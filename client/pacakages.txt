@@ -1,0 +1,6 @@
+Pacakages for Client
+----------------------
+1.React app inilialization
+npm i create-react-app
+2. Routing
+npm i react-router-dom
