@@ -45,3 +45,9 @@ module.exports = {
     ]
 
 }
+6.AOS Animation
+----------------
+npm install aos --save
+7.Bootstarp 5.3.2 added here
+
+8.npm i axios
