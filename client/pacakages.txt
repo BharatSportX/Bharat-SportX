@@ -1,6 +1,47 @@
+
 Pacakages for Client
 ----------------------
 1.React app inilialization
 npm i create-react-app
 2. Routing
 npm i react-router-dom
+
+
+
+
+Flowbite Talwind CSS framework 
+---------------------------------------
+1.Install Tailwind CSS #
+Install Tailwind CSS by running the following two commands:
+
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+
+2.Set up the Tailwind directives inside the ./src/index.css file:
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+3.Install Flowbite #
+Install Flowbite and Flowbite React by running the following command in your terminal:
+npm install flowbite flowbite-react
+
+4.Require Flowbite as a plugin inside your tailwind.config.js file:
+module.exports = {
+
+    plugins: [
+        require('flowbite/plugin')
+    ]
+
+}
+
+5.Additionally to your own content data you should add the Flowbite source paths to apply the classes from the interactive elements in the tailwind.config.js file:
+module.exports = {
+
+    content: [
+        // ...
+        'node_modules/flowbite-react/lib/esm/**/*.js'
+    ]
+
+}
