@@ -1,4 +1,14 @@
 
+-------INSTALLED Pacakages (npm)----------
+
+npm i create-react-app
+npm i react-router-dom
+npm i axios
+npm install aos --save
+npm install -D tailwindcss
+
+
+
 Pacakages for Client
 ----------------------
 1.React app inilialization

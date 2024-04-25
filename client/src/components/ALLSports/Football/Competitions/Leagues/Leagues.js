@@ -32,7 +32,7 @@ export default function Leagues() {
         {leagues.map(league => (
           <div
             key={league.league.id}
-            className="bg-yellow rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300 ease-in-out"
+            className=" rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300 ease-in-out"
           //   data-aos="fade-up"
           // data-aos-duration="3000"
           >
@@ -42,7 +42,7 @@ export default function Leagues() {
               className="w-20 h-auto mb-4 mx-auto"
               onError={(e) => { e.target.src = ''; e.target.alt = 'Image not available'; }}
             />
-            <h2 className="text-xl font-semibold">{league.league.name}</h2>
+            <h2 className="text-xl font-semibold text-center">{league.league.name}</h2>
           </div>
         ))}
       </div>
