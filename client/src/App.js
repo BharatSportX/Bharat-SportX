@@ -7,7 +7,7 @@ import {
 import FrontPage from './components/FrontPage/FrontPage';
 import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
-
+import Leagues from './components/ALLSports/Football/Competitions/Leagues/Leagues';
 function App() {
   const router=createBrowserRouter([
     {
@@ -18,6 +18,10 @@ function App() {
       path:'/home',
       element:<><Navbar/><Home/></>
     },
+    {
+      path:'/FootballLeagues',
+      element:<><Leagues/></>
+    }
     
   ])
   return (
