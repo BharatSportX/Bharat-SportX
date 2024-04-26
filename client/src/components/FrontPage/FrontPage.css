@@ -1,11 +1,11 @@
-body{
+.frontBody{
   background: url(../../../public/FrontBg1.png);
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
   /* height: 100vh; */
-  /* overflow-y: hidden; */
+  overflow-y: hidden;
 }
 .button {
   transition: all 0.3s ease-in-out;
