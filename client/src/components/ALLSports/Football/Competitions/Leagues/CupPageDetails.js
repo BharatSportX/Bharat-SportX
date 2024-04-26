@@ -1,4 +1,3 @@
-// CupPage.js
 
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
@@ -22,7 +21,7 @@ export default function CupPageDetails() {
             'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
           }
         });
-        setCupData(response.data.response[0]); // Assuming the response is an array and we take the first item
+        setCupData(response.data.response[0]); 
         setLoading(false);
       } catch (error) {
         console.error(error);
