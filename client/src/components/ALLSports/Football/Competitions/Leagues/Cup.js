@@ -1,23 +1,25 @@
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import 'aos/dist/aos.css';
+import { Link } from 'react-router-dom';
 
-export default function Leagues() {
-  const [leagues, setLeagues] = useState([]);
-  const [loading, setLoading] = useState(true); // Add loading state
+export default function Cups() {
+  const [cups, setCups] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://api-football-v1.p.rapidapi.com/v3/leagues?type=League', {
+        const response = await axios.get('https://api-football-v1.p.rapidapi.com/v3/leagues', {
+          params: {
+            type: 'Cup' 
+          },
           headers: {
             'X-RapidAPI-Key': '96d6e2db0bmshaefc24c363be681p18096ejsn20efc89ac5c0',
             'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
           }
         });
-        setLeagues(response.data.response);
-        setLoading(false); // Set loading to false after data is fetched
+        setCups(response.data.response);
+        setLoading(false);
       } catch (error) {
         console.error(error);
       }
@@ -28,8 +30,8 @@ export default function Leagues() {
 
   return (
     <div className="container mx-auto py-8">
-      <h1 className="text-3xl font-bold mb-4">Leagues</h1>
-      {loading ? ( // Conditionally render loading spinner
+      <h1 className="text-3xl font-bold mb-4">Cups</h1>
+      {loading ? (
         <div className="flex items-center justify-center h-screen">
           <div role="status">
             <svg
@@ -53,22 +55,21 @@ export default function Leagues() {
         </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {leagues.map((league) => (
-            <div
-              key={league.league.id}
-              className="rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300 ease-in-out"
-            >
-              <img
-                src={league.league.logo}
-                alt={league.league.name}
-                className="w-20 h-auto mb-4 mx-auto"
-                onError={(e) => {
-                  e.target.src = '';
-                  e.target.alt = 'Image not available';
-                }}
-              />
-              <h2 className="text-xl font-semibold text-center">{league.league.name}</h2>
-            </div>
+          {cups.map((cup) => (
+            <Link key={cup.league.id} to={`/cup/${cup.league.id}`}>
+              <div className="rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300 ease-in-out">
+                <img
+                  src={cup.league.logo}
+                  alt={cup.league.name}
+                  className="w-20 h-auto mb-4 mx-auto"
+                  onError={(e) => {
+                    e.target.src = '';
+                    e.target.alt = 'Image not available';
+                  }}
+                />
+                <h2 className="text-xl font-semibold text-center">{cup.league.name}</h2>
+              </div>
+            </Link>
           ))}
         </div>
       )}
