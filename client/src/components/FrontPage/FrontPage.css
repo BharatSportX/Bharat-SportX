@@ -1,10 +1,10 @@
-body{
+.frontBody{
   background: url(../../../public/FrontBg1.png);
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
-  height: auto;
+  /* height: auto; */
   /* overflow-y: auto; */
 }
 .button {
