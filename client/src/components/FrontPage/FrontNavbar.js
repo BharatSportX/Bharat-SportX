@@ -131,7 +131,7 @@ const FrontNavbar = () => {
       <ul class="font-medium flex flex-col p-4 md:p-0   md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 ">
            
               <form>
-                <button className="md:w-[140px] BtnEx ">
+                <button className=" w-32  md:w-36 BtnEx ">
                   See more
                 </button>
               </form>
