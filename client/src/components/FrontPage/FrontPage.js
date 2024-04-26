@@ -10,7 +10,7 @@ const FrontPage = () => {
         <div className="flex flex-col justify-center text-center items-center h-full px-3 absolute top-0 left-0 right-0 bottom-0">
           <h1 className="mb-4 text-4xl font-bold tracking-tight  leading-none text-white md:text-5xl lg:text-6xl">
             {/* write user anme here */}
-            Hey!.. Welcome <span className="leading-[2]">Soumadip</span>
+            Hey!.. Welcome to <span className="leading-[2]">BharatSportX</span>
           </h1>
 
           <p className="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">
