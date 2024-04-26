@@ -32,6 +32,7 @@ export default function CupPageDetails() {
   }, [id]);
 
   return (
+    
     <div className="container mx-auto py-8">
       {loading ? (
         <div>Loading...</div>
@@ -45,5 +46,6 @@ export default function CupPageDetails() {
         </div>
       )}
     </div>
+    
   );
 }
