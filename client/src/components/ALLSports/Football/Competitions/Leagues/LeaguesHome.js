@@ -4,9 +4,8 @@ import { useNavigate } from 'react-router-dom';
 export default function LeaguesHome() {
     const navigate=useNavigate()
   return (
-    <section className='bg-white w-full h-full  '>
-    {/* <section className='bg-white w-full h-full '>  add this line for bg-white donst add any margin in div  tag after addidng section*/}
-    <div className=" container pt-3">
+   
+    <div className=" container pt-3 mt-3">
       <div className="row">
         {/* World Cup Card */}
         <div className="col-md-6 mb-4 d-flex justify-content-around">
@@ -35,6 +34,6 @@ export default function LeaguesHome() {
         </div>
       </div>
     </div>
-    </section>
+    
   );
 }
