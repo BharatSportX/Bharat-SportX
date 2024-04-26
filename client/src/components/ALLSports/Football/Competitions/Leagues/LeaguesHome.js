@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 export default function LeaguesHome() {
     const navigate=useNavigate()
   return (
-    <div className="container-fluid pt-3 mt-3">
+    <div className="container pt-3 mt-3">
       <div className="row">
         {/* World Cup Card */}
         <div className="col-md-6 mb-4 d-flex justify-content-around">
