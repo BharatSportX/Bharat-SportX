@@ -77,14 +77,14 @@ const FrontPage = () => {
       <FrontNavbar />
       <section className="">
         <div className="flex flex-col justify-center text-center items-center h-full px-3 absolute top-0 left-0 right-0 bottom-0">
-          <h1 className="mb-4 text-4xl font-bold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
+          <h1 className="mb-4 text-4xl font-bold tracking-tight leading-normal text-white md:text-5xl lg:text-6xl">
             {text}
             {/* <span className="leading-[2]">BharatSportX</span> */}
           </h1>
 
-          <p className="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">
+          <p className="mb-8 text-xl font-normal pt-2  text-gray-300 lg:text-2xl sm:px-16 lg:px-48">
             Stay ahead with the latest updates on all sports news! Keep your finger on the pulse of the sporting world.
-            <p className="my-2">
+            <p className="my-2 text-lg pt-2 lg:text-xl">
               Ready to dive in? Click <b>Get Started</b> to explore our our sports paradise.
             </p>
           </p>
