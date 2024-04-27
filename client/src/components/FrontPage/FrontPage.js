@@ -77,7 +77,7 @@ const FrontPage = () => {
       <FrontNavbar />
       <section className="">
         <div className="flex flex-col justify-center text-center items-center h-full px-3 absolute top-0 left-0 right-0 bottom-0">
-          <h1 className="mb-4 text-4xl font-bold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
+          <h1 className="mb-4 text-4xl font-bold tracking-tight leading-normal text-white md:text-5xl lg:text-6xl">
             {text}
             {/* <span className="leading-[2]">BharatSportX</span> */}
           </h1>
