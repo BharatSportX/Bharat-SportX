@@ -38,7 +38,7 @@ const FrontPage = () => {
           </p>
           <div className=" ">
             <Link
-              to="#"
+              to="/LeagueHome"
               className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-black rounded-lg bg-yellow-300 hover:bg-yellow-300  hover:font-semibold dark:focus:ring-blue-900 button shadow-lg"
             >
               Get started
