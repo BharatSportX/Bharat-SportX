@@ -3,8 +3,14 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Acme&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lugrasimo&family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amita:wght@400;700&family=Charm:wght@400;700&family=Neucha&display=swap');
 
 /* font-family: "Acme", sans-serif; */
 /* font-family: "Quicksand", sans-serif; */
 /* font-family: "Josefin Sans", sans-serif; */
 /* font-family: "Lugrasimo", cursive; */
+
+/* --=-- */
+/* font-family: "Neucha", cursive; */
+/* font-family: "Charm", cursive; */
+/* font-family: "Amita", serif; */

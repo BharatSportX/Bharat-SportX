@@ -1,4 +1,1 @@
 
- 2.some time logo visible sometime not
- 3.logo run image must be fill in color
- 4.set padding for getStarted for(md)

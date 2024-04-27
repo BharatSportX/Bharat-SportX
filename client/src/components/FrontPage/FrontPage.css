@@ -6,6 +6,7 @@
   background-size: cover;
   /* height: auto; */
   /* overflow-y: auto; */
+  /* background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%); */
 }
 .button {
   transition: all 0.3s ease-in-out;
