@@ -62,3 +62,5 @@ npm install aos --save
 
 8.npm i axios
 9.npm install gh-pages --save-dev
+10.npm install react-soccer-lineup --legacy-peer-deps
+11.npm install react-soccer-lineup --force
