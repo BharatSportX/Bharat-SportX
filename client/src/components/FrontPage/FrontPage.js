@@ -82,9 +82,9 @@ const FrontPage = () => {
             {/* <span className="leading-[2]">BharatSportX</span> */}
           </h1>
 
-          <p className="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">
+          <p className="mb-8 text-xl font-normal pt-2  text-gray-300 lg:text-2xl sm:px-16 lg:px-48">
             Stay ahead with the latest updates on all sports news! Keep your finger on the pulse of the sporting world.
-            <p className="my-2">
+            <p className="my-2 text-lg pt-2 lg:text-xl">
               Ready to dive in? Click <b>Get Started</b> to explore our our sports paradise.
             </p>
           </p>
