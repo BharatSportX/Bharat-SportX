@@ -1,0 +1,15 @@
+.section-card {
+    background-color: #89f183;
+  }
+  
+  .card {
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+ 
+ 
