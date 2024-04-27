@@ -1,0 +1,41 @@
+.container {
+    margin: auto;
+    max-width: 1200px;
+    padding: 0 20px;
+  }
+  
+  .league-card {
+    border-radius: 4px; /* Default border radius for medium devices */
+    transition: all 0.3s ease-in-out;
+     /* Corrected border syntax */
+}
+
+
+  
+  @media (min-width: 640px) {
+    /* Small devices (sm) */
+    .league-card {
+      border-radius: 12px; /* Increased border radius for small devices */
+    }
+  }
+  
+  @media (min-width: 768px) {
+    /* Medium devices (md) */
+    .league-card {
+      border-radius: 3px; /* Adjusted border radius for medium devices */
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    /* Large devices (lg) */
+    .league-card {
+      border-radius: 4px; /* Reset border radius for large devices */
+    }
+  }
+  
+  .league-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    border: 3px solid gold;
+  }
+  
