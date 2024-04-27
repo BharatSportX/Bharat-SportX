@@ -24,6 +24,7 @@
 .button:hover {
   transform: scale(1.05);
   border-color: #fff9;
+  background: rgb(227, 227, 7);
 }
 
 .button:hover .icon {
