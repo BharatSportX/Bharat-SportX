@@ -83,9 +83,9 @@ const FrontPage = () => {
           </h1>
 
           <p className="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">
-          Stay ahead with the latest updates on all sports news! Keep your finger on the pulse of the sporting world.
+            Stay ahead with the latest updates on all sports news! Keep your finger on the pulse of the sporting world.
             <p className="my-2">
-            Ready to dive in? Click <b>Get Started</b> to explore our our sports paradise.
+              Ready to dive in? Click <b>Get Started</b> to explore our our sports paradise.
             </p>
           </p>
           <div className=" ">
