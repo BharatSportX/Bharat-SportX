@@ -22,6 +22,7 @@ export default function Cups() {
         setLoading(false);
       } catch (error) {
         console.error(error);
+        setLoading(false); // Set loading to false in case of error
       }
     };
 
@@ -56,15 +57,14 @@ export default function Cups() {
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {cups.map((cup) => (
-            <Link>
-            {/* <Link key={cup.league.id} to={`/cup/${cup.league.id}`}> */}
+            <Link key={cup.league.id} to={`/cup/${cup.league.id}`}>
               <div className="rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300 ease-in-out">
                 <img
-                  src={cup.league.logo}
+                  src={cup.league.logo || 'default_image_url'} // Replace 'default_image_url' with the URL of your default image
                   alt={cup.league.name}
                   className="w-20 h-auto mb-4 mx-auto"
                   onError={(e) => {
-                    e.target.src = '';
+                    e.target.src = ''; 
                     e.target.alt = 'Image not available';
                   }}
                 />
