@@ -1,12 +1,12 @@
 .frontBody{
-  background: url(../../../public/FrontBg1.png);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%),url(../../../public/frontBG1.jpeg);
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: scroll;
   background-size: cover;
+  background-color: black;
   /* height: auto; */
   /* overflow-y: auto; */
-  /* background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%); */
 }
 .button {
   transition: all 0.3s ease-in-out;
