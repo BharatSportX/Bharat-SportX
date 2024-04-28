@@ -29,7 +29,26 @@ const CupPageDetails = () => {
             'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
           }
         });
+  useEffect(() => {
+    const fetchCupData = async () => {
+      try {
+        const response = await axios.get(`https://api-football-v1.p.rapidapi.com/v3/leagues`, {
+          params: {
+            type: 'Cup',
+            id: id
+          },
+          headers: {
+            'X-RapidAPI-Key': '96d6e2db0bmshaefc24c363be681p18096ejsn20efc89ac5c0',
+            'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
+          }
+        });
 
+        const cupSessionData = response.data.response[0].seasons.map(session => ({
+          year: session.year,
+          start: session.start,
+          end: session.end,
+          coverage: session.coverage
+        }));
         const cupSessionData = response.data.response[0].seasons.map(session => ({
           year: session.year,
           start: session.start,
@@ -39,7 +58,14 @@ const CupPageDetails = () => {
 
         setCupData(cupSessionData);
         setLeague(response.data.response[0].league);
+        setCupData(cupSessionData);
+        setLeague(response.data.response[0].league);
 
+        setLoading(false);
+      } catch (error) {
+        console.error(error);
+      }
+    };
         setLoading(false);
       } catch (error) {
         console.error(error);
@@ -48,7 +74,26 @@ const CupPageDetails = () => {
 
     fetchCupData();
   }, [id]);
+    fetchCupData();
+  }, [id]);
 
+  const fetchFixturesForYear = async (year) => {
+    try {
+      const response = await axios.get(`https://api-football-v1.p.rapidapi.com/v3/fixtures`, {
+        params: {
+          league: id,
+          season: year
+        },
+        headers: {
+          'X-RapidAPI-Key': '96d6e2db0bmshaefc24c363be681p18096ejsn20efc89ac5c0',
+          'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
+        }
+      });
+      setFixtures(response.data.response);
+    } catch (error) {
+      console.error(error);
+    }
+  };
   const fetchFixturesForYear = async (year) => {
     try {
       const response = await axios.get(`https://api-football-v1.p.rapidapi.com/v3/fixtures`, {
@@ -202,5 +247,66 @@ const CupPageDetails = () => {
     </div>
   );
 };
+                    <input
+                      type="radio"
+                      id="away"
+                      value="away"
+                      checked={selectedOption === 'away'}
+                      onChange={() => handleOptionChange('away')}
+                    />
+                    <label htmlFor="away">Away</label>
+                  </div>
+                  {selectedOption === 'home' && (
+                    <div>
+                      <h3>Home Teams</h3>
+                      <SoccerLineUp
+                        size={"small"}
+                        color={"lightseagreen"}
+                        pattern={"lines"}
+                        homeTeam={{
+                          squad: {
+                            gk: { name: homeTeamsData.join(', ') },
+                            df: [],
+                            cdm: [],
+                            cm: [],
+                            cam: [],
+                            fw: []
+                          }
+                        }}
+                      />
+                    </div>
+                  )}
+                  {selectedOption === 'away' && (
+                    <div>
+                      <h3>Away Teams</h3>
+                      <SoccerLineUp
+                        size={"small"}
+                        color={"lightseagreen"}
+                        pattern={"lines"}
+                        homeTeam={{
+                          squad: {
+                            gk: { name: awayTeamsData.join(', ') },
+                            df: [],
+                            cdm: [],
+                            cm: [],
+                            cam: [],
+                            fw: []
+                          }
+                        }}
+                      />
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div>No cup data available</div>
+      )}
+    </div>
+  );
+};
 
+export default CupPageDetails;
 export default CupPageDetails;
