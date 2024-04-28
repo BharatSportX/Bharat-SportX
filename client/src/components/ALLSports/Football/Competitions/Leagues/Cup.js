@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-export default function Cups() {
+function Cups() {
   const [cups, setCups] = useState([]);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate(); // Corrected import
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,12 +23,17 @@ export default function Cups() {
         setLoading(false);
       } catch (error) {
         console.error(error);
-        setLoading(false); // Set loading to false in case of error
+        setLoading(false); 
       }
     };
 
     fetchData();
   }, []);
+
+ 
+  const handleCupClick = (cupId) => {
+    navigate(`/cup/${cupId}`);
+  };
 
   return (
     <div className="container mx-auto py-8">
@@ -57,10 +63,10 @@ export default function Cups() {
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {cups.map((cup) => (
-            <Link key={cup.league.id} to={`/cup/${cup.league.id}`}>
+            <div key={cup.league.id} onClick={() => handleCupClick(cup.league.id)}>
               <div className="rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300 ease-in-out">
                 <img
-                  src={cup.league.logo || 'default_image_url'} // Replace 'default_image_url' with the URL of your default image
+                  src={cup.league.logo || 'default_image_url'} 
                   alt={cup.league.name}
                   className="w-20 h-auto mb-4 mx-auto"
                   onError={(e) => {
@@ -70,10 +76,12 @@ export default function Cups() {
                 />
                 <h2 className="text-xl font-semibold text-center">{cup.league.name}</h2>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       )}
     </div>
   );
 }
+
+export default Cups;
