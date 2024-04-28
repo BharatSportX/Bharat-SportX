@@ -76,8 +76,10 @@ function Cups() {
                   }}
                 />
                 <h2 className="text-xl font-semibold text-center">{cup.league.name}</h2>
+              
               </div>
-            </div>
+              </Link>
+            
           ))}
         </div>
       )}
