@@ -63,23 +63,20 @@ function Cups() {
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {cups.map((cup) => (
-            
-            <Link key={cup.league.id} to={`/cup/${cup.league.id}`}>
+            <div key={cup.league.id} onClick={() => handleCupClick(cup.league.id)}>
               <div className="rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300 ease-in-out">
                 <img
-                  src={cup.league.logo || 'https://rapidapi-prod-apis.s3.amazonaws.com/d6/bad4e75b994d49897a95a6e7b6363b/5e91326f658012bfeb00102fe790edcd.png'} 
+                  src={cup.league.logo || ''} 
                   alt={cup.league.name}
                   className="w-20 h-auto mb-4 mx-auto"
                   onError={(e) => {
-                    e.target.src = ''; 
+                    e.target.src = 'https://rapidapi-prod-apis.s3.amazonaws.com/d6/bad4e75b994d49897a95a6e7b6363b/5e91326f658012bfeb00102fe790edcd.png'; 
                     e.target.alt = 'Image not available';
                   }}
                 />
                 <h2 className="text-xl font-semibold text-center">{cup.league.name}</h2>
-              
               </div>
-              </Link>
-            
+            </div>
           ))}
         </div>
       )}
