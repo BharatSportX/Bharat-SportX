@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 function Cups() {
   const [cups, setCups] = useState([]);
   const [loading, setLoading] = useState(true);
-  const navigate = useNavigate(); // Corrected import
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     const fetchData = async () => {
@@ -67,7 +67,7 @@ function Cups() {
             <Link key={cup.league.id} to={`/cup/${cup.league.id}`}>
               <div className="rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300 ease-in-out">
                 <img
-                  src={cup.league.logo || 'default_image_url'} 
+                  src={cup.league.logo || 'https://rapidapi-prod-apis.s3.amazonaws.com/d6/bad4e75b994d49897a95a6e7b6363b/5e91326f658012bfeb00102fe790edcd.png'} 
                   alt={cup.league.name}
                   className="w-20 h-auto mb-4 mx-auto"
                   onError={(e) => {
