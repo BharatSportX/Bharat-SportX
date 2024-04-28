@@ -4,13 +4,13 @@ const FrontBody = (props) => {
   const {img,header,mutedheader,content}=props;
   return (
     <div>
-      <div className="flex flex-col md:flex-row my-2 md:py-16 md:px-40 items-center bg-black">
-        <div className="md:w-7/12 md:order-1 md:p-3 text-white">
-          <h1 className=" md:text-5xl font-normal leading-normal mb-2">
+      <div className="flex flex-col md:flex-row my-2 py-16 px-0 lg:px-40 items-center bg-black">
+        <div className="md:w-7/12 md:order-1 text-center lg:text-start lg:p-3 px-10 py-4 text-white">
+          <h1 className=" lg:text-5xl text-3xl  font-bold leading-normal mb-2">
             {header},
             <span className="text-gray-600 md:text-[2rem] ml-2">{mutedheader}</span>
           </h1>
-          <p className="md:text-2xl leading-relaxed mb-4">
+          <p className="lg:text-2xl text-xl py-3 leading-relaxed mb-4">
            {content}
           </p>
         </div>
@@ -18,7 +18,7 @@ const FrontBody = (props) => {
         {/* img must be 500x450 */}
            
           <img
-            className="w-full h-auto mx-auto md:float-right rounded"
+            className="w-full h-auto mx-auto px-6 md:float-right rounded"
             src={img}
             alt="image"
           />
