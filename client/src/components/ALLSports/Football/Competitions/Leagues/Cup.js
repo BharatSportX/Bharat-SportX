@@ -63,7 +63,8 @@ function Cups() {
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {cups.map((cup) => (
-            <div key={cup.league.id} onClick={() => handleCupClick(cup.league.id)}>
+            
+            <Link key={cup.league.id} to={`/cup/${cup.league.id}`}>
               <div className="rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300 ease-in-out">
                 <img
                   src={cup.league.logo || ''} 
@@ -75,8 +76,10 @@ function Cups() {
                   }}
                 />
                 <h2 className="text-xl font-semibold text-center">{cup.league.name}</h2>
+              
               </div>
-            </div>
+              </Link>
+            
           ))}
         </div>
       )}
