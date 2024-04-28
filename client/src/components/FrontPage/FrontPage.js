@@ -22,7 +22,7 @@ const FrontPage = () => {
 
   return (
     <>
-      <div className="frontBody h-[90vh] min-[320px]:h-screen md:h-[90vh] lg:h-[90vh]    flex flex-col relative">
+      <div className="frontBody h-[90vh] max-[320px]:h-screen md:h-[90vh] lg:h-[90vh]    flex flex-col relative">
         <FrontNavbar />
         <section className="">
           <div className="flex flex-col  justify-center text-center items-center px-3 absolute top-0 left-0 right-0 bottom-0 ">
