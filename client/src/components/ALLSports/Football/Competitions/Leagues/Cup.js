@@ -56,7 +56,8 @@ export default function Cups() {
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {cups.map((cup) => (
-            <Link key={cup.league.id} to={`/cup/${cup.league.id}`}>
+            <Link>
+            {/* <Link key={cup.league.id} to={`/cup/${cup.league.id}`}> */}
               <div className="rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300 ease-in-out">
                 <img
                   src={cup.league.logo}

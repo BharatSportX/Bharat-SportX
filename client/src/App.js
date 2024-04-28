@@ -34,8 +34,8 @@ function App() {
       element:<><LeaguesHome/></>
     },
     {
-      path:'/cup/:id',
-      element:<><CupPageDetails/></>
+      // path:'/cup/:id',
+      // element:<><CupPageDetails/></>
     },
     
     
