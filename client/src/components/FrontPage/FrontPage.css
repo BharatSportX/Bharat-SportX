@@ -1,5 +1,5 @@
 .frontBody{
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%),url(../../../public/frontBG1.jpeg);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.895) 100%),url(../../../public/frontBG1.jpeg);
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: scroll;
