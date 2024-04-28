@@ -7,10 +7,13 @@ const FrontNavbar = () => {
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-1 pt-3 md:p-4 md:pt-7">
           <a
             href="/"
-          // className="flex items-center space-x-3 rtl:space-x-reverse"
+            // className="flex items-center space-x-3 rtl:space-x-reverse"
           >
-            <span className="self-center text-3xl text-[#faca15] font-semibold whitespace-nowrap  font-[Neucha,cursive] pl-3 md:text-[2.5rem]">
-              BharatSportX
+            <span className="self-center text-3xl  font-semibold whitespace-nowrap  font-[Charm,cursive] pl-3 md:text-[2.5rem]">
+              <span className="text-orange-700">Bh</span>
+              <span className=" text-white">ar</span>
+              <span className=" text-green-600">at</span>
+              <span className=" text-[#ffb300]">SportX</span>
             </span>
           </a>
 

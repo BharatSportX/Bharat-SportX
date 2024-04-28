@@ -21,7 +21,7 @@ const FrontPage = () => {
   }, [index]);
 
   return (
-    <>
+    <div className="bg-[#232323]">
       <div className="frontBody h-[90vh] max-[320px]:h-screen md:h-[95vh] lg:h-[95vh]    flex flex-col relative">
         <FrontNavbar />
         <section className="">
@@ -66,7 +66,7 @@ const FrontPage = () => {
         </section>
       </div>
       <FrontBody />
-    </>
+    </div>
   );
 };
 
