@@ -234,7 +234,9 @@ const CupPageDetails = () => {
         {/* Display sorted fixtures */}
         {sortedFixtures.map((fixture, index) => (
   <div key={fixture.fixture.id} className="fixture-card">
-    <p> {index + 1}</p>
+    <p className='serialno'style={{
+      fontWeight:"bold"
+    }}> Serial No{index + 1}</p>
     <p> Home</p>
     <p>{fixture.teams.home.name}</p>
     <div className="team-logo">
