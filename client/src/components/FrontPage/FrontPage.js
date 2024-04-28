@@ -22,7 +22,7 @@ const FrontPage = () => {
 
   return (
     <>
-      <div className="frontBody h-[90vh] md:h-[90vh] lg:h-[90vh]  min-[667px]:h-screen  flex flex-col relative">
+      <div className="frontBody h-[90vh] min-[320px]:h-screen md:h-[90vh] lg:h-[90vh]    flex flex-col relative">
         <FrontNavbar />
         <section className="">
           <div className="flex flex-col  justify-center text-center items-center px-3 absolute top-0 left-0 right-0 bottom-0 ">
@@ -42,7 +42,7 @@ const FrontPage = () => {
             <div className=" ">
               <Link
                 to="/LeagueHome"
-                className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-black rounded-lg bg-yellow-300 hover:bg-yellow-300  hover:font-semibold dark:focus:ring-blue-900 button shadow-lg     md:font-semibold  md:text-2xl font-[Josefin Sans,sans-serif]  min-[667px]:py-3  min-[667px]:px-5 "
+                className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-black rounded-lg bg-yellow-300 hover:bg-yellow-300  hover:font-semibold dark:focus:ring-blue-900 button shadow-lg     md:font-semibold  md:text-2xl font-[Josefin Sans,sans-serif]  sm:py-3  sm:px-5 "
               >
                 Get Started
                 <svg
