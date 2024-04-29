@@ -394,8 +394,9 @@ const CupPageDetails = () => {
                 <p>VS</p>
               </div>
               <div className="team flex items-center">
-                <p className="mr-2">{fixture.teams.away.name}</p>
+               
                 <img className="w-8 h-8 rounded-full" src={fixture.teams.away.logo} alt={fixture.teams.away.name} />
+                <p className="ml-2">{fixture.teams.away.name}</p>
               </div>
               <div>
                 <h1>Goal:</h1>
