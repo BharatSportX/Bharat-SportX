@@ -152,15 +152,15 @@ const CupPageDetails = () => {
                 <img className="w-8 h-8 rounded-full" src={fixture.teams.home.logo} alt={fixture.teams.home.name} />
                 <p className="ml-2">{fixture.teams.home.name}</p>
               </div>
-              <div className="time-date">
-                <p>{new Date(fixture.fixture.date).toLocaleDateString()}</p>
-                <p>{new Date(fixture.fixture.date).toLocaleTimeString()}</p>
-              </div>
-              <div className="time-date">
-                <p style={{
-                
-                }}>VS</p>
-              </div>
+               <div className="time-date">
+              <p>{new Date(fixture.fixture.date).toLocaleDateString()}</p>
+              <p>{new Date(fixture.fixture.date).toLocaleTimeString()}</p>
+            </div>
+            <div className="comparison">
+              <p>VS</p>
+            </div>
+
+
               <div className="team flex items-center">
                 <p className="mr-2">{fixture.teams.away.name}</p>
                 <img className="w-8 h-8 rounded-full" src={fixture.teams.away.logo} alt={fixture.teams.away.name} />
