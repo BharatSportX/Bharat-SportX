@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-
+import './Cup.css'
 function Cups() {
   const [cups, setCups] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -61,10 +61,10 @@ function Cups() {
           </div>
         </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 ">
           {cups.map((cup) => (
             <div key={cup.league.id} onClick={() => handleCupClick(cup.league.id)}>
-              <div className="rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300 ease-in-out">
+              <div className="rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300 ease-in-out cup-card">
                 <img
                   src={cup.league.logo || ''} 
                   alt={cup.league.name}
