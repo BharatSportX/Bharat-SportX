@@ -80,9 +80,12 @@ const CupPageDetails = () => {
       return;
     }
 
-    const { home, away, fixture: fixtureDetails, goals, score } = fixture;
-    const homeTeamName = home ? home.name : "Unknown";
-    const awayTeamName = away ? away.name : "Unknown";
+    const { teams, fixture: fixtureDetails, goals, score } = fixture;
+    const homeTeamName = teams.home ? teams.home.name : "Unknown";
+    const awayTeamName = teams.away ? teams.away.name : "Unknown";
+
+    
+
     const goalsHome = goals ? goals.home : 0;
     const goalsAway = goals ? goals.away : 0;
     const shortStatus = fixtureDetails.status.short || "Not available";
@@ -92,7 +95,8 @@ const CupPageDetails = () => {
     const elapsed = fixtureDetails.status?.elapsed || "Not available";
     const firstPeriod = fixtureDetails.periods?.first || "Not available";
     const secondPeriod = fixtureDetails.periods?.second || "Not available";
-    const winner = home?.winner ? homeTeamName : away?.winner ? awayTeamName : "Draw";
+    const winner = teams.home?.winner ? homeTeamName : teams.away?.winner ? awayTeamName : "Draw";
+
     const extraTimeScoreHome = score.extratime?.home || 0;
     const extraTimeScoreAway = score.extratime?.away || 0;
     const penaltyScoreHome = score.penalty?.home || 0;
