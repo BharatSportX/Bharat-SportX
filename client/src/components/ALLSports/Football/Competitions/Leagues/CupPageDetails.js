@@ -91,7 +91,7 @@ const CupPageDetails = () => {
         <div className="flex flex-wrap justify-center">
           {cupData.map(session => (
             <div key={session.year} className="m-2">
-              <button onClick={() => handleShowFixture(session.year)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">{session.year}</button>
+              <button onClick={() => handleShowFixture(session.year)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Session {session.year}</button>
             </div>
           ))}
         </div>
