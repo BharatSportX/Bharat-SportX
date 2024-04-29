@@ -132,7 +132,7 @@ const CupPageDetails = () => {
               <p>Referee: {fixture.fixture.referee || 'Not specified'}</p>
               <p>First Period: {fixture.fixture.periods?.first||"Not available"}</p>
               <p>Second Period: {fixture.fixture.periods?.second||"Not available"}</p>
-              <p>Goals: {fixture.goals.home} - {fixture.goals.away||"Not available"}</p>
+              <p>Goals: {fixture.goals.home} - {fixture.goals.away}</p>
               <p>Winner: {fixture.teams.home.winner ? fixture.teams.home.name : fixture.teams.away.winner ? fixture.teams.away.name : 'Draw'||"Not available"}</p>
               <p>Full-Time Score: {fixture.score.fulltime.home} - {fixture.score.fulltime.away||"Not available"}</p>
               <p>Extra-Time Score: {fixture.score.extratime.home} - {fixture.score.extratime.away||"Not available"}</p>
