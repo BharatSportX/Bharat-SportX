@@ -157,17 +157,27 @@ const CupPageDetails = () => {
                 <p>{new Date(fixture.fixture.date).toLocaleTimeString()}</p>
               </div>
               <div className="time-date">
-                <p>VS</p>
+                <p style={{
+                
+                }}>VS</p>
               </div>
               <div className="team flex items-center">
                 <p className="mr-2">{fixture.teams.away.name}</p>
                 <img className="w-8 h-8 rounded-full" src={fixture.teams.away.logo} alt={fixture.teams.away.name} />
               </div>
-              <button onClick={() => handleOpenModal(fixture)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Read More</button>
+              {/* <button onClick={() => handleOpenModal(fixture)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Read More</button> */}
+              <button onClick={() => handleOpenModal(fixture)} className="bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-700 hover:to-blue-900 text-white font-bold py-2 px-4 rounded flex items-center gap-2">
+              
+                Read More 
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-6 h-6">
+                  <path fillRule="evenodd" d="M8.707 15.707a1 1 0 0 0 1.414 0l5-5a1 1 0 0 0 0-1.414l-5-5a1 1 0 0 0-1.414 1.414L13.586 10 8.707 14.879a1 1 0 0 0 0 1.414z"/>
+              </svg>
+            </button>
+
             </div>
             {/* Display goal status and short status (FT) */}
             <div>
-            Goal:{fixture.goals.home} - {fixture.goals.away}
+          <h1 > Goal: </h1> {fixture.goals.home} - {fixture.goals.away}
               <p>Short : {fixture.fixture.status.short}</p>
             </div>
           </div>
