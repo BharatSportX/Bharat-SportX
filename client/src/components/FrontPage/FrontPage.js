@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./FrontPage.css";
 import FrontNavbar from "./FrontNavbar";
 import { Link } from "react-router-dom";
-import FrontBody from "./FrontBody";
+import BodyCard from "./FrontBody/BodyCard";
+import FrontBody from "./FrontBody/FrontBody";
 
 const FrontPage = () => {
   const [text, setText] = useState("");
@@ -65,7 +66,7 @@ const FrontPage = () => {
           </div>
         </section>
       </div>
-      <FrontBody />
+     <FrontBody/>
     </div>
   );
 };
