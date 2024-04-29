@@ -7,7 +7,7 @@ import './CupPageDetails.css';
 const CupPageDetails = () => {
   const { id } = useParams();
   const [cupData, setCupData] = useState([]);
-  const [loading, setLoading] = useState(false); // Initialize loading state
+  const [loading, setLoading] = useState(true); // Initialize loading state
   const [fixtures, setFixtures] = useState([]);
   const [selectedDate, setSelectedDate] = useState(null);
   const [league, setLeague] = useState(null);
@@ -30,7 +30,7 @@ const CupPageDetails = () => {
         const cupSessionData = response.data.response[0].seasons.map(session => ({
           year: session.year,
         }));
-        setLoading(true)
+        // setLoading(true)
         setCupData(cupSessionData);
         setLeague(response.data.response[0].league);
 
