@@ -1,18 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import './Cup.css'
+import './Cup.css';
+
 function Cups() {
   const [cups, setCups] = useState([]);
   const [loading, setLoading] = useState(true);
-  const navigate = useNavigate(); 
+  const [searchQuery, setSearchQuery] = useState('');
+  const [showSpeakNow, setShowSpeakNow] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get('https://api-football-v1.p.rapidapi.com/v3/leagues', {
           params: {
-            type: 'Cup' 
+            type: 'Cup'
           },
           headers: {
             'X-RapidAPI-Key': '96d6e2db0bmshaefc24c363be681p18096ejsn20efc89ac5c0',
@@ -23,21 +26,84 @@ function Cups() {
         setLoading(false);
       } catch (error) {
         console.error(error);
-        setLoading(false); 
+        setLoading(false);
       }
     };
 
     fetchData();
   }, []);
 
- 
   const handleCupClick = (cupId) => {
     navigate(`/cup/${cupId}`);
   };
 
+  const handleVoiceSearch = () => {
+    const recognition = new window.webkitSpeechRecognition();
+    recognition.lang = 'en-IN';
+    recognition.onstart = () => {
+      setShowSpeakNow(true);
+    };
+    recognition.onresult = (event) => {
+      const transcript = event.results[0][0].transcript;
+      setSearchQuery(transcript);
+      setShowSpeakNow(false);
+    };
+    recognition.onerror = () => {
+      alert('Please try again.');
+      setShowSpeakNow(false);
+    };
+    recognition.start();
+  };
+
+  // Filter cups based on search query
+  const filteredCups = cups.filter((cup) =>
+    cup.league.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <div className="container mx-auto py-8">
       <h1 className="text-3xl font-bold mb-4">Cups</h1>
+      {/* Speak Now Div */}
+      {showSpeakNow && (
+        <div className="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400" role="alert ">
+        <span class="font-medium">Speak Now...</span>
+        </div>
+      )}
+      {/* Search Form */}
+      <form
+        className="flex items-center max-w-lg mx-auto"
+        onSubmit={(e) => e.preventDefault()}
+      >
+        <label htmlFor="voice-search" className="sr-only">
+          Search
+        </label>
+        <input
+          type="text"
+          id="voice-search"
+          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          placeholder="Search World Cup Name, International Women WorldCup Name .."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          required
+        />
+        <button
+          type="button"
+          onClick={handleVoiceSearch}
+          className="inline-flex items-center px-2 ms-4 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 transition duration-300 ease-in-out"
+        >
+          <svg
+            version="1.1"
+            viewBox="0 0 150 150"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlnsXlink="http://www.w3.org/1999/xlink"
+            className="w-5 h-5 mr-2"
+          >
+            {/* SVG code here */}
+          </svg>
+          Speak Now to Search
+        </button>
+      </form>
+
       {loading ? (
         <div className="flex items-center justify-center h-screen">
           <div role="status">
@@ -61,20 +127,26 @@ function Cups() {
           </div>
         </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 ">
-          {cups.map((cup) => (
-            <div key={cup.league.id} onClick={() => handleCupClick(cup.league.id)}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-6">
+          {filteredCups.map((cup) => (
+            <div
+              key={cup.league.id}
+              onClick={() => handleCupClick(cup.league.id)}
+            >
               <div className="rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300 ease-in-out cup-card">
                 <img
-                  src={cup.league.logo || ''} 
+                  src={cup.league.logo || ''}
                   alt={cup.league.name}
                   className="w-20 h-auto mb-4 mx-auto"
                   onError={(e) => {
-                    e.target.src = 'https://rapidapi-prod-apis.s3.amazonaws.com/d6/bad4e75b994d49897a95a6e7b6363b/5e91326f658012bfeb00102fe790edcd.png'; 
+                    e.target.src =
+                      'https://rapidapi-prod-apis.s3.amazonaws.com/d6/bad4e75b994d49897a95a6e7b6363b/5e91326f658012bfeb00102fe790edcd.png';
                     e.target.alt = 'Image not available';
                   }}
                 />
-                <h2 className="text-xl font-semibold text-center">{cup.league.name}</h2>
+                <h2 className="text-xl font-semibold text-center">
+                  {cup.league.name}
+                </h2>
               </div>
             </div>
           ))}

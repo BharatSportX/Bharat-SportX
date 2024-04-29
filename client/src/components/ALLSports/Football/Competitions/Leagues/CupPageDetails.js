@@ -94,7 +94,7 @@ const CupPageDetails = () => {
     const elapsed = fixtureDetails.status?.elapsed || "Not available";
     const firstPeriod = fixtureDetails.periods?.first || "Not available";
     const secondPeriod = fixtureDetails.periods?.second || "Not available";
-    const winner = teams.home?.winner ? homeTeamName : teams.away?.winner ? awayTeamName : "Draw";
+    const winner = teams.home?.winner ? homeTeamName : teams.away?.winner ? awayTeamName : "Session Not Started";
 
     const extraTimeScoreHome = score.extratime?.home || 0;
     const extraTimeScoreAway = score.extratime?.away || 0;
