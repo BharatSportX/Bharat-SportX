@@ -11,7 +11,7 @@ const CupPageDetails = () => {
   const [fixtures, setFixtures] = useState([]);
   const [selectedDate, setSelectedDate] = useState(null);
   const [league, setLeague] = useState(null);
-  const [selectedSessionYear, setSelectedSessionYear] = useState(new Date().getFullYear().toString());
+  const [selectedSessionYear, setSelectedSessionYear] = useState();
 
 
   useEffect(() => {
