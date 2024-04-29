@@ -11,7 +11,8 @@ const CupPageDetails = () => {
   const [fixtures, setFixtures] = useState([]);
   const [selectedDate, setSelectedDate] = useState(null);
   const [league, setLeague] = useState(null);
-  const [selectedSessionYear, setSelectedSessionYear] = useState(null);
+  const [selectedSessionYear, setSelectedSessionYear] = useState(new Date().getFullYear().toString());
+
 
   useEffect(() => {
     const fetchCupData = async () => {
@@ -97,8 +98,10 @@ const CupPageDetails = () => {
         </div>
       </div>
       <div className="fixtures-container">
+      <p className="font-semibold">{selectedSessionYear}</p>
         {sortedFixtures.map((fixture, index) => (
           <div key={fixture.fixture.id} className="fixture-card bg-gray-200 rounded-lg shadow-md p-4 my-4">
+         
             <p className="font-semibold">Serial No {index + 1}</p>
             <div className="flex justify-between items-center mt-2">
               <div className="team flex items-center">
