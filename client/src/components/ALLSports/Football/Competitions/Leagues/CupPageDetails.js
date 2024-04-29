@@ -30,7 +30,7 @@ const CupPageDetails = () => {
         const cupSessionData = response.data.response[0].seasons.map(session => ({
           year: session.year,
         }));
-
+        setLoading(true)
         setCupData(cupSessionData);
         setLeague(response.data.response[0].league);
 
