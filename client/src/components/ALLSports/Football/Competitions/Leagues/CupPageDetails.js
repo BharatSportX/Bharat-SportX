@@ -105,6 +105,16 @@ const CupPageDetails = () => {
                 <img className="team-logo w-12 h-12 mr-2" src={fixture.teams.home.logo} alt={fixture.teams.home.name} />
                 <p className="team-name">{fixture.teams.home.name}</p>
               </div>
+              <div className="hidden md:flex items-center" style={{
+                fontWeight:"bold",
+                fontFamily:"sans-serif",
+                fontSize:"18px"
+              }}>VS</div> {/* Hide on mobile, show on tablet and larger screens */}
+              <div className="vs flex items-center md:hidden" style={{
+                fontWeight:"bold",
+                fontFamily:"sans-serif",
+                fontSize:"14px"
+              }}>VS</div> 
               <div className="team flex items-center">
                 <img className="team-logo w-12 h-12 mr-2" src={fixture.teams.away.logo} alt={fixture.teams.away.name} />
                 <p className="team-name">{fixture.teams.away.name}</p>
