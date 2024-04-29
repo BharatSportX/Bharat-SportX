@@ -1,0 +1,80 @@
+/* .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cup-details {
+    margin-bottom: 20px;
+  }
+  
+  .cup-details-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .cup-alert {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .cup-session-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .cup-session {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cup-session:hover {
+    background-color: #0056b3;
+  }
+  
+  .fixtures {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .fixture {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .fixture-serial {
+    font-weight: bold;
+  }
+  
+  .team {
+    display: flex;
+    align-items: center;
+  }
+  
+  .team-logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  .team-name {
+    font-weight: bold;
+  }
+  
+  .fixture-details {
+    margin-top: 10px;
+  }
+  
+   */
