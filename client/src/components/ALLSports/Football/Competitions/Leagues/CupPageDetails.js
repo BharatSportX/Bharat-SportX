@@ -111,12 +111,23 @@ const CupPageDetails = () => {
               </div>
             </div>
             <div className="goals-info mt-2">
-              <p>Goals: {fixture.goals.home} - {fixture.goals.away}</p>
-              <p>Winner: {fixture.teams.home.winner ? fixture.teams.home.name : fixture.teams.away.winner ? fixture.teams.away.name : 'Draw'}</p>
-              <p>Full-Time Score: {fixture.score.fulltime.home} - {fixture.score.fulltime.away}</p>
-              <p>Extra-Time Score: {fixture.score.extratime.home} - {fixture.score.extratime.away}</p>
-              <p>Penalty Score: {fixture.score.penalty.home} - {fixture.score.penalty.away}</p>
+            <p>Status: {fixture.fixture.status?.long}</p>
+            <p>Short Status: {fixture.fixture.status?.short}</p>
+            <p>Elapsed: {fixture.fixture.status?.elapsed}</p>
+            <p>Venue: {fixture.fixture.venue?.name}</p>
+            <p>City: {fixture.fixture.venue?.city}</p>
+            <p>Referee: {fixture.fixture.referee || 'Not specified'}</p>
+            <p>First Period: {fixture.fixture.periods?.first}</p>
+            <p>Second Period: {fixture.fixture.periods?.second}</p>
+            <p>Goals: {fixture.goals.home} - {fixture.goals.away}</p>
+            <p>Winner: {fixture.teams.home.winner ? fixture.teams.home.name : fixture.teams.away.winner ? fixture.teams.away.name : 'Draw'}</p>
+            <p>Full-Time Score: {fixture.score.fulltime.home} - {fixture.score.fulltime.away}</p>
+            <p>Extra-Time Score: {fixture.score.extratime.home} - {fixture.score.extratime.away}</p>
+            <p>Penalty Score: {fixture.score.penalty.home} - {fixture.score.penalty.away}</p>
             </div>
+
+            
+
           </div>
         ))}
       </div>
