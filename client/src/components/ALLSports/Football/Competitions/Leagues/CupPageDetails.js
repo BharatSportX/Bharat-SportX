@@ -7,7 +7,7 @@ import './CupPageDetails.css';
 const CupPageDetails = () => {
   const { id } = useParams();
   const [cupData, setCupData] = useState([]);
-  const [loading, setLoading] = useState(true); // Initialize loading state
+  const [loading, setLoading] = useState(true); 
   const [fixtures, setFixtures] = useState([]);
   const [selectedDate, setSelectedDate] = useState(null);
   const [league, setLeague] = useState(null);
