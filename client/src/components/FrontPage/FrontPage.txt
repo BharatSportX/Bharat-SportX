@@ -1,1 +1,4 @@
 
+you have to set bodycard & bodyQn for {md} device
+3.add animation to BodyQN
+4. without do again getstart do subscribe button there
