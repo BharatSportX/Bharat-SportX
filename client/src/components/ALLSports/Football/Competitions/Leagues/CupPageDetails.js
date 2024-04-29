@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import Spinner from './Spinner'; 
-import './CupPageDetails.css'; 
+import Spinner from './Spinner';
+import './CupPageDetails.css';
 
 const CupPageDetails = () => {
   const { id } = useParams();
@@ -106,37 +106,37 @@ const CupPageDetails = () => {
                 <p className="team-name">{fixture.teams.home.name}</p>
               </div>
               <div className="hidden md:flex items-center" style={{
-                fontWeight:"bold",
-                fontFamily:"sans-serif",
-                fontSize:"18px"
+                fontWeight: "bold",
+                fontFamily: "sans-serif",
+                fontSize: "18px"
               }}>VS</div> {/* Hide on mobile, show on tablet and larger screens */}
               <div className="vs flex items-center md:hidden" style={{
-                fontWeight:"bold",
-                fontFamily:"sans-serif",
-                fontSize:"14px"
-              }}>VS</div> 
+                fontWeight: "bold",
+                fontFamily: "sans-serif",
+                fontSize: "14px"
+              }}>VS</div>
               <div className="team flex items-center">
                 <img className="team-logo w-12 h-12 mr-2" src={fixture.teams.away.logo} alt={fixture.teams.away.name} />
                 <p className="team-name">{fixture.teams.away.name}</p>
               </div>
             </div>
             <div className="goals-info mt-2">
-            <p>Status: {fixture.fixture.status?.long}</p>
-            <p>Short Status: {fixture.fixture.status?.short}</p>
-            <p>Elapsed: {fixture.fixture.status?.elapsed}</p>
-            <p>Venue: {fixture.fixture.venue?.name}</p>
-            <p>City: {fixture.fixture.venue?.city}</p>
-            <p>Referee: {fixture.fixture.referee || 'Not specified'}</p>
-            <p>First Period: {fixture.fixture.periods?.first}</p>
-            <p>Second Period: {fixture.fixture.periods?.second}</p>
-            <p>Goals: {fixture.goals.home} - {fixture.goals.away}</p>
-            <p>Winner: {fixture.teams.home.winner ? fixture.teams.home.name : fixture.teams.away.winner ? fixture.teams.away.name : 'Draw'}</p>
-            <p>Full-Time Score: {fixture.score.fulltime.home} - {fixture.score.fulltime.away}</p>
-            <p>Extra-Time Score: {fixture.score.extratime.home} - {fixture.score.extratime.away}</p>
-            <p>Penalty Score: {fixture.score.penalty.home} - {fixture.score.penalty.away}</p>
+              <p>Status: {fixture.fixture.status?.long}</p>
+              <p>Short Status: {fixture.fixture.status?.short}</p>
+              <p>Elapsed: {fixture.fixture.status?.elapsed}</p>
+              <p>Venue: {fixture.fixture.venue?.name}</p>
+              <p>City: {fixture.fixture.venue?.city}</p>
+              <p>Referee: {fixture.fixture.referee || 'Not specified'}</p>
+              <p>First Period: {fixture.fixture.periods?.first}</p>
+              <p>Second Period: {fixture.fixture.periods?.second}</p>
+              <p>Goals: {fixture.goals.home} - {fixture.goals.away}</p>
+              <p>Winner: {fixture.teams.home.winner ? fixture.teams.home.name : fixture.teams.away.winner ? fixture.teams.away.name : 'Draw'}</p>
+              <p>Full-Time Score: {fixture.score.fulltime.home} - {fixture.score.fulltime.away}</p>
+              <p>Extra-Time Score: {fixture.score.extratime.home} - {fixture.score.extratime.away}</p>
+              <p>Penalty Score: {fixture.score.penalty.home} - {fixture.score.penalty.away}</p>
             </div>
 
-            
+
 
           </div>
         ))}
