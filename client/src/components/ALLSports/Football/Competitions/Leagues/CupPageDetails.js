@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
@@ -8,7 +7,7 @@ import './CupPageDetails.css';
 const CupPageDetails = () => {
   const { id } = useParams();
   const [cupData, setCupData] = useState([]);
-  const [loading, setLoading] = useState(true); 
+  const [loading, setLoading] = useState(true);
   const [fixtures, setFixtures] = useState([]);
   const [selectedDate, setSelectedDate] = useState(null);
   const [league, setLeague] = useState(null);
@@ -22,7 +21,7 @@ const CupPageDetails = () => {
         const response = await axios.get(`https://api-football-v1.p.rapidapi.com/v3/leagues`, {
           params: {
             type: 'Cup',
-            id: id,
+            id,
           },
           headers: {
             'X-RapidAPI-Key': '96d6e2db0bmshaefc24c363be681p18096ejsn20efc89ac5c0',
@@ -30,11 +29,10 @@ const CupPageDetails = () => {
           }
         });
 
-        const cupSessionData = response.data.response[0].seasons.map(session => ({
-          year: session.year,
-        }));
+        const { league, seasons } = response.data.response[0];
+        const cupSessionData = seasons.map(session => ({ year: session.year }));
         setCupData(cupSessionData);
-        setLeague(response.data.response[0].league);
+        setLeague(league);
 
         setLoading(false); // Set loading to false after data is fetched
       } catch (error) {
@@ -75,37 +73,31 @@ const CupPageDetails = () => {
     setLoading(true); // Set loading to true when fetching data
   };
 
-  const filteredFixtures = selectedDate ? fixtures.filter(fixture => fixture.fixture.date.includes(selectedDate)) : fixtures;
-
-  // Sort fixtures by date
-  const sortedFixtures = filteredFixtures.sort((a, b) => {
-    return new Date(a.fixture.date) - new Date(b.fixture.date);
-  });
-
   const handleOpenModal = (fixture) => {
     if (!fixture || !fixture.teams || !fixture.fixture || !fixture.fixture.status) {
       // If fixture or its necessary properties are undefined, handle error gracefully
       console.error("Invalid fixture object");
       return;
     }
-  
-    const homeTeamName = fixture.teams.home ? fixture.teams.home.name : "Unknown";
-    const awayTeamName = fixture.teams.away ? fixture.teams.away.name : "Unknown";
-    const goalsHome = fixture.goals ? fixture.goals.home : 0;
-    const goalsAway = fixture.goals ? fixture.goals.away : 0;
-    const shortStatus = fixture.fixture.status.short || "Not available";
-    const venueName = fixture.fixture.venue?.name || "Not available";
-    const cityName = fixture.fixture.venue?.city || "Not available";
-    const referee = fixture.fixture.referee || "Not specified";
-    const elapsed = fixture.fixture.status?.elapsed || "Not available";
-    const firstPeriod = fixture.fixture.periods?.first || "Not available";
-    const secondPeriod = fixture.fixture.periods?.second || "Not available";
-    const winner = fixture.teams.home?.winner ? homeTeamName : fixture.teams.away?.winner ? awayTeamName : "Draw";
-    const extraTimeScoreHome = fixture.score.extratime?.home || 0;
-    const extraTimeScoreAway = fixture.score.extratime?.away || 0;
-    const penaltyScoreHome = fixture.score.penalty?.home || 0;
-    const penaltyScoreAway = fixture.score.penalty?.away || 0;
-  
+
+    const { home, away, fixture: fixtureDetails, goals, score } = fixture;
+    const homeTeamName = home ? home.name : "Unknown";
+    const awayTeamName = away ? away.name : "Unknown";
+    const goalsHome = goals ? goals.home : 0;
+    const goalsAway = goals ? goals.away : 0;
+    const shortStatus = fixtureDetails.status.short || "Not available";
+    const venueName = fixtureDetails.venue?.name || "Not available";
+    const cityName = fixtureDetails.venue?.city || "Not available";
+    const referee = fixtureDetails.referee || "Not specified";
+    const elapsed = fixtureDetails.status?.elapsed || "Not available";
+    const firstPeriod = fixtureDetails.periods?.first || "Not available";
+    const secondPeriod = fixtureDetails.periods?.second || "Not available";
+    const winner = home?.winner ? homeTeamName : away?.winner ? awayTeamName : "Draw";
+    const extraTimeScoreHome = score.extratime?.home || 0;
+    const extraTimeScoreAway = score.extratime?.away || 0;
+    const penaltyScoreHome = score.penalty?.home || 0;
+    const penaltyScoreAway = score.penalty?.away || 0;
+
     const modalContent = (
       <div>
         <p>{homeTeamName} vs {awayTeamName}</p>
@@ -125,6 +117,8 @@ const CupPageDetails = () => {
     setModalContent(modalContent);
     setShowModal(true);
   };
+
+  const sortedFixtures = [...fixtures].sort((a, b) => new Date(a.fixture.date) - new Date(b.fixture.date));
 
   return (
     <div className="container mx-auto py-8">
@@ -147,38 +141,33 @@ const CupPageDetails = () => {
         {sortedFixtures.map((fixture, index) => (
           <div key={fixture.fixture.id} className="fixture-card bg-gray-200 rounded-lg shadow-md p-4 my-4">
             <p className="font-semibold">Serial No {index + 1}</p>
-            <div className="flex justify-between items-center mt-2">
+            <div className="flex flex-col md:flex-row md:justify-between items-center mt-2">
               <div className="team flex items-center">
                 <img className="w-8 h-8 rounded-full" src={fixture.teams.home.logo} alt={fixture.teams.home.name} />
                 <p className="ml-2">{fixture.teams.home.name}</p>
               </div>
-               <div className="time-date">
-              <p>{new Date(fixture.fixture.date).toLocaleDateString()}</p>
-              <p>{new Date(fixture.fixture.date).toLocaleTimeString()}</p>
-            </div>
-            <div className="comparison">
-              <p>VS</p>
-            </div>
-
-
+              <div className="time-date flex flex-col md:flex-row">
+                <p>{new Date(fixture.fixture.date).toLocaleDateString()}</p>
+                <p>{new Date(fixture.fixture.date).toLocaleTimeString()}</p>
+              </div>
+              <div className="comparison hidden md:block">
+                <p>VS</p>
+              </div>
               <div className="team flex items-center">
                 <p className="mr-2">{fixture.teams.away.name}</p>
                 <img className="w-8 h-8 rounded-full" src={fixture.teams.away.logo} alt={fixture.teams.away.name} />
               </div>
-              {/* <button onClick={() => handleOpenModal(fixture)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Read More</button> */}
-              <button onClick={() => handleOpenModal(fixture)} className="bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-700 hover:to-blue-900 text-white font-bold py-2 px-4 rounded flex items-center gap-2">
-              
-                Read More 
+              <div>
+                <h1>Goal:</h1>
+                <p>{fixture.goals.home} - {fixture.goals.away}</p>
+                <p>Short: {fixture.fixture.status.short}</p>
+              </div>
+              <button onClick={() => handleOpenModal(fixture)} className="bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-700 hover:to-blue-900 text-white font-bold py-2 px-4 rounded flex items-center gap-2 mt-4 md:mt-0">
+                Read More
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-6 h-6">
-                  <path fillRule="evenodd" d="M8.707 15.707a1 1 0 0 0 1.414 0l5-5a1 1 0 0 0 0-1.414l-5-5a1 1 0 0 0-1.414 1.414L13.586 10 8.707 14.879a1 1 0 0 0 0 1.414z"/>
-              </svg>
-            </button>
-
-            </div>
-            {/* Display goal status and short status (FT) */}
-            <div>
-          <h1 > Goal: </h1> {fixture.goals.home} - {fixture.goals.away}
-              <p>Short : {fixture.fixture.status.short}</p>
+                  <path fillRule="evenodd" d="M8.707 15.707a1 1 0 0 0 1.414 0l5-5a1 1 0 0 0 0-1.414l-5-5a1 1 0 0 0-1.414 1.414L13.586 10 8.707 14.879a1 1 0 0 0 0 1.414z" />
+                </svg>
+              </button>
             </div>
           </div>
         ))}
