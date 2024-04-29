@@ -121,19 +121,19 @@ const CupPageDetails = () => {
               </div>
             </div>
             <div className="goals-info mt-2">
-              <p>Status: {fixture.fixture.status?.long}</p>
-              <p>Short Status: {fixture.fixture.status?.short}</p>
-              <p>Elapsed: {fixture.fixture.status?.elapsed}</p>
-              <p>Venue: {fixture.fixture.venue?.name}</p>
-              <p>City: {fixture.fixture.venue?.city}</p>
+              <p>Status: {fixture.fixture.status?.long||"Not available"}</p>
+              <p>Short Status: {fixture.fixture.status?.short||"Not available"}</p>
+              <p>Elapsed: {fixture.fixture.status?.elapsed||"Not available"}</p>
+              <p>Venue: {fixture.fixture.venue?.name||"Not available"}</p>
+              <p>City: {fixture.fixture.venue?.city||"Not available"}</p>
               <p>Referee: {fixture.fixture.referee || 'Not specified'}</p>
-              <p>First Period: {fixture.fixture.periods?.first}</p>
-              <p>Second Period: {fixture.fixture.periods?.second}</p>
-              <p>Goals: {fixture.goals.home} - {fixture.goals.away}</p>
-              <p>Winner: {fixture.teams.home.winner ? fixture.teams.home.name : fixture.teams.away.winner ? fixture.teams.away.name : 'Draw'}</p>
-              <p>Full-Time Score: {fixture.score.fulltime.home} - {fixture.score.fulltime.away}</p>
-              <p>Extra-Time Score: {fixture.score.extratime.home} - {fixture.score.extratime.away}</p>
-              <p>Penalty Score: {fixture.score.penalty.home} - {fixture.score.penalty.away}</p>
+              <p>First Period: {fixture.fixture.periods?.first||"Not available"}</p>
+              <p>Second Period: {fixture.fixture.periods?.second||"Not available"}</p>
+              <p>Goals: {fixture.goals.home} - {fixture.goals.away||"Not available"}</p>
+              <p>Winner: {fixture.teams.home.winner ? fixture.teams.home.name : fixture.teams.away.winner ? fixture.teams.away.name : 'Draw'||"Not available"}</p>
+              <p>Full-Time Score: {fixture.score.fulltime.home} - {fixture.score.fulltime.away||"Not available"}</p>
+              <p>Extra-Time Score: {fixture.score.extratime.home} - {fixture.score.extratime.away||"Not available"}</p>
+              <p>Penalty Score: {fixture.score.penalty.home} - {fixture.score.penalty.away||"Not available"}</p>
             </div>
 
 
