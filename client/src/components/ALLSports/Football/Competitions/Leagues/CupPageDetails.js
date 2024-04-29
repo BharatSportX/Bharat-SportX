@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
@@ -84,8 +85,6 @@ const CupPageDetails = () => {
     const homeTeamName = teams.home ? teams.home.name : "Unknown";
     const awayTeamName = teams.away ? teams.away.name : "Unknown";
 
-    
-
     const goalsHome = goals ? goals.home : 0;
     const goalsAway = goals ? goals.away : 0;
     const shortStatus = fixtureDetails.status.short || "Not available";
@@ -103,19 +102,39 @@ const CupPageDetails = () => {
     const penaltyScoreAway = score.penalty?.away || 0;
 
     const modalContent = (
-      <div>
-        <p>{homeTeamName} vs {awayTeamName}</p>
-        <p>Goals: {goalsHome} - {goalsAway}</p>
-        <p>Full-Time: {shortStatus}</p>
-        <p>Venue: {venueName}</p>
-        <p>City: {cityName}</p>
-        <p>Referee: {referee}</p>
-        <p>Elapsed: {elapsed}</p>
-        <p>First Period: {firstPeriod}</p>
-        <p>Second Period: {secondPeriod}</p>
-        <p>Winner: {winner}</p>
-        <p>Extra-Time Score: {extraTimeScoreHome} - {extraTimeScoreAway}</p>
-        <p>Penalty Score: {penaltyScoreHome} - {penaltyScoreAway}</p>
+      <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+        <div className="sm:flex sm:items-start">
+          <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+            <h3 className="text-lg leading-6 font-medium text-gray-900" id="modal-headline">
+              Fixture Details
+            </h3>
+            <div className="mt-2 flex justify-between">
+              <div className="flex flex-col items-center">
+                <img className="w-12 h-12 rounded-full mb-2" src={fixture.teams.home.logo} alt={fixture.teams.home.name} />
+                <p className="text-sm">{fixture.teams.home.name}</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <p className="text-xl">{goalsHome} - {goalsAway}</p>
+                <p className="text-xs">{shortStatus}</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <img className="w-12 h-12 rounded-full mb-2" src={fixture.teams.away.logo} alt={fixture.teams.away.name} />
+                <p className="text-sm">{fixture.teams.away.name}</p>
+              </div>
+            </div>
+            <div className="mt-4">
+              <p className="text-xs">Venue: {venueName}</p>
+              <p className="text-xs">City: {cityName}</p>
+              <p className="text-xs">Referee: {referee}</p>
+              <p className="text-xs">Elapsed: {elapsed}</p>
+              <p className="text-xs">First Period: {firstPeriod}</p>
+              <p className="text-xs">Second Period: {secondPeriod}</p>
+              <p className="text-xs">Winner: {winner}</p>
+              <p className="text-xs">Extra-Time Score: {extraTimeScoreHome} - {extraTimeScoreAway}</p>
+              <p className="text-xs">Penalty Score: {penaltyScoreHome} - {penaltyScoreAway}</p>
+            </div>
+          </div>
+        </div>
       </div>
     );
     setModalContent(modalContent);
@@ -182,18 +201,7 @@ const CupPageDetails = () => {
             <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
             <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
             <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
-              <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                <div className="sm:flex sm:items-start">
-                  <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                    <h3 className="text-lg leading-6 font-medium text-gray-900" id="modal-headline">
-                      Fixture Details
-                    </h3>
-                    <div className="mt-2">
-                      <p className="text-sm text-gray-500">{modalContent}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              {modalContent}
               <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
                 <button onClick={() => setShowModal(false)} type="button" className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm">
                   Got it!
