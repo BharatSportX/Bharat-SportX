@@ -6,9 +6,7 @@ const FrontBody = () => {
   const [openAccordionIndex, setOpenAccordionIndex] = useState(null);
 
   const toggleAccordion = (index) => {
-    setOpenAccordionIndex((prevIndex) =>
-      prevIndex === index ? null : index
-    );
+    setOpenAccordionIndex((prevIndex) => (prevIndex === index ? null : index));
   };
 
   return (
@@ -73,8 +71,37 @@ const FrontBody = () => {
           isOpen={openAccordionIndex === 5}
           toggleAccordion={() => toggleAccordion(5)}
         />
-        
+        <h1 className=" text-3xl p-11 leading-snug lg:text-5xl text-white text-center pt-12 pb-6 font-[Rowdies,sans-serif] lg:font-bold">
+          SubsCribe Features{" "}
+        </h1>
+        <BodyQN
+          title="What is Bharat SportX?"
+          answer="Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries and more – on thousands of internet-connected devices. You can watch as much as you want, whenever you want, without a single ad – all for one low monthly price. There's always something new to discover, and new TV shows and movies are added every week!"
+          isOpen={openAccordionIndex === 0}
+          toggleAccordion={() => toggleAccordion(0)}
+        />
+        <BodyQN
+          title="What is Bharat SportX?"
+          answer="You find your favourite sports here and also you get live train with special branch"
+          isOpen={openAccordionIndex === 1}
+          toggleAccordion={() => toggleAccordion(1)}
+        />
+        <BodyQN
+          title="What is Bharat SportX?"
+          answer="You find your favourite sports here and also you get live train with special branch"
+          isOpen={openAccordionIndex === 2}
+          toggleAccordion={() => toggleAccordion(2)}
+        />
+        <div className="text-white flex justify-center flex-col items-center text-lg p-10 md:text-xl">
+          <p className="text-center">Ready To Subscribe? Click SubsCribe Button to get access.{" "}</p>
+          <div className="my-5">
+            <button className=" w-24 py-0 md:py-3 text-sm   md:w-36 BtnEx z-10  ">
+              SUBSCRIBE
+            </button>
+          </div>
+        </div>
       </div>
+      {/* add footer tag here  */}
     </div>
   );
 };

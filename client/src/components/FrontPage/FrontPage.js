@@ -3,6 +3,8 @@ import "./FrontPage.css";
 import FrontNavbar from "./FrontNavbar";
 import { Link } from "react-router-dom";
 import FrontBody from "./FrontBody/FrontBody";
+import Footer from "./Footer";
+
 
 const FrontPage = () => {
   const [text, setText] = useState("");
@@ -66,6 +68,9 @@ const FrontPage = () => {
         </section>
       </div>
      <FrontBody/>
+     <div>
+      <Footer/>
+     </div>
     </div>
   );
 };
