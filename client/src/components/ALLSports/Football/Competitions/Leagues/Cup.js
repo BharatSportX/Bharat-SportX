@@ -9,6 +9,8 @@ function Cups() {
   const [searchQuery, setSearchQuery] = useState('');
   const [showSpeakNow, setShowSpeakNow] = useState(false);
   const [isListening, setIsListening] = useState(false);
+  const [isDanger,    setIsDanger]=useState(false);
+  const [isSuccess,   setIsSuccess]=useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -50,10 +52,21 @@ function Cups() {
       setSearchQuery(transcript);
       setShowSpeakNow(false);
       setIsListening(false);
+      setIsSuccess(true);
+      setTimeout(() => {
+        setIsSuccess(false);
+      }, 3000);
+      setIsDanger(false)
     };
     recognition.onerror = () => {
       setShowSpeakNow(false);
       setIsListening(false);
+      setIsDanger(true);
+      setIsSuccess(false);
+      setTimeout(() => {
+        setIsDanger(false);
+      }, 3000);
+
     };
     recognition.start();
   };
@@ -66,7 +79,19 @@ function Cups() {
       const filtered = cups.filter((cup) => cup.league.name.toLowerCase().includes(searchQuery.toLowerCase()));
       if (filtered.length === 0) {
         // No result found, show danger alert
-        alert('No result found.');
+        setIsDanger(true);
+        setIsSuccess(false)
+        setTimeout(() => {
+          setIsDanger(false);
+        }, 3000);
+      }
+      else
+      {
+        setIsDanger(false);
+        setIsSuccess(true);
+        setTimeout(() => {
+          setIsSuccess(false);
+        }, 3000);
       }
     }
   };
@@ -83,7 +108,7 @@ function Cups() {
   return (
     <div className="container mx-auto py-8">
       <h1 className="text-3xl font-bold mb-4">Cups</h1>
-
+      
       {/* Speak Now Div */}
       {showSpeakNow && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
@@ -117,6 +142,7 @@ function Cups() {
           onChange={(e) => setSearchQuery(e.target.value)}
           required
         />
+        
         {/* Clear button */}
         {searchQuery && (
           <button
@@ -169,6 +195,19 @@ function Cups() {
         {/* Submit button (hidden) */}
         <button type="submit" className="hidden"></button>
       </form>
+      {isDanger && (
+        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 mt-3 rounded relative" role="alert">
+          <strong className="font-bold">No result found!</strong>
+          <span className="block sm:inline"> Please try a different search query.</span>
+        </div>
+      )}
+      {isSuccess &&(
+        <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 mt-4 rounded relative" role="alert">
+          <strong class="font-bold">Great!</strong>
+          <span class="block sm:inline"> Search Query Found.</span>
+        </div>
+
+      )}
 
       {/* Loading or Cup Cards */}
       {loading ? (
