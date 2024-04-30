@@ -563,7 +563,7 @@ const CupPageDetails = () => {
 
     fetchCupData();
   }, [id]);
-
+  //Fetching the fixtures date wise
   useEffect(() => {
     const fetchFixtures = async () => {
       try {
@@ -722,7 +722,10 @@ const CupPageDetails = () => {
           <p className="font-semibold">{selectedSessionYear}</p>
 
           {sortedFixtures.length === 0 && !loading && (
-            <p>{showTodayMatches ? "No matches available for today." : "No upcoming matches."}</p>
+            <p style={{
+              fontFamily:"sans-serif",
+              fontSize:"45px"
+            }}>{showTodayMatches ? "No matches available for today." : "No upcoming matches."}</p>
           )}
 
           {sortedFixtures.map((fixture, index) => {
