@@ -5,10 +5,10 @@ const BodyQN = (props) => {
 
   return (
     <div className="py-1 mx-6 lg:mx-44 ">
-      <div className="w-full  font-normal text-xl rtl:text-right text-white   rounded-lg gap-3 bg-gray-800  md:text-2xl">
+      <div className="w-full  font-normal text-xl rtl:text-right text-white rounded-lg    gap-3 bg-gray-800  md:text-2xl">
         <button
           onClick={toggleAccordion}
-          className="flex justify-between hover:bg-gray-700  py-5 md:py-7 w-full px-5 md:px-8"
+          className="flex justify-between rounded-t-lg hover:bg-gray-700  py-5 md:py-7 w-full px-5 md:px-8"
         >
           <span className=" ">{title}</span>
 
