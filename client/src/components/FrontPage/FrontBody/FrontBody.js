@@ -42,7 +42,7 @@ const FrontBody = () => {
       />
       <div className="bg-black">
         <h1 className=" text-4xl p-11 leading-snug lg:text-5xl text-white text-center pt-12 pb-6 font-[Rowdies,sans-serif] lg:font-bold">
-          Special Advance Features{" "}
+          FAQ{" "}
         </h1>
         <BodyQN
           title="what is Bharat SportX"

@@ -38,4 +38,56 @@
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
     border: 3px solid gold;
   }
+  /* .microphone-button,
+  .cross-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
   
+  .microphone-button {
+    right: 10px; 
+  }
+  
+  .cross-button {
+    right: 20px; 
+  }
+  
+  @media screen and (max-width: 768px) {
+    .microphone-button,
+    .cross-button {
+      right: 1px;
+    }
+  }
+   */
+
+
+   .microphone-button,
+.cross-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.microphone-button {
+  right: 10px; /* Adjust position as needed */
+}
+
+.cross-button {
+  right: 20px; /* Adjust position as needed */
+}
+
+/* Media query for small devices */
+@media screen and (max-width: 768px) {
+  .microphone-button,
+  .cross-button {
+    right: 30px; /* Adjust position for mobile */
+  }
+
+  /* Adjust the position of the input and add margin for spacing */
+  #voice-search {
+    padding-right: 40px; /* Increase padding to accommodate the button */
+    margin-right: 35px; /* Add margin between the button and the placeholder */
+   
+  }
+}
