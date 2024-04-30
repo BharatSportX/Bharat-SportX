@@ -24,8 +24,8 @@ const BodyQN = (props) => {
               height="2"
               rx="1"
               className={`transform origin-center transition duration-200 ease-out ${
-                isOpen ? "rotate-180" : ""
-              }`}
+              isOpen && "!rotate-180"
+            }`}
             />
             <rect
               y="7"
@@ -33,8 +33,8 @@ const BodyQN = (props) => {
               height="2"
               rx="1"
               className={`transform origin-center rotate-90 transition duration-200 ease-out ${
-                isOpen ? "rotate-180" : ""
-              }`}
+              isOpen && "!rotate-180"
+            }`}
             />
           </svg>
         </button>
