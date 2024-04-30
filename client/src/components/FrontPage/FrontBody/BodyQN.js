@@ -14,7 +14,7 @@ const BodyQN = (props) => {
         className="flex justify-between w-full"
       >
         <span className="">{title}</span>
-        {/* {accordionOpen ? <span>-</span> : <span>+</span>} */}
+        
         <svg
           className="fill-indigo-500 shrink-0 ml-8"
           width="16"
