@@ -77,25 +77,25 @@ const FrontBody = () => {
         <BodyQN
           title="What is Bharat SportX?"
           answer="Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries and more – on thousands of internet-connected devices. You can watch as much as you want, whenever you want, without a single ad – all for one low monthly price. There's always something new to discover, and new TV shows and movies are added every week!"
-          isOpen={openAccordionIndex === 0}
-          toggleAccordion={() => toggleAccordion(0)}
+          isOpen={openAccordionIndex === 6}
+          toggleAccordion={() => toggleAccordion(6)}
         />
         <BodyQN
           title="What is Bharat SportX?"
           answer="You find your favourite sports here and also you get live train with special branch"
-          isOpen={openAccordionIndex === 1}
-          toggleAccordion={() => toggleAccordion(1)}
+          isOpen={openAccordionIndex === 7}
+          toggleAccordion={() => toggleAccordion(7)}
         />
         <BodyQN
           title="What is Bharat SportX?"
           answer="You find your favourite sports here and also you get live train with special branch"
-          isOpen={openAccordionIndex === 2}
-          toggleAccordion={() => toggleAccordion(2)}
+          isOpen={openAccordionIndex === 8}
+          toggleAccordion={() => toggleAccordion(8)}
         />
         <div className="text-white flex justify-center flex-col items-center text-lg p-10 md:text-xl">
           <p className="text-center">Ready To Subscribe? Click SubsCribe Button to get access.{" "}</p>
           <div className="my-5">
-            <button className=" w-24 py-0 md:py-3 text-sm   md:w-36 BtnEx z-10  ">
+            <button className=" w-24 py-6 px-20 md:py-8 md:px-32 md:text-3xl   md:w-36 BtnEx z-10  ">
               SUBSCRIBE
             </button>
           </div>

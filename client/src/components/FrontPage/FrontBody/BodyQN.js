@@ -5,15 +5,15 @@ const BodyQN = (props) => {
 
   return (
     <div className="py-1 mx-6 lg:mx-44 ">
-      <div className="w-full py-5 font-normal text-xl rtl:text-right text-white   rounded-lg gap-3 bg-gray-800 md:py-7 md:text-2xl">
+      <div className="w-full  font-normal text-xl rtl:text-right text-white   rounded-lg gap-3 bg-gray-800  md:text-2xl">
         <button
           onClick={toggleAccordion}
-          className="flex justify-between w-full px-5 md:px-8"
+          className="flex justify-between hover:bg-gray-700  py-5 md:py-7 w-full px-5 md:px-8"
         >
           <span className=" ">{title}</span>
 
           <svg
-            className="fill-indigo-500 shrink-0 mt-2 md:mt-3  "
+            className="fill-indigo-400 shrink-0 mt-1 md:mt-2  "
             width="16"
             height="16"
             xmlns="http://www.w3.org/2000/svg"
@@ -45,8 +45,8 @@ const BodyQN = (props) => {
           }`}
         >
           <div className="overflow-hidden text-gray-500 text-xl md:text-2xl  dark:text-gray-400 mb-0">
-            <hr className=" mt-5 border-t-2 border-black"/>
-            <p className="my-5 px-5 md:px-8 ">{answer}</p>
+            <hr className="  border-t-2 border-black"/>
+            <p className="my-5 py-2 px-5 md:px-8 ">{answer}</p>
           </div>
         </div>
       </div>
