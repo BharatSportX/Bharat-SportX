@@ -13,14 +13,14 @@ const BodyQN = (props) => {
           <span className=" ">{title}</span>
 
           <svg
-            className="fill-indigo-500 shrink-0 mt-1 md:mt-2  "
-            width="22"
-            height="22"
+            className="fill-indigo-500 shrink-0 mt-2 md:mt-3  "
+            width="16"
+            height="16"
             xmlns="http://www.w3.org/2000/svg"
           >
             <rect
-              y="10"
-              width="22"
+              y="7"
+              width="16"
               height="2"
               rx="1"
               className={`transform origin-center transition duration-200 ease-out ${
@@ -28,8 +28,8 @@ const BodyQN = (props) => {
               }`}
             />
             <rect
-              y="10"
-              width="22"
+              y="7"
+              width="16"
               height="2"
               rx="1"
               className={`transform origin-center rotate-90 transition duration-200 ease-out ${
