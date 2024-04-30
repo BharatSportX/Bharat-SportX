@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import BodyCard from "./BodyCard";
 import BodyQN from "./BodyQN";
 
 const FrontBody = () => {
+  const [openAccordionIndex, setOpenAccordionIndex] = useState(null);
 
-  
+  const toggleAccordion = (index) => {
+    setOpenAccordionIndex((prevIndex) =>
+      prevIndex === index ? null : index
+    );
+  };
+
   return (
     <div className="">
       <BodyCard
@@ -33,22 +39,42 @@ const FrontBody = () => {
         </h1>
         <BodyQN
           title="What is Bharat SportX?"
-          answer=" Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries and more – on thousands of internet-connected devices.
-
-You can watch as much as you want, whenever you want, without a single ad – all for one low monthly price. There's always something new to discover, and new TV shows and movies are added every week! "
+          answer="Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries and more – on thousands of internet-connected devices. You can watch as much as you want, whenever you want, without a single ad – all for one low monthly price. There's always something new to discover, and new TV shows and movies are added every week!"
+          isOpen={openAccordionIndex === 0}
+          toggleAccordion={() => toggleAccordion(0)}
         />
         <BodyQN
-          title="what is Bharat SportX"
-          answer=" You find your favourite sports here ans also you get live train with special branch "
+          title="What is Bharat SportX?"
+          answer="You find your favourite sports here and also you get live train with special branch"
+          isOpen={openAccordionIndex === 1}
+          toggleAccordion={() => toggleAccordion(1)}
         />
-        <BodyQN title="what is Bharat SportX" answer=" You find your favourite sports here ans also you get live train with special branch " />
-        <BodyQN title="what is Bharat SportX" answer=" You find your favourite sports here ans also you get live train with special branch " />
-        <BodyQN title="what is Bharat SportX" answer=" You find your favourite sports here ans also you get live train with special branch " />
+        <BodyQN
+          title="What is Bharat SportX?"
+          answer="You find your favourite sports here and also you get live train with special branch"
+          isOpen={openAccordionIndex === 2}
+          toggleAccordion={() => toggleAccordion(2)}
+        />
+        <BodyQN
+          title="What is Bharat SportX?"
+          answer="You find your favourite sports here and also you get live train with special branch"
+          isOpen={openAccordionIndex === 3}
+          toggleAccordion={() => toggleAccordion(3)}
+        />
+        <BodyQN
+          title="What is Bharat SportX?"
+          answer="You find your favourite sports here and also you get live train with special branch"
+          isOpen={openAccordionIndex === 4}
+          toggleAccordion={() => toggleAccordion(4)}
+        />
+        <BodyQN
+          title="What is Bharat SportX?"
+          answer="You find your favourite sports here and also you get live train with special branch"
+          isOpen={openAccordionIndex === 5}
+          toggleAccordion={() => toggleAccordion(5)}
+        />
         
       </div>
-      {/* <div className="p-4 bg-gray-200 rounded-lg">
-      
-    </div> */}
     </div>
   );
 };
