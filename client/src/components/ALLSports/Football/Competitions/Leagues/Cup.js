@@ -43,42 +43,29 @@ function Cups() {
 
   const handleVoiceSearch = () => {
     const recognition = new window.webkitSpeechRecognition();
-
+    let timeoutId;
+  
     // Set recognition language based on the selected language
-    const selectedLanguage = 'en-US'; // You can change this to 'en-IN' or 'bn-IN' as needed
+    const selectedLanguage = 'en-IN'; // You can change this to 'en-IN' or 'bn-IN' as needed
     recognition.lang = selectedLanguage;
-
+  
     recognition.onstart = () => {
       setIsListening(true);
       setShowSpeakNow(true);
+      timeoutId = setTimeout(() => {
+        recognition.stop();
+        setShowSpeakNow(false);
+        setIsListening(false);
+      }, 4000); // Close modal after 4 seconds of inactivity
     };
-
+  
     recognition.onresult = (event) => {
-      const transcript = event.results[0][0].transcript.trim(); // Trim whitespace
-
-      // Check if the transcript contains any meaningful content
-      if (transcript && transcript.trim().length > 0) {
-        setSearchQuery(transcript); // Only set searchQuery if there's meaningful content
-        setShowSpeakNow(false);
-        setIsListening(false);
-        setIsSuccess(true); // Trigger success message
-        setTimeout(() => {
-          setIsSuccess(false);
-        }, 3000);
-        setIsDanger(false);
-      } else {
-        // No meaningful content found in the transcript, show danger alert
-        setShowSpeakNow(false);
-        setIsListening(false);
-        setIsDanger(true);
-        setIsSuccess(false);
-        setTimeout(() => {
-          setIsDanger(false);
-        }, 3000);
-      }
+      clearTimeout(timeoutId); // Clear the timeout when result is received
+      // Handle recognition result...
     };
-
+  
     recognition.onerror = () => {
+      clearTimeout(timeoutId); // Clear the timeout on error
       setShowSpeakNow(false);
       setIsListening(false);
       setIsDanger(true);
@@ -87,9 +74,10 @@ function Cups() {
         setIsDanger(false);
       }, 3000);
     };
-
+  
     recognition.start();
   };
+  
 
   const handleSearch = () => {
     // Perform search process
