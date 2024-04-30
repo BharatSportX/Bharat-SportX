@@ -1,15 +1,14 @@
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './Cup.css';
-
 
 function Cups() {
   const [cups, setCups] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   const [showSpeakNow, setShowSpeakNow] = useState(false);
+  const [isListening, setIsListening] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -39,29 +38,37 @@ function Cups() {
     navigate(`/cup/${cupId}`);
   };
 
-// Inside your handleVoiceSearch function
-const handleVoiceSearch = () => {
-  const recognition = new window.webkitSpeechRecognition();
-  recognition.lang = 'en-IN';
-  recognition.onstart = () => {
-    setShowSpeakNow(true);
+  const handleVoiceSearch = () => {
+    const recognition = new window.webkitSpeechRecognition();
+    recognition.lang = 'en-IN';
+    recognition.onstart = () => {
+      setIsListening(true);
+      setShowSpeakNow(true);
+    };
+    recognition.onresult = (event) => {
+      const transcript = event.results[0][0].transcript;
+      setSearchQuery(transcript);
+      setShowSpeakNow(false);
+      setIsListening(false);
+    };
+    recognition.onerror = () => {
+      setShowSpeakNow(false);
+      setIsListening(false);
+    };
+    recognition.start();
   };
-  recognition.onresult = (event) => {
-    const transcript = event.results[0][0].transcript;
-    setSearchQuery(transcript);
-    setShowSpeakNow(false);
-  };
-  recognition.onerror = () => {
-    alert('Please try again.');
-    setShowSpeakNow(false);
-  };
-  recognition.start();
-};
 
   const handleSearch = () => {
     // Perform search process
     // For now, I'm just logging the searchQuery
     console.log('Search query:', searchQuery);
+    if (searchQuery) {
+      const filtered = cups.filter((cup) => cup.league.name.toLowerCase().includes(searchQuery.toLowerCase()));
+      if (filtered.length === 0) {
+        // No result found, show danger alert
+        alert('No result found.');
+      }
+    }
   };
 
   const handleClearSearch = () => {
@@ -76,15 +83,16 @@ const handleVoiceSearch = () => {
   return (
     <div className="container mx-auto py-8">
       <h1 className="text-3xl font-bold mb-4">Cups</h1>
+
       {/* Speak Now Div */}
       {showSpeakNow && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
           <div className="bg-white rounded-lg p-8">
             <p className="text-xl font-semibold mb-4">Speak Now</p>
             <p className="mb-4">Speak into the microphone...</p>
-            {/* Content for the Speak Now modal */}
-
-            {/* You can reuse the existing modal structure here */}
+            {isListening && (
+              <div className="w-4 h-4 bg-red-500 rounded-full animate-ping"></div>
+            )}
           </div>
         </div>
       )}
@@ -117,49 +125,47 @@ const handleVoiceSearch = () => {
             className="absolute inset-y-0 right-0 flex items-center px-2 text-gray-400 hover:text-gray-600 focus:outline-none cross-button"
             style={{ top: '50%', transform: 'translateY(-50%)', marginRight: '35px' }}
           >
-                <svg
-                  className="w-5 h-5"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-
+            <svg
+              className="w-5 h-5"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
         )}
         {/* Microphone icon */}
         <button
-            type="button"
-            onClick={handleVoiceSearch}
-            className="absolute inset-y-0 right-0 flex items-center px-3 focus:outline-none microphone-button"
-            style={{ top: '50%', transform: 'translateY(-50%)', marginRight: '5px' }}
+          type="button"
+          onClick={handleVoiceSearch}
+          className="absolute inset-y-0 right-0 flex items-center px-3 focus:outline-none microphone-button"
+          style={{ top: '50%', transform: 'translateY(-50%)', marginRight: '5px' }}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-            >
-              <path fill="none" d="M0 0h24v24H0z" />
-              <path
-                fill="#4285F4"
-                d="M12 15c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v7c0 1.66 1.34 3 3 3z"
-              />
-              <path fill="#34A853" d="M11 18.92h2V22h-2z" />
-              <path
-                fill="#F4B400"
-                d="M7 12H5c0 1.93.78 3.68 2.05 4.95l1.41-1.41C7.56 14.63 7 13.38 7 12z"
-              />
-              <path
-                fill="#EA4335"
-                d="M12 17c-1.38 0-2.63-.56-3.54-1.47l-1.41 1.41A6.99 6.99 0 0 0 12.01 19c3.87 0 6.98-3.14 6.98-7h-2c0 2.76-2.23 5-4.99 5z"
-              />
-            </svg>
-          </button>
-
+            <path fill="none" d="M0 0h24v24H0z" />
+            <path
+              fill="#4285F4"
+              d="M12 15c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v7c0 1.66 1.34 3 3 3z"
+            />
+            <path fill="#34A853" d="M11 18.92h2V22h-2z" />
+            <path
+              fill="#F4B400"
+              d="M7 12H5c0 1.93.78 3.68 2.05 4.95l1.41-1.41C7.56 14.63 7 13.38 7 12z"
+            />
+            <path
+              fill="#EA4335"
+              d="M12 17c-1.38 0-2.63-.56-3.54-1.47l-1.41 1.41A6.99 6.99 0 0 0 12.01 19c3.87 0 6.98-3.14 6.98-7h-2c0 2.76-2.23 5-4.99 5z"
+            />
+          </svg>
+        </button>
         {/* Submit button (hidden) */}
         <button type="submit" className="hidden"></button>
       </form>
