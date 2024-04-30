@@ -48,16 +48,30 @@ function Cups() {
       setShowSpeakNow(true);
     };
     recognition.onresult = (event) => {
-      const transcript = event.results[0][0].transcript;
-      setSearchQuery(transcript);
-      setShowSpeakNow(false);
-      setIsListening(false);
-      setIsSuccess(true);
-      setTimeout(() => {
+      const transcript = event.results[0][0].transcript.trim(); // Trim whitespace
+      
+      // Check if the transcript contains any meaningful content
+      if (transcript && transcript.trim().length > 0) {
+        setSearchQuery(transcript); // Only set searchQuery if there's meaningful content
+        setShowSpeakNow(false);
+        setIsListening(false);
+        setIsSuccess(true); // Trigger success message
+        setTimeout(() => {
+          setIsSuccess(false);
+        }, 3000);
+        setIsDanger(false);
+      } else {
+        // No meaningful content found in the transcript, show danger alert
+        setShowSpeakNow(false);
+        setIsListening(false);
+        setIsDanger(true);
         setIsSuccess(false);
-      }, 3000);
-      setIsDanger(false)
+        setTimeout(() => {
+          setIsDanger(false);
+        }, 3000);
+      }
     };
+    
     recognition.onerror = () => {
       setShowSpeakNow(false);
       setIsListening(false);
@@ -66,11 +80,11 @@ function Cups() {
       setTimeout(() => {
         setIsDanger(false);
       }, 3000);
-
     };
+    
     recognition.start();
   };
-
+  
   const handleSearch = () => {
     // Perform search process
     // For now, I'm just logging the searchQuery
