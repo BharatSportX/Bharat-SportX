@@ -42,67 +42,83 @@ function Cups() {
   };
 
   const handleVoiceSearch = () => {
-    const recognition = new window.webkitSpeechRecognition();
-    let timeoutId;
-  
-    // Set recognition language based on the selected language
-    const selectedLanguage = 'en-IN'; // You can change this to 'en-IN' or 'bn-IN' as needed
-    recognition.lang = selectedLanguage;
-  
-    recognition.onstart = () => {
-      setIsListening(true);
-      setShowSpeakNow(true);
-      timeoutId = setTimeout(() => {
-        recognition.stop();
-        setShowSpeakNow(false);
-        setIsListening(false);
-      }, 4000); // Close modal after 4 seconds of inactivity
-    };
-  
-    recognition.onresult = (event) => {
-      clearTimeout(timeoutId); // Clear the timeout when result is received
-      // Handle recognition result...
-    };
-  
-    recognition.onerror = () => {
-      clearTimeout(timeoutId); // Clear the timeout on error
+  const recognition = new window.webkitSpeechRecognition();
+  let timeoutId;
+
+  recognition.lang = 'en-IN'; // Set recognition language
+
+  recognition.onstart = () => {
+    setIsListening(true);
+    setShowSpeakNow(true);
+    timeoutId = setTimeout(() => {
+      recognition.stop();
       setShowSpeakNow(false);
       setIsListening(false);
+    }, 4000);
+  };
+
+  recognition.onresult = (event) => {
+    clearTimeout(timeoutId);
+    const speechResult = event.results[0][0].transcript;
+    setSearchQuery(speechResult); // Set the search query to the recognized speech
+    // Handle recognition result...
+  };
+
+  recognition.onend = () => {
+    setShowSpeakNow(false); // Close modal when speech ends
+    setIsListening(false);
+  };
+
+  recognition.onerror = () => {
+    clearTimeout(timeoutId);
+    setShowSpeakNow(false);
+    setIsListening(false);
+    setIsDanger(true);
+    setIsSuccess(false);
+    setTimeout(() => {
+      setIsDanger(false);
+    }, 3000);
+  };
+
+  recognition.start();
+};
+
+  
+
+useEffect(() => {
+  handleSearch(); // Call handleSearch on every render
+});
+
+const handleSearch = () => {
+  // Perform search process
+  // For now, I'm just logging the searchQuery
+  console.log('Search query:', searchQuery);
+  if (searchQuery) {
+    const filtered = cups.filter((cup) =>
+      cup.league.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    if (filtered.length === 0) {
+      // No result found, show danger alert
       setIsDanger(true);
       setIsSuccess(false);
       setTimeout(() => {
         setIsDanger(false);
       }, 3000);
-    };
-  
-    recognition.start();
-  };
-  
-
-  const handleSearch = () => {
-    // Perform search process
-    // For now, I'm just logging the searchQuery
-    console.log('Search query:', searchQuery);
-    if (searchQuery) {
-      const filtered = cups.filter((cup) => cup.league.name.toLowerCase().includes(searchQuery.toLowerCase()));
-      if (filtered.length === 0) {
-        // No result found, show danger alert
-        setIsDanger(true);
-        setIsSuccess(false)
-        setTimeout(() => {
-          setIsDanger(false);
-        }, 3000);
-      }
-      else
-      {
-        setIsDanger(false);
-        setIsSuccess(true);
-        setTimeout(() => {
-          setIsSuccess(false);
-        }, 3000);
-      }
+    } else {
+      // Result found, show success alert
+      setIsDanger(false);
+      setIsSuccess(true);
+      setTimeout(() => {
+        setIsSuccess(false);
+      }, 3000);
     }
-  };
+    // Clear search query after displaying alerts
+   
+  }
+};
+
+
+
 
   const handleClearSearch = () => {
     setSearchQuery('');
