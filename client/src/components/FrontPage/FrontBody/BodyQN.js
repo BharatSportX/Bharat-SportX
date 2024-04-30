@@ -9,7 +9,7 @@ const BodyQN = (props) => {
         <h2 id={`${targetQn}`}>
           <button
             type="button"
-            className="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-white  border-gray-200 rounded-t-lg   hover:bg-gray-100 dark:hover:bg-gray-800 gap-3 bg-gray-800"
+            className="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-white  border-gray-200 rounded-t-lg  hover:bg-gray-600 dark:hover:bg-gray-800 gap-3 bg-gray-800"
             onClick={() => toggleAccordion(targetAns)}
             aria-expanded={isOpen ? "true" : "false"}
             aria-controls={body}
