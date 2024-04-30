@@ -45,60 +45,19 @@ const FrontBody = () => {
           Special Advance Features{" "}
         </h1>
         <BodyQN
-          qn="What is Special in BharatSportX"
-          ans=" You find your favourite sports here ans also you get live train with special branch "
-          targetAns="Firstans"
-          targetQn="Firstqn"
-          body="body1"
-           isOpen={accordionState["Firstans"]}
-           toggleAccordion={toggleAccordion}
+          title="what is Bharat SportX"
+          answer=" You find your favourite sports here ans also you get live train with special branch "
         />
         <BodyQN
-          qn="What is Special in BharatSportX"
-          ans=" You find your favourite sports here ans also you get live train with special branch "
-          targetAns="Secondans"
-          targetQn="Secondqn"
-          body="body2"
-           isOpen={accordionState["Secondans"]}
-           toggleAccordion={toggleAccordion}
+          title="what is Bharat SportX"
+          answer=" You find your favourite sports here ans also you get live train with special branch "
         />
-        <BodyQN
-          qn="What is Special in BharatSportX"
-          ans=" You find your favourite sports here ans also you get live train with special branch "
-          targetAns="Thirdans"
-          targetQn="Thirdqn"
-          body="body3"
-           isOpen={accordionState["Thirdans"]}
-           toggleAccordion={toggleAccordion}
-        />
-        <BodyQN
-          qn="What is Special in BharatSportX"
-          ans=" You find your favourite sports here ans also you get live train with special branch "
-          targetAns="fourthans"
-          targetQn="fourthqn"
-          body="body4"
-           isOpen={accordionState["fourthans"]}
-           toggleAccordion={toggleAccordion}
-        />
-        <BodyQN
-          qn="What is Special in BharatSportX"
-          ans=" You find your favourite sports here ans also you get live train with special branch "
-          targetAns="fifthans"
-          targetQn="fifthqn"
-          body="body5"
-           isOpen={accordionState["fifthans"]}
-           toggleAccordion={toggleAccordion}
-        />
-        <BodyQN
-          qn="What is Special in BharatSportX"
-          ans=" You find your favourite sports here ans also you get live train with special branch "
-          targetAns="Sixthans"
-          targetQn="Sixthqn"
-          body="body6"
-           isOpen={accordionState["Sixthans"]}
-           toggleAccordion={toggleAccordion}
-        />
+        <BodyQN title="what is Bharat SportX" answer=" You find your favourite sports here ans also you get live train with special branch " />
+        
       </div>
+      {/* <div className="p-4 bg-gray-200 rounded-lg">
+      
+    </div> */}
     </div>
   );
 };
