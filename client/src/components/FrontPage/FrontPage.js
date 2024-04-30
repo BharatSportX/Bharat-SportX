@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./FrontPage.css";
 import FrontNavbar from "./FrontNavbar";
 import { Link } from "react-router-dom";
-import BodyCard from "./FrontBody/BodyCard";
 import FrontBody from "./FrontBody/FrontBody";
 
 const FrontPage = () => {
