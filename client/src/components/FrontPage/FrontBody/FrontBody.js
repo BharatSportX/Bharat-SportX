@@ -1,23 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import BodyCard from "./BodyCard";
 import BodyQN from "./BodyQN";
 
 const FrontBody = () => {
-  const [accordionState, setAccordionState] = useState({});
 
-  const toggleAccordion = (targetAns) => {
-    setAccordionState((prevState) => {
-      // Close any other open accordions
-      const newState = {};
-      for (const key in prevState) {
-        if (key !== targetAns) {
-          newState[key] = false;
-        }
-      }
-      // Toggle the clicked accordion
-      return { ...newState, [targetAns]: !prevState[targetAns] || false };
-    });
-  };
+  
   return (
     <div className="">
       <BodyCard
@@ -45,13 +32,17 @@ const FrontBody = () => {
           FAQ{" "}
         </h1>
         <BodyQN
-          title="what is Bharat SportX"
-          answer=" You find your favourite sports here ans also you get live train with special branch "
+          title="What is Bharat SportX?"
+          answer=" Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries and more – on thousands of internet-connected devices.
+
+You can watch as much as you want, whenever you want, without a single ad – all for one low monthly price. There's always something new to discover, and new TV shows and movies are added every week! "
         />
         <BodyQN
           title="what is Bharat SportX"
           answer=" You find your favourite sports here ans also you get live train with special branch "
         />
+        <BodyQN title="what is Bharat SportX" answer=" You find your favourite sports here ans also you get live train with special branch " />
+        <BodyQN title="what is Bharat SportX" answer=" You find your favourite sports here ans also you get live train with special branch " />
         <BodyQN title="what is Bharat SportX" answer=" You find your favourite sports here ans also you get live train with special branch " />
         
       </div>
