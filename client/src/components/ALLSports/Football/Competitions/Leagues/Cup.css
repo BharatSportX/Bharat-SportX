@@ -88,5 +88,6 @@
   #voice-search {
     padding-right: 40px; /* Increase padding to accommodate the button */
     margin-right: 35px; /* Add margin between the button and the placeholder */
+    width:645px;
   }
 }
