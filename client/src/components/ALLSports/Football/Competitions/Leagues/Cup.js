@@ -228,7 +228,7 @@ const handleSearch = () => {
       {isSuccess &&(
         <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 mt-4 rounded relative" role="alert">
           <strong className="font-bold">Great!</strong>
-          <span className="block sm:inline"> Search Query Found.</span>
+          <span className="block sm:inline">Showing the result for "{searchQuery}"</span>
         </div>
 
       )}
