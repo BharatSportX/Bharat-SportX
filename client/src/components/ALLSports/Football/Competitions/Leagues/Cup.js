@@ -368,7 +368,7 @@ function Cups() {
                         stroke-linejoin="round"
                       />
                     </svg>
-                    <span>{cup.league.name}</span> {/* Cup name */}
+                    <span><strong>{cup.league.name}</strong></span> {/* Cup name */}
                   </div>
                 </Link>
               </li>
