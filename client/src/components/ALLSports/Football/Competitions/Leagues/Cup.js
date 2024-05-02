@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Cup.css';
 
 function Cups() {
@@ -334,37 +335,39 @@ const handleSearch = () => {
 
       {isSearchBox && (
   <div className='searchbox absolute z-50 mt-2 w-full'>
-    <ul className="bg-white border border-gray-200 rounded-lg w-auto shadow-md sm:w-full lg:w-[80%]  md:w-[80%]">
+    <ul className="bg-white border border-gray-200 rounded-lg w-auto shadow-md sm:w-full lg:w-[80%] md:w-[80%]">
       {filteredCups.map((cup) => (
         <li
           key={cup.league.id}
           className="px-4 py-2 cursor-pointer hover:bg-gray-100 flex items-center"
-          onClick={() => {
-            setSearchQuery(cup.league.name);
-            setSearchBox(false); // Hide the suggestion box when a suggestion is clicked
-          }}
         >
-          <svg
-            width="20"
-            height="20"
-            className="DocSearch-Search-Icon mr-2"
-            viewBox="0 0 20 20"
-          >
-            <path
-              d="M14.386 14.386l4.0877 4.0877-4.0877-4.0877c-2.9418 2.9419-7.7115 2.9419-10.6533 0-2.9419-2.9418-2.9419-7.7115 0-10.6533 2.9418-2.9419 7.7115-2.9419 10.6533 0 2.9419 2.9418 2.9419 7.7115 0 10.6533z"
-              stroke="currentColor"
-              fill="none"
-              fill-rule="evenodd"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-          {cup.league.name}
+          <Link to={`/cup/${cup.league.id}`} onClick={() => setSearchBox(false)}>
+            <div className="flex items-center"> {/* Wrap the elements in a flex container */}
+              <svg
+                width="20"
+                height="20"
+                className="DocSearch-Search-Icon mr-2"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M14.386 14.386l4.0877 4.0877-4.0877-4.0877c-2.9418 2.9419-7.7115 2.9419-10.6533 0-2.9419-2.9418-2.9419-7.7115 0-10.6533 2.9418-2.9419 7.7115-2.9419 10.6533 0 2.9419 2.9418 2.9419 7.7115 0 10.6533z"
+                  stroke="currentColor"
+                  fill="none"
+                  fill-rule="evenodd"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <span>{cup.league.name}</span> {/* Cup name */}
+            </div>
+          </Link>
         </li>
       ))}
     </ul>
   </div>
 )}
+
+
 
 
 
