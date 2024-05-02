@@ -56,7 +56,7 @@ function Cups() {
       recognition.stop();
       setShowSpeakNow(false);
       setIsListening(false);
-    }, 4000);
+    }, 6000);
   };
 
   recognition.onresult = (event) => {
@@ -99,6 +99,10 @@ const handleSearch = () => {
     const filtered = cups.filter((cup) =>
       cup.league.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
+    if (!searchQuery) {
+      setSearchBox(true);
+      return;
+    }
     if (filtered.length === 0) {
       // No result found, show danger alert
       setIsDanger(true);
