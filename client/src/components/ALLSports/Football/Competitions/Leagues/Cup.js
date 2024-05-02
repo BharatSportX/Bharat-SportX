@@ -343,7 +343,7 @@ function Cups() {
       )} */}
 
 
-      {isSearchBox && (
+      {/* {isSearchBox && (
         <div className='searchbox absolute z-50 mt-2 w-full'>
           <ul className="bg-white border border-gray-200 rounded-lg w-auto shadow-md sm:w-full lg:w-[80%] md:w-[80%]">
             {filteredCups.map((cup) => (
@@ -352,7 +352,7 @@ function Cups() {
                 className="px-4 py-2 cursor-pointer hover:bg-gray-100 flex items-center"
               >
                 <Link to={`/cup/${cup.league.id}`} onClick={() => setSearchBox(false)}>
-                  <div className="flex items-center"> {/* Wrap the elements in a flex container */}
+                  <div className="flex items-center"> 
                     <svg
                       width="20"
                       height="20"
@@ -368,19 +368,120 @@ function Cups() {
                         stroke-linejoin="round"
                       />
                     </svg>
-                    <span><strong>{cup.league.name}</strong></span> {/* Cup name */}
+                    <span>{cup.league.name}</span>
                   </div>
                 </Link>
               </li>
             ))}
           </ul>
         </div>
-      )}
+      )} */}
 
+{/* 
+      {isSearchBox && (
+  <div className='searchbox absolute z-50 mt-2 w-full'>
+    <ul className="bg-white border border-gray-200 rounded-lg w-auto shadow-md sm:w-full lg:w-[80%] md:w-[80%]">
+      {filteredCups.map((cup) => {
+        const parts = cup.league.name.split(new RegExp(`(${searchQuery})`, 'gi'));
+        return (
+          <li
+            key={cup.league.id}
+            className="px-4 py-2 cursor-pointer hover:bg-gray-100 flex items-center"
+          >
+            <Link to={`/cup/${cup.league.id}`} onClick={() => setSearchBox(false)}>
+              <div className="flex items-center">
+                {parts.map((part, index) => (
+                  <span
+                    key={index}
+                    style={part.toLowerCase() === searchQuery.toLowerCase() ? { fontWeight: 'bold' } : {}}
+                  >
+                    {part}
+                  </span>
+                ))}
+              </div>
+            </Link>
+          </li>
+        );
+      })}
+    </ul>
+  </div>
+)} */}
 
+{/* {isSearchBox && (
+  <div className='searchbox absolute z-50 mt-2 w-full'>
+    <ul className="bg-white border border-gray-200 rounded-lg w-auto shadow-md sm:w-full lg:w-[80%] md:w-[80%]">
+      {filteredCups.map((cup) => {
+        const parts = cup.league.name.split(new RegExp(`(${searchQuery})`, 'gi'));
+        return (
+          <li
+            key={cup.league.id}
+            className="px-4 py-2 cursor-pointer hover:bg-gray-100 flex items-center"
+          >
+            <Link to={`/cup/${cup.league.id}`} onClick={() => setSearchBox(false)}>
+              <div className="flex items-center">
+                {parts.map((part, index) => (
+                  <React.Fragment key={index}>
+                    {part.toLowerCase() === searchQuery.toLowerCase() ? (
+                      <span style={{ fontWeight: 'bold' }}>{part}</span>
+                    ) : (
+                      <span>{part}</span>
+                    )}
+                  </React.Fragment>
+                ))}
+              </div>
+            </Link>
+          </li>
+        );
+      })}
+    </ul>
+  </div>
+)}
 
-
-
+ */}
+ {isSearchBox && (
+  <div className='searchbox absolute z-50 mt-2 w-full'>
+    <ul className="bg-white border border-gray-200 rounded-lg w-auto shadow-md sm:w-full lg:w-[80%] md:w-[80%]">
+      {filteredCups.map((cup) => {
+        const parts = cup.league.name.split(new RegExp(`(${searchQuery})`, 'gi'));
+        return (
+          <li
+            key={cup.league.id}
+            className="px-4 py-2 cursor-pointer hover:bg-gray-100 flex items-center"
+          >
+            <Link to={`/cup/${cup.league.id}`} onClick={() => setSearchBox(false)}>
+              <div className="flex items-center">
+                <svg
+                  width="20"
+                  height="20"
+                  className="DocSearch-Search-Icon mr-2"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M14.386 14.386l4.0877 4.0877-4.0877-4.0877c-2.9418 2.9419-7.7115 2.9419-10.6533 0-2.9419-2.9418-2.9419-7.7115 0-10.6533 2.9418-2.9419 7.7115-2.9419 10.6533 0 2.9419 2.9418 2.9419 7.7115 0 10.6533z"
+                    stroke="currentColor"
+                    fill="none"
+                    fillRule="evenodd"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                {parts.map((part, index) => (
+                  <React.Fragment key={index}>
+                    {part.toLowerCase() === searchQuery.toLowerCase() ? (
+                      <span style={{ fontWeight: 'bold' }}>{part}</span>
+                    ) : (
+                      <span>{part}</span>
+                    )}
+                  </React.Fragment>
+                ))}
+              </div>
+            </Link>
+          </li>
+        );
+      })}
+    </ul>
+  </div>
+)}
 
 
       {/* Loading or Cup Cards */}
