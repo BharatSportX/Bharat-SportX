@@ -1290,6 +1290,7 @@ const CupPageDetails = () => {
   const [showModal, setShowModal] = useState(false);
   const [modalContent, setModalContent] = useState('');
   const [selectedDate, setSelectedDate] = useState(null);
+  const [year,setYear]=useState(null)
 
   useEffect(() => {
     const fetchCupData = async () => {
@@ -1306,9 +1307,11 @@ const CupPageDetails = () => {
         });
 
         const { seasons } = response.data.response[0];
+        const { league } = response.data.response[0];
+        console.log(league.name);
         const cupSessionData = seasons.map(session => ({ year: session.year }));
         setCupData(cupSessionData);
-
+        setYear({league})
         setLoading(false); // Set loading to false after data is fetched
       } catch (error) {
         console.error(error);
@@ -1431,7 +1434,7 @@ const CupPageDetails = () => {
     <div className="container mx-auto py-8">
       {loading && <Spinner />}
       <div className="cup-details">
-        <h1 className="text-3xl font-bold mb-4">Cup Name</h1>
+        <h1 className="text-3xl font-bold mb-4">{year && year.league && year.league.name}</h1>
         <div className="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
           <span className="font-medium">Alert!</span> The page is under construction. Thank you for your patience!
         </div>
