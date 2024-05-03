@@ -1,123 +1,110 @@
-// Navbar.js
-
 import React, { useState } from "react";
-import './Navbar.css'
+import "./Navbar.css";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
-  };
-
-  const handleMouseEnter = () => {
-    setIsDropdownOpen(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsDropdownOpen(false);
-  };
-
   return (
     <nav className="bg-gray-800">
-      <div className="max-w-7xl mx-auto">
+      <div className=" px-12">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <div className="flex-shrink-0 flex items-center">
-            <div className="flex items-baseline space-x-4">
-              <img className="h-8 w-auto" src="path/to/logo.png" alt="Logo" />
-              <span className="text-white font-bold ml-2">Company Name</span>
-              <form>
-                <button className="w-24 px-0 font-semibold text-xs BtnEx1 z-10" style={{ height: '31px' }}>
-                  SUBSCRIBE
-                </button>
-              </form>
-              
-              <a
-                href="#"
-                className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-              >
-                Home
-              </a>
-              <a
-                href="#"
-                className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-              >
-                About
-              </a>
-              <a
-                href="#"
-                className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-              >
-                Services
-              </a>
-              <a
-                href="#"
-                className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-              >
-                Contact
-              </a>
+          {/* Logo and Company Name */}
 
-              {/* Dropdown menu */}
-              <div 
-                className="relative inline-block text-left" 
-                onMouseEnter={handleMouseEnter} 
-                // onMouseLeave={handleMouseLeave}
+          <div className="hidden text-white md:flex md:items-center md:space-x-4">
+            <img className="h-8 w-auto" src="path/to/logo.png" alt="Logo" />
+            <form>
+              <button
+                className="w-24 px-0 font-semibold text-xs BtnEx1 z-10"
+                style={{ height: "31px" }}
               >
-                <button 
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                  onClick={toggleDropdown}
-                >
-                  More
+                SUBSCRIBE
+              </button>
+            </form>
+
+            {/* Navigation */}
+
+            <a href="#" className="nav-link">
+              Home
+            </a>
+            <a href="#" className="nav-link">
+              About
+            </a>
+            <a href="#" className="nav-link">
+              Services
+            </a>
+            <a href="#" className="nav-link">
+              Contact
+            </a>
+            <a href="#" className="nav-link">
+              <div className="paste-button">
+                <button className="button45">
+                  Paste <span className="animate-paste-arrow">▽</span>
                 </button>
-                {isDropdownOpen && (
-                  <div className="absolute z-10 left-0 mt-2 w-48 bg-gray-800 rounded-md shadow-lg" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                    <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-                      <a href="#" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" role="menuitem">Option 1</a>
-                      <a href="#" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" role="menuitem">Option 2</a>
-                      <a href="#" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" role="menuitem">Option 3</a>
-                    </div>
-                  </div>
-                )}
+                <div className="dropdown-content">
+                  <a id="top" href="#">
+                    Keep source formatting
+                  </a>
+                  <a id="middle" href="#">
+                    Merge formatting
+                  </a>
+                  <a id="bottom" href="#">
+                    Keep text only
+                  </a>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
 
-          {/* Right side - Search bar and user profile */}
-          <div className="flex items-center">
-            {/* Search bar */}
+          {/* Search bar */}
+          <div className="flex-1 flex justify-center md:justify-end">
             <div className="relative">
               <input
                 type="text"
-                placeholder="Search..."
-                className="bg-gray-700 text-white rounded-md px-3 py-1 focus:outline-none focus:bg-gray-900"
+                placeholder="Search... Here!!"
+                className="bg-gray-700 text-white rounded-full pl-12 pr-14 py-1 focus:outline-none focus:bg-gray-900"
               />
-              <button className="absolute right-0 top-0 mt-2 mr-2">
+              <button className="absolute px-1 left-2 top-0 mt-[0.4rem] mr-2 ">
                 <svg
-                  className="h-4 w-4 text-gray-400"
+                  className=" size-5 text-gray-400"
                   xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 >
-                  <path
-                    fillRule="evenodd"
-                    d="M14.291 12.227l5.373 5.373-1.414 1.414-5.373-5.373a7 7 0 1 1 1.414-1.414zM7 13a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"
-                    clipRule="evenodd"
-                  />
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+              </button>
+              <button className="absolute right-2 top-0 mt-[0.5rem] mr-1 ">
+                <svg
+                  className="h-5 w-5 text-gray-400"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M12 15c2.21 0 4-1.79 4-4V5c0-2.21-1.79-4-4-4s-4 1.79-4 4v6c0 2.21 1.79 4 4 4z"></path>
+                  <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
                 </svg>
               </button>
             </div>
-            {/* User profile */}
-            <div className="ml-4 flex items-center">
-              <span className="text-gray-300 text-sm font-medium mr-2">
-                Username
-              </span>
-              <img
-                className="h-8 w-8 rounded-full"
-                src="https://via.placeholder.com/30"
-                alt="User"
-              />
-            </div>
+          </div>
+
+          {/* User profile */}
+          <div className="flex items-center ml-4">
+            <span className="text-gray-300 text-sm font-medium mr-2 hidden md:block">
+              Username
+            </span>
+            <img
+              className="h-8 w-8 rounded-full"
+              src="https://via.placeholder.com/30"
+              alt="User"
+            />
           </div>
         </div>
       </div>
