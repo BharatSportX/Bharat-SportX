@@ -78,10 +78,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import 'aos/dist/aos.css';
-import './Leagues.css'
+import './Leagues.css';
+import { useNavigate } from 'react-router-dom';
+
 export default function Leagues() {
   const [leagues, setLeagues] = useState([]);
   const [loading, setLoading] = useState(true); // Add loading state
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -102,9 +105,13 @@ export default function Leagues() {
     fetchData();
   }, []);
 
+  const handleLeagueClick = (leagueID) => {
+    navigate(`/league/${leagueID}`); // Navigate to the league page
+  };
+
   return (
-    <section className="container mx-auto py-8  ">
-      <h1 className="text-3xl font-bold mb-4 mt-4 ">Leagues</h1>
+    <section className="container mx-auto py-8">
+      <h1 className="text-3xl font-bold mb-4 mt-4">Leagues</h1>
       {loading ? ( // Conditionally render loading spinner
         <div className="flex items-center justify-center h-screen mt-3">
           <div role="status">
@@ -133,6 +140,7 @@ export default function Leagues() {
             <div
               key={league.league.id}
               className="league-card rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300 ease-in-out"
+              onClick={() => handleLeagueClick(league.league.id)} // Call handleLeagueClick on click
             >
               <img
                 src={league.league.logo}
