@@ -64,3 +64,4 @@ npm install aos --save
 9.npm install gh-pages --save-dev
 10.npm install react-soccer-lineup --legacy-peer-deps
 11.npm install react-soccer-lineup --force
+12.npm install @headlessui/react @heroicons/react

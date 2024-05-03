@@ -5,7 +5,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import FrontPage from './components/FrontPage/FrontPage';
-import Navbar from './components/Home/Navbar/Navbar';
+
 import Home from './components/Home/Home';
 import LeaguesHome from './components/ALLSports/Football/Competitions/Leagues/LeaguesHome';
 import Leagues from './components/ALLSports/Football/Competitions/Leagues/Leagues';

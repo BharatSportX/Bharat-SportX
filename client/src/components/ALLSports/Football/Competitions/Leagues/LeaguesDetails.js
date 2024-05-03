@@ -6,7 +6,7 @@ export default function LeaguesDetails() {
   const { id } = useParams();
   const [leagueData, setLeagueData] = useState(null);
   const [loading, setLoading] = useState(true);
-  
+
   useEffect(() => {
     const fetchLeagueData = async () => {
       try {
@@ -43,6 +43,7 @@ export default function LeaguesDetails() {
     <div className='maincontent'>
     <div className='container' >
       <h1 className='text-4xl text-gray-900 dark:text-white mt-4'><strong>{leagueData.league.name}</strong></h1>
+      <h1 className='text-2xl text-gray-900 dark:text-white mt-4'><strong>{leagueData.country.name}</strong></h1>
       </div>
       {/* Add more league details as needed */}
     </div>
