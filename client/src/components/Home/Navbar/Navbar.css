@@ -1,4 +1,4 @@
-.BtnEx {
+.BtnEx1 {
     
     height: 40px;
     border: none;
@@ -16,7 +16,7 @@
     overflow: hidden;
 }
   
-.BtnEx::before {
+.BtnEx1::before {
     position: absolute;
     content: "SUBSCRIBE";
     color: #ffd277;
@@ -31,18 +31,18 @@
     background-size: 200%;
 }
   
-.BtnEx:hover {
+.BtnEx1:hover {
     background-position: right;
     transition-duration: 1s;
   /* animation: shine 1.5s ease-out infinite; */
 
 }
   
-.BtnEx:hover::before {
+.BtnEx1:hover::before {
     background-position: right;
     transition-duration: 1s;
 }
   
-.BtnEx:active {
+.BtnEx1:active {
     transform: scale(0.95);
 }
