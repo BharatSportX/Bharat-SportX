@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-
+import "./LeaguesDetails.css"
 export default function LeaguesDetails() {
   const { id } = useParams();
   const [leagueData, setLeagueData] = useState(null);
@@ -40,9 +40,10 @@ export default function LeaguesDetails() {
   }
 
   return (
-    <div>
-      <h1>{leagueData.league.name}</h1>
-      
+    <div className='maincontent'>
+    <div className='container' >
+      <h1 className='text-4xl text-gray-900 dark:text-white mt-4'><strong>{leagueData.league.name}</strong></h1>
+      </div>
       {/* Add more league details as needed */}
     </div>
   );
