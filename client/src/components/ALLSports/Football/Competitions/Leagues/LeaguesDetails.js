@@ -6,7 +6,7 @@ export default function LeaguesDetails() {
   const { id } = useParams();
   const [leagueData, setLeagueData] = useState(null);
   const [loading, setLoading] = useState(true);
-
+  
   useEffect(() => {
     const fetchLeagueData = async () => {
       try {
