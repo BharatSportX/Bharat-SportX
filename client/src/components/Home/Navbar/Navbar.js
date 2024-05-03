@@ -18,7 +18,7 @@ const Navbar = () => {
             />
             <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
             <form>
-                <button className=" w-24 py-0 md:py-3 text-xs   md:w-36 BtnEx z-10  " style={{height:'31px'}}>
+                <button className=" w-24 py-0 md:py-3 text-xs   md:w-36 BtnEx1 z-10  " style={{height:'31px'}}>
                   SUBSCRIBE
                 </button>
               </form>
