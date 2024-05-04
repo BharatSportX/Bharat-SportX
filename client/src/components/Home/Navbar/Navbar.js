@@ -6,23 +6,25 @@ const Navbar = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   const toggleSearch = () => {
+
     setIsSearchOpen(!isSearchOpen);
+
   };
+
   return (
     <nav className="bg-gray-800">
-      <div className=" px-4 md:px-10 xl:px-12">
+      <div className="px-4 md:px-10 xl:px-12">
         <div className="flex items-center justify-between h-16">
           {/* Logo and Company Name */}
-
-          <div className=" text-white space-x-3 flex items-center xl:space-x-6">
+          <div className="text-white space-x-3 flex items-center xl:space-x-6">
             <img
-              className="h-8 w-auto cursor-pointer "
+              className="h-8 w-auto cursor-pointer"
               src="sportlogo.svg"
               alt="Logo"
             />
             <form>
               <button
-                className=" w-28 xl:w-24 px-0 font-semibold text-xs BtnEx1 z-10"
+                className="w-28 xl:w-24 px-0 font-semibold text-xs BtnEx1 z-10"
                 style={{ height: "31px" }}
               >
                 SUBSCRIBE
@@ -30,37 +32,36 @@ const Navbar = () => {
             </form>
 
             {/* Navigation */}
-
-            <a
-              href="#"
-              className=" hidden  xl:block  xl:font-semibold xl:text-gray-300 xl:text-[1.1rem]"
+            <NavLink
+              to="#"
+              className="hidden xl:block xl:font-semibold xl:text-gray-300 xl:text-[1.1rem]"
             >
               Home
-            </a>
-            <a
-              href="#"
-              className=" hidden xl:block xl:font-semibold xl:text-gray-300 xl:text-[1.1rem]"
+            </NavLink>
+            <NavLink
+              to="#"
+              className="hidden xl:block xl:font-semibold xl:text-gray-300 xl:text-[1.1rem]"
             >
               About
-            </a>
-            <a
-              href="#"
-              className=" hidden xl:block xl:font-semibold xl:text-gray-300 xl:text-[1.1rem]"
+            </NavLink>
+            <NavLink
+              to="#"
+              className="hidden xl:block xl:font-semibold xl:text-gray-300 xl:text-[1.1rem]"
             >
               Services
-            </a>
-            <a
-              href="#"
-              className=" hidden xl:block xl:font-semibold xl:text-gray-300 xl:text-[1.1rem]"
+            </NavLink>
+            <NavLink
+              to="#"
+              className="hidden xl:block xl:font-semibold xl:text-gray-300 xl:text-[1.1rem]"
             >
               Contact
-            </a>
-            <a
-              href="#"
-              className=" hidden xl:block xl:font-semibold xl:text-gray-300 xl:text-[1.1rem]"
+            </NavLink>
+            <NavLink
+              to="#"
+              className="hidden xl:block xl:font-semibold xl:text-gray-300 xl:text-[1.1rem]"
             >
               <div className="paste-button">
-                <button className="button45  font-semibold text-gray-300 text-[1.1rem]">
+                <button className="button45 font-semibold text-gray-300 text-[1.1rem]">
                   More{" "}
                   <span>
                     <svg
@@ -69,7 +70,7 @@ const Navbar = () => {
                       viewBox="0 0 15 15"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
-                      className=" size-[20px] stroke-white stroke-[1px] animate-paste-arrow  opacity-70  text-white "
+                      className="size-[20px] stroke-white stroke-[1px] animate-paste-arrow opacity-70 text-white "
                       aria-hidden="true"
                     >
                       <path
@@ -93,12 +94,12 @@ const Navbar = () => {
                   </a>
                 </div>
               </div>
-            </a>
+            </NavLink>
           </div>
 
           {/* Search bar */}
-          <div className="hidden flex-1 xl:flex justify-center xl:justify-end ">
-            <div className="relative">
+          <div className="hidden flex-1 xl:flex justify-center xl:justify-end">
+            <div className="relative z-0">
               <input
                 type="text"
                 placeholder="Search... Here!!"
@@ -106,7 +107,7 @@ const Navbar = () => {
               />
               <button className="absolute px-1 left-2 top-0 mt-[0.4rem] mr-2 ">
                 <svg
-                  className=" size-5 text-gray-400"
+                  className="size-5 text-gray-400"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="none"
@@ -133,14 +134,15 @@ const Navbar = () => {
             </div>
           </div>
 
-          <div className="   flex xl:items-center xl:ml-4">
+          {/* Mobile Search button */}
+          <div className="flex xl:items-center xl:ml-4">
             <button
-              className="hover:rounded-full mx-4 my-0 size-8 hover:border hover:border-gray-700   hover:focus:ring-slate-900 hover:focus:ring-4 items-center flex justify-center xl:hidden  hover:bg-slate-200 hover:bg-opacity-5"
+              className="hover:rounded-full mx-4 my-0 size-8 hover:border hover:border-gray-700 hover:focus:ring-slate-900 hover:focus:ring-4 items-center flex justify-center xl:hidden hover:bg-slate-200 hover:bg-opacity-5"
               title="Search"
               onClick={toggleSearch}
             >
               <svg
-                className=" size-6 text-white   xl:hidden"
+                className="size-6 text-white xl:hidden"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="none"
@@ -154,16 +156,16 @@ const Navbar = () => {
               </svg>
             </button>
             {isSearchOpen && (
-              <div className=" xl:hidden   absolute w-full top-14 left-0 mt-1 pb-4 bg-gray-800  p-2">
+              <div className="xl:hidden z-[-1] absolute w-full top-14 left-0 mt-1 pb-4 bg-gray-800 p-2" data-aos='fade-down'  data-aos-duration="500">
                 <div className="relative">
                   <input
                     type="text"
                     placeholder="Search... Here!!"
-                    className="bg-gray-700 w-full text-white rounded-full pl-12  pr-14 py-1 focus:outline-none focus:bg-gray-900"
+                    className="bg-gray-700 w-full text-white rounded-full pl-12 pr-14 py-1 focus:outline-none focus:bg-gray-900"
                   />
                   <button className="absolute px-1 left-2 top-0 mt-[0.4rem] mr-2 ">
                     <svg
-                      className=" size-5 text-gray-400"
+                      className="size-5 text-gray-400"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       fill="none"
@@ -192,7 +194,7 @@ const Navbar = () => {
             )}
             {/* User profile */}
             <button
-              className="hover:rounded-full  size-8 hover:border hover:border-gray-700   hover:focus:ring-slate-900 hover:focus:ring-4 items-center flex justify-center hover:bg-slate-200 hover:bg-opacity-5"
+              className="hover:rounded-full size-8 hover:border hover:border-gray-700 hover:focus:ring-slate-900 hover:focus:ring-4 items-center flex justify-center hover:bg-slate-200 hover:bg-opacity-5"
               title="Search"
             >
               <img
