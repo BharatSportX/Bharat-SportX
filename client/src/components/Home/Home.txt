@@ -1,5 +1,4 @@
-search voice hover -- bg set
+bootom nav bar main things is in middle
 
-home hover deep color
-
-responsive 
+set padding for set perfectly 
+also set md device padding
