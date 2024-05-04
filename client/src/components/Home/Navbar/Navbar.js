@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
   return (
     <nav className="bg-gray-800">
-      <div className=" px-4 xl:px-12">
+      <div className=" px-4 md:px-10 xl:px-12">
         <div className="flex items-center justify-between h-16">
           {/* Logo and Company Name */}
 
