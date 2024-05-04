@@ -128,29 +128,36 @@ const Navbar = () => {
             </div>
           </div>
 
-          <div className="   flex xl:items-center xl:ml-4" >
-          <button className="hover:rounded-full mx-4 my-0 size-8 hover:border hover:border-gray-700   hover:focus:ring-slate-900 hover:focus:ring-4 items-center flex justify-center hover:bg-slate-200 hover:bg-opacity-5" title="Search" >
-            <svg
-              className=" size-6 text-white   xl:hidden"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
+          <div className="   flex xl:items-center xl:ml-4">
+            <button
+              className="hover:rounded-full mx-4 my-0 size-8 hover:border hover:border-gray-700   hover:focus:ring-slate-900 hover:focus:ring-4 items-center flex justify-center hover:bg-slate-200 hover:bg-opacity-5"
+              title="Search"
             >
-              <circle cx="11" cy="11" r="8"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
+              <svg
+                className=" size-6 text-white   xl:hidden"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
             </button>
-          {/* User profile */}
-          
-            <img
-              className="h-8 w-8 rounded-full"
-              src="https://via.placeholder.com/30"
-              alt="User"
-            />
+            {/* User profile */}
+            <button
+              className="hover:rounded-full  size-8 hover:border hover:border-gray-700   hover:focus:ring-slate-900 hover:focus:ring-4 items-center flex justify-center hover:bg-slate-200 hover:bg-opacity-5"
+              title="Search"
+            >
+              <img
+                className="h-8 w-8 rounded-full"
+                src="https://via.placeholder.com/30"
+                alt="User"
+              />
+            </button>
           </div>
         </div>
       </div>
