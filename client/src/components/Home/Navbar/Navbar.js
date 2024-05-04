@@ -5,15 +5,19 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
   return (
     <nav className="bg-gray-800">
-      <div className=" px-12">
+      <div className=" px-4 xl:px-12">
         <div className="flex items-center justify-between h-16">
           {/* Logo and Company Name */}
 
-          <div className="hidden text-white xl:flex xl:items-center xl:space-x-6">
-            <img className="h-8 w-auto cursor-pointer" src="sportlogo.svg" alt="Logo" />
+          <div className=" text-white space-x-3 flex items-center xl:space-x-6">
+            <img
+              className="h-8 w-auto cursor-pointer "
+              src="sportlogo.svg"
+              alt="Logo"
+            />
             <form>
               <button
-                className="w-24 px-0 font-semibold text-xs BtnEx1 z-10"
+                className=" w-28 xl:w-24 px-0 font-semibold text-xs BtnEx1 z-10"
                 style={{ height: "31px" }}
               >
                 SUBSCRIBE
@@ -22,23 +26,38 @@ const Navbar = () => {
 
             {/* Navigation */}
 
-            <a href="#" className=" font-semibold text-gray-300 text-[1.1rem]">
+            <a
+              href="#"
+              className=" hidden  xl:block  xl:font-semibold xl:text-gray-300 xl:text-[1.1rem]"
+            >
               Home
             </a>
-            <a href="#" className=" font-semibold text-gray-300 text-[1.1rem]">
+            <a
+              href="#"
+              className=" hidden xl:block xl:font-semibold xl:text-gray-300 xl:text-[1.1rem]"
+            >
               About
             </a>
-            <a href="#" className=" font-semibold text-gray-300 text-[1.1rem]">
+            <a
+              href="#"
+              className=" hidden xl:block xl:font-semibold xl:text-gray-300 xl:text-[1.1rem]"
+            >
               Services
             </a>
-            <a href="#" className=" font-semibold text-gray-300 text-[1.1rem]">
+            <a
+              href="#"
+              className=" hidden xl:block xl:font-semibold xl:text-gray-300 xl:text-[1.1rem]"
+            >
               Contact
             </a>
-            <a href="#" className=" font-semibold text-gray-300 text-[1.1rem]">
+            <a
+              href="#"
+              className=" hidden xl:block xl:font-semibold xl:text-gray-300 xl:text-[1.1rem]"
+            >
               <div className="paste-button">
                 <button className="button45  font-semibold text-gray-300 text-[1.1rem]">
                   More{" "}
-                  <span >
+                  <span>
                     <svg
                       width="15"
                       height="15"
@@ -95,26 +114,38 @@ const Navbar = () => {
                   <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                 </svg>
               </button>
-              <button className="absolute hover:rounded-full hover:bg-slate-300 size-7 items-center flex justify-center right-2 top-0 mt-1 mr-1 ">
+              <button className="absolute hover:rounded-full hover:bg-slate-300 size-7 items-center flex justify-center right-2 top-0 mt-1 mr-1  ">
                 <svg
-                  className="h-5 w-5 text-gray-400 hover:text-gray-700"
+                  className="h-5 w-5 text-gray-400 hover:text-gray-700 "
                   xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+                  fill="currentColor"
+                  viewBox="0 0 16 19"
                 >
-                  <path d="M12 15c2.21 0 4-1.79 4-4V5c0-2.21-1.79-4-4-4s-4 1.79-4 4v6c0 2.21 1.79 4 4 4z"></path>
-                  <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                  <path d="M15 5a1 1 0 0 0-1 1v3a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V6a1 1 0 0 0-2 0v3a6.006 6.006 0 0 0 6 6h1v2H5a1 1 0 0 0 0 2h6a1 1 0 0 0 0-2H9v-2h1a6.006 6.006 0 0 0 6-6V6a1 1 0 0 0-1-1Z" />
+                  <path d="M9 0H7a3 3 0 0 0-3 3v5a3 3 0 0 0 3 3h2a3 3 0 0 0 3-3V3a3 3 0 0 0-3-3Z" />
                 </svg>
               </button>
             </div>
           </div>
 
+          <div className="   flex xl:items-center xl:ml-4" >
+          <button className="hover:rounded-full mx-4 my-0 size-8 hover:border hover:border-gray-700   hover:focus:ring-slate-900 hover:focus:ring-4 items-center flex justify-center hover:bg-slate-200 hover:bg-opacity-5" title="Search" >
+            <svg
+              className=" size-6 text-white   xl:hidden"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            </button>
           {/* User profile */}
-          <div className=" hidden xl:flex items-center ml-4">
+          
             <img
               className="h-8 w-8 rounded-full"
               src="https://via.placeholder.com/30"
