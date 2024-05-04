@@ -9,7 +9,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo and Company Name */}
 
-          <div className="hidden text-white md:flex md:items-center md:space-x-6">
+          <div className="hidden text-white xl:flex xl:items-center xl:space-x-6">
             <img className="h-8 w-auto cursor-pointer" src="sportlogo.svg" alt="Logo" />
             <form>
               <button
@@ -73,7 +73,7 @@ const Navbar = () => {
           </div>
 
           {/* Search bar */}
-          <div className="flex-1 flex justify-center md:justify-end ">
+          <div className="hidden flex-1 xl:flex justify-center xl:justify-end ">
             <div className="relative">
               <input
                 type="text"
@@ -114,7 +114,7 @@ const Navbar = () => {
           </div>
 
           {/* User profile */}
-          <div className="flex items-center ml-4">
+          <div className=" hidden xl:flex items-center ml-4">
             <img
               className="h-8 w-8 rounded-full"
               src="https://via.placeholder.com/30"
