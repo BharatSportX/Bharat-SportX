@@ -59,8 +59,6 @@
 
 .button45 {
   background-color: transparent;
-  color: white;
-
   cursor: pointer;
 }
 
@@ -111,6 +109,7 @@
 }
 .animate-paste-arrow {
   display: inline-block;
+  
   transition: transform 0.3s ease-in-out;
 }
 
