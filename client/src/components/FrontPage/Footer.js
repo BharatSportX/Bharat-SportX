@@ -170,12 +170,12 @@ const Footer = () => {
         <ul className="flex flex-wrap justify-center items-center mb-6 text-white">
           <li>
             <Link to="#" className="mr-4 hover:underline md:mr-6">
-              About BharatSportX
+              About 
             </Link>
           </li>
           <li>
             <Link to="#" className="mr-4 hover:underline md:mr-6">
-              Premium Subscription
+              Subscription
             </Link>
           </li>
           <li>
