@@ -140,7 +140,7 @@ const Navbar = () => {
               onClick={toggleSearch}
             >
               <svg
-                className="size-6 dark:text-white text-gray-500 xl:hidden"
+                className="size-6 dark:text-white  text-slate-900 xl:hidden"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="none"
@@ -155,7 +155,7 @@ const Navbar = () => {
             </button>
             {isSearchOpen && (
               <div
-                className="xl:hidden z-[-1] absolute w-full top-14 left-0 mt-1 pb-4 bg-gray-800 p-2"
+                className="xl:hidden z-[-1] absolute w-full top-14 left-0 mt-1 pb-4 bg-white dark:bg-gray-800 p-2"
                 data-aos="fade-down"
                 data-aos-duration="500"
               >
@@ -163,11 +163,11 @@ const Navbar = () => {
                   <input
                     type="text"
                     placeholder="Search... Here!!"
-                    className="bg-gray-700 w-full text-white rounded-full pl-12 pr-14 py-1 focus:outline-none focus:bg-gray-900"
+                    className="dark:bg-gray-700 bg-slate-300 w-full text-gray-700 dark:text-white rounded-full pl-12 pr-14 py-1 focus:outline-none dark:focus:bg-gray-500 focus:bg-gray-200"
                   />
                   <button className="absolute px-1 left-2 top-0 mt-[0.4rem] mr-2 ">
                     <svg
-                      className="size-5 text-gray-400"
+                      className="size-5 dark:text-gray-400 text-slate-900"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       fill="none"
@@ -180,9 +180,9 @@ const Navbar = () => {
                       <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                     </svg>
                   </button>
-                  <button className="absolute hover:rounded-full hover:bg-slate-300 size-7 items-center flex justify-center right-2 top-0 mt-1 mr-1  ">
+                  <button className="absolute hover:rounded-full dark:hover:bg-slate-300 hover:bg-slate-800  size-8  items-center flex justify-center right-2 top-0 mt-0 mr-1  ">
                     <svg
-                      className="h-5 w-5 text-gray-400 hover:text-gray-700 "
+                      className="h-5 w-5 dark:text-gray-400 text-slate-900 hover:text-gray-400 dark:hover:text-gray-700  "
                       xmlns="http://www.w3.org/2000/svg"
                       fill="currentColor"
                       viewBox="0 0 16 19"
@@ -192,6 +192,7 @@ const Navbar = () => {
                     </svg>
                   </button>
                 </div>
+                <hr className="dark:hidden mt-5 w-full"/>
               </div>
             )}
             {/* User profile */}
