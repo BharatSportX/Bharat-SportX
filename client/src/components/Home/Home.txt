@@ -1,4 +1,1 @@
-bootom nav bar main things is in middle
-
-set padding for set perfectly 
-also set md device padding
+dropdown color for light theme 
