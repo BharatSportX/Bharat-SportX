@@ -10,8 +10,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="dark:bg-gray-800 bg-white">
-      <div className="px-4 md:px-14  lg:px-16 xl:px-12">
+    <nav className="dark:bg-gray-800  bg-white shadow-md">
+      <div className="px-4 md:px-14   lg:px-16 xl:px-12 ">
         <div className="flex items-center justify-between h-16">
           {/* Logo and Company Name */}
           <div className="text-white space-x-3 flex items-center xl:space-x-6">
@@ -155,7 +155,7 @@ const Navbar = () => {
             </button>
             {isSearchOpen && (
               <div
-                className="xl:hidden z-[-1] absolute w-full top-14 left-0 mt-1 pb-4 bg-white dark:bg-gray-800 p-2"
+                className="xl:hidden z-[-1] absolute w-full top-14 left-0 pb-4 pt-8  bg-white dark:bg-gray-800 px-2"
                 data-aos="fade-down"
                 data-aos-duration="500"
               >
@@ -192,7 +192,7 @@ const Navbar = () => {
                     </svg>
                   </button>
                 </div>
-                <hr className="dark:hidden mt-5 w-full"/>
+                {/* <hr className="dark:hidden mt-5 w-full"/> */}
               </div>
             )}
             {/* User profile */}
@@ -213,7 +213,7 @@ const Navbar = () => {
       {/* Mobile navbar */}
 
       <div className=" xl:hidden fixed bottom-0 left-0 z-50 w-full h-16 bg-white border-t border-gray-200 dark:bg-gray-800 dark:border-gray-600">
-        <div className="grid h-full max-w-lg grid-cols-5 m-auto  font-medium md:flex md:justify-center">
+        <div className="grid h-full max-w-lg grid-cols-5 m-auto   font-medium md:flex md:justify-center">
           <button
             type="button"
             className="inline-flex flex-col items-center justify-center px-5 md:px-14  lg:px-16 hover:bg-gray-50 dark:hover:bg-gray-800 group"
