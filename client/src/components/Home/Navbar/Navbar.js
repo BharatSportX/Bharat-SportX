@@ -218,7 +218,7 @@ const Navbar = () => {
           <NavLink
             role="button"
             // type="button"
-            to="/"
+            to="/home"
             className="inline-flex flex-col items-center justify-center px-5 md:px-14  lg:px-16 hover:bg-gray-50 dark:hover:bg-gray-800 group"
           >
             <svg
