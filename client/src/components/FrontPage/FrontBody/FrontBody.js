@@ -197,8 +197,8 @@ const FrontBody = () => {
          <BodyQN
           title="Is there a mobile app available for your website?"
           answer="No, we are currently focused on delivering the best experience through our web version and mobile website. However, stay tuned as we are working on launching mobile apps for both iOS and Android platforms in the near future, providing you with access to live scores, player statistics, and match predictions on the go."
-          isOpen={openAccordionIndex === 3}
-          toggleAccordion={() => toggleAccordion(3)}
+          isOpen={openAccordionIndex === 8}
+          toggleAccordion={() => toggleAccordion(8)}
         />
         {/* Subscribe Features Accordion Item */}
         <h1 className="text-3xl p-11 leading-snug lg:text-5xl text-white text-center pt-12 pb-6 font-[Rowdies,sans-serif] lg:font-bold">
@@ -256,8 +256,8 @@ const FrontBody = () => {
       </ul>
     </div>
   }
-  isOpen={openAccordionIndex === 8}
-  toggleAccordion={() => toggleAccordion(8)}
+  isOpen={openAccordionIndex === 9}
+  toggleAccordion={() => toggleAccordion(9)}
 />
 
 
@@ -266,22 +266,22 @@ const FrontBody = () => {
 <BodyQN
   title="What are the benefits of subscribing to BharatSportX?"
   answer="Subscribing to BharatSportX unlocks a range of benefits, including access to exclusive content, advanced features such as personalized notifications and alerts, ad-free browsing experience, and priority customer support."
-  isOpen={openAccordionIndex === 9}
-  toggleAccordion={() => toggleAccordion(9)}
-/>
-
-<BodyQN
-  title="Is there a trial period available for subscriptions?"
-  answer="Yes, BharatSportX offers a trial period for new subscribers. During this period, you can explore the platform and its features before making a commitment. The duration of the trial period may vary, so be sure to check the current offer."
   isOpen={openAccordionIndex === 10}
   toggleAccordion={() => toggleAccordion(10)}
 />
 
 <BodyQN
-  title="Can I cancel my subscription at any time?"
-  answer="Yes, you can cancel your subscription to BharatSportX at any time. There are no long-term contracts or commitments, and you can manage your subscription settings directly from your account dashboard."
+  title="Is there a trial period available for subscriptions?"
+  answer="Yes, BharatSportX offers a trial period for new subscribers. During this period, you can explore the platform and its features before making a commitment. The duration of the trial period may vary, so be sure to check the current offer."
   isOpen={openAccordionIndex === 11}
   toggleAccordion={() => toggleAccordion(11)}
+/>
+
+<BodyQN
+  title="Can I cancel my subscription at any time?"
+  answer="Yes, you can cancel your subscription to BharatSportX at any time. There are no long-term contracts or commitments, and you can manage your subscription settings directly from your account dashboard."
+  isOpen={openAccordionIndex === 12}
+  toggleAccordion={() => toggleAccordion(12)}
 />
 
 
