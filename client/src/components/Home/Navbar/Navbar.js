@@ -140,7 +140,7 @@ const Navbar = () => {
               onClick={toggleSearch}
             >
               <svg
-                className="size-6 dark:text-white text-gray-500 xl:hidden"
+                className="size-6 dark:text-white  text-slate-900 xl:hidden"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="none"
@@ -155,7 +155,7 @@ const Navbar = () => {
             </button>
             {isSearchOpen && (
               <div
-                className="xl:hidden z-[-1] absolute w-full top-14 left-0 mt-1 pb-4 bg-gray-800 p-2"
+                className="xl:hidden z-[-1] absolute w-full top-14 left-0 mt-1 pb-4 bg-white dark:bg-gray-800 p-2"
                 data-aos="fade-down"
                 data-aos-duration="500"
               >
@@ -163,7 +163,7 @@ const Navbar = () => {
                   <input
                     type="text"
                     placeholder="Search... Here!!"
-                    className="bg-gray-700 w-full text-white rounded-full pl-12 pr-14 py-1 focus:outline-none focus:bg-gray-900"
+                    className="dark:bg-gray-700 bg-slate-300 w-full text-gray-700 dark:text-white rounded-full pl-12 pr-14 py-1 focus:outline-none focus:bg-gray-500"
                   />
                   <button className="absolute px-1 left-2 top-0 mt-[0.4rem] mr-2 ">
                     <svg
