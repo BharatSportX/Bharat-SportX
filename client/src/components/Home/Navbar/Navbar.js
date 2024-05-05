@@ -10,7 +10,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="dark:bg-gray-800 bg-slate-300">
+    <nav className="dark:bg-gray-800 bg-white">
       <div className="px-4 md:px-14  lg:px-16 xl:px-12">
         <div className="flex items-center justify-between h-16">
           {/* Logo and Company Name */}
@@ -140,7 +140,7 @@ const Navbar = () => {
               onClick={toggleSearch}
             >
               <svg
-                className="size-6 dark:text-white text-gray-800 xl:hidden"
+                className="size-6 dark:text-white text-gray-500 xl:hidden"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="none"
