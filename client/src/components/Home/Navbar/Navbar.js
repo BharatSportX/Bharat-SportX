@@ -163,11 +163,11 @@ const Navbar = () => {
                   <input
                     type="text"
                     placeholder="Search... Here!!"
-                    className="dark:bg-gray-700 bg-slate-300 w-full text-gray-700 dark:text-white rounded-full pl-12 pr-14 py-1 focus:outline-none focus:bg-gray-500"
+                    className="dark:bg-gray-700 bg-slate-300 w-full text-gray-700 dark:text-white rounded-full pl-12 pr-14 py-1 focus:outline-none dark:focus:bg-gray-500 focus:bg-gray-200"
                   />
                   <button className="absolute px-1 left-2 top-0 mt-[0.4rem] mr-2 ">
                     <svg
-                      className="size-5 text-gray-400"
+                      className="size-5 dark:text-gray-400 text-slate-900"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       fill="none"
@@ -182,7 +182,7 @@ const Navbar = () => {
                   </button>
                   <button className="absolute hover:rounded-full hover:bg-slate-300 size-7 items-center flex justify-center right-2 top-0 mt-1 mr-1  ">
                     <svg
-                      className="h-5 w-5 text-gray-400 hover:text-gray-700 "
+                      className="h-5 w-5 dark:text-gray-400 text-slate-900 hover:text-gray-700 "
                       xmlns="http://www.w3.org/2000/svg"
                       fill="currentColor"
                       viewBox="0 0 16 19"
