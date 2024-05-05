@@ -180,9 +180,9 @@ const Navbar = () => {
                       <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                     </svg>
                   </button>
-                  <button className="absolute hover:rounded-full dark:hover:bg-slate-300  size-7 items-center flex justify-center right-2 top-0 mt-1 mr-1  ">
+                  <button className="absolute hover:rounded-full dark:hover:bg-slate-300 hover:bg-slate-800  size-8  items-center flex justify-center right-2 top-0 mt-0 mr-1  ">
                     <svg
-                      className="h-5 w-5 dark:text-gray-400 text-slate-900 dark:hover:text-gray-700 hover:text-black "
+                      className="h-5 w-5 dark:text-gray-400 text-slate-900 hover:text-gray-400 dark:hover:text-gray-700  "
                       xmlns="http://www.w3.org/2000/svg"
                       fill="currentColor"
                       viewBox="0 0 16 19"
@@ -192,7 +192,7 @@ const Navbar = () => {
                     </svg>
                   </button>
                 </div>
-                <hr className="dark:hidden "/>
+                <hr className="dark:hidden mt-5 w-full"/>
               </div>
             )}
             {/* User profile */}
