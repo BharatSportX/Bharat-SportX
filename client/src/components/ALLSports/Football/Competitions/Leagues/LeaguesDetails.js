@@ -194,9 +194,9 @@ const LeagueDetails = () => {
 
       <div  className=" mt-3 font-semibold"> {selectedSeasonYear}</div>
       {filteredFixtures.length > 0 ? (
-  filteredFixtures.map((fixture, index) => (
+       filteredFixtures.map((fixture, index) => (
     
-    <div key={fixture.fixture.id} className="fixture-card bg-gray-200 rounded-lg shadow-md p-4 my-4">
+      <div key={fixture.fixture.id} className="fixture-card bg-gray-200 rounded-lg shadow-md p-4 my-4">
     
       <p className={`font-semibold ${selectedSeasonYear ? 'text-blue-500' : ''}`}> {index + 1}</p>
       <p className="font-semibold 'text-blue-500" > {fixture.league.country}</p>
