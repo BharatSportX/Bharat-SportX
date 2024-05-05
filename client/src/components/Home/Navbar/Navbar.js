@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Navbar.css";
 import { NavLink } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 const Navbar = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
@@ -81,15 +81,15 @@ const Navbar = () => {
                   </span>
                 </button>
                 <div className="dropdown-content">
-                  <a id="top" href="#">
+                  <Link id="top" href="#">
                     Keep source formatting
-                  </a>
-                  <a id="middle" href="#">
+                  </Link>
+                  <Link id="middle" href="#">
                     Merge formatting
-                  </a>
-                  <a id="bottom" href="#">
+                  </Link>
+                  <Link id="bottom" href="#">
                     Keep text only
-                  </a>
+                  </Link>
                 </div>
               </div>
             </NavLink>
