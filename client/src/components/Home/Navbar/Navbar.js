@@ -192,6 +192,7 @@ const Navbar = () => {
                     </svg>
                   </button>
                 </div>
+                <hr className="dark:hidden "/>
               </div>
             )}
             {/* User profile */}
