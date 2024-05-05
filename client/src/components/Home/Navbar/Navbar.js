@@ -31,32 +31,32 @@ const Navbar = () => {
 
             {/* Navigation */}
             <NavLink
-              to="#"
-              className="hidden xl:block xl:font-semibold xl:text-gray-900 xl:dark:text-gray-300 xl:text-[1.1rem]"
+              to="/home"
+              className="hidden hover:text-white xl:block xl:font-semibold xl:text-gray-900 xl:dark:text-gray-300 xl:text-[1.1rem]"
             >
               Home
             </NavLink>
             <NavLink
-              to="#"
-              className="hidden xl:block xl:font-semibold xl:text-gray-900 xl:dark:text-gray-300 xl:text-[1.1rem]"
+              to="/LeagueHome"
+              className="hidden hover:text-white xl:block xl:font-semibold xl:text-gray-900 xl:dark:text-gray-300 xl:text-[1.1rem]"
             >
-              About
+              Matches
             </NavLink>
             <NavLink
-              to="#"
-              className="hidden xl:block xl:font-semibold xl:text-gray-900 xl:dark:text-gray-300 xl:text-[1.1rem]"
+              to="/"
+              className="hidden hover:text-white xl:block xl:font-semibold xl:text-gray-900 xl:dark:text-gray-300 xl:text-[1.1rem]"
             >
-              Services
+              Players
             </NavLink>
             <NavLink
-              to="#"
-              className="hidden xl:block xl:font-semibold xl:text-gray-900 xl:dark:text-gray-300 xl:text-[1.1rem]"
+              to="/"
+              className="hidden hover:text-white xl:block xl:font-semibold xl:text-gray-900 xl:dark:text-gray-300 xl:text-[1.1rem]"
             >
-              Contact
+              Games
             </NavLink>
-            <NavLink
-              to="#"
-              className="hidden xl:block xl:font-semibold xl:text-gray-900 xl:dark:text-gray-300 xl:text-[1.1rem]"
+            <span
+              
+              className="hidden hover:text-white xl:block xl:font-semibold xl:text-gray-900 xl:dark:text-gray-300 xl:text-[1.1rem]"
             >
               <div className="paste-button">
                 <button className="button45 font-semibold  text-[1.1rem]">
@@ -81,18 +81,19 @@ const Navbar = () => {
                   </span>
                 </button>
                 <div className="dropdown-content">
-                  <Link id="top" href="#">
-                    Keep source formatting
+                  <Link id="top" to="/">
+                    Advance AI
                   </Link>
-                  <Link id="middle" href="#">
-                    Merge formatting
+                  <Link id="middle" to="/">
+                    Contact Us
+                    {/* call image */}
                   </Link>
-                  <Link id="bottom" href="#">
-                    Keep text only
+                  <Link id="bottom" to="/">
+                    Help Center
                   </Link>
                 </div>
               </div>
-            </NavLink>
+            </span>
           </div>
 
           {/* Search bar */}
@@ -214,12 +215,14 @@ const Navbar = () => {
 
       <div className=" xl:hidden fixed bottom-0 left-0 z-50 w-full h-16 bg-white border-t border-gray-200 dark:bg-gray-800 dark:border-gray-600">
         <div className="grid h-full max-w-lg grid-cols-5 m-auto   font-medium md:flex md:justify-center">
-          <button
-            type="button"
+          <NavLink
+            role="button"
+            // type="button"
+            to="/"
             className="inline-flex flex-col items-center justify-center px-5 md:px-14  lg:px-16 hover:bg-gray-50 dark:hover:bg-gray-800 group"
           >
             <svg
-              className="size-4 mb-2 text-gray-500 dark:text-gray-400 group-hover:text-red-600 dark:group-hover:text-red-500"
+              className="size-4 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-red-600 dark:group-hover:text-red-500"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
@@ -230,13 +233,15 @@ const Navbar = () => {
             <span className="text-xs text-gray-500 dark:text-gray-400 group-hover:text-red-600 dark:group-hover:text-red-500">
               Home
             </span>
-          </button>
-          <button
-            type="button"
+          </NavLink>
+          <NavLink
+            role="button"
+            // type="button"
+            to="/LeagueHome"
             className="inline-flex flex-col items-center justify-center px-5 md:px-14  lg:px-16 hover:bg-gray-50 dark:hover:bg-gray-800 group"
           >
             <svg
-              className="size-5 mb-2 text-gray-500 dark:text-gray-400
+              className="size-5 mb-1 text-gray-500 dark:text-gray-400
             group-hover:text-red-600 dark:group-hover:text-red-500"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
@@ -251,12 +256,14 @@ const Navbar = () => {
                 clip-rule="evenodd"
               />
             </svg>
-            <span className="text-xs text-gray-500 dark:text-gray-400 group-hover:text-red-600 dark:group-hover:text-red-500">
+            <span className="  text-xs text-gray-500 dark:text-gray-400 group-hover:text-red-600 dark:group-hover:text-red-500">
               Matches
             </span>
-          </button>
-          <button
-            type="button"
+          </NavLink>
+          <NavLink
+            role="button"
+            // type="button"
+            to="/"
             className="inline-flex flex-col items-center justify-center px-5 md:px-14  lg:px-16 hover:bg-gray-50 dark:hover:bg-gray-800 group"
           >
             <svg
@@ -271,47 +278,55 @@ const Navbar = () => {
             >
               <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z" />
             </svg>
-          </button>
-          <button
-            type="button"
+          </NavLink>
+          <NavLink
+            role="button"
+            // type="button"
+            to="/"
             className="inline-flex flex-col items-center justify-center px-5 md:px-14  lg:px-16 hover:bg-gray-50 dark:hover:bg-gray-800 group"
           >
             <svg
-              className="size-4 mb-2 text-gray-500 dark:text-gray-400 group-hover:text-red-600 dark:group-hover:text-red-500"
-              aria-hidden="true"
+              viewBox="0 0 512 512"
+              className="size-5 mb-1 text-gray-500 dark:text-gray-400
+            group-hover:text-red-600 dark:group-hover:text-red-500"
               xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 20 20"
+              fill="currentColor"
             >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 12.25V1m0 11.25a2.25 2.25 0 0 0 0 4.5m0-4.5a2.25 2.25 0 0 1 0 4.5M4 19v-2.25m6-13.5V1m0 2.25a2.25 2.25 0 0 0 0 4.5m0-4.5a2.25 2.25 0 0 1 0 4.5M10 19V7.75m6 4.5V1m0 11.25a2.25 2.25 0 1 0 0 4.5 2.25 2.25 0 0 0 0-4.5ZM16 19v-2"
-              />
+              <path d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c39.77 0 72 32.24 72 72S295.8 272 256 272c-39.76 0-72-32.24-72-72S216.2 128 256 128zM256 448c-52.93 0-100.9-21.53-135.7-56.29C136.5 349.9 176.5 320 224 320h64c47.54 0 87.54 29.88 103.7 71.71C356.9 426.5 308.9 448 256 448z" />
             </svg>
             <span className="text-xs text-gray-500 dark:text-gray-400 group-hover:text-red-600 dark:group-hover:text-red-500">
               Players
             </span>
-          </button>
-          <button
-            type="button"
+          </NavLink>
+          <NavLink
+            role="button"
+            // type="button"
+            to="/"
             className="inline-flex flex-col items-center justify-center px-5 md:px-14  lg:px-16 hover:bg-gray-50 dark:hover:bg-gray-800 group"
           >
             <svg
-              className="size-4 mb-2 text-gray-500 dark:text-gray-400 group-hover:text-red-600 dark:group-hover:text-red-500"
+              className="size-6 mb-0 text-gray-500 dark:text-gray-400
+            group-hover:text-red-600 dark:group-hover:text-red-500"
+              // version="1.1"
+              viewBox="0 0 512 512"
+              // xmlns="http://www.w3.org/2000/svg"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
-              viewBox="0 0 20 20"
             >
-              <path d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z" />
+              <path
+                // stroke="currentColor"
+                // stroke-linecap="round"
+                // stroke-linejoin="round"
+                // stroke-width="22"
+
+                d="M377.8,100.1C332.9,86.8,318.8,112,256,112s-76.9-25.3-121.8-11.9c-44.9,13.3-67.3,60.4-88.5,148.8  c-21.2,88.5-17.3,152.4,7.7,164.3c25,11.9,53.2-15.4,80.1-49.1C155.3,337.7,166.2,336,256,336c89.7,0,99,0.7,122.5,28.1  c26.9,33.7,55.1,61,80.1,49.1c25-11.9,28.9-75.8,7.7-164.3C445.1,160.5,422.6,113.5,377.8,100.1z M128.2,263.7  c-21.7,0-39.3-17.7-39.3-39.6c0-21.8,17.6-39.6,39.3-39.6c21.7,0,39.3,17.8,39.3,39.6S149.9,263.7,128.2,263.7z M309.7,243.6  c-10.6,0-19.3-8.7-19.3-19.4c0-10.7,8.7-19.4,19.3-19.4c10.7,0,19.4,8.7,19.4,19.4C329,234.9,320.4,243.6,309.7,243.6z M351.9,286  c-10.6,0-19.3-8.7-19.3-19.4c0-10.8,8.7-19.4,19.3-19.4c10.7,0,19.4,8.7,19.4,19.4C371.3,277.4,362.6,286,351.9,286z M351.9,201.1  c-10.6,0-19.3-8.7-19.3-19.4c0-10.7,8.7-19.4,19.3-19.4c10.7,0,19.4,8.7,19.4,19.4C371.3,192.4,362.6,201.1,351.9,201.1z   M394.2,243.6c-10.7,0-19.3-8.7-19.3-19.4c0-10.7,8.7-19.4,19.3-19.4c10.6,0,19.3,8.7,19.3,19.4  C413.5,234.9,404.9,243.6,394.2,243.6z"
+              />
             </svg>
-            <span className="text-xs text-gray-500 dark:text-gray-400 group-hover:text-red-600 dark:group-hover:text-red-500">
+            <span className="text-xs mt-0.5 text-gray-500 dark:text-gray-400 group-hover:text-red-600 dark:group-hover:text-red-500">
               Game
             </span>
-          </button>
+          </NavLink>
         </div>
       </div>
     </nav>

@@ -1,3 +1,5 @@
 dropdown color for light theme 
 
 hover of bottom navbar is cicular type
+
+navitem-->[More ▽] do itds like jio cinema...
