@@ -12,6 +12,7 @@ import Leagues from './components/ALLSports/Football/Competitions/Leagues/League
 import Cups from './components/ALLSports/Football/Competitions/Cups/Cup';
 import CupPageDetails from './components/ALLSports/Football/Competitions/Cups/CupPageDetails';
 import LeaguesDetails from './components/ALLSports/Football/Competitions/Leagues/LeaguesDetails';
+import Statistics from './components/Statistics/Statistics';
 function App() {
   const router=createBrowserRouter([
     {
@@ -41,6 +42,10 @@ function App() {
     {
       path:'/league/:id',
       element:<><LeaguesDetails/></>
+    },
+    {
+      path:'stat',
+      element:<><Statistics/></>
     },
     
     
