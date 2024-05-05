@@ -1,4 +1,3 @@
-bootom nav bar main things is in middle
+dropdown color for light theme 
 
-set padding for set perfectly 
-also set md device padding
+hover of bottom navbar is cicular type
