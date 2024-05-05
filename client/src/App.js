@@ -9,9 +9,10 @@ import FrontPage from './components/FrontPage/FrontPage';
 import Home from './components/Home/Home';
 import LeaguesHome from './components/ALLSports/Football/Competitions/Leagues/LeaguesHome';
 import Leagues from './components/ALLSports/Football/Competitions/Leagues/Leagues';
-import Cups from './components/ALLSports/Football/Competitions/Leagues/Cup';
-import CupPageDetails from './components/ALLSports/Football/Competitions/Leagues/CupPageDetails';
+import Cups from './components/ALLSports/Football/Competitions/Cups/Cup';
+import CupPageDetails from './components/ALLSports/Football/Competitions/Cups/CupPageDetails';
 import LeaguesDetails from './components/ALLSports/Football/Competitions/Leagues/LeaguesDetails';
+import Statistics from './components/Statistics/Statistics';
 import Navbar from './components/Home/Navbar/Navbar';
 function App() {
   const router=createBrowserRouter([
@@ -42,6 +43,10 @@ function App() {
     {
       path:'/league/:id',
       element:<><Navbar/><LeaguesDetails/></>
+    },
+    {
+      path:'stat',
+      element:<><Statistics/></>
     },
     
     

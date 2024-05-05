@@ -465,6 +465,10 @@ function Cups() {
                     strokeLinejoin="round"
                   />
                 </svg>
+                <span className="whitespace-no-wrap">
+                  <img src={`${cup.league.logo}`} className="w-15 h-12 mx-auto sm:w-6 md:w-20 lg:w-15 xl:w-6" alt={`${cup.league.name}`}/>
+                </span>
+
                 {parts.map((part, index) => (
                   <React.Fragment key={index}>
                     {part.toLowerCase() === searchQuery.toLowerCase() ? (
