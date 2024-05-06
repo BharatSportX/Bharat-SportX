@@ -32,37 +32,32 @@ const Navbar = () => {
             {/* Navigation */}
             <NavLink
               to="/home"
-              className="hidden hover:text-white xl:block xl:font-semibold xl:text-gray-900 xl:dark:text-gray-300 xl:text-[1.1rem]"
+              className="hidden dark:hover:text-white hover:text-black xl:block xl:font-semibold xl:text-gray-900 xl:dark:text-gray-300 xl:text-[1.1rem]"
             >
               Home
             </NavLink>
             <NavLink
               to="/LeagueHome"
-              className="hidden hover:text-white xl:block xl:font-semibold xl:text-gray-900 xl:dark:text-gray-300 xl:text-[1.1rem]"
+              className="hidden dark:hover:text-white hover:text-black xl:block xl:font-semibold xl:text-gray-900 xl:dark:text-gray-300 xl:text-[1.1rem]"
             >
               Matches
             </NavLink>
-            {/* <NavLink
-              to="/LeagueHome"
-              className="hidden hover:text-white xl:block xl:font-semibold xl:text-gray-900 xl:dark:text-gray-300 xl:text-[1.1rem]"
-            >
-              H2H
-            </NavLink> */}
+            
             <NavLink
               to="/"
-              className="hidden hover:text-white xl:block xl:font-semibold xl:text-gray-900 xl:dark:text-gray-300 xl:text-[1.1rem]"
+              className="hidden dark:hover:text-white hover:text-black xl:block xl:font-semibold xl:text-gray-900 xl:dark:text-gray-300 xl:text-[1.1rem]"
             >
               Players
             </NavLink>
             <NavLink
               to="/"
-              className="hidden hover:text-white xl:block xl:font-semibold xl:text-gray-900 xl:dark:text-gray-300 xl:text-[1.1rem]"
+              className="hidden dark:hover:text-white hover:text-black xl:block xl:font-semibold xl:text-gray-900 xl:dark:text-gray-300 xl:text-[1.1rem]"
             >
               Games
             </NavLink>
             <span
               
-              className="hidden hover:text-white xl:block xl:font-semibold xl:text-gray-900 xl:dark:text-gray-300 xl:text-[1.1rem]"
+              className="hidden dark:hover:text-white hover:text-black xl:block xl:font-semibold xl:text-gray-900 xl:dark:text-gray-300 xl:text-[1.1rem]"
             >
               <div className="paste-button">
                 <button className="button45 font-semibold  text-[1.1rem]">
