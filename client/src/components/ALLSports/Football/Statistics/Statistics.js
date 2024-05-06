@@ -19,45 +19,39 @@ export default function StatisticsPage() {
           }
         });
         console.log("Statistics data:", response.data); // Log the data received from the API
-        console.log("Fixture ID:", fixtureId);
 
-        // Check if there's any statistics available
-        if (response.data.results > 0) {
-          setStatData(response.data.response[0].statistics);
-        } else {
-          setStatData([]); // No statistics available
-        }
+        // Set the statistics data for both teams
+        setStatData(response.data.response);
       } catch (error) {
         console.error("Error fetching statistics:", error);
       }
     };
     fetchStatistics();
   }, [fixtureId]);
-  
 
   return (
     <div className='container'>
       {/* Notification Banner */}
-      <div className="bg-yellow-200 text-yellow-800 p-4 mb-4 mt-3">
-        Statistics chart will be added soon! Stay Tuned with us!!
+      <div className="bg-yellow-200 text-yellow-800 p-4 mb-4">
+        Statistics chart will be added soon!
       </div>
 
       {statData !== null ? (
         <div>
           <h1>Statistics</h1>
-          <div>Fixture ID: {fixtureId}</div> {/* Display fixtureId instead of fixture */}
-  
-          <ul>
-            {statData.length > 0 ? (
-              statData.map((stat, index) => (
-                <li key={index}>
-                  <strong>{stat.type}: </strong>{stat.value}
-                </li>
-              ))
-            ) : (
-              <li className="bg-red-200 text-red-800 p-2 rounded">No statistics available!</li>
-            )}
-          </ul>
+          {statData.map((teamStats, index) => (
+            <div key={index}>
+              <h2>{teamStats.team.name}</h2>
+              <div>Logo: <img src={teamStats.team.logo} alt={teamStats.team.name} /></div>
+              <ul>
+                {teamStats.statistics.map((stat, index) => (
+                  <li key={index}>
+                    <strong>{stat.type}: </strong>{stat.value}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       ) : (
         <div className='bg-red-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mt-3' role='alert'>
