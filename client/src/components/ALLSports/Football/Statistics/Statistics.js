@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 
 export default function StatisticsPage() {
-  const [statData, setStatData] = useState(null);
+  const [teamStats, setTeamStats] = useState(null);
   const { id: fixtureId } = useParams(); // Extract fixture id from URL params
 
   useEffect(() => {
@@ -18,10 +19,7 @@ export default function StatisticsPage() {
             'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
           }
         });
-        console.log("Statistics data:", response.data); // Log the data received from the API
-
-        // Set the statistics data for both teams
-        setStatData(response.data.response);
+        setTeamStats(response.data.response);
       } catch (error) {
         console.error("Error fetching statistics:", error);
       }
@@ -29,36 +27,40 @@ export default function StatisticsPage() {
     fetchStatistics();
   }, [fixtureId]);
 
+  if (!teamStats) {
+    return <div className='loading'>Loading team statistics...</div>;
+  }
+
+  // Combine statistics of both teams into a single array
+  const combinedStats = [];
+  teamStats.forEach(teamStat => {
+    const teamName = teamStat.team.name;
+    teamStat.statistics.forEach(stat => {
+      const existingStatIndex = combinedStats.findIndex(item => item.type === stat.type);
+      if (existingStatIndex !== -1) {
+        combinedStats[existingStatIndex][teamName] = stat.value;
+      } else {
+        const newStat = { type: stat.type, [teamName]: stat.value };
+        combinedStats.push(newStat);
+      }
+    });
+  });
+
   return (
     <div className='container'>
-      {/* Notification Banner */}
-      <div className="bg-yellow-200 text-yellow-800 p-4 mb-4">
-        Statistics chart will be added soon!
-      </div>
-
-      {statData !== null ? (
-        <div>
-          <h1>Statistics</h1>
-          {statData.map((teamStats, index) => (
-            <div key={index}>
-              <h2>{teamStats.team.name}</h2>
-              <div>Logo: <img src={teamStats.team.logo} alt={teamStats.team.name} /></div>
-              <ul>
-                {teamStats.statistics.map((stat, index) => (
-                  <li key={index}>
-                    <strong>{stat.type}: </strong>{stat.value}
-                  </li>
-                ))}
-              </ul>
-            </div>
+      <h1 className='title'>Match Statistics</h1>
+      <div className='chart-container'>
+        <LineChart width={800} height={400} data={combinedStats}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="type" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          {teamStats.map((teamStat, index) => (
+            <Line key={index} type="monotone" dataKey={teamStat.team.name} stroke={index === 0 ? "#8884d8" : "#82ca9d"} animationDuration={1000} />
           ))}
-        </div>
-      ) : (
-        <div className='bg-red-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mt-3' role='alert'>
-          <strong className='font-bold'>Loading...</strong>
-          <span className='block sm:inline'>Please wait while we fetch the statistics.</span>
-        </div>
-      )}
+        </LineChart>
+      </div>
     </div>
   );
 }
