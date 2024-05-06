@@ -32,37 +32,32 @@ const Navbar = () => {
             {/* Navigation */}
             <NavLink
               to="/home"
-              className="hidden hover:text-white xl:block xl:font-semibold xl:text-gray-900 xl:dark:text-gray-300 xl:text-[1.1rem]"
+              className="hidden dark:hover:text-white hover:text-black xl:block xl:font-semibold xl:text-gray-600 xl:dark:text-gray-300 xl:text-[1.1rem]"
             >
               Home
             </NavLink>
             <NavLink
               to="/LeagueHome"
-              className="hidden hover:text-white xl:block xl:font-semibold xl:text-gray-900 xl:dark:text-gray-300 xl:text-[1.1rem]"
+              className="hidden dark:hover:text-white hover:text-black xl:block xl:font-semibold xl:text-gray-600 xl:dark:text-gray-300 xl:text-[1.1rem]"
             >
               Matches
             </NavLink>
-            {/* <NavLink
-              to="/LeagueHome"
-              className="hidden hover:text-white xl:block xl:font-semibold xl:text-gray-900 xl:dark:text-gray-300 xl:text-[1.1rem]"
-            >
-              H2H
-            </NavLink> */}
+            
             <NavLink
               to="/"
-              className="hidden hover:text-white xl:block xl:font-semibold xl:text-gray-900 xl:dark:text-gray-300 xl:text-[1.1rem]"
+              className="hidden dark:hover:text-white hover:text-black xl:block xl:font-semibold xl:text-gray-600 xl:dark:text-gray-300 xl:text-[1.1rem]"
             >
               Players
             </NavLink>
             <NavLink
               to="/"
-              className="hidden hover:text-white xl:block xl:font-semibold xl:text-gray-900 xl:dark:text-gray-300 xl:text-[1.1rem]"
+              className="hidden dark:hover:text-white hover:text-black xl:block xl:font-semibold xl:text-gray-600 xl:dark:text-gray-300 xl:text-[1.1rem]"
             >
               Games
             </NavLink>
             <span
               
-              className="hidden hover:text-white xl:block xl:font-semibold xl:text-gray-900 xl:dark:text-gray-300 xl:text-[1.1rem]"
+              className="hidden dark:hover:text-white hover:text-black xl:block xl:font-semibold xl:text-gray-600 xl:dark:text-gray-300 xl:text-[1.1rem]"
             >
               <div className="paste-button">
                 <button className="button45 font-semibold  text-[1.1rem]">
@@ -72,9 +67,9 @@ const Navbar = () => {
                       width="15"
                       height="15"
                       viewBox="0 0 15 15"
-                      fill="none"
+                      fill="currentColor"
                       xmlns="http://www.w3.org/2000/svg"
-                      className="size-[20px] stroke-white stroke-[1px] animate-paste-arrow opacity-70 text-white "
+                      className="size-[20px] stroke-white stroke-[1px] animate-paste-arrow opacity-70 dark:text-white rounded-full bg-slate-700 "
                       aria-hidden="true"
                     >
                       <path
@@ -107,11 +102,11 @@ const Navbar = () => {
 
           {/* Search bar */}
           <div className="hidden flex-1 xl:flex justify-center xl:justify-end">
-            <div className="relative z-0">
+            <div className="relative z-0 ">
               <input
                 type="text"
                 placeholder="Search... Here!!"
-                className="bg-gray-700 text-white rounded-full pl-12 w-80 pr-14 py-1 focus:outline-none focus:bg-gray-900"
+                className="bg-white dark:bg-gray-700 dark:text-white text-gray-800 rounded-full pl-12 w-80 pr-14 py-1 focus:outline-none dark:focus:bg-gray-900 focus:bg-gray-200"
               />
               <button className="absolute px-1 left-2 top-0 mt-[0.4rem] mr-2 ">
                 <svg
@@ -173,7 +168,7 @@ const Navbar = () => {
                   <input
                     type="text"
                     placeholder="Search... Here!!"
-                    className="dark:bg-gray-700 bg-slate-300 w-full text-gray-700 dark:text-white rounded-full pl-12 pr-14 py-1 focus:outline-none dark:focus:bg-gray-500 focus:bg-gray-200"
+                    className="dark:bg-gray-700 bg-slate-300 w-full text-gray-700 dark:text-white rounded-full pl-12 pr-14 py-1 focus:outline-none dark:focus:bg-gray-900 focus:bg-gray-200"
                   />
                   <button className="absolute px-1 left-2 top-0 mt-[0.4rem] mr-2 ">
                     <svg
