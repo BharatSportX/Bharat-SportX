@@ -1536,15 +1536,15 @@
 
 // export default CupPageDetails;
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 import Spinner from "../Leagues/Spinner";
-import {Link } from 'react-router-dom';
-
 import './CupPageDetails.css';
 
 const CupPageDetails = () => {
   const { id } = useParams();
+  
+
   const [cupData, setCupData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [fixtures, setFixtures] = useState([]);
@@ -1552,8 +1552,7 @@ const CupPageDetails = () => {
   const [showModal, setShowModal] = useState(false);
   const [modalContent, setModalContent] = useState('');
   const [selectedDate, setSelectedDate] = useState(null);
-  const [year,setYear]=useState(null);
-  
+  const [year, setYear] = useState(null);
 
   useEffect(() => {
     const fetchCupData = async () => {
@@ -1568,13 +1567,13 @@ const CupPageDetails = () => {
             'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
           }
         });
-     
 
-        const { seasons, league } = response.data.response[0]; // Destructuring to get league
+        const { seasons, league } = response.data.response[0];
         const cupSessionData = seasons.map(session => ({ year: session.year }));
+        
         setCupData(cupSessionData);
-        setYear(league); // Set year to league
-        setLoading(false); // Set loading to false after data is fetched
+        setYear(league);
+        setLoading(false);
       } catch (error) {
         console.error(error);
       }
@@ -1599,34 +1598,30 @@ const CupPageDetails = () => {
 
         setFixtures(response.data.response);
       } catch (error) {
-        alert("Error: " + error);
+        console.error("Error fetching fixtures:", error);
       } finally {
-        setLoading(false); // Set loading to false after data is fetched or if there's an error
+        setLoading(false);
       }
     }
 
     fetchFixtures();
   }, [id, selectedSessionYear]);
 
-
   useEffect(() => {
-    // Reset selected date when selectedSessionYear changes
     setSelectedDate(null);
   }, [selectedSessionYear]);
 
   const handleShowFixture = async (year) => {
     setSelectedSessionYear(year);
-    setLoading(true); // Set loading to true when fetching data
+    setLoading(true);
   };
 
   const handleOpenModal = (fixture) => {
     if (!fixture || !fixture.teams || !fixture.fixture || !fixture.fixture.status) {
-      // If fixture or its necessary properties are undefined, handle error gracefully
       console.error("Invalid fixture object");
       return;
     }
 
-    // Destructuring fixtureDetails to get required properties
     const { teams, fixture: fixtureDetails, goals, score } = fixture;
 
     const homeTeamName = teams.home ? teams.home.name : "Unknown";
@@ -1694,12 +1689,12 @@ const CupPageDetails = () => {
     const fixtureDate = new Date(fixture.fixture.date);
     return fixtureDate.toDateString() === selectedDate.toDateString();
   }) : sortedFixtures;
-  
+
   return (
     <div className="container mx-auto py-8">
       {loading && <Spinner />}
       <div className="cup-details">
-        <h1 className="text-3xl font-bold mb-4">{year && year.name}</h1> {/* Displaying league name */}
+        <h1 className="text-3xl font-bold mb-4">{year && year.name}</h1>
         <div className="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
           <span className="font-medium">Alert!</span> The page is under construction. Thank you for your patience!
         </div>
@@ -1719,92 +1714,81 @@ const CupPageDetails = () => {
                 <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
               </svg>
             </div>
-            <input 
-  type="date" 
-  className=" flex justify-content:centyer sm:items-center bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 "
-  placeholder="Select date"
-  value={selectedDate ? selectedDate.toISOString().split('T')[0] : ''}
-  onChange={(e) => setSelectedDate(new Date(e.target.value))}
-/>
-
+            <input
+              type="date"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Select date"
+              value={selectedDate ? selectedDate.toISOString().split('T')[0] : ''}
+              onChange={(e) => setSelectedDate(new Date(e.target.value))}
+            />
           </div>
         )}
       </div>
       <div className="fixtures-container">
-
-      <div  className=" mt-3 font-semibold"> {selectedSessionYear}</div>
-      {filteredFixtures.length > 0 ? (
-  filteredFixtures.map((fixture, index) => (
-    
-    <div key={fixture.fixture.id} className="fixture-card bg-gray-200 rounded-lg shadow-md p-4 my-4 mx-auto sm:max-w-xl lg:max-w-2xl xl:max-w-3xl">
-  {/* Inside the map function for rendering fixtures */}
-  <div className="flex flex-wrap gap-2 justify-center">
-    <Link to="/events">
-      <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded">
-        Events
-      </button>
-    </Link>
-    <Link to="/stat">
-      <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded">
-        Statistics
-      </button>
-    </Link>
-    <Link to="/lineups">
-      <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded">
-        Lineups
-      </button>
-    </Link>
-    <Link to="/players">
-      <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded">
-        Players
-      </button>
-    </Link>
-  </div>
-
-  <p className={`font-semibold ${selectedSessionYear ? 'text-blue-500' : ''}`}> {index + 1}</p>
-  <p className="font-semibold text-blue-500"> {fixture.league.country}</p>
-
-  <div className="flex flex-col md:flex-row md:justify-between items-center mt-2">
-    <div className="team flex items-center">
-      <img className="w-8 h-8 rounded-full " src={fixture.teams.home.logo} alt={fixture.teams.home.name} />
-      <p className="ml-2">{fixture.teams.home.name}</p>
-    </div>
-    <div className="time-date flex flex-col md:flex-row items-center sm:mt-2">
-  <p>{new Date(fixture.fixture.date).toLocaleDateString()}</p>
-  <p className="mt-2 md:mt-0 md:ml-2">{new Date(fixture.fixture.date).toLocaleTimeString()}</p>
-</div>
-
-    <div className="comparison ">
-      <p>VS</p>
-    </div>
-    <div className="team flex items-center">
-  <img className="w-8 h-8 rounded-full sm:mt-2" src={fixture.teams.away.logo} alt={fixture.teams.away.name} />
-  <p className="ml-2 sm:mt-2">{fixture.teams.away.name}</p>
-</div>
-
-    <div>
-      <h1>Goal:</h1>
-      <p>{fixture.goals.home} - {fixture.goals.away}</p>
-      <p>Short: {fixture.fixture.status.short}</p>
-    </div>
-    
-    <button onClick={() => handleOpenModal(fixture)} className="bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-700 hover:to-blue-900 text-white font-bold py-2 px-4 rounded flex items-center gap-2 mt-4 md:mt-0">
-      Read More
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-6 h-6">
-        <path fillRule="evenodd" d="M8.707 15.707a1 1 0 0 0 1.414 0l5-5a1 1 0 0 0 0-1.414l-5-5a1 1 0 0 0-1.414 1.414L13.586 10 8.707 14.879a1 1 0 0 0 0 1.414z" />
-      </svg>
-    </button>
-  </div>
-</div>
-
-
-  ))
-) : (
-  <div className="text-center font-semibold text-gray-600 mt-8">
-    No match Found
-  </div>
-)}
-
+        <div className="mt-3 font-semibold"> {selectedSessionYear}</div>
+        {filteredFixtures.length > 0 ? (
+          filteredFixtures.map((fixture, index) => (
+            <div key={fixture.fixture.id} className="fixture-card bg-gray-200 rounded-lg shadow-md p-4 my-4 mx-auto sm:max-w-xl lg:max-w-2xl xl:max-w-3xl">
+              <div className="flex flex-wrap gap-2 justify-center">
+                <Link to="/events">
+                  <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded">
+                    Events
+                  </button>
+                </Link>
+               
+                <Link to={`/statistics/${fixture.fixture.id}`}>
+                  <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded">
+                    Statistics {fixture.fixture.id}
+                  </button>
+                </Link>
+                <Link to="/lineups">
+                  <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded">
+                    Lineups
+                  </button>
+                </Link>
+                <Link to="/players">
+                  <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded">
+                    Players
+                  </button>
+                </Link>
+              </div>
+              <p className={`font-semibold ${selectedSessionYear ? 'text-blue-500' : ''}`}> {index + 1}</p>
+              <p className="font-semibold text-blue-500"> {fixture.league.country}</p>
+              <div className="flex flex-col md:flex-row md:justify-between items-center mt-2">
+                <div className="team flex items-center">
+                  <img className="w-8 h-8 rounded-full " src={fixture.teams.home.logo} alt={fixture.teams.home.name} />
+                  <p className="ml-2">{fixture.teams.home.name}</p>
+                </div>
+                <div className="time-date flex flex-col md:flex-row items-center sm:mt-2">
+                  <p>{new Date(fixture.fixture.date).toLocaleDateString()}</p>
+                  <p className="mt-2 md:mt-0 md:ml-2">{new Date(fixture.fixture.date).toLocaleTimeString()}</p>
+                </div>
+                <div className="comparison ">
+                  <p>VS</p>
+                </div>
+                <div className="team flex items-center">
+                  <img className="w-8 h-8 rounded-full sm:mt-2" src={fixture.teams.away.logo} alt={fixture.teams.away.name} />
+                  <p className="ml-2 sm:mt-2">{fixture.teams.away.name}</p>
+                </div>
+                <div>
+                  <h1>Goal:</h1>
+                  <p>{fixture.goals.home} - {fixture.goals.away}</p>
+                  <p>Short: {fixture.fixture.status.short}</p>
+                </div>
+                <button onClick={() => handleOpenModal(fixture)} className="bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-700 hover:to-blue-900 text-white font-bold py-2 px-4 rounded flex items-center gap-2 mt-4 md:mt-0">
+                  Read More
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-6 h-6">
+                    <path fillRule="evenodd" d="M8.707 15.707a1 1 0 0 0 1.414 0l5-5a1 1 0 0 0 0-1.414l-5-5a1 1 0 0 0-1.414 1.414L13.586 10 8.707 14.879a1 1 0 0 0 0 1.414z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          ))
+        ) : (
+          <div className="text-center font-semibold text-gray-600 mt-8">
+            No match Found
+          </div>
+        )}
       </div>
       <div id="static-modal" data-modal-backdrop="static" className={`fixed z-50 inset-0 overflow-y-auto overflow-x-hidden ${showModal ? '' : 'hidden'}`}>
         <div className="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
