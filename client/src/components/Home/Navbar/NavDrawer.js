@@ -1,55 +1,65 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const NavDrawer = () => {
+  const [drawerOpen, setDrawerOpen] = useState(false);
+
+  // Function to toggle the drawer
+  const toggleDrawer = () => {
+    setDrawerOpen(!drawerOpen);
+  };
+
+  // Close drawer when component mounts
+  useEffect(() => {
+    const closeDrawerOnMount = () => {
+      setDrawerOpen(false);
+    };
+    closeDrawerOnMount();
+  }, []);
+
   return (
     <>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className=" mb-2  text-gray-500 dark:text-gray-400
-            group-hover:text-red-600  dark:group-hover:text-red-500"
+        className="mb-2 text-gray-500 dark:text-gray-400 group-hover:text-red-600 dark:group-hover:text-red-500"
         width="44"
         height="44"
         fill="gray"
-        
         viewBox="0 0 16 16"
-        data-drawer-target="drawer-swipe"
-        data-drawer-show="drawer-swipe"
-        data-drawer-placement="bottom"
-        data-drawer-edge="true"
-        data-drawer-edge-offset="bottom-[60px]"
+        onClick={toggleDrawer}
         aria-controls="drawer-swipe"
       >
         <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z" />
       </svg>
 
-      <div
-        id="drawer-swipe"
-        className="fixed z-[40] w-full overflow-y-auto bg-white border-t border-gray-200 rounded-t-lg dark:border-gray-700 dark:bg-gray-800 transition-transform bottom-[0px] left-0 right-0 translate-y-full "
-        tabIndex="-1"
-        aria-labelledby="drawer-swipe-label"
-      >
+      {drawerOpen && (
         <div
-          className="p-4 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700"
-          data-drawer-toggle="drawer-swipe"
+          id="drawer-swipe"
+          className="fixed z-[40] w-full overflow-y-auto bg-white border-t border-gray-200 rounded-t-lg dark:border-gray-700 dark:bg-gray-800 transition-transform bottom-[0px] left-0 right-0 translate-y-full"
+          tabIndex="-1"
+          aria-labelledby="drawer-swipe-label"
         >
-          <span className="absolute w-8 h-1 -translate-x-1/2 bg-gray-300 rounded-lg top-3 left-1/2 dark:bg-gray-600"></span>
-          <h5
-            id="drawer-swipe-label"
-            className="inline-flex items-center text-base text-gray-500 dark:text-gray-400 font-medium"
+          <div
+            className="p-4 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700"
+            onClick={toggleDrawer}
           >
-            <svg
-              className="w-4 h-4 me-2"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              viewBox="0 0 18 18"
+            <span className="absolute w-8 h-1 -translate-x-1/2 bg-gray-300 rounded-lg top-3 left-1/2 dark:bg-gray-600"></span>
+            <h5
+              id="drawer-swipe-label"
+              className="inline-flex items-center text-base text-gray-500 dark:text-gray-400 font-medium"
             >
-              <path d="M6.143 0H1.857A1.857 1.857 0 0 0 0 1.857v4.286C0 7.169.831 8 1.857 8h4.286A1.857 1.857 0 0 0 8 6.143V1.857A1.857 1.857 0 0 0 6.143 0Zm10 0h-4.286A1.857 1.857 0 0 0 10 1.857v4.286C10 7.169 10.831 8 11.857 8h4.286A1.857 1.857 0 0 0 18 6.143V1.857A1.857 1.857 0 0 0 16.143 0Zm-10 10H1.857A1.857 1.857 0 0 0 0 11.857v4.286C0 17.169.831 18 1.857 18h4.286A1.857 1.857 0 0 0 8 16.143v-4.286A1.857 1.857 0 0 0 6.143 10ZM17 13h-2v-2a1 1 0 0 0-2 0v2h-2a1 1 0 0 0 0 2h2v2a1 1 0 0 0 2 0v-2h2a1 1 0 0 0 0-2Z" />
-            </svg>
-            Add widget
-          </h5>
-        </div>
-        <div className="grid grid-cols-3 gap-4 p-4 lg:grid-cols-4">
+              <svg
+                className="w-4 h-4 me-2"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 18 18"
+              >
+                <path d="M6.143 0H1.857A1.857 1.857 0 0 0 0 1.857v4.286C0 7.169.831 8 1.857 8h4.286A1.857 1.857 0 0 0 8 6.143V1.857A1.857 1.857 0 0 0 6.143 0Zm10 0h-4.286A1.857 1.857 0 0 0 10 1.857v4.286C10 7.169 10.831 8 11.857 8h4.286A1.857 1.857 0 0 0 18 6.143V1.857A1.857 1.857 0 0 0 16.143 0Zm-10 10H1.857A1.857 1.857 0 0 0 0 11.857v4.286C0 17.169.831 18 1.857 18h4.286A1.857 1.857 0 0 0 8 16.143v-4.286A1.857 1.857 0 0 0 6.143 10ZM17 13h-2v-2a1 1 0 0 0-2 0v2h-2a1 1 0 0 0 0 2h2v2a1 1 0 0 0 2 0v-2h2a1 1 0 0 0 0-2Z" />
+              </svg>
+              Add widget
+            </h5>
+          </div>
+          <div className="grid grid-cols-3 gap-4 p-4 lg:grid-cols-4">
           <div className="p-4 rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 dark:hover:bg-gray-600 dark:bg-gray-700">
             <div className="flex justify-center items-center p-2 mx-auto mb-2 bg-gray-200 dark:bg-gray-600 rounded-full w-[48px] h-[48px] max-w-[48px] max-h-[48px]">
               <svg
@@ -192,7 +202,8 @@ const NavDrawer = () => {
             </div>
           </div>
         </div>
-      </div>
+        </div>
+      )}
     </>
   );
 };
