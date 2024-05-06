@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Navbar.css";
 import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
+import NavDrawer from "./NavDrawer";
 const Navbar = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
@@ -42,7 +43,7 @@ const Navbar = () => {
             >
               Matches
             </NavLink>
-            
+
             <NavLink
               to="/"
               className="hidden dark:hover:text-white hover:text-black xl:block xl:font-semibold xl:text-gray-600 xl:dark:text-gray-300 xl:text-[1.1rem]"
@@ -55,10 +56,7 @@ const Navbar = () => {
             >
               Games
             </NavLink>
-            <span
-              
-              className="hidden dark:hover:text-white hover:text-black xl:block xl:font-semibold xl:text-gray-600 xl:dark:text-gray-300 xl:text-[1.1rem]"
-            >
+            <span className="hidden dark:hover:text-white hover:text-black xl:block xl:font-semibold xl:text-gray-600 xl:dark:text-gray-300 xl:text-[1.1rem]">
               <div className="paste-button">
                 <button className="button45 font-semibold  text-[1.1rem]">
                   More{" "}
@@ -83,7 +81,7 @@ const Navbar = () => {
                 </button>
                 <div className="dropdown-content">
                   <Link id="top" to="/">
-                   AI Match Predictor 
+                    AI Match Predictor
                   </Link>
                   <Link id="middle" to="/">
                     Contact Us
@@ -264,25 +262,9 @@ const Navbar = () => {
               Matches
             </span>
           </NavLink>
-          <NavLink
-            role="button"
-            // type="button"
-            to="/"
-            className="inline-flex flex-col items-center justify-center px-5 md:px-14  lg:px-16 hover:bg-gray-50 dark:hover:bg-gray-800 group"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className=" mb-2  text-gray-500 dark:text-gray-400
-            group-hover:text-red-600 dark:group-hover:text-red-500"
-              width="44"
-              height="44"
-              fill="gray"
-              class="bi bi-arrow-up-circle-fill"
-              viewBox="0 0 16 16"
-            >
-              <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z" />
-            </svg>
-          </NavLink>
+          <span className="inline-flex flex-col items-center justify-center px-5 md:px-14  lg:px-16 hover:bg-gray-50 dark:hover:bg-gray-800 group">
+            <NavDrawer />
+          </span>
           <NavLink
             role="button"
             // type="button"
