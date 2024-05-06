@@ -168,7 +168,7 @@ const Navbar = () => {
                   <input
                     type="text"
                     placeholder="Search... Here!!"
-                    className="dark:bg-gray-700 bg-slate-300 w-full text-gray-700 dark:text-white rounded-full pl-12 pr-14 py-1 focus:outline-none dark:focus:bg-gray-500 focus:bg-gray-200"
+                    className="dark:bg-gray-700 bg-slate-300 w-full text-gray-700 dark:text-white rounded-full pl-12 pr-14 py-1 focus:outline-none dark:focus:bg-gray-900 focus:bg-gray-200"
                   />
                   <button className="absolute px-1 left-2 top-0 mt-[0.4rem] mr-2 ">
                     <svg
