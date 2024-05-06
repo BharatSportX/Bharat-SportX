@@ -52,7 +52,7 @@ function App() {
       element:<><Navbar/><LeaguesDetails/></>
     },
     {
-      path:'/stat',
+      path:'/stat/:id',
       element:<><Statistics/></>
     },
     {
