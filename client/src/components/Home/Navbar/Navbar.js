@@ -42,6 +42,12 @@ const Navbar = () => {
             >
               Matches
             </NavLink>
+            {/* <NavLink
+              to="/LeagueHome"
+              className="hidden hover:text-white xl:block xl:font-semibold xl:text-gray-900 xl:dark:text-gray-300 xl:text-[1.1rem]"
+            >
+              H2H
+            </NavLink> */}
             <NavLink
               to="/"
               className="hidden hover:text-white xl:block xl:font-semibold xl:text-gray-900 xl:dark:text-gray-300 xl:text-[1.1rem]"
@@ -82,7 +88,7 @@ const Navbar = () => {
                 </button>
                 <div className="dropdown-content">
                   <Link id="top" to="/">
-                    Advance AI
+                   AI Match Predictor 
                   </Link>
                   <Link id="middle" to="/">
                     Contact Us
@@ -90,6 +96,9 @@ const Navbar = () => {
                   </Link>
                   <Link id="bottom" to="/">
                     Help Center
+                  </Link>
+                  <Link id="bottom" to="/stat">
+                    Statistics
                   </Link>
                 </div>
               </div>

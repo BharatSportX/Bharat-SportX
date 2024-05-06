@@ -1539,6 +1539,8 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Spinner from "../Leagues/Spinner";
+import {Link } from 'react-router-dom';
+
 import './CupPageDetails.css';
 
 const CupPageDetails = () => {
@@ -1734,7 +1736,31 @@ const CupPageDetails = () => {
   filteredFixtures.map((fixture, index) => (
     
     <div key={fixture.fixture.id} className="fixture-card bg-gray-200 rounded-lg shadow-md p-4 my-4">
-    
+    {/* Inside the map function for rendering fixtures */}
+    <div className="flex gap-2">
+  <Link to="/events">
+    <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded">
+      Events
+    </button>
+  </Link>
+  <Link to="/stat">
+    <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded">
+      Statistics
+    </button>
+  </Link>
+  <Link to="/lineups">
+    <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded">
+      Lineups
+    </button>
+  </Link>
+  <Link to="/players">
+    <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded">
+      Players
+    </button>
+  </Link>
+</div>
+
+
       <p className={`font-semibold ${selectedSessionYear ? 'text-blue-500' : ''}`}> {index + 1}</p>
       <p className="font-semibold 'text-blue-500" > {fixture.league.country}</p>
 
@@ -1759,6 +1785,7 @@ const CupPageDetails = () => {
           <p>{fixture.goals.home} - {fixture.goals.away}</p>
           <p>Short: {fixture.fixture.status.short}</p>
         </div>
+        
         <button onClick={() => handleOpenModal(fixture)} className="bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-700 hover:to-blue-900 text-white font-bold py-2 px-4 rounded flex items-center gap-2 mt-4 md:mt-0">
           Read More
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-6 h-6">
