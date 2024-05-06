@@ -1720,12 +1720,13 @@ const CupPageDetails = () => {
               </svg>
             </div>
             <input 
-              type="date" 
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
-              placeholder="Select date"
-              value={selectedDate ? selectedDate.toISOString().split('T')[0] : ''}
-              onChange={(e) => setSelectedDate(new Date(e.target.value))}
-            />
+  type="date" 
+  className=" flex justify-content:centyer sm:items-center bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 "
+  placeholder="Select date"
+  value={selectedDate ? selectedDate.toISOString().split('T')[0] : ''}
+  onChange={(e) => setSelectedDate(new Date(e.target.value))}
+/>
+
           </div>
         )}
       </div>
@@ -1735,65 +1736,68 @@ const CupPageDetails = () => {
       {filteredFixtures.length > 0 ? (
   filteredFixtures.map((fixture, index) => (
     
-    <div key={fixture.fixture.id} className="fixture-card bg-gray-200 rounded-lg shadow-md p-4 my-4">
-    {/* Inside the map function for rendering fixtures */}
-    <div className="flex gap-2">
-  <Link to="/events">
-    <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded">
-      Events
+    <div key={fixture.fixture.id} className="fixture-card bg-gray-200 rounded-lg shadow-md p-4 my-4 mx-auto sm:max-w-xl lg:max-w-2xl xl:max-w-3xl">
+  {/* Inside the map function for rendering fixtures */}
+  <div className="flex flex-wrap gap-2 justify-center">
+    <Link to="/events">
+      <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded">
+        Events
+      </button>
+    </Link>
+    <Link to="/stat">
+      <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded">
+        Statistics
+      </button>
+    </Link>
+    <Link to="/lineups">
+      <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded">
+        Lineups
+      </button>
+    </Link>
+    <Link to="/players">
+      <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded">
+        Players
+      </button>
+    </Link>
+  </div>
+
+  <p className={`font-semibold ${selectedSessionYear ? 'text-blue-500' : ''}`}> {index + 1}</p>
+  <p className="font-semibold text-blue-500"> {fixture.league.country}</p>
+
+  <div className="flex flex-col md:flex-row md:justify-between items-center mt-2">
+    <div className="team flex items-center">
+      <img className="w-8 h-8 rounded-full " src={fixture.teams.home.logo} alt={fixture.teams.home.name} />
+      <p className="ml-2">{fixture.teams.home.name}</p>
+    </div>
+    <div className="time-date flex flex-col md:flex-row items-center sm:mt-2">
+  <p>{new Date(fixture.fixture.date).toLocaleDateString()}</p>
+  <p className="mt-2 md:mt-0 md:ml-2">{new Date(fixture.fixture.date).toLocaleTimeString()}</p>
+</div>
+
+    <div className="comparison ">
+      <p>VS</p>
+    </div>
+    <div className="team flex items-center">
+  <img className="w-8 h-8 rounded-full sm:mt-2" src={fixture.teams.away.logo} alt={fixture.teams.away.name} />
+  <p className="ml-2 sm:mt-2">{fixture.teams.away.name}</p>
+</div>
+
+    <div>
+      <h1>Goal:</h1>
+      <p>{fixture.goals.home} - {fixture.goals.away}</p>
+      <p>Short: {fixture.fixture.status.short}</p>
+    </div>
+    
+    <button onClick={() => handleOpenModal(fixture)} className="bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-700 hover:to-blue-900 text-white font-bold py-2 px-4 rounded flex items-center gap-2 mt-4 md:mt-0">
+      Read More
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-6 h-6">
+        <path fillRule="evenodd" d="M8.707 15.707a1 1 0 0 0 1.414 0l5-5a1 1 0 0 0 0-1.414l-5-5a1 1 0 0 0-1.414 1.414L13.586 10 8.707 14.879a1 1 0 0 0 0 1.414z" />
+      </svg>
     </button>
-  </Link>
-  <Link to="/stat">
-    <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded">
-      Statistics
-    </button>
-  </Link>
-  <Link to="/lineups">
-    <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded">
-      Lineups
-    </button>
-  </Link>
-  <Link to="/players">
-    <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded">
-      Players
-    </button>
-  </Link>
+  </div>
 </div>
 
 
-      <p className={`font-semibold ${selectedSessionYear ? 'text-blue-500' : ''}`}> {index + 1}</p>
-      <p className="font-semibold 'text-blue-500" > {fixture.league.country}</p>
-
-      <div className="flex flex-col md:flex-row md:justify-between items-center mt-2">
-        <div className="team flex items-center">
-          <img className="w-8 h-8 rounded-full" src={fixture.teams.home.logo} alt={fixture.teams.home.name} />
-          <p className="ml-2">{fixture.teams.home.name}</p>
-        </div>
-        <div className="time-date flex flex-col md:flex-row">
-          <p>{new Date(fixture.fixture.date).toLocaleDateString()}</p>
-          <p>{new Date(fixture.fixture.date).toLocaleTimeString()}</p>
-        </div>
-        <div className="comparison hidden md:block">
-          <p>VS</p>
-        </div>
-        <div className="team flex items-center">
-          <img className="w-8 h-8 rounded-full" src={fixture.teams.away.logo} alt={fixture.teams.away.name} />
-          <p className="ml-2">{fixture.teams.away.name}</p>
-        </div>
-        <div>
-          <h1>Goal:</h1>
-          <p>{fixture.goals.home} - {fixture.goals.away}</p>
-          <p>Short: {fixture.fixture.status.short}</p>
-        </div>
-        
-        <button onClick={() => handleOpenModal(fixture)} className="bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-700 hover:to-blue-900 text-white font-bold py-2 px-4 rounded flex items-center gap-2 mt-4 md:mt-0">
-          Read More
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-6 h-6">
-            <path fillRule="evenodd" d="M8.707 15.707a1 1 0 0 0 1.414 0l5-5a1 1 0 0 0 0-1.414l-5-5a1 1 0 0 0-1.414 1.414L13.586 10 8.707 14.879a1 1 0 0 0 0 1.414z" />
-          </svg>
-        </button>
-      </div>
-    </div>
   ))
 ) : (
   <div className="text-center font-semibold text-gray-600 mt-8">
