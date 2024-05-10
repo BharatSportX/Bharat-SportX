@@ -1095,7 +1095,7 @@ import React, { useEffect, useState } from 'react';
 import { CanvasJSChart } from "canvasjs-react-charts";
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-
+import Footer from '../../../FrontPage/Footer';
 // Import FontAwesome icon
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChartLine } from '@fortawesome/free-solid-svg-icons';
@@ -1196,6 +1196,7 @@ const Statistics = () => {
 
   // Render CanvasJS chart with checkboxes
   return (
+    <React.Fragment>
     <div className='container mx-auto px-4 md:px-0'>
       <h1 className='title text-center text-2xl md:text-3xl my-6'>Detailed Match Statistics
         <span className="icon">
@@ -1307,6 +1308,9 @@ const Statistics = () => {
         }
       `}</style>
     </div>
+
+    <Footer />
+    </React.Fragment>
   );
 }
 
