@@ -21,6 +21,7 @@ import Players from './components/ALLSports/Football/Players/Players';
 import LineUps from './components/ALLSports/Football/LineUps/LineUps';
 import H2H from './components/ALLSports/Football/HaedToHead/H2H';
 import Events from './components/ALLSports/Football/Events/Events';
+import Error from './components/DeafultErrorPage/Error';
 function App() {
   const router=createBrowserRouter([
     {
@@ -86,6 +87,10 @@ function App() {
       path:'/events',
       element:<><Events/></>
     },
+    {
+      path: '*',
+      element: <Error />
+    }
     
     
     

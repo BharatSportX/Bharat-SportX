@@ -1,0 +1,12 @@
+.error-img {
+    width: 96px; /* Adjust width as needed */
+    height: 96px; /* Adjust height as needed */
+    animation: bounce 0.5s; /* Set the duration of the bounce animation */
+  }
+  
+  @keyframes bounce {
+    0% { transform: translateY(0); } /* Start at the original position */
+    50% { transform: translateY(-20px); } /* Move up */
+    100% { transform: translateY(0); } /* Return to the original position */
+  }
+  
