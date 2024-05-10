@@ -1091,6 +1091,15 @@
 // }
 
 // export default Statistics;
+
+
+
+
+
+
+
+
+
 import React, { useEffect, useState } from 'react';
 import { CanvasJSChart } from "canvasjs-react-charts";
 import axios from 'axios';
