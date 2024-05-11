@@ -1,4 +1,7 @@
 
+
+
+For Statsitics Canava JS Chart is Used see the Canava Js Chart Documentation
 -------INSTALLED Pacakages (npm)----------
 
 npm i create-react-app
@@ -65,3 +68,11 @@ npm install aos --save
 10.npm install react-soccer-lineup --legacy-peer-deps
 11.npm install react-soccer-lineup --force
 12.npm install @headlessui/react @heroicons/react
+13.npm i lottie-react
+14.npm install @canvasjs/charts
+15 npm i @fortawesome/free-solid-svg-icons
+16. npm i @fortawesome/react-fontawesome
+17. npm i @mui/lab,
+18. npm i @mui/material,
+19. npm i  @mui/styled-engine-sc,
+20.npm i   @mui/x-charts:
