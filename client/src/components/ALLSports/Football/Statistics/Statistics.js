@@ -1108,13 +1108,17 @@ import Footer from '../../../FrontPage/Footer';
 // Import FontAwesome icon
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChartLine } from '@fortawesome/free-solid-svg-icons';
-
+import NoDataModal from './NoDataModal';
 const Statistics = () => {
   const [teamStats, setTeamStats] = useState(null);
   const [loading, setLoading] = useState(true);
   const [visibleStats, setVisibleStats] = useState({}); // State to track visible statistic types
+ 
   const { id: fixtureId } = useParams(); // Extract fixture id from URL params
-
+  const handleCloseModal = () => {
+   
+    window.history.back();
+  };
   useEffect(() => {
     const fetchStatistics = async () => {
       try {
@@ -1163,14 +1167,21 @@ const Statistics = () => {
     );
   }
 
-  if (!teamStats || teamStats.length === 0) {
-    // Show alert if no data found
-    return (
-      <div className="alert-container">
-        <div className="alert">No statistics data found</div>
-      </div>
-    );
-  }
+//   if (!teamStats || teamStats.length === 0) {
+//     // Show alert if no data found
+//     return (
+//       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+//         <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
+//           <span class="font-medium">Sorry!!</span> No Statistics Data Found.
+//         </div>
+//       </div>
+//     );
+// }
+
+if (!teamStats || teamStats.length === 0) {
+  return <NoDataModal onClose={handleCloseModal} />;
+}
+
 
   // Prepare data for the chart, filtering out invisible statistic types
   const chartData = teamStats.map(teamStat => ({
