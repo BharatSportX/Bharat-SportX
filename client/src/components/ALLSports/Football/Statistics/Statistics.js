@@ -1204,7 +1204,7 @@ if (!teamStats || teamStats.length === 0) {
       text: "Match Statistics"
     },
     axisX: {
-      title: "Statistic Type",
+      title: " Type",
       interval: 1,
       labelAngle: -45
     },
