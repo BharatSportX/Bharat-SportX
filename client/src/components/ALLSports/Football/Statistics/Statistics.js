@@ -1109,6 +1109,8 @@ import Footer from '../../../FrontPage/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChartLine } from '@fortawesome/free-solid-svg-icons';
 import NoDataModal from './NoDataModal';
+import Lottie from "lottie-react"
+import SpinLottieAnimation from "./SpinLottieAnimation.json";
 const Statistics = () => {
   const [teamStats, setTeamStats] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -1162,7 +1164,7 @@ const Statistics = () => {
     // Show spinner while loading
     return (
       <div className="loading-container">
-        <div className="spinner"></div>
+        <Lottie SpinLottieAnimation={SpinLottieAnimation}/>
       </div>
     );
   }
