@@ -37,6 +37,7 @@ export default function Prediction() {
       {prediction ? (
         <div>
           <div>Winner: {prediction.predictions.winner.name ? prediction.predictions.winner.name : "Not available"}</div>
+          <div>Winner Comment: {prediction.predictions.winner.comment ? prediction.predictions.winner.comment : "Not available"}</div>
           <div>Advice: {prediction.predictions.advice}</div>
         </div>
       ) : (
