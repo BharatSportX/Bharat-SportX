@@ -22,6 +22,7 @@ import LineUps from './components/ALLSports/Football/LineUps/LineUps';
 import H2H from './components/ALLSports/Football/HaedToHead/H2H';
 import Events from './components/ALLSports/Football/Events/Events';
 import Error from './components/DeafultErrorPage/Error';
+import AllGameNavbar from './components/Home/Navbar/AllGameNavbar/AllGameNavbar';
 function App() {
   const router=createBrowserRouter([
     {
@@ -86,6 +87,10 @@ function App() {
     {
       path:'/events',
       element:<><Events/></>
+    },
+    {
+      path:'/allgamesnav',
+      element:<><AllGameNavbar/></>
     },
     {
       path: '*',
