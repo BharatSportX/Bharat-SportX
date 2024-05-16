@@ -44,7 +44,7 @@ const FrontBody = () => {
         imgorder="1"
         img="https://source.unsplash.com/random/500x450/?ludo"
       /> */}
-      <BodyCard
+      {/* <BodyCard
   header="Experience the Thrill of Bharat Sports"
   mutedheader="Get Ready for Action-Packed Moments"
   content="Join the excitement as athletes compete fiercely, showcasing their skills and determination. From cricket to hockey, from kabaddi to badminton, Bharat SpotX brings you the best of Indian sports. Immerse yourself in the thrill of live matches, stay updated with scores, fixtures, and player statistics, all in one place."
@@ -75,7 +75,41 @@ const FrontBody = () => {
   paragraphorder="2"
   imgorder="1"
   img="https://source.unsplash.com/random/500x450/?ludo"
+/> */}
+
+<BodyCard
+  header="Enjoy BharatSportX Anywhere"
+  mutedheader="Watch on Any Device"
+  content="Stream on smart TVs, gaming consoles, and more. Download shows for offline viewing. Your entertainment, your way."
+  paragraphorder="1"
+  imgorder="2"
+  img="https://source.unsplash.com/random/500x450/?footballer"
 />
+<BodyCard
+  header="Your Favorite Sports, Anytime"
+  mutedheader="Never Miss a Moment"
+  content="Catch every thrilling sports match on-the-go. Stream on your phone, tablet, or laptop. Total sports excitement, always at hand."
+  paragraphorder="2"
+  imgorder="1"
+  img="https://source.unsplash.com/random/500x450/?cricket"
+/>
+<BodyCard
+  header="Stream Unlimited Sports and More"
+  mutedheader="Your Premier Entertainment Destination"
+  content="Dive into the world of entertainment on any screen. Stream movies, TV shows, and sports events. Your entertainment, unlimited."
+  paragraphorder="1"
+  imgorder="2"
+  img="https://source.unsplash.com/random/500x450/?hockey"
+/>
+<BodyCard
+  header="Entertainment for the Whole Family"
+  mutedheader="Kids' Adventures Included"
+  content="Create kid-friendly profiles for free. Let children explore with their favorite characters. Fun for the whole family, on BharatSportX."
+  paragraphorder="2"
+  imgorder="1"
+  img="https://source.unsplash.com/random/500x450/?ludo"
+/>
+
 
       <div className="bg-black">
         <h1 className="text-4xl p-11 leading-snug lg:text-5xl text-white text-center pt-12 pb-6 font-[Rowdies,sans-serif] lg:font-bold">
