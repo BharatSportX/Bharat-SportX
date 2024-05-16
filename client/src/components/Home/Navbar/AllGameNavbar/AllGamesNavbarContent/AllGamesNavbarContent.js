@@ -15,7 +15,7 @@ function classNames(...classes) {
 
 export default function AllGamesNavbarContent() {
   return (
-    <Disclosure as="nav" className="bg-green-400 mt-3">
+    <Disclosure as="nav" className="bg-green-400 mt-2">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
