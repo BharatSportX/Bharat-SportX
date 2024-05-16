@@ -12,7 +12,7 @@ const FrontBody = () => {
 
   return (
     <div className="">
-      <BodyCard
+      {/* <BodyCard
         header="hey man"
         mutedheader=" for you man"
         content=" here every one comes and loss his money ha ha ha"
@@ -43,8 +43,40 @@ const FrontBody = () => {
         paragraphorder="2"
         imgorder="1"
         img="https://source.unsplash.com/random/500x450/?ludo"
-      />
-      
+      /> */}
+      <BodyCard
+  header="Experience the Thrill of Bharat Sports"
+  mutedheader="Get Ready for Action-Packed Moments"
+  content="Join the excitement as athletes compete fiercely, showcasing their skills and determination. From cricket to hockey, from kabaddi to badminton, Bharat SpotX brings you the best of Indian sports. Immerse yourself in the thrill of live matches, stay updated with scores, fixtures, and player statistics, all in one place."
+  paragraphorder="1"
+  imgorder="2"
+  img="https://source.unsplash.com/random/500x450/?footballer"
+/>
+<BodyCard
+  header="Dive Into the Heart of Bharat Sports"
+  mutedheader="Your Gateway to Sporting Excellence"
+  content="Feel the adrenaline rush as legends are born on the field. Whether it's cricket's glorious sixes, hockey's lightning-fast goals, or kabaddi's strategic brilliance, Bharat SpotX keeps you at the edge of your seat with free updates on matches, scores, and head-to-head stats. Elevate your sports viewing experience with us!"
+  paragraphorder="2"
+  imgorder="1"
+  img="https://source.unsplash.com/random/500x450/?cricket"
+/>
+<BodyCard
+  header="Unleash the Power of Bharat Sports"
+  mutedheader="Where Every Moment Counts"
+  content="Witness the passion, the intensity, and the spirit of Indian sports like never before. With Bharat SpotX, every game becomes a spectacle, every victory a celebration. From cricket fever to hockey hysteria, our comprehensive coverage ensures you never miss a beat. Get ready to be thrilled!"
+  paragraphorder="1"
+  imgorder="2"
+  img="https://source.unsplash.com/random/500x450/?hockey"
+/>
+<BodyCard
+  header="Embark on a Journey with Bharat SpotX"
+  mutedheader="Your Ultimate Sports Companion"
+  content="Indulge in the excitement of Ludo tournaments or immerse yourself in the strategic brilliance of chess. With Bharat SpotX, the thrill of live sports extends beyond the field. Stay ahead of the game with free updates, expert analysis, and exclusive content. Elevate your sports viewing experience with us!"
+  paragraphorder="2"
+  imgorder="1"
+  img="https://source.unsplash.com/random/500x450/?ludo"
+/>
+
       <div className="bg-black">
         <h1 className="text-4xl p-11 leading-snug lg:text-5xl text-white text-center pt-12 pb-6 font-[Rowdies,sans-serif] lg:font-bold">
           FAQ{" "}
