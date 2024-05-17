@@ -3,7 +3,7 @@ import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import logo from "../../../../src/images/logos/sportlogo.svg"
 const navigation = [
-  { name: 'Live Score', href: '/launching-soon', current: true },
+  { name: 'Live Score', href: '/home', current: true },
   { name: 'News', href: '/launching-soon', current: false },
   { name: 'Blog', href: '/launching-soon', current: false },
   { name: 'Videos', href: '/launching-soon', current: false },

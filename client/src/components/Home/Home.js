@@ -1,6 +1,8 @@
 import React from 'react'
 import Navbar from './Navbar/Navbar'
-import LiveUpdates from './LiveUpdatesPages/LiveUpdate'
+import LiveUpdateNav from './LiveUpdatesPages/LiveUpdateNav'
+import LiveUpdatesContent from './LiveUpdatesPages/LiveUpdatesContent'
+import Footer from '../FrontPage/Footer'
 
 
 export default function Home() {
@@ -10,7 +12,9 @@ export default function Home() {
     
       
       <Navbar/>
-      <LiveUpdates/>
+      <LiveUpdateNav/>
+      <LiveUpdatesContent/>
+     <Footer/>
       </React.Fragment>
     </div>
     
