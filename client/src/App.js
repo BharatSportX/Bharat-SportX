@@ -23,6 +23,7 @@ import H2H from './components/ALLSports/Football/HaedToHead/H2H';
 import Events from './components/ALLSports/Football/Events/Events';
 import Error from './components/DeafultErrorPage/Error';
 import AllGameNavbar from './components/Home/Navbar/AllGameNavbar/AllGameNavbar';
+import LaunchingSoon from './components/LaunchingSoonPage/LaunchingSoon';
 function App() {
   const router=createBrowserRouter([
     {
@@ -91,6 +92,10 @@ function App() {
     {
       path:'/allgamesnav',
       element:<><AllGameNavbar/></>
+    },
+    {
+      path:'/launching-soon',
+      element:<><LaunchingSoon/></>
     },
     {
       path: '*',
