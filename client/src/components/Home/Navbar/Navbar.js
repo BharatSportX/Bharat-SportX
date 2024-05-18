@@ -40,7 +40,7 @@ const Navbar = () => {
               Home
             </NavLink>
             <Link
-              to="/allgamesnav"
+              to="/LeagueHome"
               className="hidden dark:hover:text-white hover:text-black xl:block xl:font-semibold xl:text-gray-600 xl:dark:text-gray-300 xl:text-[1.1rem]"
             >
               Matches
@@ -221,106 +221,100 @@ const Navbar = () => {
 
       {/* Mobile navbar */}
 
-      <div className=" xl:hidden fixed bottom-0 left-0 z-50 w-full h-16 bg-white border-t border-gray-200 dark:bg-gray-900 dark:border-gray-600">
-        <div className="grid h-full max-w-lg grid-cols-5 m-auto   font-medium md:flex md:justify-center">
-          <NavLink
-            role="button"
-            // type="button"
-            to="/home"
-            className="inline-flex flex-col items-center justify-center px-5 md:px-14  lg:px-16 hover:bg-gray-50 dark:hover:bg-gray-800 group"
+      <div className="xl:hidden fixed bottom-0 left-0 z-50 w-full h-16 bg-white border-t border-gray-200 dark:bg-gray-900 dark:border-gray-600">
+      <div className="grid h-full max-w-lg grid-cols-5 m-auto font-medium md:flex md:justify-center">
+        <NavLink
+          to="/home"
+          className={({ isActive }) =>
+            `inline-flex flex-col items-center justify-center px-5 md:px-14 lg:px-16 hover:bg-gray-50 dark:hover:bg-gray-800 group ${
+              isActive ? 'text-red-600 dark:text-red-500' : 'text-gray-500 dark:text-gray-400'
+            }`
+          }
+        >
+          <svg
+            className="size-4 mb-1 group-hover:text-red-600 dark:group-hover:text-red-500"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 20 20"
           >
-            <svg
-              className="size-4 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-red-600 dark:group-hover:text-red-500"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z" />
-            </svg>
-            <span className="text-xs text-gray-500 dark:text-gray-400 group-hover:text-red-600 dark:group-hover:text-red-500">
-              Home
-            </span>
-          </NavLink>
-          <NavLink
-            role="button"
-            // type="button"
-            to="/allgamesnav"
-            className="inline-flex flex-col items-center justify-center px-5 md:px-14  lg:px-16 hover:bg-gray-50 dark:hover:bg-gray-800 group"
-          >
-            <svg
-              className="size-5 mb-1 text-gray-500 dark:text-gray-400
-            group-hover:text-red-600 dark:group-hover:text-red-500"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M5 5a1 1 0 0 0 1-1 1 1 0 1 1 2 0 1 1 0 0 0 1 1h1a1 1 0 0 0 1-1 1 1 0 1 1 2 0 1 1 0 0 0 1 1h1a1 1 0 0 0 1-1 1 1 0 1 1 2 0 1 1 0 0 0 1 1 2 2 0 0 1 2 2v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a2 2 0 0 1 2-2ZM3 19v-7a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Zm6.01-6a1 1 0 1 0-2 0 1 1 0 0 0 2 0Zm2 0a1 1 0 1 1 2 0 1 1 0 0 1-2 0Zm6 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0Zm-10 4a1 1 0 1 1 2 0 1 1 0 0 1-2 0Zm6 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0Zm2 0a1 1 0 1 1 2 0 1 1 0 0 1-2 0Z"
-                clip-rule="evenodd"
-              />
-            </svg>
-            <span className="  text-xs text-gray-500 dark:text-gray-400 group-hover:text-red-600 dark:group-hover:text-red-500">
-              Matches
-            </span>
-          </NavLink>
-          <span className="inline-flex flex-col items-center justify-center px-5 md:px-14  lg:px-16  group-hover:text-red-600 dark:group-hover:text-red-500 group pt-2">
-            <NavDrawer />
-          </span>
-          <NavLink
-            role="button"
-            // type="button"
-            to="/"
-            className="inline-flex flex-col items-center justify-center px-5 md:px-14  lg:px-16 hover:bg-gray-50 dark:hover:bg-gray-800 group"
-          >
-            <svg
-              viewBox="0 0 512 512"
-              className="size-5 mb-1 text-gray-500 dark:text-gray-400
-            group-hover:text-red-600 dark:group-hover:text-red-500"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-            >
-              <path d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c39.77 0 72 32.24 72 72S295.8 272 256 272c-39.76 0-72-32.24-72-72S216.2 128 256 128zM256 448c-52.93 0-100.9-21.53-135.7-56.29C136.5 349.9 176.5 320 224 320h64c47.54 0 87.54 29.88 103.7 71.71C356.9 426.5 308.9 448 256 448z" />
-            </svg>
-            <span className="text-xs text-gray-500 dark:text-gray-400 group-hover:text-red-600 dark:group-hover:text-red-500">
-              Players
-            </span>
-          </NavLink>
-          <NavLink
-            role="button"
-            // type="button"
-            to="/"
-            className="inline-flex flex-col items-center justify-center px-5 md:px-14  lg:px-16 hover:bg-gray-50 dark:hover:bg-gray-800 group"
-          >
-            <svg
-              className="size-6 mb-0 text-gray-500 dark:text-gray-400
-            group-hover:text-red-600 dark:group-hover:text-red-500"
-              // version="1.1"
-              viewBox="0 0 512 512"
-              // xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-            >
-              <path
-                // stroke="currentColor"
-                // stroke-linecap="round"
-                // stroke-linejoin="round"
-                // stroke-width="22"
+            <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z" />
+          </svg>
+          <span className="text-xs group-hover:text-red-600 dark:group-hover:text-red-500">Home</span>
+        </NavLink>
 
-                d="M377.8,100.1C332.9,86.8,318.8,112,256,112s-76.9-25.3-121.8-11.9c-44.9,13.3-67.3,60.4-88.5,148.8  c-21.2,88.5-17.3,152.4,7.7,164.3c25,11.9,53.2-15.4,80.1-49.1C155.3,337.7,166.2,336,256,336c89.7,0,99,0.7,122.5,28.1  c26.9,33.7,55.1,61,80.1,49.1c25-11.9,28.9-75.8,7.7-164.3C445.1,160.5,422.6,113.5,377.8,100.1z M128.2,263.7  c-21.7,0-39.3-17.7-39.3-39.6c0-21.8,17.6-39.6,39.3-39.6c21.7,0,39.3,17.8,39.3,39.6S149.9,263.7,128.2,263.7z M309.7,243.6  c-10.6,0-19.3-8.7-19.3-19.4c0-10.7,8.7-19.4,19.3-19.4c10.7,0,19.4,8.7,19.4,19.4C329,234.9,320.4,243.6,309.7,243.6z M351.9,286  c-10.6,0-19.3-8.7-19.3-19.4c0-10.8,8.7-19.4,19.3-19.4c10.7,0,19.4,8.7,19.4,19.4C371.3,277.4,362.6,286,351.9,286z M351.9,201.1  c-10.6,0-19.3-8.7-19.3-19.4c0-10.7,8.7-19.4,19.3-19.4c10.7,0,19.4,8.7,19.4,19.4C371.3,192.4,362.6,201.1,351.9,201.1z   M394.2,243.6c-10.7,0-19.3-8.7-19.3-19.4c0-10.7,8.7-19.4,19.3-19.4c10.6,0,19.3,8.7,19.3,19.4  C413.5,234.9,404.9,243.6,394.2,243.6z"
-              />
-            </svg>
-            <span className="text-xs mt-0.5 text-gray-500 dark:text-gray-400 group-hover:text-red-600 dark:group-hover:text-red-500">
-              Game
-            </span>
-          </NavLink>
-        </div>
+        <NavLink
+          to="/LeagueHome"
+          className={({ isActive }) =>
+            `inline-flex flex-col items-center justify-center px-5 md:px-14 lg:px-16 hover:bg-gray-50 dark:hover:bg-gray-800 group ${
+              isActive ? 'text-red-600 dark:text-red-500' : 'text-gray-500 dark:text-gray-400'
+            }`
+          }
+        >
+          <svg
+            className="size-5 mb-1 group-hover:text-red-600 dark:group-hover:text-red-500"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fillRule="evenodd"
+              d="M5 5a1 1 0 0 0 1-1 1 1 0 1 1 2 0 1 1 0 0 0 1 1h1a1 1 0 0 0 1-1 1 1 0 1 1 2 0 1 1 0 0 0 1 1h1a1 1 0 0 0 1-1 1 1 0 1 1 2 0 1 1 0 0 0 1 1 2 2 0 0 1 2 2v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a2 2 0 0 1 2-2ZM3 19v-7a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Zm6.01-6a1 1 0 1 0-2 0 1 1 0 0 0 2 0Zm2 0a1 1 0 1 1 2 0 1 1 0 0 1-2 0Zm6 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0Zm-10 4a1 1 0 1 1 2 0 1 1 0 0 1-2 0Zm6 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0Zm2 0a1 1 0 1 1 2 0 1 1 0 0 1-2 0Z"
+              clipRule="evenodd"
+            />
+          </svg>
+          <span className="text-xs group-hover:text-red-600 dark:group-hover:text-red-500">Matches</span>
+        </NavLink>
+
+        <span className="inline-flex flex-col items-center justify-center px-5 md:px-14 lg:px-16 group-hover:text-red-600 dark:group-hover:text-red-500 group pt-2">
+          <NavDrawer />
+        </span>
+
+        <NavLink
+          to="/players"
+          className={({ isActive }) =>
+            `inline-flex flex-col items-center justify-center px-5 md:px-14 lg:px-16 hover:bg-gray-50 dark:hover:bg-gray-800 group ${
+              isActive ? 'text-red-600 dark:text-red-500' : 'text-gray-500 dark:text-gray-400'
+            }`
+          }
+        >
+          <svg
+            viewBox="0 0 512 512"
+            className="size-5 mb-1 group-hover:text-red-600 dark:group-hover:text-red-500"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+          >
+            <path d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c39.77 0 72 32.24 72 72S295.8 272 256 272c-39.76 0-72-32.24-72-72S216.2 128 256 128zM256 448c-52.93 0-100.9-21.53-135.7-56.29C136.5 349.9 176.5 320 224 320h64c47.54 0 87.54 29.88 103.7 71.71C356.9 426.5 308.9 448 256 448z" />
+          </svg>
+          <span className="text-xs group-hover:text-red-600 dark:group-hover:text-red-500">Players</span>
+        </NavLink>
+
+        <NavLink
+          to="/games"
+          className={({ isActive }) =>
+            `inline-flex flex-col items-center justify-center px-5 md:px-14 lg:px-16 hover:bg-gray-50 dark:hover:bg-gray-800 group ${
+              isActive ? 'text-red-600 dark:text-red-500' : 'text-gray-500 dark:text-gray-400'
+            }`
+          }
+        >
+          <svg
+            className="size-6 mb-0 group-hover:text-red-600 dark:group-hover:text-red-500"
+            viewBox="0 0 512 512"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+          >
+            <path
+              d="M377.8,100.1C332.9,86.8,318.8,112,256,112s-76.9-25.3-121.8-11.9c-44.9,13.3-67.3,60.4-88.5,148.8  c-21.2,88.5-17.3,152.4,7.7,164.3c25,11.9,53.2-15.7,87.5-40.3c34.3-24.7,46.2-39.9,115.2-39.9s80.9,15.2,115.2,39.9  c34.3,24.7,62.5,52.2,87.5,40.3c25-11.9,28.9-75.8,7.7-164.3C445.1,160.5,422.7,113.4,377.8,100.1z M256,307.1  c-25.6,0-46.4-20.8-46.4-46.4s20.8-46.4,46.4-46.4s46.4,20.8,46.4,46.4S281.6,307.1,256,307.1z"
+            />
+          </svg>
+          <span className="text-xs group-hover:text-red-600 dark:group-hover:text-red-500">Games</span>
+        </NavLink>
       </div>
+    </div>
     </nav>
   );
 };
