@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import './LeagueHomestyles.css'
 export default function LeaguesHome() {
     return (
-        <section className=" dark:bg-gray-900 h-full overflow-x-hidden relative z-[-10] top-16 section-card ">
-            <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16">
+        <section className=" dark:bg-gray-900 h-full relative  top-16 section-card ">
+            <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 ">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {/* World Cup Card */}
                     <div className=" card bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12 mb-8 ">

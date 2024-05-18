@@ -1,9 +1,11 @@
 .section-card {
     background-color: #dff496;
+
   }
   
   .card {
     transition: all 0.3s ease-in-out;
+    
   }
   
   .card:hover {
