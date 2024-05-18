@@ -1,10 +1,9 @@
 import React from 'react'
 import Navbar from '../Navbar'
 import AllGamesNavbarContent from './AllGamesNavbarContent/AllGamesNavbarContent'
-import LeaguesHome from '../../../ALLSports/Football/Competitions/Leagues/LeaguesHome'
-import LiveUpdates from '../../LiveUpdatesPages/LiveUpdateNav'
+
 import Footer from '../../../FrontPage/Footer'
-import LiveUpdatesContent from '../../LiveUpdatesPages/LiveUpdatesContent'
+
 
 export default function AllGameNavbar() {
   return (

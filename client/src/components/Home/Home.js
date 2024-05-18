@@ -1,7 +1,6 @@
 import React from 'react'
 import Navbar from './Navbar/Navbar'
-import LiveUpdateNav from './LiveUpdatesPages/LiveUpdateNav'
-import LiveUpdatesContent from './LiveUpdatesPages/LiveUpdatesContent'
+
 import Footer from '../FrontPage/Footer'
 
 
