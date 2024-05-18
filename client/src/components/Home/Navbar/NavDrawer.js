@@ -49,7 +49,7 @@ const NavDrawer = () => {
           onClick={toggleDrawer}
         >
           <span className="absolute w-8 h-1 -translate-x-1/2 bg-gray-300 rounded-lg top-3 left-1/2 dark:bg-gray-600"></span>
-          <h5 className="inline-flex items-center text-base text-gray-500 dark:text-white font-medium">
+          <h5 className="inline-flex items-center text-base text-gray-600 dark:text-white font-medium">
             <svg
               className=" size-5 mr-2"
               aria-hidden="true"
@@ -63,8 +63,8 @@ const NavDrawer = () => {
           </h5>
         </div>
         <div className="grid grid-cols-3 gap-4 p-4 xl:grid-cols-4">
-          <div className="p-4 rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 dark:hover:bg-opacity-15 dark:bg-gray-800">
-            <div className="flex justify-center items-center p-2 mx-auto mb-2 bg-gray-200 dark:bg-gray-700 rounded-full w-[48px] h-[48px] max-w-[48px] max-h-[48px]">
+          <div className="p-4 rounded-lg cursor-pointer bg-gray-100 hover:bg-gray-200 dark:hover:bg-opacity-15 dark:bg-gray-800">
+            <div className="flex justify-center items-center p-2 mx-auto mb-2 bg-gray-300 dark:bg-gray-700 rounded-full w-[48px] h-[48px] max-w-[48px] max-h-[48px]">
               <svg
                 viewBox="0 0 640 512"
                 xmlns="http://www.w3.org/2000/svg"
@@ -78,8 +78,8 @@ const NavDrawer = () => {
               Premium
             </div>
           </div>
-          <div className="p-4 rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 dark:hover:bg-opacity-15 dark:bg-gray-800">
-            <div className="flex justify-center items-center p-2 mx-auto mb-2 bg-gray-200 dark:bg-gray-700 rounded-full w-[48px] h-[48px] max-w-[48px] max-h-[48px]">
+          <div className="p-4 rounded-lg cursor-pointer bg-gray-100 hover:bg-gray-200 dark:hover:bg-opacity-15 dark:bg-gray-800">
+            <div className="flex justify-center items-center p-2 mx-auto mb-2 bg-gray-300 dark:bg-gray-700 rounded-full w-[48px] h-[48px] max-w-[48px] max-h-[48px]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="inline size-6 text-black dark:text-white"
@@ -96,8 +96,8 @@ const NavDrawer = () => {
               Top News
             </div>
           </div>
-          <div className="p-4 rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 dark:hover:bg-opacity-15 dark:bg-gray-800">
-            <div className="flex justify-center items-center p-2 mx-auto mb-2 bg-gray-200 dark:bg-gray-700 rounded-full w-[48px] h-[48px] max-w-[48px] max-h-[48px]">
+          <div className="p-4 rounded-lg cursor-pointer bg-gray-100 hover:bg-gray-200 dark:hover:bg-opacity-15 dark:bg-gray-800">
+            <div className="flex justify-center items-center p-2 mx-auto mb-2 bg-gray-300 dark:bg-gray-700 rounded-full w-[48px] h-[48px] max-w-[48px] max-h-[48px]">
               <svg
                 className="inline size-8 text-black dark:text-white"
                 fill="none"
@@ -126,8 +126,8 @@ const NavDrawer = () => {
               Match Predictor
             </div>
           </div>
-          <div className="p-4 rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 dark:hover:bg-opacity-15 dark:bg-gray-800">
-            <div className="flex justify-center items-center p-2 mx-auto mb-2 bg-gray-200 dark:bg-gray-700 rounded-full w-[48px] h-[48px] max-w-[48px] max-h-[48px]">
+          <div className="p-4 rounded-lg cursor-pointer bg-gray-100 hover:bg-gray-200 dark:hover:bg-opacity-15 dark:bg-gray-800">
+            <div className="flex justify-center items-center p-2 mx-auto mb-2 bg-gray-300 dark:bg-gray-700 rounded-full w-[48px] h-[48px] max-w-[48px] max-h-[48px]">
               <svg
                 className="inline size-7 text-black dark:text-white"
                 xmlns="http://www.w3.org/2000/svg"
@@ -143,8 +143,8 @@ const NavDrawer = () => {
               Settings
             </div>
           </div>
-          <div className="p-4 rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 dark:hover:bg-opacity-15 dark:bg-gray-800">
-            <div className="flex justify-center items-center p-2 mx-auto mb-2 bg-gray-200 dark:bg-gray-700 rounded-full w-[48px] h-[48px] max-w-[48px] max-h-[48px]">
+          <div className="p-4 rounded-lg cursor-pointer bg-gray-100 hover:bg-gray-200 dark:hover:bg-opacity-15 dark:bg-gray-800">
+            <div className="flex justify-center items-center p-2 mx-auto mb-2 bg-gray-300 dark:bg-gray-700 rounded-full w-[48px] h-[48px] max-w-[48px] max-h-[48px]">
               <svg
                 className="inline size-6 text-black dark:text-white"
                 aria-hidden="true"
@@ -161,27 +161,21 @@ const NavDrawer = () => {
           </div>
         </div>
         <div className="p-4  ">
-          <h5 className="inline-flex mb-2 items-center text-base text-gray-500 dark:text-white font-medium">
+          <h5 className="inline-flex mb-2 items-center text-base text-gray-600 dark:text-white font-medium">
             <svg
-              enable-background="new 0 0 48 48"
-              className=" size-7 mr-2"
-              height="48px"
-              id="Layer_1"
-              version="1.1"
-              viewBox="0 0 48 48"
-              width="48px"
+              viewBox="0 0 64 64"
+              className=" size-6 mr-2"
               fill="currentColor"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path
-                clip-rule="evenodd"
-                d="M36,18L36,18c0,5.59-3.827,10.272-9,11.606V40h6c0.553,0,1,0.448,1,1  c0,0.553-0.447,1-1,1H15c-0.553,0-1-0.447-1-1c0-0.552,0.447-1,1-1h6V29.606C15.827,28.272,12,23.59,12,18l0,0c-3.866,0-7-3.134-7-7  V9c0-0.552,0.447-1,1-1h6V7c0-1.657-1.343-3-3-3l0,0C8.447,4,8,3.552,8,3s0.447-1,1-1l0,0l0,0h30l0,0l0,0c0.553,0,1,0.448,1,1  s-0.447,1-1,1l0,0c-1.657,0-3,1.343-3,3l0,0v1h6c0.553,0,1,0.448,1,1v2C43,14.866,39.866,18,36,18z M23,40h2V29.949  C24.67,29.977,24.338,30,24,30s-0.67-0.023-1-0.051V40z M7,10v1c0,2.762,2.238,5,5,5v-6H7z M12.978,4C13.61,4.838,14,5.869,14,7l0,0  v11c0,5.523,4.477,10,10,10c5.522,0,10-4.477,10-10V7l0,0l0,0c0-1.131,0.39-2.162,1.022-3H12.978z M41,10h-5v6c2.762,0,5-2.238,5-5  V10z M12,44h24c0.553,0,1,0.448,1,1c0,0.553-0.447,1-1,1H12c-0.553,0-1-0.447-1-1C11,44.448,11.447,44,12,44z"
-                fill-rule="evenodd"
-              />
+              <g id="Trophy">
+                <path d="M48.0632,55.4387H15.8288a3.03,3.03,0,0,0-3.03,3.03v3.0323a.9121.9121,0,0,0,.9121.9124h36.47a.9124.9124,0,0,0,.9124-.9124V58.4691A3.03,3.03,0,0,0,48.0632,55.4387Z" />
+                <path d="M55.6941,6.1826H50.64V4.5367A1.9506,1.9506,0,0,0,48.69,2.5861H15.5432a1.9506,1.9506,0,0,0-1.9507,1.9506V6.1826H8.3064a4.5171,4.5171,0,0,0-4.5117,4.5117v2.9228a13.4035,13.4035,0,0,0,6.5009,11.6592,13.212,13.212,0,0,0,5.708,1.7373q.0645.0043.129.0044a1.7133,1.7133,0,0,0,.2121-.02,18.592,18.592,0,0,0,8.12,7.1725,7.1072,7.1072,0,0,1,4.0617,6.5071v3.3494A2.2628,2.2628,0,0,1,26.2639,46.29H21.5862a2.7452,2.7452,0,0,0-2.7451,2.7452v3.7528H45.3918V49.0347A2.7452,2.7452,0,0,0,42.6465,46.29H37.9687a2.263,2.263,0,0,1-2.2629-2.2629V40.6772a7.1071,7.1071,0,0,1,4.062-6.5071,18.5922,18.5922,0,0,0,8.1082-7.1523c.04,0,.0805-.0015.1208-.0042a13.2033,13.2033,0,0,0,5.707-1.7373,13.4039,13.4039,0,0,0,6.502-11.6592V10.6943A4.5171,4.5171,0,0,0,55.6941,6.1826ZM12.0486,22.2465a9.896,9.896,0,0,1-4.7539-8.6294V10.6943A1.0128,1.0128,0,0,1,8.3064,9.6826h5.2861v7.62a18.4666,18.4666,0,0,0,.9871,5.9428A9.5264,9.5264,0,0,1,12.0486,22.2465ZM39.1211,18.18l-2.13,1.5474a1.429,1.429,0,0,0-.519,1.5979l.8132,2.5034a1.4293,1.4293,0,0,1-2.1994,1.5981l-2.13-1.5472a1.4293,1.4293,0,0,0-1.68,0l-2.13,1.5472a1.4293,1.4293,0,0,1-2.1994-1.5981l.8134-2.5034a1.4293,1.4293,0,0,0-.5193-1.5979L25.112,18.18a1.4293,1.4293,0,0,1,.84-2.5857h2.6321a1.4293,1.4293,0,0,0,1.3594-.9875l.8135-2.5034a1.4293,1.4293,0,0,1,2.7187,0l.8135,2.5034a1.43,1.43,0,0,0,1.3594.9875H38.281A1.4294,1.4294,0,0,1,39.1211,18.18Zm17.5847-4.563a9.8973,9.8973,0,0,1-4.7549,8.63,9.5091,9.5091,0,0,1-2.2764.9368,18.4662,18.4662,0,0,0,.9659-5.8815v-7.62h5.0537a1.0128,1.0128,0,0,1,1.0117,1.0117Z" />
+              </g>
             </svg>
             <span className="text-2xl font-[600] ">My Matches</span>
           </h5>
-          <div className="text-black dark:text-gray-400 hover:bg-gray-50 hover:bg-opacity-10 rounded-lg">
+          <div className="text-black dark:text-gray-400 hover:bg-gray-700  dark:hover:bg-gray-50 hover:bg-opacity-10  rounded-lg">
             <span className="py-3 px-1  inline-flex items-center text-xl">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
