@@ -10,7 +10,7 @@ export default function Home() {
       <LiveUpdatesContent /> */}
       <div>
         <h1 className='text-center text-red-600 text-4xl md:text-6xl font-bold shadow-lg'>
-          Bara Boka choda thik kore Kaj korbi
+          Por por Kaj kor thik kore  nale emon khisit marbo na nijer nam ule jabi
         </h1>
       </div>
       <Footer />
