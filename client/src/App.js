@@ -8,12 +8,12 @@ import FrontPage from './components/FrontPage/FrontPage';
 
 import Home from './components/Home/Home';
 import LeaguesHome from './components/ALLSports/Football/Competitions/Leagues/LeaguesHome';
-import Leagues from './components/ALLSports/Football/Competitions/Leagues/Leagues';
+import Leagues from "./components/ALLSports/Football/Competitions/Leagues/Leagues"
 import Cups from './components/ALLSports/Football/Competitions/Cups/Cup';
 import CupPageDetails from './components/ALLSports/Football/Competitions/Cups/CupPageDetails';
 import LeaguesDetails from './components/ALLSports/Football/Competitions/Leagues/LeaguesDetails';
 import  Statistics from "./components/ALLSports/Football/Statistics/Statistics"
-import Navbar from './components/Home/Navbar/Navbar';
+
 import TeamStatistics from './components/ALLSports/Football/Team Statistics/TeamStatistics';
 import Standings from './components/ALLSports/Football/Standings/Standings';
 import Prediction from './components/ALLSports/Football/Predictions/Prediction';
