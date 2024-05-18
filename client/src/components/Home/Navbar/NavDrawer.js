@@ -7,6 +7,10 @@ const NavDrawer = () => {
     setIsOpen(!isOpen);
   };
 
+  const closeDrawer = () => {
+    setIsOpen(false);
+  };
+
   return (
     <div>
       {/* Button to toggle drawer */}
@@ -14,12 +18,10 @@ const NavDrawer = () => {
         <button onClick={toggleDrawer} className="">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className=" mb-2  text-gray-500 dark:text-gray-400
-            group-hover:text-red-600 dark:group-hover:text-red-500"
+            className=" mb-2  text-gray-500 dark:text-gray-400 group-hover:text-red-600 dark:group-hover:text-red-500"
             width="44"
             height="44"
             fill="gray"
-            class="bi bi-arrow-up-circle-fill"
             viewBox="0 0 16 16"
           >
             <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z" />
@@ -27,21 +29,29 @@ const NavDrawer = () => {
         </button>
       </div>
 
+      {/* Dark overlay */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-20 z-30"
+          onClick={closeDrawer}
+        ></div>
+      )}
+
       {/* Drawer component */}
       <div
-        className={`fixed z-40 w-full overflow-y-auto bg-white border-t border-gray-200 rounded-t-lg dark:border-gray-700 dark:bg-gray-800 transition-transform transform ${
+        className={`fixed z-40 w-full overflow-y-auto bg-white border-t border-gray-200 rounded-t-lg dark:border-gray-700 dark:bg-gray-900 transition-transform transform ${
           isOpen ? "translate-y-0" : "translate-y-full"
         } bottom-0 left-0 right-0 xl:hidden`}
-        tabindex="-1"
+        tabIndex="-1"
       >
         <div
           className="p-4 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700"
           onClick={toggleDrawer}
         >
           <span className="absolute w-8 h-1 -translate-x-1/2 bg-gray-300 rounded-lg top-3 left-1/2 dark:bg-gray-600"></span>
-          <h5 className="inline-flex items-center text-base text-gray-500 dark:text-gray-400 font-medium">
+          <h5 className="inline-flex items-center text-base text-gray-500 dark:text-white font-medium">
             <svg
-              className="w-4 h-4 mr-2"
+              className=" size-5 mr-2"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
@@ -49,31 +59,94 @@ const NavDrawer = () => {
             >
               <path d="M6.143 0H1.857A1.857 1.857 0 0 0 0 1.857v4.286C0 7.169.831 8 1.857 8h4.286A1.857 1.857 0 0 0 8 6.143V1.857A1.857 1.857 0 0 0 6.143 0Zm10 0h-4.286A1.857 1.857 0 0 0 10 1.857v4.286C10 7.169 10.831 8 11.857 8h4.286A1.857 1.857 0 0 0 18 6.143V1.857A1.857 1.857 0 0 0 16.143 0Zm-10 10H1.857A1.857 1.857 0 0 0 0 11.857v4.286C0 17.169.831 18 1.857 18h4.286A1.857 1.857 0 0 0 8 16.143v-4.286A1.857 1.857 0 0 0 6.143 10ZM17 13h-2v-2a1 1 0 0 0-2 0v2h-2a1 1 0 0 0 0 2h2v2a1 1 0 0 0 2 0v-2h2a1 1 0 0 0 0-2Z" />
             </svg>
-            Add widget
+            <span className="text-2xl font-[600]">Browse</span>
           </h5>
         </div>
         <div className="grid grid-cols-3 gap-4 p-4 xl:grid-cols-4">
-          <div className="p-4 rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 dark:hover:bg-gray-600 dark:bg-gray-700">
-            <div className="flex justify-center items-center p-2 mx-auto mb-2 bg-gray-200 dark:bg-gray-600 rounded-full w-[48px] h-[48px] max-w-[48px] max-h-[48px]">
+          <div className="p-4 rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 dark:hover:bg-opacity-15 dark:bg-gray-800">
+            <div className="flex justify-center items-center p-2 mx-auto mb-2 bg-gray-200 dark:bg-gray-700 rounded-full w-[48px] h-[48px] max-w-[48px] max-h-[48px]">
               <svg
-                className="inline w-5 h-5 text-gray-500 dark:text-gray-400"
-                aria-hidden="true"
+                viewBox="0 0 640 512"
                 xmlns="http://www.w3.org/2000/svg"
+                className="inline size-6 text-black dark:text-white"
                 fill="currentColor"
-                viewBox="0 0 22 21"
               >
-                <path d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z" />
-                <path d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z" />
+                <path d="M528 448H112c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h416c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm64-320c-26.5 0-48 21.5-48 48 0 7.1 1.6 13.7 4.4 19.8L476 239.2c-15.4 9.2-35.3 4-44.2-11.6L350.3 85C361 76.2 368 63 368 48c0-26.5-21.5-48-48-48s-48 21.5-48 48c0 15 7 28.2 17.7 37l-81.5 142.6c-8.9 15.6-28.9 20.8-44.2 11.6l-72.3-43.4c2.7-6 4.4-12.7 4.4-19.8 0-26.5-21.5-48-48-48S0 149.5 0 176s21.5 48 48 48c2.6 0 5.2-.4 7.7-.8L128 416h384l72.3-192.8c2.5.4 5.1.8 7.7.8 26.5 0 48-21.5 48-48s-21.5-48-48-48z" />
               </svg>
             </div>
-            <div className="font-medium text-center text-gray-500 dark:text-gray-400">
-              Chart
+            <div className="font-medium text-center text-black dark:text-gray-400">
+              Premium
             </div>
           </div>
-          <div className="p-4 rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 dark:hover:bg-gray-600 dark:bg-gray-700">
-            <div className="flex justify-center items-center p-2 mx-auto mb-2 bg-gray-200 dark:bg-gray-600 rounded-full w-[48px] h-[48px] max-w-[48px] max-h-[48px]">
+          <div className="p-4 rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 dark:hover:bg-opacity-15 dark:bg-gray-800">
+            <div className="flex justify-center items-center p-2 mx-auto mb-2 bg-gray-200 dark:bg-gray-700 rounded-full w-[48px] h-[48px] max-w-[48px] max-h-[48px]">
               <svg
-                className="inline w-5 h-5 text-gray-500 dark:text-gray-400"
+                xmlns="http://www.w3.org/2000/svg"
+                className="inline size-6 text-black dark:text-white"
+                width="16"
+                height="16"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+              >
+                <path d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .3-.05.654-.238.972h.738a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 1 1 0v9a1.5 1.5 0 0 1-1.5 1.5H1.497A1.497 1.497 0 0 1 0 13.5zM12 14c.37 0 .654-.211.853-.441.092-.106.147-.279.147-.531V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5v11c0 .278.223.5.497.5z" />
+                <path d="M2 3h10v2H2zm0 3h4v3H2zm0 4h4v1H2zm0 2h4v1H2zm5-6h2v1H7zm3 0h2v1h-2zM7 8h2v1H7zm3 0h2v1h-2zm-3 2h2v1H7zm3 0h2v1h-2zm-3 2h2v1H7zm3 0h2v1h-2z" />
+              </svg>
+            </div>
+            <div className="font-medium text-center text-black dark:text-gray-400">
+              Top News
+            </div>
+          </div>
+          <div className="p-4 rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 dark:hover:bg-opacity-15 dark:bg-gray-800">
+            <div className="flex justify-center items-center p-2 mx-auto mb-2 bg-gray-200 dark:bg-gray-700 rounded-full w-[48px] h-[48px] max-w-[48px] max-h-[48px]">
+              <svg
+                className="inline size-8 text-black dark:text-white"
+                fill="none"
+                viewBox="0 0 164 125"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19.2329 89.0831C17.3341 89.4211 15.7432 89.7559 14.1371 89.9817C7.06966 90.976 1.51901 86.5687 0.48068 79.5288C-1.0289 69.307 6.73229 58.1139 14.141 55.0389C16.6482 53.9986 19.5794 53.9795 23.0364 53.3665C32.2494 32.1615 49.7618 21.7934 73.5423 20.3488C73.8921 16.4462 74.238 12.5935 74.6022 8.54059C73.5751 8.11988 72.3431 7.95977 71.6796 7.26077C70.7134 6.24344 69.5996 4.84016 69.5957 3.59771C69.5918 2.53116 70.9221 0.709891 71.8974 0.535306C74.597 0.0535535 77.542 -0.276629 80.1608 0.325233C83.5048 1.0938 83.9852 3.75262 81.8548 6.48561C81.4171 6.9389 81.1341 7.51899 81.0462 8.14288C81.224 11.6156 81.5273 15.081 81.7616 18.179C88.0211 18.7375 94.0055 19.0381 99.9211 19.8421C119.273 22.472 132.088 33.3508 139.077 51.3896C139.194 51.6909 139.333 51.9849 139.478 52.2744C139.549 52.3747 139.633 52.4656 139.727 52.5448C142.943 52.5448 146.247 52.1103 149.393 52.6347C156.138 53.7583 161.178 57.4004 162.853 64.3477C164.528 71.2951 161.862 77.0616 156.759 81.6435C151.742 86.1493 145.621 87.389 138.993 86.5404C138.746 86.7453 138.532 86.987 138.359 87.2571C130.949 104.691 117.203 114.915 99.7662 120.658C84.6227 125.684 68.3154 126.026 52.9746 121.639C36.0424 116.958 23.8017 107.182 19.2329 89.0831ZM74.3653 116.033C77.9548 115.728 81.5686 115.59 85.1292 115.09C99.4118 113.083 112.05 107.628 121.744 96.6153C138.759 77.2881 134.524 42.1123 104.846 32.3558C93.8566 28.746 82.3857 26.5243 70.7233 27.2725C57.6687 28.1106 46.2832 33.0968 37.8617 43.4256C30.0513 53.0022 26.6062 64.3694 26.3233 76.5471C25.9125 94.2223 34.5276 106.232 51.1808 112.095C58.6448 114.649 66.4731 115.979 74.362 116.032L74.3653 116.033ZM20.0205 60.3756C19.7421 60.3376 19.4597 60.3412 19.1824 60.3861C12.7641 62.2757 6.45466 73.2929 8.09026 79.6823C8.58579 81.6199 9.81316 82.7712 11.7592 82.8092C13.8765 82.8512 16.0005 82.5894 17.5501 82.4949C18.4092 74.7881 19.2099 67.6156 20.0185 60.3742L20.0205 60.3756ZM141.736 77.21C145.278 77.15 148.678 75.8064 151.305 73.4289C154.874 70.1905 155.296 65.2817 152.224 62.4522C149.242 59.7061 145.667 58.9152 141.736 59.7146V77.21Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M84.8075 82.0252C86.4018 82.3193 88.1725 82.2825 89.5331 83.0097C90.1516 83.3495 90.6946 83.8115 91.129 84.3676C91.5634 84.9238 91.8802 85.5624 92.06 86.2448C92.3344 88.1095 90.7172 89.0671 88.9411 89.2994C88.0814 89.4143 87.2076 89.3635 86.367 89.1498C84.8505 88.6937 83.2428 88.6309 81.6954 88.9674C80.148 89.304 78.7116 90.0287 77.5215 91.0734C76.1714 92.182 74.5896 93.0209 73.233 91.3781C72.0319 89.9236 72.5832 88.2348 73.7817 86.9346C75.1549 85.3673 76.8518 84.1166 78.7554 83.269C80.659 82.4214 82.7239 81.9971 84.8075 82.0252Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M57.7186 52.5112C61.4295 52.6392 63.7503 55.2876 63.5495 59.1645C63.3893 62.2533 60.9084 64.7434 58.1203 64.6154C54.9698 64.4703 52.4724 61.3206 52.607 57.6582C52.7442 53.9453 54.2853 52.3924 57.7186 52.5112Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M93.575 57.3327C93.5684 54.2361 94.7564 52.8328 97.4244 52.7856C100.873 52.7245 103.039 54.689 102.96 57.8066C102.891 60.4916 100.78 62.7678 98.3 62.8282C95.4672 62.8971 93.5822 60.7024 93.575 57.3327Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+            <div className="font-medium text-center text-black dark:text-gray-400">
+              Match Predictor
+            </div>
+          </div>
+          <div className="p-4 rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 dark:hover:bg-opacity-15 dark:bg-gray-800">
+            <div className="flex justify-center items-center p-2 mx-auto mb-2 bg-gray-200 dark:bg-gray-700 rounded-full w-[48px] h-[48px] max-w-[48px] max-h-[48px]">
+              <svg
+                className="inline size-7 text-black dark:text-white"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+              >
+                <path d="M7.068.727c.243-.97 1.62-.97 1.864 0l.071.286a.96.96 0 0 0 1.622.434l.205-.211c.695-.719 1.888-.03 1.613.931l-.08.284a.96.96 0 0 0 1.187 1.187l.283-.081c.96-.275 1.65.918.931 1.613l-.211.205a.96.96 0 0 0 .434 1.622l.286.071c.97.243.97 1.62 0 1.864l-.286.071a.96.96 0 0 0-.434 1.622l.211.205c.719.695.03 1.888-.931 1.613l-.284-.08a.96.96 0 0 0-1.187 1.187l.081.283c.275.96-.918 1.65-1.613.931l-.205-.211a.96.96 0 0 0-1.622.434l-.071.286c-.243.97-1.62.97-1.864 0l-.071-.286a.96.96 0 0 0-1.622-.434l-.205.211c-.695.719-1.888.03-1.613-.931l.08-.284a.96.96 0 0 0-1.186-1.187l-.284.081c-.96.275-1.65-.918-.931-1.613l.211-.205a.96.96 0 0 0-.434-1.622l-.286-.071c-.97-.243-.97-1.62 0-1.864l.286-.071a.96.96 0 0 0 .434-1.622l-.211-.205c-.719-.695-.03-1.888.931-1.613l.284.08a.96.96 0 0 0 1.187-1.186l-.081-.284c-.275-.96.918-1.65 1.613-.931l.205.211a.96.96 0 0 0 1.622-.434zM12.973 8.5H8.25l-2.834 3.779A4.998 4.998 0 0 0 12.973 8.5m0-1a4.998 4.998 0 0 0-7.557-3.779l2.834 3.78zM5.048 3.967l-.087.065zm-.431.355A4.98 4.98 0 0 0 3.002 8c0 1.455.622 2.765 1.615 3.678L7.375 8zm.344 7.646.087.065z" />
+              </svg>
+            </div>
+            <div className="font-medium text-center text-black dark:text-gray-400">
+              Settings
+            </div>
+          </div>
+          <div className="p-4 rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 dark:hover:bg-opacity-15 dark:bg-gray-800">
+            <div className="flex justify-center items-center p-2 mx-auto mb-2 bg-gray-200 dark:bg-gray-700 rounded-full w-[48px] h-[48px] max-w-[48px] max-h-[48px]">
+              <svg
+                className="inline size-6 text-black dark:text-white"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -82,25 +155,46 @@ const NavDrawer = () => {
                 <path d="M18 0H2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2ZM9 6v2H2V6h7Zm2 0h7v2h-7V6Zm-9 4h7v2H2v-2Zm9 2v-2h7v2h-7Z" />
               </svg>
             </div>
-            <div className="font-medium text-center text-gray-500 dark:text-gray-400">
-              Table
+            <div className="font-medium text-center text-black dark:text-gray-400">
+              Saved Blogs
             </div>
           </div>
-          <div className="hidden p-4 rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 dark:hover:bg-gray-600 dark:bg-gray-700 xl:block">
-            <div className="flex justify-center items-center p-2 mx-auto mb-2 bg-gray-200 dark:bg-gray-600 rounded-full w-[48px] h-[48px] max-w-[48px] max-h-[48px]">
+        </div>
+        <div className="p-4  ">
+          <h5 className="inline-flex mb-2 items-center text-base text-gray-500 dark:text-white font-medium">
+            <svg
+              enable-background="new 0 0 48 48"
+              className=" size-7 mr-2"
+              height="48px"
+              id="Layer_1"
+              version="1.1"
+              viewBox="0 0 48 48"
+              width="48px"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M36,18L36,18c0,5.59-3.827,10.272-9,11.606V40h6c0.553,0,1,0.448,1,1  c0,0.553-0.447,1-1,1H15c-0.553,0-1-0.447-1-1c0-0.552,0.447-1,1-1h6V29.606C15.827,28.272,12,23.59,12,18l0,0c-3.866,0-7-3.134-7-7  V9c0-0.552,0.447-1,1-1h6V7c0-1.657-1.343-3-3-3l0,0C8.447,4,8,3.552,8,3s0.447-1,1-1l0,0l0,0h30l0,0l0,0c0.553,0,1,0.448,1,1  s-0.447,1-1,1l0,0c-1.657,0-3,1.343-3,3l0,0v1h6c0.553,0,1,0.448,1,1v2C43,14.866,39.866,18,36,18z M23,40h2V29.949  C24.67,29.977,24.338,30,24,30s-0.67-0.023-1-0.051V40z M7,10v1c0,2.762,2.238,5,5,5v-6H7z M12.978,4C13.61,4.838,14,5.869,14,7l0,0  v11c0,5.523,4.477,10,10,10c5.522,0,10-4.477,10-10V7l0,0l0,0c0-1.131,0.39-2.162,1.022-3H12.978z M41,10h-5v6c2.762,0,5-2.238,5-5  V10z M12,44h24c0.553,0,1,0.448,1,1c0,0.553-0.447,1-1,1H12c-0.553,0-1-0.447-1-1C11,44.448,11.447,44,12,44z"
+                fill-rule="evenodd"
+              />
+            </svg>
+            <span className="text-2xl font-[600] ">My Matches</span>
+          </h5>
+          <div className="text-black dark:text-gray-400 hover:bg-gray-50 hover:bg-opacity-10 rounded-lg">
+            <span className="py-3 px-1  inline-flex items-center text-xl">
               <svg
-                className="inline w-5 h-5 text-gray-500 dark:text-gray-400"
-                aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
                 fill="currentColor"
-                viewBox="0 0 14 20"
+                className=" size-5 mr-4 mt-0.5 "
+                viewBox="0 0 16 16"
               >
-                <path d="M13.383.076a1 1 0 0 0-1.09.217L11 1.586 9.707.293a1 1 0 0 0-1.414 0L7 1.586 5.707.293a1 1 0 0 0-1.414 0L3 1.586 1.707.293A1 1 0 0 0 0 1v18a1 1 0 0 0 1.707.707L3 18.414l1.293 1.293a1 1 0 0 0 1.414 0L7 18.414l1.293 1.293a1 1 0 0 0 1.414 0L11 18.414l1.293 1.293A1 1 0 0 0 14 19V1a1 1 0 0 0-.617-.924ZM10 15H4a1 1 0 1 1 0-2h6a1 1 0 0 1 0 2Zm0-4H4a1 1 0 1 1 0-2h6a1 1 0 1 1 0 2Zm0-4H4a1 1 0 0 1 0-2h6a1 1 0 1 1 0 2Z" />
+                <path d="M9.828.722a.5.5 0 0 1 .354.146l4.95 4.95a.5.5 0 0 1 0 .707c-.48.48-1.072.588-1.503.588-.177 0-.335-.018-.46-.039l-3.134 3.134a6 6 0 0 1 .16 1.013c.046.702-.032 1.687-.72 2.375a.5.5 0 0 1-.707 0l-2.829-2.828-3.182 3.182c-.195.195-1.219.902-1.414.707s.512-1.22.707-1.414l3.182-3.182-2.828-2.829a.5.5 0 0 1 0-.707c.688-.688 1.673-.767 2.375-.72a6 6 0 0 1 1.013.16l3.134-3.133a3 3 0 0 1-.04-.461c0-.43.108-1.022.589-1.503a.5.5 0 0 1 .353-.146" />
               </svg>
-            </div>
-            <div className="hidden font-medium text-center text-gray-500 dark:text-gray-400 xl:block">
-              Form
-            </div>
+              Pinned Matches
+            </span>
           </div>
         </div>
       </div>

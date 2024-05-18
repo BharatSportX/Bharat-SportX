@@ -221,7 +221,7 @@ const Navbar = () => {
 
       {/* Mobile navbar */}
 
-      <div className=" xl:hidden fixed bottom-0 left-0 z-50 w-full h-16 bg-white border-t border-gray-200 dark:bg-gray-800 dark:border-gray-600">
+      <div className=" xl:hidden fixed bottom-0 left-0 z-50 w-full h-16 bg-white border-t border-gray-200 dark:bg-gray-900 dark:border-gray-600">
         <div className="grid h-full max-w-lg grid-cols-5 m-auto   font-medium md:flex md:justify-center">
           <NavLink
             role="button"
@@ -268,7 +268,7 @@ const Navbar = () => {
               Matches
             </span>
           </NavLink>
-          <span className="inline-flex flex-col items-center justify-center px-5 md:px-14  lg:px-16 hover:bg-gray-50 dark:hover:bg-gray-800 group">
+          <span className="inline-flex flex-col items-center justify-center px-5 md:px-14  lg:px-16  group-hover:text-red-600 dark:group-hover:text-red-500 group pt-2">
             <NavDrawer />
           </span>
           <NavLink
