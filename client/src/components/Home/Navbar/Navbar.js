@@ -3,6 +3,7 @@ import "./Navbar.css";
 import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
 import NavDrawer from "./NavDrawer";
+import ScrollNav from "./ScrollNav";
 const Navbar = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
@@ -139,6 +140,7 @@ const Navbar = () => {
               </button>
             </div>
           </div>
+          
 
           {/* Mobile Search button */}
           <div className="flex xl:items-center xl:ml-4">
@@ -163,7 +165,7 @@ const Navbar = () => {
             </button>
             {isSearchOpen && (
               <div
-                className="xl:hidden z-[-1] absolute w-full top-14 left-0 pb-4 pt-8  bg-white dark:bg-gray-800 px-2"
+                className="xl:hidden z-[-1] absolute w-full top-32 left-0 pb-4 pt-8  bg-white dark:bg-gray-800 px-2"
                 data-aos="fade-down"
                 data-aos-duration="500"
               >
@@ -217,6 +219,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+      <ScrollNav/>
 
 
 

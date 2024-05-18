@@ -1,5 +1,10 @@
-dropdown color for light theme 
+overflow-x-auto is the things what i want for gaming navbar
 
-hover of bottom navbar is cicular type
-
-navitem-->[More ▽] do itds like jio cinema...
+----Scroll navbar-----
+1.Athletics
+ a.Javelin-Throw
+ b.running
+ c.track and field
+ d.high jumping
+ e. race walking
+ f.cross country running
