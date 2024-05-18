@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from './Navbar/Navbar';
-import Footer from '../FrontPage/Footer';
+;
 
 export default function Home() {
   return (
@@ -12,7 +12,7 @@ export default function Home() {
           Por por Kaj kor thik kore  nale emon khisit marbo na nijer nam vule jabi
         </h1>
       </div>
-      <Footer />
+     
     </div>
   );
 }

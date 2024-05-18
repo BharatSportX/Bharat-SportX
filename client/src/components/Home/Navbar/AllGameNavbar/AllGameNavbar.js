@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from '../Navbar'
 import AllGamesNavbarContent from './AllGamesNavbarContent/AllGamesNavbarContent'
 
-import Footer from '../../../FrontPage/Footer'
+
 
 
 export default function AllGameNavbar() {
@@ -26,7 +26,7 @@ export default function AllGameNavbar() {
   </div>
 </div>
        
-        <Footer/>
+  
 
       </React.Fragment>
     </div>
