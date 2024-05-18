@@ -35,7 +35,7 @@ function App() {
     },
     {
       path:'/FootballLeagues',
-      element:<><Navbar/><Leagues/></>
+      element:<><Leagues/></>
     },
     {
       path:'/FootballWorldCup',
@@ -47,11 +47,11 @@ function App() {
     },
     {
       path:'/cup/:id',
-      element:<><Navbar/><CupPageDetails/></>
+      element:<><CupPageDetails/></>
     },
     {
       path:'/league/:id',
-      element:<><Navbar/><LeaguesDetails/></>
+      element:<><LeaguesDetails/></>
     },
     {
       path: "/statistics/:id",
