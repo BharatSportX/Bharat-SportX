@@ -175,7 +175,7 @@ const NavDrawer = () => {
             </svg>
             <span className="text-2xl font-[600] ">My Matches</span>
           </h5>
-          <div className="text-black dark:text-gray-400 hover:bg-gray-700  dark:hover:bg-gray-50 hover:bg-opacity-10  rounded-lg">
+          <div className="text-black dark:text-gray-400 hover:bg-gray-700 hover:bg-opacity-10   dark:hover:bg-gray-50 dark:hover:bg-opacity-10  rounded-lg">
             <span className="py-3 px-1  inline-flex items-center text-xl">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
