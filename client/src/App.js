@@ -39,11 +39,11 @@ function App() {
     },
     {
       path:'/FootballWorldCup',
-      element:<><Navbar/><Cups/></>
+      element:<><Cups/></>
     },
     {
       path:'/LeagueHome',
-      element:<><Navbar/><LeaguesHome/></>
+      element:<><LeaguesHome/></>
     },
     {
       path:'/cup/:id',
