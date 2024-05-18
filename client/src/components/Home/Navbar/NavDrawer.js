@@ -39,7 +39,7 @@ const NavDrawer = () => {
 
       {/* Drawer component */}
       <div
-        className={`fixed z-40 w-full overflow-y-auto bg-white border-t border-gray-200 rounded-t-lg dark:border-gray-700 dark:bg-gray-900 transition-transform transform ${
+        className={`fixed z-40 w-full h-auto [@media(max-height:450px)]:h-64 overflow-y-auto bg-white border-t border-gray-200 rounded-t-lg dark:border-gray-700 dark:bg-gray-900 transition-transform transform ${
           isOpen ? "translate-y-0" : "translate-y-full"
         } bottom-0 left-0 right-0 xl:hidden`}
         tabIndex="-1"
