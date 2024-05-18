@@ -12,8 +12,8 @@ export default function Home() {
     
       
       <Navbar/>
-      <LiveUpdateNav/>
-      <LiveUpdatesContent/>
+      {/* <LiveUpdateNav/>
+      <LiveUpdatesContent/> */}
      <Footer/>
       </React.Fragment>
     </div>
