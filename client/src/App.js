@@ -23,7 +23,9 @@ import H2H from './components/ALLSports/Football/HaedToHead/H2H';
 import Events from './components/ALLSports/Football/Events/Events';
 import Error from './components/DeafultErrorPage/Error';
 import LaunchingSoon from './components/LaunchingSoonPage/LaunchingSoon';
+import Navbar from './components/Home/Navbar/Navbar';
 function App() {
+  
   const router=createBrowserRouter([
     {
       path:'/',
@@ -31,62 +33,62 @@ function App() {
     },
     {
       path:'/home',
-      element:<><Home/></>
+      element:<><Navbar/><Home/></>
     },
     {
       path:'/FootballLeagues',
-      element:<><Leagues/></>
+      element:<><Navbar/><Leagues/></>
     },
     {
       path:'/FootballWorldCup',
-      element:<><Cups/></>
+      element:<><Navbar/><Cups/></>
     },
     {
       path:'/LeagueHome',
-      element:<><LeaguesHome/></>
+      element:<><Navbar/><LeaguesHome/></>
     },
     {
       path:'/cup/:id',
-      element:<><CupPageDetails/></>
+      element:<><Navbar/><CupPageDetails/></>
     },
     {
       path:'/league/:id',
-      element:<><LeaguesDetails/></>
+      element:<><Navbar/><LeaguesDetails/></>
     },
     {
       path: "/statistics/:id",
-      element: <><Statistics/></>
+      element: <><Navbar/><Statistics/></>
     },
     
     {
       path:'/team-stat',
-      element:<><TeamStatistics/></>
+      element:<><Navbar/><TeamStatistics/></>
     },
     {
       path:'/standings/:id',
-      element:<><Standings/></>
+      element:<><Navbar/><Standings/></>
     },
     {
       path:'/prediction/:id',
-      element:<><Prediction/></>
+      element:<><Navbar/><Prediction/></>
     },
     
     {
       path:'/players',
-      element:<><Players/></>
+      element:<><Navbar/><Players/></>
     },
     
     {
       path:'/lineups',
-      element:<><LineUps/></>
+      element:<><Navbar/><LineUps/></>
     },
     {
       path:'/h2h',
-      element:<><H2H/></>
+      element:<><Navbar/><H2H/></>
     },
     {
       path:'/events',
-      element:<><Events/></>
+      element:<><Navbar/><Events/></>
     },
     
     {

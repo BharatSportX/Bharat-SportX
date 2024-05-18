@@ -229,7 +229,7 @@ const Navbar = () => {
         <NavLink
           to="/home"
           className={({ isActive }) =>
-            `inline-flex flex-col items-center justify-center px-5 md:px-14 lg:px-16  dark:hover:bg-gray-800 group ${
+            `inline-flex flex-col items-center justify-center px-5 md:px-14 lg:px-16   group ${
               isActive ? 'text-red-600 dark:text-red-500' : 'text-gray-500 dark:text-gray-400'
             }`
           }
@@ -249,7 +249,7 @@ const Navbar = () => {
         <NavLink
           to="/LeagueHome"
           className={({ isActive }) =>
-            `inline-flex flex-col items-center justify-center px-5 md:px-14 lg:px-16  dark:hover:bg-gray-800 group ${
+            `inline-flex flex-col items-center justify-center px-5 md:px-14 lg:px-16   group ${
               isActive ? 'text-red-600 dark:text-red-500' : 'text-gray-500 dark:text-gray-400'
             }`
           }
@@ -279,7 +279,7 @@ const Navbar = () => {
         <NavLink
           to="/players"
           className={({ isActive }) =>
-            `inline-flex flex-col items-center justify-center px-5 md:px-14 lg:px-16  dark:hover:bg-gray-800 group ${
+            `inline-flex flex-col items-center justify-center px-5 md:px-14 lg:px-16   group ${
               isActive ? 'text-red-600 dark:text-red-500' : 'text-gray-500 dark:text-gray-400'
             }`
           }
@@ -298,7 +298,7 @@ const Navbar = () => {
         <NavLink
           to="/games"
           className={({ isActive }) =>
-            `inline-flex flex-col items-center justify-center px-5 md:px-14 lg:px-16  dark:hover:bg-gray-800 group ${
+            `inline-flex flex-col items-center justify-center px-5 md:px-14 lg:px-16   group ${
               isActive ? 'text-red-600 dark:text-red-500' : 'text-gray-500 dark:text-gray-400'
             }`
           }
