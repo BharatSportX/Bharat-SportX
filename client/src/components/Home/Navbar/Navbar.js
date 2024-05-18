@@ -18,11 +18,14 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo and Company Name */}
           <div className="text-white space-x-3 flex items-center xl:space-x-6">
+          <NavLink to='/'>
             <img
+              
               className="h-8 w-auto cursor-pointer"
               src="sportlogo.svg"
               alt="Logo"
             />
+            </NavLink>
             <form>
               <button
                 className="w-28 xl:w-24 px-0 font-semibold text-xs BtnEx1 z-10"
