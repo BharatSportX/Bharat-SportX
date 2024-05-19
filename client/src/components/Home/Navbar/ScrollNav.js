@@ -8,7 +8,11 @@ const ScrollNav = () => {
       <div className="inline-flex space-x-8 whitespace-nowrap p-4">
         <NavLink
           to="/footballhome"
-          className="flex flex-col items-center dark:text-gray-400 text-gray-800"
+           className={({ isActive }) =>
+            isActive
+              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-2 border-orange-600 dark:border-orange-400 "
+              : "flex flex-col items-center dark:text-gray-400 text-gray-800"
+          }
         >
           <div className="w-6 h-6 mb-1 rounded-full bg-opacity-50">
             <svg
@@ -154,7 +158,11 @@ const ScrollNav = () => {
         </NavLink>
         <NavLink
           to="/LeagueHome"
-          className="flex flex-col items-center dark:text-gray-400 text-gray-800"
+           className={({ isActive }) =>
+            isActive
+              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-2 border-orange-600 dark:border-orange-400 "
+              : "flex flex-col items-center dark:text-gray-400 text-gray-800"
+          }
         >
           <div className="w-6 h-6 mb-1 rounded-full bg-opacity-50">
             <svg
@@ -171,8 +179,12 @@ const ScrollNav = () => {
           <span className="">Cricket</span>
         </NavLink>
         <NavLink
-          to="/LeagueHome"
-          className="flex flex-col items-center dark:text-gray-400 text-gray-800"
+          to="/players"
+           className={({ isActive }) =>
+            isActive
+              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-2 border-orange-600 dark:border-orange-400 "
+              : "flex flex-col items-center dark:text-gray-400 text-gray-800"
+          }
         >
           <div className="w-6 h-6 mb-1 rounded-full bg-opacity-50">
             <svg
@@ -208,7 +220,11 @@ const ScrollNav = () => {
 
         <NavLink
           to="/LeagueHome"
-          className="flex flex-col items-center dark:text-gray-400 text-gray-800"
+           className={({ isActive }) =>
+            isActive
+              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-2 border-orange-600 dark:border-orange-400 "
+              : "flex flex-col items-center dark:text-gray-400 text-gray-800"
+          }
         >
           <div className="w-6 h-6 mb-1 rounded-full bg-opacity-50">
             <svg
@@ -230,7 +246,11 @@ const ScrollNav = () => {
         </NavLink>
         <NavLink
           to="/LeagueHome"
-          className="flex flex-col items-center dark:text-gray-400 text-gray-800"
+           className={({ isActive }) =>
+            isActive
+              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-2 border-orange-600 dark:border-orange-400 "
+              : "flex flex-col items-center dark:text-gray-400 text-gray-800"
+          }
         >
           <div className="w-6 h-6 mb-1 rounded-full bg-opacity-50">
             <svg
@@ -451,7 +471,11 @@ const ScrollNav = () => {
         </NavLink>
         <NavLink
           to="/LeagueHome"
-          className="flex flex-col items-center dark:text-gray-400 text-gray-800"
+           className={({ isActive }) =>
+            isActive
+              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-2 border-orange-600 dark:border-orange-400 "
+              : "flex flex-col items-center dark:text-gray-400 text-gray-800"
+          }
         >
           <div className="w-6 h-6 mb-1 rounded-full bg-opacity-50">
             <svg
@@ -485,7 +509,11 @@ const ScrollNav = () => {
         </NavLink>
         <NavLink
           to="/LeagueHome"
-          className="flex flex-col items-center dark:text-gray-400 text-gray-800"
+           className={({ isActive }) =>
+            isActive
+              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-2 border-orange-600 dark:border-orange-400 "
+              : "flex flex-col items-center dark:text-gray-400 text-gray-800"
+          }
         >
           <div className="w-6 h-6 mb-1 rounded-full bg-opacity-50">
             <svg
@@ -551,10 +579,18 @@ const ScrollNav = () => {
           </div>
           <span className="">Volleyball</span>
         </NavLink>
-        {/* className="flex flex-col items-center dark:text-gray-400 text-gray-800" */}
+        {/*  className={({ isActive }) =>
+            isActive
+              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-2 border-orange-600 dark:border-orange-400 "
+              : "flex flex-col items-center dark:text-gray-400 text-gray-800"
+          } */}
         <NavLink
           to="/LeagueHome"
-          className="flex flex-col items-center dark:text-gray-400 text-gray-800"
+           className={({ isActive }) =>
+            isActive
+              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-2 border-orange-600 dark:border-orange-400 "
+              : "flex flex-col items-center dark:text-gray-400 text-gray-800"
+          }
         >
           <div className="w-6 h-6 mb-1 rounded-full bg-opacity-50">
             <svg
@@ -574,7 +610,11 @@ const ScrollNav = () => {
 
         <NavLink
           to="/LeagueHome"
-          className="flex flex-col items-center dark:text-gray-400 text-gray-800"
+           className={({ isActive }) =>
+            isActive
+              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-2 border-orange-600 dark:border-orange-400 "
+              : "flex flex-col items-center dark:text-gray-400 text-gray-800"
+          }
         >
           <div className="w-6 h-6 mb-1 rounded-full bg-opacity-50">
             <svg
@@ -608,7 +648,11 @@ const ScrollNav = () => {
 
         <NavLink
           to="/LeagueHome"
-          className="flex flex-col items-center dark:text-gray-400 text-gray-800"
+           className={({ isActive }) =>
+            isActive
+              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-2 border-orange-600 dark:border-orange-400 "
+              : "flex flex-col items-center dark:text-gray-400 text-gray-800"
+          }
         >
           <div className="w-6 h-6 mb-1 rounded-full bg-opacity-50">
             <svg
@@ -624,7 +668,11 @@ const ScrollNav = () => {
         </NavLink>
         <NavLink
           to="/LeagueHome"
-          className="flex flex-col items-center dark:text-gray-400 text-gray-800"
+           className={({ isActive }) =>
+            isActive
+              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-2 border-orange-600 dark:border-orange-400 "
+              : "flex flex-col items-center dark:text-gray-400 text-gray-800"
+          }
         >
           <div className="w-6 h-6 mb-1 rounded-full bg-opacity-50">
             <svg
@@ -646,7 +694,11 @@ const ScrollNav = () => {
         </NavLink>
         <NavLink
           to="/LeagueHome"
-          className="flex flex-col items-center dark:text-gray-400 text-gray-800"
+           className={({ isActive }) =>
+            isActive
+              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-2 border-orange-600 dark:border-orange-400 "
+              : "flex flex-col items-center dark:text-gray-400 text-gray-800"
+          }
         >
           <div className="w-6 h-6 mb-1 rounded-full bg-opacity-50">
             <svg
@@ -723,7 +775,11 @@ const ScrollNav = () => {
         </NavLink>
         <NavLink
           to="/LeagueHome"
-          className="flex flex-col items-center dark:text-gray-400 text-gray-800"
+           className={({ isActive }) =>
+            isActive
+              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-2 border-orange-600 dark:border-orange-400 "
+              : "flex flex-col items-center dark:text-gray-400 text-gray-800"
+          }
         >
           <div className="w-6 h-6 mb-1 rounded-full bg-opacity-50">
             <svg
@@ -775,7 +831,11 @@ const ScrollNav = () => {
         </NavLink>
         <NavLink
           to="/LeagueHome"
-          className="flex flex-col items-center dark:text-gray-400 text-gray-800"
+           className={({ isActive }) =>
+            isActive
+              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-2 border-orange-600 dark:border-orange-400 "
+              : "flex flex-col items-center dark:text-gray-400 text-gray-800"
+          }
         >
           <div className="w-6 h-6 mb-1 rounded-full bg-opacity-50">
             <svg
@@ -808,7 +868,11 @@ const ScrollNav = () => {
         </NavLink>
         <NavLink
           to="/LeagueHome"
-          className="flex flex-col items-center dark:text-gray-400 text-gray-800"
+           className={({ isActive }) =>
+            isActive
+              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-2 border-orange-600 dark:border-orange-400 "
+              : "flex flex-col items-center dark:text-gray-400 text-gray-800"
+          }
         >
           <div className="w-6 h-6 mb-1 rounded-full bg-opacity-50">
             <svg
@@ -832,7 +896,11 @@ const ScrollNav = () => {
         </NavLink>
         <NavLink
           to="/LeagueHome"
-          className="flex flex-col items-center dark:text-gray-400 text-gray-800"
+           className={({ isActive }) =>
+            isActive
+              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-2 border-orange-600 dark:border-orange-400 "
+              : "flex flex-col items-center dark:text-gray-400 text-gray-800"
+          }
         >
           <div className="w-6 h-6 mb-1 rounded-full bg-opacity-50">
             <svg
@@ -850,10 +918,16 @@ const ScrollNav = () => {
           </div>
           <span className="">Basketball</span>
         </NavLink>
+          {/* className="flex flex-col items-center dark:text-gray-400 text-gray-800" */}
         <NavLink
           to="/LeagueHome"
-          className="flex flex-col items-center dark:text-gray-400 text-gray-800"
+           className={({ isActive }) =>
+            isActive
+              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-2 border-orange-600 dark:"
+              : "flex flex-col items-center dark:text-gray-400 text-gray-800"
+          }
         >
+          
           <div className="w-6 h-6 mb-1 rounded-full bg-opacity-50">
             <svg
               enable-background="new 0 0 24 24"
@@ -901,7 +975,11 @@ const ScrollNav = () => {
         </NavLink>
         <NavLink
           to="/LeagueHome"
-          className="flex flex-col items-center dark:text-gray-400 text-gray-800"
+           className={({ isActive }) =>
+            isActive
+              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-2 border-orange-600 dark:border-orange-400 "
+              : "flex flex-col items-center dark:text-gray-400 text-gray-800"
+          }
         >
           <div className="w-6 h-6 mb-1 rounded-full bg-opacity-50">
             <svg
@@ -966,6 +1044,7 @@ const ScrollNav = () => {
   );
 };
 
-// SVG Icons
 
 export default ScrollNav;
+
+// this is my code set active property dependnds on which navbar i select .d ont need to write whole code just write the main code with suitable example.
