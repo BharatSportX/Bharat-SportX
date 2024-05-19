@@ -4,7 +4,7 @@ import Footer from '../FrontPage/Footer';
 
 export default function Error() {
   return (
-    <React.Fragment>
+    <>
       <div className="error-container bg-gray-100 min-h-screen flex justify-center items-center">
         <div className="error-content text-center">
           <img
@@ -17,7 +17,7 @@ export default function Error() {
           </p>
         </div>
       </div>
-      <Footer />
-    </React.Fragment>
+      
+    </>
   );
 }

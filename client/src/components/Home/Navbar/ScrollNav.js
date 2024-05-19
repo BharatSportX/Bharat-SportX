@@ -159,7 +159,7 @@ const ScrollNav = () => {
           <span className="mb-1">Football</span>
         </NavLink>
         <NavLink
-          to="/LeagueHome"
+          to="/cricket"
            className={({ isActive }) =>
             isActive
               ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
@@ -181,7 +181,7 @@ const ScrollNav = () => {
           <span className="mb-1">Cricket</span>
         </NavLink>
         <NavLink
-          to="/players"
+          to="/hockey"
            className={({ isActive }) =>
             isActive
               ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
@@ -221,7 +221,7 @@ const ScrollNav = () => {
         </NavLink>
 
         <NavLink
-          to="/LeagueHome"
+          to="/kabaddi"
            className={({ isActive }) =>
             isActive
               ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
@@ -247,7 +247,7 @@ const ScrollNav = () => {
           <span className="mb-1">Kabaddi</span>
         </NavLink>
         <NavLink
-          to="/LeagueHome"
+          to="/baseball"
            className={({ isActive }) =>
             isActive
               ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
@@ -472,7 +472,7 @@ const ScrollNav = () => {
           <span className="mb-1">Baseball</span>
         </NavLink>
         <NavLink
-          to="/LeagueHome"
+          to="/tennis"
            className={({ isActive }) =>
             isActive
               ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
@@ -510,7 +510,7 @@ const ScrollNav = () => {
           <span className="mb-1">Tennis</span>
         </NavLink>
         <NavLink
-          to="/LeagueHome"
+          to="/volleyball"
            className={({ isActive }) =>
             isActive
               ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
@@ -587,7 +587,7 @@ const ScrollNav = () => {
               : "flex flex-col items-center dark:text-gray-400 text-gray-800"
           } */}
         <NavLink
-          to="/LeagueHome"
+          to="/archery"
            className={({ isActive }) =>
             isActive
               ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
@@ -611,7 +611,7 @@ const ScrollNav = () => {
         </NavLink>
 
         <NavLink
-          to="/LeagueHome"
+          to="/golf"
            className={({ isActive }) =>
             isActive
               ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
@@ -649,7 +649,7 @@ const ScrollNav = () => {
         </NavLink>
 
         <NavLink
-          to="/LeagueHome"
+          to="/athletics"
            className={({ isActive }) =>
             isActive
               ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
@@ -669,7 +669,7 @@ const ScrollNav = () => {
           <span className="mb-1">Athletics</span>
         </NavLink>
         <NavLink
-          to="/LeagueHome"
+          to="/chess"
            className={({ isActive }) =>
             isActive
               ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
@@ -695,7 +695,7 @@ const ScrollNav = () => {
           <span className="mb-1">Chess</span>
         </NavLink>
         <NavLink
-          to="/LeagueHome"
+          to="/carrom"
            className={({ isActive }) =>
             isActive
               ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
@@ -776,7 +776,7 @@ const ScrollNav = () => {
           <span className="mb-1">Carrom</span>
         </NavLink>
         <NavLink
-          to="/LeagueHome"
+          to="/boxing"
            className={({ isActive }) =>
             isActive
               ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
@@ -832,7 +832,7 @@ const ScrollNav = () => {
           <span className="mb-1">Boxing</span>
         </NavLink>
         <NavLink
-          to="/LeagueHome"
+          to="/gymnastic"
            className={({ isActive }) =>
             isActive
               ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
@@ -869,7 +869,7 @@ const ScrollNav = () => {
           <span className="mb-1">Gymnastic</span>
         </NavLink>
         <NavLink
-          to="/LeagueHome"
+          to="/iceskating"
            className={({ isActive }) =>
             isActive
               ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
@@ -897,7 +897,7 @@ const ScrollNav = () => {
           <span className="mb-1">Ice-Skating</span>
         </NavLink>
         <NavLink
-          to="/LeagueHome"
+          to="/basketball"
            className={({ isActive }) =>
             isActive
               ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
@@ -922,7 +922,7 @@ const ScrollNav = () => {
         </NavLink>
           {/* className="flex flex-col items-center dark:text-gray-400 text-gray-800" */}
         <NavLink
-          to="/LeagueHome"
+          to="/weightlifting"
            className={({ isActive }) =>
             isActive
               ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm dark:border-orange-400 border-orange-600"
@@ -976,7 +976,7 @@ const ScrollNav = () => {
           <span className="mb-1">Weight-Lifting</span>
         </NavLink>
         <NavLink
-          to="/LeagueHome"
+          to="/wrestling"
            className={({ isActive }) =>
             isActive
               ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
@@ -1049,4 +1049,3 @@ const ScrollNav = () => {
 
 export default ScrollNav;
 
-// this is my code set active property dependnds on which navbar i select .d ont need to write whole code just write the main code with suitable example.
