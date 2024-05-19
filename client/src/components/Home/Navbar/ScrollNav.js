@@ -8,7 +8,7 @@ const ScrollNav = () => {
       <div className="inline-flex space-x-8 whitespace-nowrap p-4">
         <NavLink
           to="/"
-          className="flex flex-col items-center text-gray-400"
+          className="flex flex-col items-center dark:text-gray-400 text-gray-800"
           activeClassName="active-nav-item"
         >
           <div className="w-6 h-6 mb-1 rounded-full bg-opacity-50">
@@ -155,7 +155,7 @@ const ScrollNav = () => {
         </NavLink>
         <NavLink
           to="/"
-          className="flex flex-col items-center text-gray-400"
+          className="flex flex-col items-center dark:text-gray-400 text-gray-800"
           activeClassName="active-nav-item"
         >
           <div className="w-6 h-6 mb-1 rounded-full bg-opacity-50">
@@ -174,7 +174,7 @@ const ScrollNav = () => {
         </NavLink>
         <NavLink
           to="/"
-          className="flex flex-col items-center text-gray-400"
+          className="flex flex-col items-center dark:text-gray-400 text-gray-800"
           activeClassName="active-nav-item"
         >
           <div className="w-6 h-6 mb-1 rounded-full bg-opacity-50">
@@ -211,7 +211,7 @@ const ScrollNav = () => {
 
         <NavLink
           to="/"
-          className="flex flex-col items-center text-gray-400"
+          className="flex flex-col items-center dark:text-gray-400 text-gray-800"
           activeClassName="active-nav-item"
         >
           <div className="w-6 h-6 mb-1 rounded-full bg-opacity-50">
@@ -234,7 +234,7 @@ const ScrollNav = () => {
         </NavLink>
         <NavLink
           to="/"
-          className="flex flex-col items-center text-gray-400"
+          className="flex flex-col items-center dark:text-gray-400 text-gray-800"
           activeClassName="active-nav-item"
         >
           <div className="w-6 h-6 mb-1 rounded-full bg-opacity-50">
@@ -456,7 +456,7 @@ const ScrollNav = () => {
         </NavLink>
         <NavLink
           to="/"
-          className="flex flex-col items-center text-gray-400"
+          className="flex flex-col items-center dark:text-gray-400 text-gray-800"
           activeClassName="active-nav-item"
         >
           <div className="w-6 h-6 mb-1 rounded-full bg-opacity-50">
@@ -491,7 +491,7 @@ const ScrollNav = () => {
         </NavLink>
         <NavLink
           to="/"
-          className="flex flex-col items-center text-gray-400"
+          className="flex flex-col items-center dark:text-gray-400 text-gray-800"
           activeClassName="active-nav-item"
         >
           <div className="w-6 h-6 mb-1 rounded-full bg-opacity-50">
@@ -560,7 +560,7 @@ const ScrollNav = () => {
         </NavLink>
         <NavLink
           to="/"
-          className="flex flex-col items-center text-gray-400"
+          className="flex flex-col items-center dark:text-gray-400 text-gray-800"
           activeClassName="active-nav-item"
         >
           <div className="w-6 h-6 mb-1 rounded-full bg-opacity-50">
@@ -581,7 +581,7 @@ const ScrollNav = () => {
 
         <NavLink
           to="/"
-          className="flex flex-col items-center text-gray-400"
+          className="flex flex-col items-center dark:text-gray-400 text-gray-800"
           activeClassName="active-nav-item"
         >
           <div className="w-6 h-6 mb-1 rounded-full bg-opacity-50">
@@ -616,7 +616,7 @@ const ScrollNav = () => {
 
         <NavLink
           to="/"
-          className="flex flex-col items-center text-gray-400"
+          className="flex flex-col items-center dark:text-gray-400 text-gray-800"
           activeClassName="active-nav-item"
         >
           <div className="w-6 h-6 mb-1 rounded-full bg-opacity-50">
@@ -633,7 +633,7 @@ const ScrollNav = () => {
         </NavLink>
         <NavLink
           to="/"
-          className="flex flex-col items-center text-gray-400"
+          className="flex flex-col items-center dark:text-gray-400 text-gray-800"
           activeClassName="active-nav-item"
         >
           <div className="w-6 h-6 mb-1 rounded-full bg-opacity-50">
@@ -656,7 +656,7 @@ const ScrollNav = () => {
         </NavLink>
         <NavLink
           to="/"
-          className="flex flex-col items-center text-gray-400"
+          className="flex flex-col items-center dark:text-gray-400 text-gray-800"
           activeClassName="active-nav-item"
         >
           <div className="w-6 h-6 mb-1 rounded-full bg-opacity-50">
@@ -734,7 +734,7 @@ const ScrollNav = () => {
         </NavLink>
         <NavLink
           to="/"
-          className="flex flex-col items-center text-gray-400"
+          className="flex flex-col items-center dark:text-gray-400 text-gray-800"
           activeClassName="active-nav-item"
         >
           <div className="w-6 h-6 mb-1 rounded-full bg-opacity-50">
@@ -787,7 +787,7 @@ const ScrollNav = () => {
         </NavLink>
         <NavLink
           to="/"
-          className="flex flex-col items-center text-gray-400"
+          className="flex flex-col items-center dark:text-gray-400 text-gray-800"
           activeClassName="active-nav-item"
         >
           <div className="w-6 h-6 mb-1 rounded-full bg-opacity-50">
@@ -821,7 +821,7 @@ const ScrollNav = () => {
         </NavLink>
         <NavLink
           to="/"
-          className="flex flex-col items-center text-gray-400"
+          className="flex flex-col items-center dark:text-gray-400 text-gray-800"
           activeClassName="active-nav-item"
         >
           <div className="w-6 h-6 mb-1 rounded-full bg-opacity-50">
@@ -846,7 +846,7 @@ const ScrollNav = () => {
         </NavLink>
         <NavLink
           to="/"
-          className="flex flex-col items-center text-gray-400"
+          className="flex flex-col items-center dark:text-gray-400 text-gray-800"
           activeClassName="active-nav-item"
         >
           <div className="w-6 h-6 mb-1 rounded-full bg-opacity-50">
@@ -867,7 +867,7 @@ const ScrollNav = () => {
         </NavLink>
         <NavLink
           to="/"
-          className="flex flex-col items-center text-gray-400"
+          className="flex flex-col items-center dark:text-gray-400 text-gray-800"
           activeClassName="active-nav-item"
         >
           <div className="w-6 h-6 mb-1 rounded-full bg-opacity-50">
@@ -917,7 +917,7 @@ const ScrollNav = () => {
         </NavLink>
         <NavLink
           to="/"
-          className="flex flex-col items-center text-gray-400"
+          className="flex flex-col items-center dark:text-gray-400 text-gray-800"
           activeClassName="active-nav-item"
         >
           <div className="w-6 h-6 mb-1 rounded-full bg-opacity-50">
