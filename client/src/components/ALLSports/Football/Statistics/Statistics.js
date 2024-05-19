@@ -1448,7 +1448,7 @@ const Statistics = () => {
 
   return (
     <React.Fragment>
-      <div className="container mx-auto px-4 md:px-0  relative overflow-x-hidden top-64">
+      <div className="container mx-auto px-4 md:px-0  relative overflow-x-hidden">
         <h1 className="title text-center text-2xl md:text-3xl my-6">
           Detailed Match Statistics
           <span className="icon">
