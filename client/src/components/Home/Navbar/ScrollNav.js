@@ -1,16 +1,18 @@
 // src/ScrollNav.js
 import React from "react";
 import { NavLink } from "react-router-dom";
+// import './Scrollbar.css';
+
 
 const ScrollNav = () => {
   return (
-    <div className="overflow-x-auto bg-gray-50 dark:bg-gray-800">
-      <div className="inline-flex space-x-8 whitespace-nowrap p-4">
+    <div className="overflow-x-auto lg:no-scrollbar bg-gray-50 dark:bg-gray-800">
+      <div className="inline-flex space-x-8 whitespace-nowrap p-4 pb-0">
         <NavLink
           to="/footballhome"
            className={({ isActive }) =>
             isActive
-              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-2 border-orange-600 dark:border-orange-400 "
+              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
               : "flex flex-col items-center dark:text-gray-400 text-gray-800"
           }
         >
@@ -154,13 +156,13 @@ const ScrollNav = () => {
               />
             </svg>
           </div>
-          <span className="">Football</span>
+          <span className="mb-1">Football</span>
         </NavLink>
         <NavLink
           to="/LeagueHome"
            className={({ isActive }) =>
             isActive
-              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-2 border-orange-600 dark:border-orange-400 "
+              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
               : "flex flex-col items-center dark:text-gray-400 text-gray-800"
           }
         >
@@ -176,13 +178,13 @@ const ScrollNav = () => {
               <path d="M19.07,4.93A10,10,0,0,0,4.93,19.07,10,10,0,0,0,19.07,4.93ZM6.34,6.34a8,8,0,0,1,8.78-1.71l-.29.3.71.71.52-.53a9.53,9.53,0,0,1,.84.57L5.68,16.9a9.53,9.53,0,0,1-.57-.84l.53-.52-.71-.71-.29.29A8,8,0,0,1,6.34,6.34ZM17.66,17.66a8,8,0,0,1-8.78,1.71l.29-.3-.71-.71-.52.53a9.53,9.53,0,0,1-.84-.57L18.32,7.1a9.53,9.53,0,0,1,.57.84l-.53.52.71.71.29-.29A8,8,0,0,1,17.66,17.66Zm-6.37-2.12.71.7-1.41,1.42L9.88,17Zm2.83-2.83.71.7-1.42,1.42-.7-.71ZM17,9.88l.71.71L16.24,12l-.7-.71ZM12.71,8.46,12,7.76l1.41-1.42.71.71ZM9.88,11.29l-.71-.7,1.42-1.42.7.71ZM7.05,14.12l-.71-.71L7.76,12l.7.71Z" />
             </svg>
           </div>
-          <span className="">Cricket</span>
+          <span className="mb-1">Cricket</span>
         </NavLink>
         <NavLink
           to="/players"
            className={({ isActive }) =>
             isActive
-              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-2 border-orange-600 dark:border-orange-400 "
+              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
               : "flex flex-col items-center dark:text-gray-400 text-gray-800"
           }
         >
@@ -215,14 +217,14 @@ const ScrollNav = () => {
               </g>
             </svg>
           </div>
-          <span className="">Hockey</span>
+          <span className="mb-1">Hockey</span>
         </NavLink>
 
         <NavLink
           to="/LeagueHome"
            className={({ isActive }) =>
             isActive
-              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-2 border-orange-600 dark:border-orange-400 "
+              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
               : "flex flex-col items-center dark:text-gray-400 text-gray-800"
           }
         >
@@ -242,13 +244,13 @@ const ScrollNav = () => {
               <path d="m11.24 10.56-2-2c-.1-.1-.2-.18-.31-.26-.22-.14-.47-.24-.72-.28-.13-.03-.25-.04-.38-.04-.51 0-1.02.2-1.41.59l-3.34 3.34c-.41.41-.62.98-.58 1.54 0 .18.04.37.11.55l1.07 2.95-3.63 3.63 1.41 1.42 4.24-4.24v-2.22l1.3 1.21v5.13h2v-6l-2.12-2.12 2.36-2.36.71.71c1.29 1.26 2.97 2.04 5.03 2.04l-.14-2.07c-1.5-.02-2.7-.62-3.6-1.52z" />
             </svg>
           </div>
-          <span className="">Kabaddi</span>
+          <span className="mb-1">Kabaddi</span>
         </NavLink>
         <NavLink
           to="/LeagueHome"
            className={({ isActive }) =>
             isActive
-              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-2 border-orange-600 dark:border-orange-400 "
+              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
               : "flex flex-col items-center dark:text-gray-400 text-gray-800"
           }
         >
@@ -467,13 +469,13 @@ const ScrollNav = () => {
               </g>
             </svg>
           </div>
-          <span className="">Baseball</span>
+          <span className="mb-1">Baseball</span>
         </NavLink>
         <NavLink
           to="/LeagueHome"
            className={({ isActive }) =>
             isActive
-              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-2 border-orange-600 dark:border-orange-400 "
+              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
               : "flex flex-col items-center dark:text-gray-400 text-gray-800"
           }
         >
@@ -505,13 +507,13 @@ const ScrollNav = () => {
               </g>
             </svg>
           </div>
-          <span className="">Tennis</span>
+          <span className="mb-1">Tennis</span>
         </NavLink>
         <NavLink
           to="/LeagueHome"
            className={({ isActive }) =>
             isActive
-              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-2 border-orange-600 dark:border-orange-400 "
+              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
               : "flex flex-col items-center dark:text-gray-400 text-gray-800"
           }
         >
@@ -577,18 +579,18 @@ const ScrollNav = () => {
               />
             </svg>
           </div>
-          <span className="">Volleyball</span>
+          <span className="mb-1">Volleyball</span>
         </NavLink>
         {/*  className={({ isActive }) =>
             isActive
-              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-2 border-orange-600 dark:border-orange-400 "
+              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
               : "flex flex-col items-center dark:text-gray-400 text-gray-800"
           } */}
         <NavLink
           to="/LeagueHome"
            className={({ isActive }) =>
             isActive
-              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-2 border-orange-600 dark:border-orange-400 "
+              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
               : "flex flex-col items-center dark:text-gray-400 text-gray-800"
           }
         >
@@ -605,14 +607,14 @@ const ScrollNav = () => {
               </g>
             </svg>
           </div>
-          <span className="">Archery</span>
+          <span className="mb-1">Archery</span>
         </NavLink>
 
         <NavLink
           to="/LeagueHome"
            className={({ isActive }) =>
             isActive
-              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-2 border-orange-600 dark:border-orange-400 "
+              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
               : "flex flex-col items-center dark:text-gray-400 text-gray-800"
           }
         >
@@ -643,14 +645,14 @@ const ScrollNav = () => {
               </g>
             </svg>
           </div>
-          <span className="">Golf</span>
+          <span className="mb-1">Golf</span>
         </NavLink>
 
         <NavLink
           to="/LeagueHome"
            className={({ isActive }) =>
             isActive
-              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-2 border-orange-600 dark:border-orange-400 "
+              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
               : "flex flex-col items-center dark:text-gray-400 text-gray-800"
           }
         >
@@ -664,13 +666,13 @@ const ScrollNav = () => {
               <path d="M272 96c26.51 0 48-21.49 48-48S298.51 0 272 0s-48 21.49-48 48 21.49 48 48 48zM113.69 317.47l-14.8 34.52H32c-17.67 0-32 14.33-32 32s14.33 32 32 32h77.45c19.25 0 36.58-11.44 44.11-29.09l8.79-20.52-10.67-6.3c-17.32-10.23-30.06-25.37-37.99-42.61zM384 223.99h-44.03l-26.06-53.25c-12.5-25.55-35.45-44.23-61.78-50.94l-71.08-21.14c-28.3-6.8-57.77-.55-80.84 17.14l-39.67 30.41c-14.03 10.75-16.69 30.83-5.92 44.86s30.84 16.66 44.86 5.92l39.69-30.41c7.67-5.89 17.44-8 25.27-6.14l14.7 4.37-37.46 87.39c-12.62 29.48-1.31 64.01 26.3 80.31l84.98 50.17-27.47 87.73c-5.28 16.86 4.11 34.81 20.97 40.09 3.19 1 6.41 1.48 9.58 1.48 13.61 0 26.23-8.77 30.52-22.45l31.64-101.06c5.91-20.77-2.89-43.08-21.64-54.39l-61.24-36.14 31.31-78.28 20.27 41.43c8 16.34 24.92 26.89 43.11 26.89H384c17.67 0 32-14.33 32-32s-14.33-31.99-32-31.99z" />
             </svg>
           </div>
-          <span className="">Athletics</span>
+          <span className="mb-1">Athletics</span>
         </NavLink>
         <NavLink
           to="/LeagueHome"
            className={({ isActive }) =>
             isActive
-              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-2 border-orange-600 dark:border-orange-400 "
+              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
               : "flex flex-col items-center dark:text-gray-400 text-gray-800"
           }
         >
@@ -690,13 +692,13 @@ const ScrollNav = () => {
               </g>
             </svg>
           </div>
-          <span className="">Chess</span>
+          <span className="mb-1">Chess</span>
         </NavLink>
         <NavLink
           to="/LeagueHome"
            className={({ isActive }) =>
             isActive
-              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-2 border-orange-600 dark:border-orange-400 "
+              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
               : "flex flex-col items-center dark:text-gray-400 text-gray-800"
           }
         >
@@ -771,13 +773,13 @@ const ScrollNav = () => {
               </g>
             </svg>
           </div>
-          <span className="">Carrom</span>
+          <span className="mb-1">Carrom</span>
         </NavLink>
         <NavLink
           to="/LeagueHome"
            className={({ isActive }) =>
             isActive
-              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-2 border-orange-600 dark:border-orange-400 "
+              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
               : "flex flex-col items-center dark:text-gray-400 text-gray-800"
           }
         >
@@ -827,13 +829,13 @@ const ScrollNav = () => {
               </g>
             </svg>
           </div>
-          <span className="">Boxing</span>
+          <span className="mb-1">Boxing</span>
         </NavLink>
         <NavLink
           to="/LeagueHome"
            className={({ isActive }) =>
             isActive
-              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-2 border-orange-600 dark:border-orange-400 "
+              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
               : "flex flex-col items-center dark:text-gray-400 text-gray-800"
           }
         >
@@ -864,13 +866,13 @@ const ScrollNav = () => {
               </g>
             </svg>
           </div>
-          <span className="">Gymnastic</span>
+          <span className="mb-1">Gymnastic</span>
         </NavLink>
         <NavLink
           to="/LeagueHome"
            className={({ isActive }) =>
             isActive
-              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-2 border-orange-600 dark:border-orange-400 "
+              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
               : "flex flex-col items-center dark:text-gray-400 text-gray-800"
           }
         >
@@ -892,13 +894,13 @@ const ScrollNav = () => {
               </g>
             </svg>
           </div>
-          <span className="">Ice-Skating</span>
+          <span className="mb-1">Ice-Skating</span>
         </NavLink>
         <NavLink
           to="/LeagueHome"
            className={({ isActive }) =>
             isActive
-              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-2 border-orange-600 dark:border-orange-400 "
+              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
               : "flex flex-col items-center dark:text-gray-400 text-gray-800"
           }
         >
@@ -916,14 +918,14 @@ const ScrollNav = () => {
               <path d="M12,0C5.4,0,0,5.4,0,12s5.4,12,12,12s12-5.4,12-12S18.6,0,12,0z M11.1,22c-2.2-0.2-4.2-1.1-5.8-2.5l6.7-6.7l2.2,2.2  C12.4,16.8,11.3,19.2,11.1,22z M14.9,15.6l3.8,3.8C16.9,21,14.6,22,12.1,22C12.3,19.5,13.3,17.3,14.9,15.6z M12.7,12l6.7-6.7  c1.4,1.6,2.3,3.5,2.5,5.8c-2.7,0.2-5.2,1.4-7.1,3.1L12.7,12z M5.3,4.6C7.1,3,9.4,2,11.9,2c-0.2,2.5-1.2,4.7-2.8,6.4L5.3,4.6z   M12.9,2c2.2,0.2,4.2,1.1,5.8,2.5L12,11.3L9.8,9.1C11.6,7.2,12.7,4.8,12.9,2z M4.6,5.3l3.8,3.8C6.7,10.7,4.5,11.7,2,12  C2,9.4,3,7.1,4.6,5.3z M2,12.9c2.7-0.2,5.2-1.4,7.1-3.1l2.2,2.2l-6.7,6.7C3.2,17.1,2.3,15.2,2,12.9z M19.4,18.7l-3.8-3.8  c1.7-1.6,3.9-2.6,6.4-2.8C22,14.6,21,16.9,19.4,18.7z" />
             </svg>
           </div>
-          <span className="">Basketball</span>
+          <span className="mb-1">Basketball</span>
         </NavLink>
           {/* className="flex flex-col items-center dark:text-gray-400 text-gray-800" */}
         <NavLink
           to="/LeagueHome"
            className={({ isActive }) =>
             isActive
-              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-2 border-orange-600 dark:"
+              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm dark:border-orange-400 border-orange-600"
               : "flex flex-col items-center dark:text-gray-400 text-gray-800"
           }
         >
@@ -971,13 +973,13 @@ const ScrollNav = () => {
               <path d="M6.9,22l2-1.3c0.2-0.1,0.4-0.3,0.6-0.5l2.1-2.4l0.5-0.2c1.1-0.4,2.2-0.4,3.3,0h0c0.4,0.1,0.7,0.5,0.7,0.9V22h2v-3.4  c0-1.3-0.8-2.4-2-2.8l-2.3-0.8l-3.2,1.2l-2.1,2.4c-0.2,0.2-0.4,0.4-0.6,0.5L3.2,22H6.9z" />
             </svg>
           </div>
-          <span className="">Weight-Lifting</span>
+          <span className="mb-1">Weight-Lifting</span>
         </NavLink>
         <NavLink
           to="/LeagueHome"
            className={({ isActive }) =>
             isActive
-              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-2 border-orange-600 dark:border-orange-400 "
+              ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
               : "flex flex-col items-center dark:text-gray-400 text-gray-800"
           }
         >
@@ -1037,7 +1039,7 @@ const ScrollNav = () => {
               </g>
             </svg>
           </div>
-          <span className="">Wrestling</span>
+          <span className="mb-1">Wrestling</span>
         </NavLink>
       </div>
     </div>
