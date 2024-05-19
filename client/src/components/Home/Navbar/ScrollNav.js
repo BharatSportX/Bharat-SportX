@@ -7,7 +7,7 @@ const ScrollNav = () => {
     <div className="overflow-x-auto bg-gray-50 dark:bg-gray-800">
       <div className="inline-flex space-x-8 whitespace-nowrap p-4">
         <NavLink
-          to="/"
+          to="/footballhome"
           className="flex flex-col items-center dark:text-gray-400 text-gray-800"
           activeClassName="active-nav-item"
         >

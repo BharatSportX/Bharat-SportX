@@ -38,7 +38,7 @@ const Navbar = () => {
 
             {/* Navigation */}
             <NavLink
-              to="/home"
+              to="/footballhome"
               className="hidden dark:hover:text-white hover:text-black xl:block xl:font-semibold xl:text-gray-600 xl:dark:text-gray-300 xl:text-[1.1rem]"
             >
               Home
@@ -230,7 +230,7 @@ const Navbar = () => {
       <div className="xl:hidden fixed bottom-0 left-0 z-50 w-full h-16 bg-white border-t border-gray-200 dark:bg-gray-900 dark:border-gray-600">
       <div className="grid h-full max-w-lg grid-cols-5 m-auto font-medium md:flex md:justify-center">
         <NavLink
-          to="/home"
+          to="/footballhome"
           className={({ isActive }) =>
             `inline-flex flex-col items-center justify-center px-5 md:px-14 lg:px-16   group ${
               isActive ? 'text-red-600 dark:text-red-500' : 'text-gray-500 dark:text-gray-400'

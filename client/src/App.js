@@ -32,7 +32,7 @@ function App() {
       element:<><FrontPage/></>
     },
     {
-      path:'/home',
+      path:'/footballhome',
       element:<><Navbar/><Home/></>
     },
     {
