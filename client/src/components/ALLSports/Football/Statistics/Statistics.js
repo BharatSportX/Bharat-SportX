@@ -1100,42 +1100,295 @@
 
 
 
+// import React, { useEffect, useState } from 'react';
+// import { CanvasJSChart } from "canvasjs-react-charts";
+// import axios from 'axios';
+// import { useParams } from 'react-router-dom';
+// import Footer from '../../../FrontPage/Footer';
+// // Import FontAwesome icon
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faChartLine } from '@fortawesome/free-solid-svg-icons';
+// import NoDataModal from './NoDataModal';
+// import Lottie from "lottie-react"
+// import SpinLottieAnimation from "./SpinLottieAnimation.json";
+// const Statistics = () => {
+//   const [teamStats, setTeamStats] = useState(null);
+//   const [loading, setLoading] = useState(true);
+//   const [visibleStats, setVisibleStats] = useState({}); // State to track visible statistic types
+ 
+//   const { id: fixtureId } = useParams(); // Extract fixture id from URL params
+//   const handleCloseModal = () => {
+   
+//     window.history.back();
+//   };
+//   useEffect(() => {
+//     const fetchStatistics = async () => {
+//       try {
+//         const response = await axios.get("https://api-football-v1.p.rapidapi.com/v3/fixtures/statistics", {
+//           params: {
+//             fixture: fixtureId
+//           },
+//           headers: {
+//             'X-RapidAPI-Key': '96d6e2db0bmshaefc24c363be681p18096ejsn20efc89ac5c0',
+//             'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
+//           }
+//         });
+//         setTeamStats(response.data.response);
+//         setLoading(false); // Data fetched, set loading to false
+//         // Initialize visibleStats state with all statistic types initially visible
+//         setVisibleStats(
+//           response.data.response.reduce((acc, teamStat) => {
+//             teamStat.statistics.forEach(stat => {
+//               acc[stat.type] = true;
+//             });
+//             return acc;
+//           }, {})
+//         );
+//       } catch (error) {
+//         console.error("Error fetching statistics:", error);
+//         setLoading(false); // Error occurred, set loading to false
+//       }
+//     };
+//     fetchStatistics();
+//   }, [fixtureId]);
+
+//   const handleCheckboxChange = (type) => {
+//     // Toggle visibility status of the statistic type
+//     setVisibleStats(prevState => ({
+//       ...prevState,
+//       [type]: !prevState[type]
+//     }));
+//   };
+
+//   if (loading) {
+//     // Show spinner while loading
+//     return (
+//       <div className="loading-container">
+//         <Lottie SpinLottieAnimation={SpinLottieAnimation}/>
+//       </div>
+//     );
+//   }
+
+// //   if (!teamStats || teamStats.length === 0) {
+// //     // Show alert if no data found
+// //     return (
+// //       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+// //         <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
+// //           <span class="font-medium">Sorry!!</span> No Statistics Data Found.
+// //         </div>
+// //       </div>
+// //     );
+// // }
+
+// if (!teamStats || teamStats.length === 0) {
+//   return <NoDataModal onClose={handleCloseModal} />;
+// }
+
+
+//   // Prepare data for the chart, filtering out invisible statistic types
+//   const chartData = teamStats.map(teamStat => ({
+//     type: "line",
+//     showInLegend: true,
+//     name: teamStat.team.name,
+//     dataPoints: teamStat.statistics
+//       .filter(stat => visibleStats[stat.type])
+//       .map(stat => ({
+//         label: stat.type,
+//         y: parseFloat(stat.value)
+//       }))
+//   }));
+
+//   // Chart configuration
+//   const options = {
+//     animationEnabled: true,
+//     theme: "light2",
+//     title: {
+//       text: "Match Statistics"
+//     },
+//     axisX: {
+//       title: " Type",
+//       interval: 1,
+//       labelAngle: -45
+//     },
+//     axisY: {
+//       title: "Value"
+//     },
+//     data: chartData
+//   };
+
+//   // Render CanvasJS chart with checkboxes
+//   return (
+//     <React.Fragment>
+//     <div className='container mx-auto px-4 md:px-0'>
+//       <h1 className='title text-center text-2xl md:text-3xl my-6'>Detailed Match Statistics
+//         <span className="icon">
+//           <FontAwesomeIcon icon={faChartLine} />
+//         </span>
+       
+//       </h1>
+//       <div className='text-center mb-6'>
+//       <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-500 group-hover:to-pink-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 " onClick={()=>{
+//         alert("We are working on it... Please wait for few days! Thank You for your Patient!!!");
+//       }}>
+//         <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+//         See in Table Format
+//         </span>
+//       </button>
+//     </div>
+//       <div className='chart-container border border-gray-200 rounded-lg shadow-md overflow-hidden mb-6'>
+//         <CanvasJSChart options={options} />
+//       </div>
+//       <div className="checkbox-container">
+//         {Object.keys(visibleStats).map((type, index) => (
+//           <div key={index} className="checkbox-item">
+//             <label className="checkbox-label">
+//               <input
+//                 type="checkbox"
+//                 checked={visibleStats[type]}
+//                 onChange={() => handleCheckboxChange(type)}
+//                 className="checkbox-input"
+//               />
+//               <span className="checkbox-custom"></span>
+//               {type}
+//             </label>
+//           </div>
+//         ))}
+//       </div>
+//       <style jsx>{`
+//         /* Styles for loading spinner */
+//         .loading-container {
+//           display: flex;
+//           justify-content: center;
+//           align-items: center;
+//           height: 100vh;
+//         }
+//         .spinner {
+//           border: 5px solid #f3f3f3;
+//           border-top: 5px solid #3498db;
+//           border-radius: 50%;
+//           width: 50px;
+//           height: 50px;
+//           animation: spin 1s linear infinite;
+//         }
+//         @keyframes spin {
+//           0% { transform: rotate(0deg); }
+//           100% { transform: rotate(360deg); }
+//         }
+
+//         /* Styles for alert */
+//         .alert-container {
+//           display: flex;
+//           justify-content: center;
+//           align-items: center;
+//           height: 100vh;
+//         }
+//         .alert {
+//           padding: 10px 20px;
+//           background-color: #f44336;
+//           color: white;
+//           border-radius: 5px;
+//           font-size: 18px;
+//         }
+
+//         /* Styles for icon */
+//         .icon {
+//           margin-left: 10px;
+//           vertical-align: middle;
+//         }
+
+//         /* Styles for checkbox */
+//         .checkbox-container {
+//           display: grid;
+//           grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+//           gap: 10px;
+//         }
+//         .checkbox-item {
+//           display: flex;
+//           align-items: center;
+//         }
+//         .checkbox-label {
+//           display: flex;
+//           align-items: center;
+//         }
+//         .checkbox-input {
+//           display: none;
+//         }
+//         .checkbox-custom {
+//           width: 20px;
+//           height: 20px;
+//           border: 2px solid #000;
+//           border-radius: 3px;
+//           margin-right: 5px;
+//           position: relative;
+//         }
+//         .checkbox-input:checked + .checkbox-custom::after {
+//           content: '';
+//           position: absolute;
+//           top: 50%;
+//           left: 50%;
+//           transform: translate(-50%, -50%);
+//           width: 10px;
+//           height: 10px;
+//           background-color: #000;
+//           border-radius: 50%;
+//         }
+
+//         @media (max-width: 768px) {
+//           .checkbox-container {
+//             grid-template-columns: repeat(3, minmax(100px, 1fr));
+//           }
+//         }
+//       `}</style>
+//     </div>
+
+//     <Footer />
+//     </React.Fragment>
+//   );
+// }
+
+// export default Statistics;
+
 import React, { useEffect, useState } from 'react';
-import { CanvasJSChart } from "canvasjs-react-charts";
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import Footer from '../../../FrontPage/Footer';
-// Import FontAwesome icon
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChartLine } from '@fortawesome/free-solid-svg-icons';
 import NoDataModal from './NoDataModal';
-import Lottie from "lottie-react"
-import SpinLottieAnimation from "./SpinLottieAnimation.json";
+import Lottie from 'lottie-react';
+import SpinLottieAnimation from './SpinLottieAnimation.json';
+import ResizableBox from './ResizableBox';
+import useDemoConfig from './useDemoConfig';
+import { AxisOptions, Chart } from 'react-charts';
+
 const Statistics = () => {
   const [teamStats, setTeamStats] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [visibleStats, setVisibleStats] = useState({}); // State to track visible statistic types
- 
-  const { id: fixtureId } = useParams(); // Extract fixture id from URL params
+  const [visibleStats, setVisibleStats] = useState({});
+
+  const { id: fixtureId } = useParams();
+
   const handleCloseModal = () => {
-   
     window.history.back();
   };
+
   useEffect(() => {
     const fetchStatistics = async () => {
       try {
-        const response = await axios.get("https://api-football-v1.p.rapidapi.com/v3/fixtures/statistics", {
-          params: {
-            fixture: fixtureId
-          },
-          headers: {
-            'X-RapidAPI-Key': '96d6e2db0bmshaefc24c363be681p18096ejsn20efc89ac5c0',
-            'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
+        const response = await axios.get(
+          'https://api-football-v1.p.rapidapi.com/v3/fixtures/statistics',
+          {
+            params: {
+              fixture: fixtureId
+            },
+            headers: {
+              'X-RapidAPI-Key': '96d6e2db0bmshaefc24c363be681p18096ejsn20efc89ac5c0',
+              'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
+            }
           }
-        });
+        );
         setTeamStats(response.data.response);
-        setLoading(false); // Data fetched, set loading to false
-        // Initialize visibleStats state with all statistic types initially visible
+        setLoading(false);
         setVisibleStats(
           response.data.response.reduce((acc, teamStat) => {
             teamStat.statistics.forEach(stat => {
@@ -1145,15 +1398,14 @@ const Statistics = () => {
           }, {})
         );
       } catch (error) {
-        console.error("Error fetching statistics:", error);
-        setLoading(false); // Error occurred, set loading to false
+        console.error('Error fetching statistics:', error);
+        setLoading(false);
       }
     };
     fetchStatistics();
   }, [fixtureId]);
 
-  const handleCheckboxChange = (type) => {
-    // Toggle visibility status of the statistic type
+  const handleCheckboxChange = type => {
     setVisibleStats(prevState => ({
       ...prevState,
       [type]: !prevState[type]
@@ -1161,189 +1413,201 @@ const Statistics = () => {
   };
 
   if (loading) {
-    // Show spinner while loading
     return (
       <div className="loading-container">
-        <Lottie SpinLottieAnimation={SpinLottieAnimation}/>
-      </div>
+  <Lottie animationData={SpinLottieAnimation} className="spin-animation" />
+</div>
+
     );
   }
 
-//   if (!teamStats || teamStats.length === 0) {
-//     // Show alert if no data found
-//     return (
-//       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-//         <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
-//           <span class="font-medium">Sorry!!</span> No Statistics Data Found.
-//         </div>
-//       </div>
-//     );
-// }
+  if (!teamStats || teamStats.length === 0) {
+    return <NoDataModal onClose={handleCloseModal} />;
+  }
 
-if (!teamStats || teamStats.length === 0) {
-  return <NoDataModal onClose={handleCloseModal} />;
-}
-
-
-  // Prepare data for the chart, filtering out invisible statistic types
   const chartData = teamStats.map(teamStat => ({
-    type: "line",
-    showInLegend: true,
-    name: teamStat.team.name,
-    dataPoints: teamStat.statistics
+    label: teamStat.team.name,
+    data: teamStat.statistics
       .filter(stat => visibleStats[stat.type])
       .map(stat => ({
-        label: stat.type,
-        y: parseFloat(stat.value)
+        primary: stat.type,
+        secondary: parseFloat(stat.value)
       }))
   }));
 
-  // Chart configuration
-  const options = {
-    animationEnabled: true,
-    theme: "light2",
-    title: {
-      text: "Match Statistics"
-    },
-    axisX: {
-      title: " Type",
-      interval: 1,
-      labelAngle: -45
-    },
-    axisY: {
-      title: "Value"
-    },
-    data: chartData
+  const primaryAxis = {
+    getValue: datum => datum.primary
   };
 
-  // Render CanvasJS chart with checkboxes
+  const secondaryAxes = [
+    {
+      getValue: datum => datum.secondary,
+      elementType: 'line'
+    }
+  ];
+
   return (
     <React.Fragment>
-    <div className='container mx-auto px-4 md:px-0'>
-      <h1 className='title text-center text-2xl md:text-3xl my-6'>Detailed Match Statistics
-        <span className="icon">
-          <FontAwesomeIcon icon={faChartLine} />
-        </span>
-       
-      </h1>
-      <div className='text-center mb-6'>
-      <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-500 group-hover:to-pink-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 " onClick={()=>{
-        alert("We are working on it... Please wait for few days! Thank You for your Patient!!!");
-      }}>
-        <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-        See in Table Format
-        </span>
-      </button>
-    </div>
-      <div className='chart-container border border-gray-200 rounded-lg shadow-md overflow-hidden mb-6'>
-        <CanvasJSChart options={options} />
-      </div>
-      <div className="checkbox-container">
-        {Object.keys(visibleStats).map((type, index) => (
-          <div key={index} className="checkbox-item">
-            <label className="checkbox-label">
-              <input
-                type="checkbox"
-                checked={visibleStats[type]}
-                onChange={() => handleCheckboxChange(type)}
-                className="checkbox-input"
-              />
-              <span className="checkbox-custom"></span>
-              {type}
-            </label>
-          </div>
-        ))}
-      </div>
-      <style jsx>{`
-        /* Styles for loading spinner */
-        .loading-container {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          height: 100vh;
-        }
-        .spinner {
-          border: 5px solid #f3f3f3;
-          border-top: 5px solid #3498db;
-          border-radius: 50%;
-          width: 50px;
-          height: 50px;
-          animation: spin 1s linear infinite;
-        }
-        @keyframes spin {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
-        }
-
-        /* Styles for alert */
-        .alert-container {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          height: 100vh;
-        }
-        .alert {
-          padding: 10px 20px;
-          background-color: #f44336;
-          color: white;
-          border-radius: 5px;
-          font-size: 18px;
-        }
-
-        /* Styles for icon */
-        .icon {
-          margin-left: 10px;
-          vertical-align: middle;
-        }
-
-        /* Styles for checkbox */
-        .checkbox-container {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-          gap: 10px;
-        }
-        .checkbox-item {
-          display: flex;
-          align-items: center;
-        }
-        .checkbox-label {
-          display: flex;
-          align-items: center;
-        }
-        .checkbox-input {
-          display: none;
-        }
-        .checkbox-custom {
-          width: 20px;
-          height: 20px;
-          border: 2px solid #000;
-          border-radius: 3px;
-          margin-right: 5px;
-          position: relative;
-        }
-        .checkbox-input:checked + .checkbox-custom::after {
-          content: '';
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          width: 10px;
-          height: 10px;
-          background-color: #000;
-          border-radius: 50%;
-        }
-
-        @media (max-width: 768px) {
-          .checkbox-container {
-            grid-template-columns: repeat(3, minmax(100px, 1fr));
+      <div className="container mx-auto px-4 md:px-0  relative overflow-x-hidden top-64">
+        <h1 className="title text-center text-2xl md:text-3xl my-6">
+          Detailed Match Statistics
+          <span className="icon">
+            <FontAwesomeIcon icon={faChartLine} />
+          </span>
+        </h1>
+        <div className="text-center mb-6">
+          <button
+            className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-500 group-hover:to-pink-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800"
+            onClick={() => {
+              alert(
+                'We are working on it... Please wait for a few days! Thank you for your patience!!!'
+              );
+            }}
+          >
+            <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+              See in Table Format
+            </span>
+          </button>
+        </div>
+        <div className="chart-container border border-gray-200 rounded-lg shadow-md overflow-hidden mb-6">
+          <ResizableBox>
+            <Chart
+              options={{
+                data: chartData,
+                primaryAxis,
+                secondaryAxes
+              }}
+            />
+          </ResizableBox>
+        </div>
+        <div className="checkbox-container">
+          {Object.keys(visibleStats).map((type, index) => (
+            <div key={index} className="checkbox-item">
+              <label className="checkbox-label">
+                <input
+                  type="checkbox"
+                  checked={visibleStats[type]}
+                  onChange={() => handleCheckboxChange(type)}
+                  className="checkbox-input"
+                />
+                <span className="checkbox-custom"></span>
+                {type}
+              </label>
+            </div>
+          ))}
+        </div>
+        <style jsx>{`
+          .loading-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
           }
-        }
-      `}</style>
-    </div>
-
-    <Footer />
+          .spinner {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+          }
+          @keyframes spin {
+            0% {
+              transform: rotate(0deg);
+            }
+            100% {
+              transform: rotate(360deg);
+            }
+          }
+          .alert-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+          }
+          .alert {
+            padding: 10px 20px;
+            background-color: #f44336;
+            color: white;
+            border-radius: 5px;
+            font-size: 18px;
+          }
+          .icon {
+            margin-left: 10px;
+            vertical-align: middle;
+          }
+          .checkbox-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+          }
+          .checkbox-item {
+            display: flex;
+            align-items: center;
+          }
+          .checkbox-label {
+            display: flex;
+            align-items: center;
+          }
+          .checkbox-input {
+            display: none;
+          }
+          .checkbox-custom {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #000;
+            border-radius: 3px;
+            margin-right: 5px;
+            position: relative;
+          }
+          .checkbox-input:checked + .checkbox-custom::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 10px;
+            height: 10px;
+            background-color: #000;
+            border-radius: 50%;
+          }
+          
+          .loading-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 30vh;
+          }
+        
+          .spin-animation {
+            width: 100px; /* Default size */
+            height: 100px; /* Default size */
+          }
+        
+          /* Responsive adjustments */
+          @media (max-width: 768px) {
+            .spin-animation {
+              width: 80px; /* Smaller size for smaller screens */
+              height: 80px;
+            }
+          }
+        
+          @media (max-width: 480px) {
+            .spin-animation {
+              width: 60px; /* Even smaller size for mobile devices */
+              height: 60px;
+            }
+          }
+          @media (max-width: 768px) {
+            .checkbox-container {
+              grid-template-columns: repeat(3, minmax(100px, 1fr));
+            }
+          }
+        `}</style>
+      </div>
+     
     </React.Fragment>
   );
-}
+};
 
 export default Statistics;
