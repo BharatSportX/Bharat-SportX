@@ -1,4 +1,8 @@
 
+20-5-24 pcakage addede
+
+npm install re-resizable
+npm install react-charts
 
 
 For Statsitics Canava JS Chart is Used see the Canava Js Chart Documentation

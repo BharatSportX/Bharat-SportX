@@ -142,7 +142,7 @@ function Cups() {
   );
 
   return (
-    <div className="container mx-auto py-8">
+    <div className="container mx-auto py-8 relative overflow-x-hidden top-64">
       <h1 className="text-3xl font-bold mb-4">Cups</h1>
 
       {/* Speak Now Div */}
