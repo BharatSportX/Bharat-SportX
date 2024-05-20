@@ -73,7 +73,7 @@ function App() {
       element: (
         <>
           <Navbar />
-          <CupPageDetails />
+        <CupPageDetails/>
         </>
       ),
     },
