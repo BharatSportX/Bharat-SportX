@@ -683,11 +683,11 @@ const TableFormat = () => {
         />
       </div>
 
-      <div className="overflow-x-auto">
-        <div className="overflow-scroll scrollbar-thin scrollbar-thumb-black scrollbar-track-gray-200" style={{ overflowX: 'auto' }}>
+      <div className="overflow-x-auto mt-4">
+        <div className="overflow-scroll scrollbar-thin scrollbar-thumb-black scrollbar-track-gray-200 " style={{ overflowX: 'auto' }}>
           <table
             ref={tableRef}
-            className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 divide-y divide-gray-200 dark:divide-gray-700"
+            className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 divide-y divide-gray-200 dark:divide-gray-700 "
           >
             <thead className="text-xs text-gray-700 uppercase dark:text-gray-400">
               <tr>
