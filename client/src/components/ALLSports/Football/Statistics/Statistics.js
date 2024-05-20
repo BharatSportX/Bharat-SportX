@@ -1096,7 +1096,7 @@
 
 
 
-
+// <!-- Canava JS Chart -->
 
 
 
@@ -1348,17 +1348,553 @@
 
 // export default Statistics;
 
+// import React, { useEffect, useState } from 'react';
+// import axios from 'axios';
+// import { useParams } from 'react-router-dom';
+
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faChartLine } from '@fortawesome/free-solid-svg-icons';
+// import NoDataModal from './NoDataModal';
+// import Lottie from 'lottie-react';
+// import SpinLottieAnimation from './SpinLottieAnimation.json';
+// import ResizableBox from './ResizableBox';
+// import useDemoConfig from './useDemoConfig';
+// import { AxisOptions, Chart } from 'react-charts';
+
+// const Statistics = () => {
+//   const [teamStats, setTeamStats] = useState(null);
+//   const [loading, setLoading] = useState(true);
+//   const [visibleStats, setVisibleStats] = useState({});
+
+//   const { id: fixtureId } = useParams();
+
+//   const handleCloseModal = () => {
+//     window.history.back();
+//   };
+
+//   useEffect(() => {
+//     const fetchStatistics = async () => {
+//       try {
+//         const response = await axios.get(
+//           'https://api-football-v1.p.rapidapi.com/v3/fixtures/statistics',
+//           {
+//             params: {
+//               fixture: fixtureId
+//             },
+//             headers: {
+//               'X-RapidAPI-Key': '96d6e2db0bmshaefc24c363be681p18096ejsn20efc89ac5c0',
+//               'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
+//             }
+//           }
+//         );
+//         setTeamStats(response.data.response);
+//         setLoading(false);
+//         setVisibleStats(
+//           response.data.response.reduce((acc, teamStat) => {
+//             teamStat.statistics.forEach(stat => {
+//               acc[stat.type] = true;
+//             });
+//             return acc;
+//           }, {})
+//         );
+//       } catch (error) {
+//         console.error('Error fetching statistics:', error);
+//         setLoading(false);
+//       }
+//     };
+//     fetchStatistics();
+//   }, [fixtureId]);
+
+//   const handleCheckboxChange = type => {
+//     setVisibleStats(prevState => ({
+//       ...prevState,
+//       [type]: !prevState[type]
+//     }));
+//   };
+
+//   if (loading) {
+//     return (
+//       <div className="loading-container">
+//         <Lottie animationData={SpinLottieAnimation} className="spin-animation" />
+//       </div>
+
+//     );
+//   }
+
+//   if (!teamStats || teamStats.length === 0) {
+//     return <NoDataModal onClose={handleCloseModal} />;
+//   }
+
+//   const chartData = teamStats.map(teamStat => ({
+//     label: teamStat.team.name,
+//     data: teamStat.statistics
+//       .filter(stat => visibleStats[stat.type])
+//       .map(stat => ({
+//         primary: stat.type,
+//         secondary: parseFloat(stat.value)
+//       }))
+//   }));
+
+//   const primaryAxis = {
+//     getValue: datum => datum.primary
+//   };
+
+//   const secondaryAxes = [
+//     {
+//       getValue: datum => datum.secondary,
+//       elementType: 'line'
+//     }
+//   ];
+
+//   return (
+//     <React.Fragment>
+//       <div className="container mx-auto px-4 md:px-0  relative overflow-x-hidden top-36">
+//         <h1 className="title text-center text-2xl md:text-3xl my-6">
+//           Detailed Match Statistics
+//           <span className="icon">
+//             <FontAwesomeIcon icon={faChartLine} />
+//           </span>
+//         </h1>
+//         <div className="text-center mb-6">
+//           <button
+//             className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-500 group-hover:to-pink-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800"
+//             onClick={() => {
+//               alert(
+//                 'We are working on it... Please wait for a few days! Thank you for your patience!!!'
+//               );
+//             }}
+//           >
+//             <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+//               See in Table Format
+//             </span>
+//           </button>
+//         </div>
+//         <div className="chart-container border border-gray-200 rounded-lg shadow-md overflow-hidden mb-6">
+//           <ResizableBox>
+//             <Chart
+//               options={{
+//                 data: chartData,
+//                 primaryAxis,
+//                 secondaryAxes
+//               }}
+//             />
+//           </ResizableBox>
+//         </div>
+//         <div className="checkbox-container">
+//           {Object.keys(visibleStats).map((type, index) => (
+//             <div key={index} className="checkbox-item">
+//               <label className="checkbox-label">
+//                 <input
+//                   type="checkbox"
+//                   checked={visibleStats[type]}
+//                   onChange={() => handleCheckboxChange(type)}
+//                   className="checkbox-input"
+//                 />
+//                 <span className="checkbox-custom"></span>
+//                 {type}
+//               </label>
+//             </div>
+//           ))}
+//         </div>
+//         <style jsx>{`
+//           .loading-container {
+//             display: flex;
+//             justify-content: center;
+//             align-items: center;
+//             height: 100vh;
+//           }
+//           .spinner {
+//             border: 5px solid #f3f3f3;
+//             border-top: 5px solid #3498db;
+//             border-radius: 50%;
+//             width: 50px;
+//             height: 50px;
+//             animation: spin 1s linear infinite;
+//           }
+//           @keyframes spin {
+//             0% {
+//               transform: rotate(0deg);
+//             }
+//             100% {
+//               transform: rotate(360deg);
+//             }
+//           }
+//           .alert-container {
+//             display: flex;
+//             justify-content: center;
+//             align-items: center;
+//             height: 100vh;
+//           }
+//           .alert {
+//             padding: 10px 20px;
+//             background-color: #f44336;
+//             color: white;
+//             border-radius: 5px;
+//             font-size: 18px;
+//           }
+//           .icon {
+//             margin-left: 10px;
+//             vertical-align: middle;
+//           }
+//           .checkbox-container {
+//             display: grid;
+//             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+//             gap: 10px;
+//           }
+//           .checkbox-item {
+//             display: flex;
+//             align-items: center;
+//           }
+//           .checkbox-label {
+//             display: flex;
+//             align-items: center;
+//           }
+//           .checkbox-input {
+//             display: none;
+//           }
+//           .checkbox-custom {
+//             width: 20px;
+//             height: 20px;
+//             border: 2px solid #000;
+//             border-radius: 3px;
+//             margin-right: 5px;
+//             position: relative;
+//           }
+//           .checkbox-input:checked + .checkbox-custom::after {
+//             content: '';
+//             position: absolute;
+//             top: 50%;
+//             left: 50%;
+//             transform: translate(-50%, -50%);
+//             width: 10px;
+//             height: 10px;
+//             background-color: #000;
+//             border-radius: 50%;
+//           }
+          
+//           .loading-container {
+//             display: flex;
+//             justify-content: center;
+//             align-items: center;
+//             height: 30vh;
+//           }
+        
+//           .spin-animation {
+//             width: 100px; /* Default size */
+//             height: 100px; /* Default size */
+//           }
+        
+//           /* Responsive adjustments */
+//           @media (max-width: 768px) {
+//             .spin-animation {
+//               width: 80px; /* Smaller size for smaller screens */
+//               height: 80px;
+//             }
+//           }
+        
+//           @media (max-width: 480px) {
+//             .spin-animation {
+//               width: 60px; /* Even smaller size for mobile devices */
+//               height: 60px;
+//             }
+//           }
+//           @media (max-width: 768px) {
+//             .checkbox-container {
+//               grid-template-columns: repeat(3, minmax(100px, 1fr));
+//             }
+//           }
+//         `}</style>
+//       </div>
+     
+//     </React.Fragment>
+//   );
+// };
+
+// export default Statistics;
+
+
+
+
+
+//Final Matreial UI Stat
+
+// import React, { useEffect, useState } from 'react';
+// import axios from 'axios';
+// import { useParams } from 'react-router-dom';
+
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faChartLine } from '@fortawesome/free-solid-svg-icons';
+// import NoDataModal from './NoDataModal';
+// import Lottie from 'lottie-react';
+
+// import ResizableBox from './ResizableBox';
+// import useDemoConfig from './useDemoConfig';
+// import { AxisOptions, Chart } from 'react-charts';
+
+// const Statistics = () => {
+//   const [teamStats, setTeamStats] = useState(null);
+//   const [loading, setLoading] = useState(true);
+//   const [visibleStats, setVisibleStats] = useState({});
+
+//   const { id: fixtureId } = useParams();
+
+//   const handleCloseModal = () => {
+//     window.history.back();
+//   };
+
+//   useEffect(() => {
+//     const fetchStatistics = async () => {
+//       try {
+//         const response = await axios.get(
+//           'https://api-football-v1.p.rapidapi.com/v3/fixtures/statistics',
+//           {
+//             params: {
+//               fixture: fixtureId
+//             },
+//             headers: {
+//               'X-RapidAPI-Key': '96d6e2db0bmshaefc24c363be681p18096ejsn20efc89ac5c0',
+//               'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
+//             }
+//           }
+//         );
+//         setTeamStats(response.data.response);
+//         setLoading(false);
+//         setVisibleStats(
+//           response.data.response.reduce((acc, teamStat) => {
+//             teamStat.statistics.forEach(stat => {
+//               acc[stat.type] = true;
+//             });
+//             return acc;
+//           }, {})
+//         );
+//       } catch (error) {
+//         console.error('Error fetching statistics:', error);
+//         setLoading(false);
+//       }
+//     };
+//     fetchStatistics();
+//   }, [fixtureId]);
+
+//   const handleCheckboxChange = type => {
+//     setVisibleStats(prevState => ({
+//       ...prevState,
+//       [type]: !prevState[type]
+//     }));
+//   };
+
+//   if (loading) {
+//     return (
+//       <div className="spin">
+//       <iframe
+//       src="https://lottie.host/embed/cd29fa7c-026f-43db-85bb-f7c2595f0bca/6CVeJY1HpL.json"
+     
+//       title="Loading animation"
+//       className="fixed top-0 right-0 h-screen w-screen  z-50 flex justify-center items-center spin "
+//     ></iframe>
+//     </div>
+//     );
+//   }
+
+//   if (!teamStats || teamStats.length === 0) {
+//     return <NoDataModal onClose={handleCloseModal} />;
+//   }
+
+//   const chartData = teamStats.map(teamStat => ({
+//     label: teamStat.team.name,
+//     data: teamStat.statistics
+//       .filter(stat => visibleStats[stat.type])
+//       .map(stat => ({
+//         primary: stat.type,
+//         secondary: parseFloat(stat.value)
+//       }))
+//   }));
+
+//   const primaryAxis = {
+//     getValue: datum => datum.primary
+//   };
+
+//   const secondaryAxes = [
+//     {
+//       getValue: datum => datum.secondary,
+//       elementType: 'line'
+//     }
+//   ];
+
+//   return (
+//     <React.Fragment>
+//       <div className="container mx-auto px-4 md:px-0 relative overflow-x-hidden top-36">
+//         <h1 className="title text-center text-2xl md:text-3xl my-6">
+//           Detailed Match Statistics
+//           <span className="icon">
+//             <FontAwesomeIcon icon={faChartLine} />
+//           </span>
+//         </h1>
+//         <div className="text-center mb-6">
+//           <button
+//             className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-500 group-hover:to-pink-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800"
+//             onClick={() => {
+//               alert(
+//                 'We are working on it... Please wait for a few days! Thank you for your patience!!!'
+//               );
+//             }}
+//           >
+//             <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+//               See in Table Format
+//             </span>
+//           </button>
+//         </div>
+//         <div className="chart-container border border-gray-200 rounded-lg shadow-md overflow-hidden mb-6">
+//           <ResizableBox>
+//             <Chart
+//               options={{
+//                 data: chartData,
+//                 primaryAxis,
+//                 secondaryAxes
+//               }}
+//             />
+//           </ResizableBox>
+//         </div>
+//         <div className="checkbox-container">
+//           {Object.keys(visibleStats).map((type, index) => (
+//             <div key={index} className="checkbox-item">
+//               <label className="checkbox-label">
+//                 <input
+//                   type="checkbox"
+//                   checked={visibleStats[type]}
+//                   onChange={() => handleCheckboxChange(type)}
+//                   className="checkbox-input"
+//                 />
+//                 <span className="checkbox-custom"></span>
+//                 {type}
+//               </label>
+//             </div>
+//           ))}
+//         </div>
+//         <style jsx>{`
+//           .loading-container {
+//             display: flex;
+//             justify-content: center;
+//             align-items: center;
+//             height: 100vh;
+//           }
+//           .spinner {
+//             border: 5px solid #f3f3f3;
+//             border-top: 5px solid #3498db;
+//             border-radius: 50%;
+//             width: 50px;
+//             height: 50px;
+//             animation: spin 1s linear infinite;
+//           }
+//           @keyframes spin {
+//             0% {
+//               transform: rotate(0deg);
+//             }
+//             100% {
+//               transform: rotate(360deg);
+//             }
+//           }
+//           .alert-container {
+//             display: flex;
+//             justify-content: center;
+//             align-items: center;
+//             height: 100vh;
+//           }
+//           .alert {
+//             padding: 10px 20px;
+//             background-color: #f44336;
+//             color: white;
+//             border-radius: 5px;
+//             font-size: 18px;
+//           }
+//           .icon {
+//             margin-left: 10px;
+//             vertical-align: middle;
+//           }
+//           .checkbox-container {
+//             display: grid;
+//             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+//             gap: 10px;
+//           }
+//           .checkbox-item {
+//             display: flex;
+//             align-items: center;
+//           }
+//           .checkbox-label {
+//             display: flex;
+//             align-items: center;
+//           }
+//           .checkbox-input {
+//             display: none;
+//           }
+//           .checkbox-custom {
+//             width: 20px;
+//             height: 20px;
+//             border: 2px solid #000;
+//             border-radius: 3px;
+//             margin-right: 5px;
+//             position: relative;
+//           }
+//           .checkbox-input:checked + .checkbox-custom::after {
+//             content: '';
+//             position: absolute;
+//             top: 50%;
+//             left: 50%;
+//             transform: translate(-50%, -50%);
+//             width: 10px;
+//             height: 10px;
+//             background-color: #000;
+//             border-radius: 50%;
+//           }
+          
+//           .loading-container {
+//             display: flex;
+//             justify-content: center;
+//             align-items: center;
+//             height: 30vh;
+//           }
+        
+//           .spin-animation {
+//             width: 100px;
+//             height: 100px;
+//           }
+       
+//           @media (max-width: 768px) {
+//             .spin-animation {
+//               width: 80px;
+//               height: 80px;
+//             }
+//           }
+        
+//           @media (max-width: 480px) {
+//             .spin-animation {
+//               width: 60px;
+//               height: 60px;
+//             }
+//           }
+//           @media (max-width: 768px) {
+//             .checkbox-container {
+//               grid-template-columns: repeat(3, minmax(100px, 1fr));
+//             }
+//           }
+//         `}</style>
+//       </div>
+     
+//     </React.Fragment>
+//   );
+// };
+
+// export default Statistics;
+
+
+
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
-import Footer from '../../../FrontPage/Footer';
+import { useParams, Link } from 'react-router-dom';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChartLine } from '@fortawesome/free-solid-svg-icons';
 import NoDataModal from './NoDataModal';
-import Lottie from 'lottie-react';
-import SpinLottieAnimation from './SpinLottieAnimation.json';
 import ResizableBox from './ResizableBox';
-import useDemoConfig from './useDemoConfig';
 import { AxisOptions, Chart } from 'react-charts';
 
 const Statistics = () => {
@@ -1378,9 +1914,7 @@ const Statistics = () => {
         const response = await axios.get(
           'https://api-football-v1.p.rapidapi.com/v3/fixtures/statistics',
           {
-            params: {
-              fixture: fixtureId
-            },
+            params: { fixture: fixtureId },
             headers: {
               'X-RapidAPI-Key': '96d6e2db0bmshaefc24c363be681p18096ejsn20efc89ac5c0',
               'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
@@ -1414,10 +1948,14 @@ const Statistics = () => {
 
   if (loading) {
     return (
-      <div className="loading-container">
-  <Lottie animationData={SpinLottieAnimation} className="spin-animation" />
-</div>
-
+      <div className="spin">
+           <iframe
+           src="https://lottie.host/embed/cd29fa7c-026f-43db-85bb-f7c2595f0bca/6CVeJY1HpL.json"
+           
+           title="Loading animation"
+           className="fixed top-0 right-0 h-screen w-screen  z-50 flex justify-center items-center spin "
+         ></iframe>
+         </div>
     );
   }
 
@@ -1448,7 +1986,7 @@ const Statistics = () => {
 
   return (
     <React.Fragment>
-      <div className="container mx-auto px-4 md:px-0  relative overflow-x-hidden">
+      <div className="container mx-auto px-4 md:px-0 relative overflow-x-hidden top-36">
         <h1 className="title text-center text-2xl md:text-3xl my-6">
           Detailed Match Statistics
           <span className="icon">
@@ -1456,18 +1994,14 @@ const Statistics = () => {
           </span>
         </h1>
         <div className="text-center mb-6">
-          <button
+          <Link
+            to={`/table-format/${fixtureId}`}
             className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-500 group-hover:to-pink-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800"
-            onClick={() => {
-              alert(
-                'We are working on it... Please wait for a few days! Thank you for your patience!!!'
-              );
-            }}
           >
             <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
               See in Table Format
             </span>
-          </button>
+          </Link>
         </div>
         <div className="chart-container border border-gray-200 rounded-lg shadow-md overflow-hidden mb-6">
           <ResizableBox>
@@ -1480,22 +2014,38 @@ const Statistics = () => {
             />
           </ResizableBox>
         </div>
-        <div className="checkbox-container">
+        {/* <div className="checkbox-container">
           {Object.keys(visibleStats).map((type, index) => (
-            <div key={index} className="checkbox-item">
-              <label className="checkbox-label">
-                <input
-                  type="checkbox"
-                  checked={visibleStats[type]}
-                  onChange={() => handleCheckboxChange(type)}
-                  className="checkbox-input"
-                />
-                <span className="checkbox-custom"></span>
+            <div key={index} className="flex items-center me-4">
+              <input
+                type="checkbox"
+                checked={visibleStats[type]}
+                onChange={() => handleCheckboxChange(type)}
+                className={`w-4 h-4 bg-gray-100 border-gray-300 rounded focus:ring-2 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-offset-gray-800`}
+              />
+              <label className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">
                 {type}
               </label>
             </div>
           ))}
-        </div>
+        </div> */}
+
+<div className="checkbox-container flex flex-wrap">
+  {Object.keys(visibleStats).map((type, index) => (
+    <div key={index} className="flex items-center me-4 mb-4 w-full sm:w-auto">
+      <input
+        type="checkbox"
+        checked={visibleStats[type]}
+        onChange={() => handleCheckboxChange(type)}
+        className={`w-4 h-4 bg-gray-100 border-gray-300 rounded focus:ring-2 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-offset-gray-800`}
+      />
+      <label className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+        {type}
+      </label>
+    </div>
+  ))}
+</div>
+
         <style jsx>{`
           .loading-container {
             display: flex;
@@ -1503,111 +2053,38 @@ const Statistics = () => {
             align-items: center;
             height: 100vh;
           }
-          .spinner {
-            border: 5px solid #f3f3f3;
-            border-top: 5px solid #3498db;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            animation: spin 1s linear infinite;
+          .spin-animation {
+            width: 200px;
+            height: 200px;
           }
-          @keyframes spin {
-            0% {
-              transform: rotate(0deg);
-            }
-            100% {
-              transform: rotate(360deg);
+          @media (max-width: 768px) {
+            .spin-animation {
+              width: 100px;
+              height: 100px;
             }
           }
-          .alert-container {
+          @media (max-width: 480px) {
+            .spin-animation {
+              width: 80px;
+              height: 80px;
+            }
+          }
+          .checkbox-container {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-          }
-          .alert {
-            padding: 10px 20px;
-            background-color: #f44336;
-            color: white;
-            border-radius: 5px;
-            font-size: 18px;
+            flex-wrap: wrap;
+            gap: 10px;
           }
           .icon {
             margin-left: 10px;
             vertical-align: middle;
           }
-          .checkbox-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 10px;
-          }
-          .checkbox-item {
-            display: flex;
-            align-items: center;
-          }
-          .checkbox-label {
-            display: flex;
-            align-items: center;
-          }
-          .checkbox-input {
-            display: none;
-          }
-          .checkbox-custom {
-            width: 20px;
-            height: 20px;
-            border: 2px solid #000;
-            border-radius: 3px;
-            margin-right: 5px;
-            position: relative;
-          }
-          .checkbox-input:checked + .checkbox-custom::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 10px;
-            height: 10px;
-            background-color: #000;
-            border-radius: 50%;
-          }
-          
-          .loading-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 30vh;
-          }
-        
-          .spin-animation {
-            width: 100px; /* Default size */
-            height: 100px; /* Default size */
-          }
-        
-          /* Responsive adjustments */
-          @media (max-width: 768px) {
-            .spin-animation {
-              width: 80px; /* Smaller size for smaller screens */
-              height: 80px;
-            }
-          }
-        
-          @media (max-width: 480px) {
-            .spin-animation {
-              width: 60px; /* Even smaller size for mobile devices */
-              height: 60px;
-            }
-          }
-          @media (max-width: 768px) {
-            .checkbox-container {
-              grid-template-columns: repeat(3, minmax(100px, 1fr));
-            }
-          }
         `}</style>
       </div>
-     
     </React.Fragment>
   );
 };
 
 export default Statistics;
+
+
+

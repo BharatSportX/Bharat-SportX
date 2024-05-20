@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 
 const ScrollNav = () => {
   return (
-    <div className="overflow-x-auto lg:no-scrollbar bg-gray-50 dark:bg-gray-800">
+    <div className="overflow-x-auto lg:no-scrollbar bg-gray-50 dark:bg-gray-800 ">
       <div className="inline-flex space-x-8 whitespace-nowrap p-4 pb-0">
         <NavLink
           to="/footballhome"
