@@ -2014,7 +2014,7 @@ const Statistics = () => {
             />
           </ResizableBox>
         </div>
-        <div className="checkbox-container">
+        {/* <div className="checkbox-container">
           {Object.keys(visibleStats).map((type, index) => (
             <div key={index} className="flex items-center me-4">
               <input
@@ -2028,7 +2028,24 @@ const Statistics = () => {
               </label>
             </div>
           ))}
-        </div>
+        </div> */}
+
+<div className="checkbox-container flex flex-wrap">
+  {Object.keys(visibleStats).map((type, index) => (
+    <div key={index} className="flex items-center me-4 mb-4 w-full sm:w-auto">
+      <input
+        type="checkbox"
+        checked={visibleStats[type]}
+        onChange={() => handleCheckboxChange(type)}
+        className={`w-4 h-4 bg-gray-100 border-gray-300 rounded focus:ring-2 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-offset-gray-800`}
+      />
+      <label className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+        {type}
+      </label>
+    </div>
+  ))}
+</div>
+
         <style jsx>{`
           .loading-container {
             display: flex;
