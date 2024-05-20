@@ -714,47 +714,52 @@ const TableFormat = () => {
                       {team.statistics.find(stat => stat.type === type)?.value || 'N/A'}
                     </td>
                   ))}
-                  <td className="px-4 py-4 sm:px-6 sm:py-4 bg-gray-50 dark:bg-gray-800">
-                    {teamStats.length === 2 && (
-                      <div>
-                        <span
-                          className={
-                            parseFloat(
-                              teamStats[0].statistics.find(stat => stat.type === type)?.value
-                            ) >
-                            parseFloat(
-                              teamStats[1].statistics.find(stat => stat.type === type)?.value
-                            )
-                              ? 'text-green-500'
-                              : 'text-red-500'
-                          }
-                        >
-                          {parseFloat(
-                            teamStats[0].statistics.find(stat => stat.type === type)?.value
-                          ) >
-                          parseFloat(
-                            teamStats[1].statistics.find(stat => stat.type === type)?.value
-                          )
-                            ? teamStats[0].team.name
-                            : teamStats[1].team.name}
-                        </span>
-                        <img
-                          src={
-                            parseFloat(
-                              teamStats[0].statistics.find(stat => stat.type === type)?.value
-                            ) >
-                            parseFloat(
-                              teamStats[1].statistics.find(stat => stat.type === type)?.value
-                            )
-                              ? teamStats[0].team.logo
-                              : teamStats[1].team.logo
-                          }
-                          alt="Team Logo"
-                          className="w-6 h-6 ml-2"
-                        />
-                      </div>
-                    )}
-                  </td>
+                 
+<td className="px-4 py-4 sm:px-6 sm:py-4 bg-gray-50 dark:bg-gray-800">
+  {teamStats.length === 2 && (
+    <div>
+      <span
+        className={
+          parseFloat(
+            teamStats[0].statistics.find(stat => stat.type === type)?.value
+          ) >
+          parseFloat(
+            teamStats[1].statistics.find(stat => stat.type === type)?.value
+          )
+            ? 'text-green-500'
+            : 'text-red-500'
+        }
+      >
+        {isNaN(parseFloat(teamStats[0].statistics.find(stat => stat.type === type)?.value)) || isNaN(parseFloat(teamStats[1].statistics.find(stat => stat.type === type)?.value)) ? 
+          'N/A' 
+          : 
+          (parseFloat(teamStats[0].statistics.find(stat => stat.type === type)?.value) >
+          parseFloat(teamStats[1].statistics.find(stat => stat.type === type)?.value)
+            ? `${teamStats[0].team.name} (+${parseFloat(teamStats[0].statistics.find(stat => stat.type === type)?.value) - parseFloat(teamStats[1].statistics.find(stat => stat.type === type)?.value)})`
+            : `${teamStats[1].team.name} (+${parseFloat(teamStats[1].statistics.find(stat => stat.type === type)?.value) - parseFloat(teamStats[0].statistics.find(stat => stat.type === type)?.value)})`)
+        }
+      </span>
+      <img
+        src={
+          parseFloat(
+            teamStats[0].statistics.find(stat => stat.type === type)?.value
+          ) >
+          parseFloat(
+            teamStats[1].statistics.find(stat => stat.type === type)?.value
+          )
+            ? teamStats[0].team.logo
+            : teamStats[1].team.logo
+        }
+        alt="Team Logo"
+        className="w-6 h-6 ml-2"
+      />
+     
+    </div>
+  )}
+</td>
+
+
+
                 </tr>
               ))}
             </tbody>
