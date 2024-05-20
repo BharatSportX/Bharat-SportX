@@ -4,7 +4,11 @@
 npm install re-resizable
 npm install react-charts
 
-
+20-5-24 day
+ npm install jspdf jspdf-autotable html-to-image
+ npm install jspdf jspdf-autotable html-to-image
+ npm i react-csv 
+npm install file-saver
 For Statsitics Canava JS Chart is Used see the Canava Js Chart Documentation
 -------INSTALLED Pacakages (npm)----------
 
