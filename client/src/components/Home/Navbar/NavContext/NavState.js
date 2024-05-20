@@ -7,9 +7,14 @@ const NavState = (props) => {
   const toggleSearch = () => {
     setIsSearchOpen(!isSearchOpen);
   };
+  const closeSearch = () => {
+    if (isSearchOpen) {
+      toggleSearch();
+    }
+  };
   return (
     <>
-      <NavContext.Provider value={{isSearchOpen, toggleSearch }}>
+      <NavContext.Provider value={{isSearchOpen,closeSearch, toggleSearch }}>
         {props.children}
       </NavContext.Provider>
     </>
