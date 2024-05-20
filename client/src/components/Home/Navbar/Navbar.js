@@ -7,8 +7,8 @@ import ScrollNav from "./ScrollNav";
 import NavContext from "./NavContext/NavContext";
 const Navbar = () => {
   
- const {isSearchOpen,toggleSearch}=useContext(NavContext)
-  
+ const {isSearchOpen,closeSearch,toggleSearch}=useContext(NavContext)
+ 
   return (
     <nav className="dark:bg-gray-800  h-auto z-40 fixed top-0 left-0 w-full  bg-white shadow-sm-light dark:shadow-none">
       <div className="px-4 md:px-14   lg:px-16 xl:px-12 ">
@@ -231,7 +231,7 @@ const Navbar = () => {
             `inline-flex flex-col items-center justify-center px-5 md:px-14 lg:px-16   group ${
               isActive ? 'text-red-600 dark:text-red-500' : 'text-gray-500 dark:text-gray-400'
             }` 
-          } onClick={toggleSearch}
+          } onClick={closeSearch}
         >
           <svg
             className="size-4 mb-1 group-hover:text-red-600 dark:group-hover:text-red-500"
@@ -251,7 +251,7 @@ const Navbar = () => {
             `inline-flex flex-col items-center justify-center px-5 md:px-14 lg:px-16   group ${
               isActive ? 'text-red-600 dark:text-red-500' : 'text-gray-500 dark:text-gray-400'
             }` 
-          } onClick={toggleSearch}
+          } onClick={closeSearch}
         >
           <svg
             className="size-5 mb-1 group-hover:text-red-600 dark:group-hover:text-red-500"
@@ -281,7 +281,7 @@ const Navbar = () => {
             `inline-flex flex-col items-center justify-center px-5 md:px-14 lg:px-16   group ${
               isActive ? 'text-red-600 dark:text-red-500' : 'text-gray-500 dark:text-gray-400'
             }` 
-          } onClick={toggleSearch}
+          } onClick={closeSearch}
         >
           <svg
             viewBox="0 0 512 512"
@@ -300,7 +300,7 @@ const Navbar = () => {
             `inline-flex flex-col items-center justify-center px-5 md:px-14 lg:px-16   group ${
               isActive ? 'text-red-600 dark:text-red-500' : 'text-gray-500 dark:text-gray-400'
             }` 
-          } onClick={toggleSearch}
+          } onClick={closeSearch}
         >
           <svg
             className="size-6 mb-0 group-hover:text-red-600 dark:group-hover:text-red-500"
