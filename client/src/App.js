@@ -21,6 +21,7 @@ import Events from "./components/ALLSports/Football/Events/Events";
 import Error from "./components/DeafultErrorPage/Error";
 import LaunchingSoon from "./components/LaunchingSoonPage/LaunchingSoon";
 import Navbar from "./components/Home/Navbar/Navbar";
+import TableFormat from "./components/ALLSports/Football/Statistics/TableFormat";
 function App() {
   const router = createBrowserRouter([
     {
@@ -166,6 +167,15 @@ function App() {
       element: (
         <>
           <LaunchingSoon />
+        </>
+      ),
+    },
+
+    {
+      path: "/table-format/:id",
+      element: (
+        <>
+          <Navbar/><TableFormat/>
         </>
       ),
     },
