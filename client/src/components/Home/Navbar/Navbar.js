@@ -6,22 +6,111 @@ import NavDrawer from "./NavDrawer";
 import ScrollNav from "./ScrollNav";
 import NavContext from "./NavContext/NavContext";
 const Navbar = () => {
-  
- const {isSearchOpen,closeSearch,toggleSearch}=useContext(NavContext)
- 
+  const { isSearchOpen, closeSearch, toggleSearch } = useContext(NavContext);
+
   return (
     <nav className="dark:bg-gray-800  h-auto z-40 fixed top-0 left-0 w-full  bg-white shadow-sm-light dark:shadow-none">
       <div className="px-4 md:px-14   lg:px-16 xl:px-12 ">
         <div className="flex items-center justify-between h-16">
           {/* Logo and Company Name */}
           <div className="text-white space-x-3 flex items-center xl:space-x-6">
-          <NavLink to='/'>
-            <img
-              
-              className="h-8 w-auto cursor-pointer"
-              src="sportlogo.svg"
-              alt="Logo"
-            />
+            <NavLink to="/">
+              <svg
+                className="h-8 w-auto cursor-pointer"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 89.06947623679682 89.06947623679682"
+                height="89.06947623679682"
+                width="89.06947623679682"
+              >
+                <g>
+                  <svg />
+                </g>
+                <g id="icon-0">
+                  <svg
+                    viewBox="0 0 89.06947623679682 89.06947623679682"
+                    height="89.06947623679682"
+                    width="89.06947623679682"
+                  >
+                    <g>
+                      <path
+                        d="M0 44.535c0-24.596 19.939-44.535 44.535-44.535 24.596 0 44.535 19.939 44.534 44.535 0 24.596-19.939 44.535-44.534 44.534-24.596 0-44.535-19.939-44.535-44.534zM44.535 83.334c21.428 0 38.8-17.371 38.799-38.799 0-21.428-17.371-38.8-38.799-38.8-21.428 0-38.8 17.371-38.8 38.8 0 21.428 17.371 38.8 38.8 38.799z"
+                        data-fill-palette-color="accent"
+                        fill="#c5170b"
+                        stroke="transparent"
+                      />
+                      <ellipse
+                        rx="44.08939073721442"
+                        ry="44.08939073721442"
+                        cx="44.53473811839841"
+                        cy="44.53473811839841"
+                        fill="#c5170b"
+                        stroke="transparent"
+                        stroke-width="0"
+                        fill-opacity="1"
+                        data-fill-palette-color="accent"
+                      />
+                    </g>
+                    <g transform="matrix(1,0,0,1,21.437205562203268,22.284411150945264)">
+                      <svg
+                        viewBox="0 0 46.19506511239028 44.50065393490629"
+                        height="44.50065393490629"
+                        width="46.19506511239028"
+                      >
+                        <g>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            
+                            version="1.1"
+                            x="0"
+                            y="0"
+                            viewBox="4.1 5.7000002933936145 91.84680416452579 88.47791072939533"
+                           
+                            
+                            height="44.50065393490629"
+                            width="46.19506511239028"
+                            class="icon-dxe-0"
+                            data-fill-palette-color="quaternary"
+                            id="dxe-0"
+                          >
+                            <g
+                              fill="#ebe5e5"
+                              data-fill-palette-color="quaternary"
+                            >
+                              <path
+                                d="M93.9 45.1L79.1 42.1S78 28.7 77.8 26.9C77.7 26.2 77.6 25.3 77.3 24.3 74.4 23.4 72.1 21.3 70.9 18.6 70.4 18.5 70 18.4 69.6 18.4 68.3 18.4 52.5 18.9 52.5 18.9 51 18.7 49.6 19.7 49.1 21.1L45.1 36.6C44.6 38.3 44.7 39.3 46.7 39.6S49.2 39.1 49.6 37.7L53.7 24.7H61.5C60.2 28.5 57.5 36.1 55.4 39.1 53.6 41.6 50 45.1 48.9 48.1L36.1 59.6C35.5 60.1 34.7 60.1 34.1 59.7L20.2 48.9C18.1 46.9 16.2 46.4 14.5 48.3 12.7 50.3 13.4 52.9 15.5 54.8L31.3 69.5C32.3 70.4 33.6 70.9 34.8 70.9S37.1 70.5 38.1 69.7L54.9 56.1 70.3 69.4C70.7 69.8 71.1 70.3 71.3 70.8L80.1 90.8C81 92.6 82.8 95 85.4 93.9S87.9 91 86.9 87.8L79.7 65.4C79.4 64.8 79 64.3 78.6 63.9L65.3 51.5C68.4 47.6 71.8 42.8 73.2 40.9L74.1 45.5C74.3 46.8 75.4 47.9 76.7 48.1 76.7 48.1 93.3 49.9 93.5 49.9 95 49.9 95.6 49.6 95.9 48 96.1 46.2 95.7 45.4 93.9 45.1"
+                                fill="#ebe5e5"
+                                data-fill-palette-color="quaternary"
+                              />
+                              <circle
+                                cx="80.6"
+                                cy="14.3"
+                                r="8.6"
+                                fill="#ebe5e5"
+                                data-fill-palette-color="quaternary"
+                              />
+                              <path
+                                d="M10.1 22.9L40.9 23.6H41C41.7 23.6 42.3 23 42.3 22.3S41.7 21 41 21L10.2 22C10 22 9.7 22.2 9.7 22.5 9.5 22.7 9.9 22.9 10.1 22.9"
+                                fill="#ebe5e5"
+                                data-fill-palette-color="quaternary"
+                              />
+                              <path
+                                d="M7.3 29.7L38.1 30.4H38.2C38.9 30.4 39.5 29.8 39.5 29.1S38.9 27.8 38.2 27.8L7.4 28.5C7.2 28.5 6.9 28.7 6.9 29 6.8 29.5 7.1 29.7 7.3 29.7"
+                                fill="#ebe5e5"
+                                data-fill-palette-color="quaternary"
+                              />
+                              <path
+                                d="M36.7 35.9C36.7 35.2 36.1 34.6 35.4 34.6L4.6 35.3C4.4 35.3 4.1 35.5 4.1 35.8 4.1 36 4.3 36.4 4.6 36.4L35.4 37.2C36.1 37.2 36.7 36.6 36.7 35.9"
+                                fill="#ebe5e5"
+                                data-fill-palette-color="quaternary"
+                              />
+                            </g>
+                          </svg>
+                        </g>
+                      </svg>
+                    </g>
+                  </svg>
+                </g>
+              </svg>
             </NavLink>
             <form>
               <button
@@ -34,31 +123,48 @@ const Navbar = () => {
 
             {/* Navigation */}
             <NavLink
-              to="/footballhome"
-              className="hidden dark:hover:text-white hover:text-black xl:block xl:font-semibold xl:text-gray-600 xl:dark:text-gray-300 xl:text-[1.1rem]"
+              to="/football/home"
+              className={({ isActive }) =>
+                isActive
+                  ? "hidden xl:dark:text-white xl:text-black xl:block xl:font-semibold  xl:text-[1.1rem] "
+                  : "hidden dark:hover:text-white hover:text-black xl:block xl:font-semibold xl:text-gray-600 xl:dark:text-gray-300 xl:text-[1.1rem]"
+              }
             >
               Home
             </NavLink>
-            <Link
-              to="/LeagueHome"
-              className="hidden dark:hover:text-white hover:text-black xl:block xl:font-semibold xl:text-gray-600 xl:dark:text-gray-300 xl:text-[1.1rem]"
+            <NavLink
+              to="/football/LeagueHome"
+              className={({ isActive }) =>
+                isActive
+                  ? "hidden xl:dark:text-white xl:text-black xl:block xl:font-semibold  xl:text-[1.1rem] "
+                  : "hidden dark:hover:text-white hover:text-black xl:block xl:font-semibold xl:text-gray-600 xl:dark:text-gray-300 xl:text-[1.1rem]"
+              }
             >
               Matches
-            </Link>
+            </NavLink>
 
+            {/*  */}
             <NavLink
-              to="/"
-              className="hidden dark:hover:text-white hover:text-black xl:block xl:font-semibold xl:text-gray-600 xl:dark:text-gray-300 xl:text-[1.1rem]"
+              to="/football/home3"
+              className={({ isActive }) =>
+                isActive
+                  ? "hidden xl:dark:text-white xl:text-black xl:block xl:font-semibold  xl:text-[1.1rem] "
+                  : "hidden dark:hover:text-white hover:text-black xl:block xl:font-semibold xl:text-gray-600 xl:dark:text-gray-300 xl:text-[1.1rem]"
+              }
             >
               Players
             </NavLink>
             <NavLink
-              to="/"
-              className="hidden dark:hover:text-white hover:text-black xl:block xl:font-semibold xl:text-gray-600 xl:dark:text-gray-300 xl:text-[1.1rem]"
+              to="/football/home2"
+              className={({ isActive }) =>
+                isActive
+                  ? "hidden xl:dark:text-white xl:text-black xl:block xl:font-semibold  xl:text-[1.1rem] "
+                  : "hidden dark:hover:text-white hover:text-black xl:block xl:font-semibold xl:text-gray-600 xl:dark:text-gray-300 xl:text-[1.1rem]"
+              }
             >
-              Play  Games
+              Play Games
             </NavLink>
-            <span className="hidden dark:hover:text-white hover:text-black xl:block xl:font-semibold xl:text-gray-600 xl:dark:text-gray-300 xl:text-[1.1rem]">
+            <span className="hidden dark:hover:text-white hover:text-black xl:block xl:font-semibold xl:text-gray-600 xl:dark:text-gray-300 xl:text-[1.1rem] ">
               <div className="paste-button">
                 <button className="button45 font-semibold  text-[1.1rem]">
                   More{" "}
@@ -82,17 +188,17 @@ const Navbar = () => {
                   </span>
                 </button>
                 <div className="dropdown-content">
-                  <Link id="top" to="/">
+                  <Link id="top" to="/football/home">
                     AI Match Predictor
                   </Link>
-                  <Link id="middle" to="/">
+                  <Link id="middle" to="/football/home">
                     Contact Us
                     {/* call image */}
                   </Link>
-                  <Link id="bottom" to="/">
+                  <Link id="bottom" to="/football/home">
                     Help Center
                   </Link>
-                  <Link id="bottom" to="/stat">
+                  <Link id="bottom" to="/football/stat">
                     Statistics
                   </Link>
                 </div>
@@ -136,7 +242,6 @@ const Navbar = () => {
               </button>
             </div>
           </div>
-          
 
           {/* Mobile Search button */}
           <div className="flex xl:items-center xl:ml-4">
@@ -215,108 +320,122 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <ScrollNav/>
-
-
-
-
+      <ScrollNav />
 
       {/* Mobile navbar */}
 
       <div className="xl:hidden fixed bottom-0 left-0 z-50 w-full h-16 bg-white border-t border-gray-200 dark:bg-gray-900 dark:border-gray-600">
-      <div className="grid h-full max-w-lg grid-cols-5 m-auto font-medium md:flex md:justify-center">
-        <NavLink
-          to="/footballhome"
-          className={({ isActive }) =>
-            `inline-flex flex-col items-center justify-center px-5 md:px-14 lg:px-16   group ${
-              isActive ? 'text-red-600 dark:text-red-500' : 'text-gray-500 dark:text-gray-400'
-            }` 
-          } onClick={closeSearch}
-        >
-          <svg
-            className="size-4 mb-1 group-hover:text-red-600 dark:group-hover:text-red-500"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="currentColor"
-            viewBox="0 0 20 20"
+        <div className="grid h-full max-w-lg grid-cols-5 m-auto font-medium md:flex md:justify-center">
+          <NavLink
+            to="/football/home"
+            className={({ isActive }) =>
+              `inline-flex flex-col items-center justify-center px-5 md:px-14 lg:px-16   group ${
+                isActive
+                  ? "text-red-600 dark:text-red-500"
+                  : "text-gray-500 dark:text-gray-400"
+              }`
+            }
+            onClick={closeSearch}
           >
-            <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z" />
-          </svg>
-          <span className="text-xs group-hover:text-red-600 dark:group-hover:text-red-500">Home</span>
-        </NavLink>
+            <svg
+              className="size-4 mb-1 group-hover:text-red-600 dark:group-hover:text-red-500"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z" />
+            </svg>
+            <span className="text-xs group-hover:text-red-600 dark:group-hover:text-red-500">
+              Home
+            </span>
+          </NavLink>
 
-        <NavLink
-          to="/LeagueHome"
-          className={({ isActive }) =>
-            `inline-flex flex-col items-center justify-center px-5 md:px-14 lg:px-16   group ${
-              isActive ? 'text-red-600 dark:text-red-500' : 'text-gray-500 dark:text-gray-400'
-            }` 
-          } onClick={closeSearch}
-        >
-          <svg
-            className="size-5 mb-1 group-hover:text-red-600 dark:group-hover:text-red-500"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            fill="currentColor"
-            viewBox="0 0 24 24"
+          <NavLink
+            to="/football/LeagueHome"
+            className={({ isActive }) =>
+              `inline-flex flex-col items-center justify-center px-5 md:px-14 lg:px-16   group ${
+                isActive
+                  ? "text-red-600 dark:text-red-500"
+                  : "text-gray-500 dark:text-gray-400"
+              }`
+            }
+            onClick={closeSearch}
           >
-            <path
-              fillRule="evenodd"
-              d="M5 5a1 1 0 0 0 1-1 1 1 0 1 1 2 0 1 1 0 0 0 1 1h1a1 1 0 0 0 1-1 1 1 0 1 1 2 0 1 1 0 0 0 1 1h1a1 1 0 0 0 1-1 1 1 0 1 1 2 0 1 1 0 0 0 1 1 2 2 0 0 1 2 2v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a2 2 0 0 1 2-2ZM3 19v-7a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Zm6.01-6a1 1 0 1 0-2 0 1 1 0 0 0 2 0Zm2 0a1 1 0 1 1 2 0 1 1 0 0 1-2 0Zm6 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0Zm-10 4a1 1 0 1 1 2 0 1 1 0 0 1-2 0Zm6 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0Zm2 0a1 1 0 1 1 2 0 1 1 0 0 1-2 0Z"
-              clipRule="evenodd"
-            />
-          </svg>
-          <span className="text-xs group-hover:text-red-600 dark:group-hover:text-red-500">Matches</span>
-        </NavLink>
+            <svg
+              className="size-5 mb-1 group-hover:text-red-600 dark:group-hover:text-red-500"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fillRule="evenodd"
+                d="M5 5a1 1 0 0 0 1-1 1 1 0 1 1 2 0 1 1 0 0 0 1 1h1a1 1 0 0 0 1-1 1 1 0 1 1 2 0 1 1 0 0 0 1 1h1a1 1 0 0 0 1-1 1 1 0 1 1 2 0 1 1 0 0 0 1 1 2 2 0 0 1 2 2v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a2 2 0 0 1 2-2ZM3 19v-7a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Zm6.01-6a1 1 0 1 0-2 0 1 1 0 0 0 2 0Zm2 0a1 1 0 1 1 2 0 1 1 0 0 1-2 0Zm6 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0Zm-10 4a1 1 0 1 1 2 0 1 1 0 0 1-2 0Zm6 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0Zm2 0a1 1 0 1 1 2 0 1 1 0 0 1-2 0Z"
+                clipRule="evenodd"
+              />
+            </svg>
+            <span className="text-xs group-hover:text-red-600 dark:group-hover:text-red-500">
+              Matches
+            </span>
+          </NavLink>
 
-        <span className="inline-flex flex-col items-center justify-center px-5 md:px-14 lg:px-16 group-hover:text-red-600 dark:group-hover:text-red-500 group pt-2">
-          <NavDrawer />
-        </span>
+          <span className="inline-flex flex-col items-center justify-center px-5 md:px-14 lg:px-16 group-hover:text-red-600 dark:group-hover:text-red-500 group pt-2">
+            <NavDrawer />
+          </span>
 
-        <NavLink
-          to="/players"
-          className={({ isActive }) =>
-            `inline-flex flex-col items-center justify-center px-5 md:px-14 lg:px-16   group ${
-              isActive ? 'text-red-600 dark:text-red-500' : 'text-gray-500 dark:text-gray-400'
-            }` 
-          } onClick={closeSearch}
-        >
-          <svg
-            viewBox="0 0 512 512"
-            className="size-5 mb-1 group-hover:text-red-600 dark:group-hover:text-red-500"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="currentColor"
+          <NavLink
+            to="/football/players"
+            className={({ isActive }) =>
+              `inline-flex flex-col items-center justify-center px-5 md:px-14 lg:px-16   group ${
+                isActive
+                  ? "text-red-600 dark:text-red-500"
+                  : "text-gray-500 dark:text-gray-400"
+              }`
+            }
+            onClick={closeSearch}
           >
-            <path d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c39.77 0 72 32.24 72 72S295.8 272 256 272c-39.76 0-72-32.24-72-72S216.2 128 256 128zM256 448c-52.93 0-100.9-21.53-135.7-56.29C136.5 349.9 176.5 320 224 320h64c47.54 0 87.54 29.88 103.7 71.71C356.9 426.5 308.9 448 256 448z" />
-          </svg>
-          <span className="text-xs group-hover:text-red-600 dark:group-hover:text-red-500">Players</span>
-        </NavLink>
+            <svg
+              viewBox="0 0 512 512"
+              className="size-5 mb-1 group-hover:text-red-600 dark:group-hover:text-red-500"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+            >
+              <path d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c39.77 0 72 32.24 72 72S295.8 272 256 272c-39.76 0-72-32.24-72-72S216.2 128 256 128zM256 448c-52.93 0-100.9-21.53-135.7-56.29C136.5 349.9 176.5 320 224 320h64c47.54 0 87.54 29.88 103.7 71.71C356.9 426.5 308.9 448 256 448z" />
+            </svg>
+            <span className="text-xs group-hover:text-red-600 dark:group-hover:text-red-500">
+              Players
+            </span>
+          </NavLink>
 
-        <NavLink
-          to="/games"
-          className={({ isActive }) =>
-            `inline-flex flex-col items-center justify-center px-5 md:px-14 lg:px-16   group ${
-              isActive ? 'text-red-600 dark:text-red-500' : 'text-gray-500 dark:text-gray-400'
-            }` 
-          } onClick={closeSearch}
-        >
-          <svg
-            className="size-6 mb-0 group-hover:text-red-600 dark:group-hover:text-red-500"
-            viewBox="0 0 512 512"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="currentColor"
+          <NavLink
+            to="/football/games"
+            className={({ isActive }) =>
+              `inline-flex flex-col items-center justify-center px-5 md:px-14 lg:px-16   group ${
+                isActive
+                  ? "text-red-600 dark:text-red-500"
+                  : "text-gray-500 dark:text-gray-400"
+              }`
+            }
+            onClick={closeSearch}
           >
-            <path
-              d="M377.8,100.1C332.9,86.8,318.8,112,256,112s-76.9-25.3-121.8-11.9c-44.9,13.3-67.3,60.4-88.5,148.8  c-21.2,88.5-17.3,152.4,7.7,164.3c25,11.9,53.2-15.7,87.5-40.3c34.3-24.7,46.2-39.9,115.2-39.9s80.9,15.2,115.2,39.9  c34.3,24.7,62.5,52.2,87.5,40.3c25-11.9,28.9-75.8,7.7-164.3C445.1,160.5,422.7,113.4,377.8,100.1z M256,307.1  c-25.6,0-46.4-20.8-46.4-46.4s20.8-46.4,46.4-46.4s46.4,20.8,46.4,46.4S281.6,307.1,256,307.1z"
-            />
-          </svg>
-          <span className="text-xs group-hover:text-red-600 dark:group-hover:text-red-500">Games</span>
-        </NavLink>
+            <svg
+              className="size-6 mb-0 group-hover:text-red-600 dark:group-hover:text-red-500"
+              viewBox="0 0 512 512"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+            >
+              <path d="M377.8,100.1C332.9,86.8,318.8,112,256,112s-76.9-25.3-121.8-11.9c-44.9,13.3-67.3,60.4-88.5,148.8  c-21.2,88.5-17.3,152.4,7.7,164.3c25,11.9,53.2-15.7,87.5-40.3c34.3-24.7,46.2-39.9,115.2-39.9s80.9,15.2,115.2,39.9  c34.3,24.7,62.5,52.2,87.5,40.3c25-11.9,28.9-75.8,7.7-164.3C445.1,160.5,422.7,113.4,377.8,100.1z M256,307.1  c-25.6,0-46.4-20.8-46.4-46.4s20.8-46.4,46.4-46.4s46.4,20.8,46.4,46.4S281.6,307.1,256,307.1z" />
+            </svg>
+            <span className="text-xs group-hover:text-red-600 dark:group-hover:text-red-500">
+              Games
+            </span>
+          </NavLink>
+        </div>
       </div>
-    </div>
     </nav>
   );
 };

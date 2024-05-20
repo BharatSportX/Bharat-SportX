@@ -1,4 +1,3 @@
-// src/ScrollNav.js
 import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 // import './Scrollbar.css';
@@ -6,27 +5,29 @@ import { NavLink, useLocation } from "react-router-dom";
 const ScrollNav = () => {
   const location = useLocation();
 
-// this is football paths ... 
-// for cricket  you have to create cricketpath function... and for every nav sports item .....
+  // this is football paths ...
+  // for cricket  you have to create cricketpath function... and for every nav sports item .....
 
   const isFootballActive = () => {
     const footballPaths = [
-      "/footballhome",
-      "/FootballLeagues",
-      "/FootballWorldCup",
-      "/LeagueHome",
-      "/cup/",
-      "/league/",
-      "/statistics/",
-      "/team-stat",
-      "/standings/",
-      "/prediction/",
-      "/players",
-      "/lineups",
-      "/h2h",
-      "/events",
-      "/launching-soon",
-      "/table-format/",
+      
+      "/football/home",
+      "/football/FootballLeagues",
+      "/football/FootballWorldCup",
+      "/football/LeagueHome",
+      "/football/cup/:id",
+      "/football/league/:id",
+      "/football/statistics/:id",
+      "/football/team-stat",
+      "/football/standings/:id",
+      "/football/prediction/:id",
+      "/football/players",
+      "/football/lineups",
+      "/football/h2h",
+      "/football/events",
+      "/football/launching-soon",
+      "/football/table-format/:id",
+      
     ];
     return footballPaths.some((path) => location.pathname.startsWith(path));
   };
@@ -186,7 +187,7 @@ const ScrollNav = () => {
         </NavLink>
         <NavLink
           to="/cricket"
-            className={({ isActive }) =>
+          className={({ isActive }) =>
             isActive
               ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
               : "flex flex-col items-center dark:text-gray-400 text-gray-800"
@@ -208,7 +209,7 @@ const ScrollNav = () => {
         </NavLink>
         <NavLink
           to="/hockey"
-            className={({ isActive }) =>
+          className={({ isActive }) =>
             isActive
               ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
               : "flex flex-col items-center dark:text-gray-400 text-gray-800"
@@ -248,7 +249,7 @@ const ScrollNav = () => {
 
         <NavLink
           to="/kabaddi"
-            className={({ isActive }) =>
+          className={({ isActive }) =>
             isActive
               ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
               : "flex flex-col items-center dark:text-gray-400 text-gray-800"
@@ -274,7 +275,7 @@ const ScrollNav = () => {
         </NavLink>
         <NavLink
           to="/baseball"
-            className={({ isActive }) =>
+          className={({ isActive }) =>
             isActive
               ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
               : "flex flex-col items-center dark:text-gray-400 text-gray-800"
@@ -499,7 +500,7 @@ const ScrollNav = () => {
         </NavLink>
         <NavLink
           to="/tennis"
-            className={({ isActive }) =>
+          className={({ isActive }) =>
             isActive
               ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
               : "flex flex-col items-center dark:text-gray-400 text-gray-800"
@@ -537,7 +538,7 @@ const ScrollNav = () => {
         </NavLink>
         <NavLink
           to="/volleyball"
-            className={({ isActive }) =>
+          className={({ isActive }) =>
             isActive
               ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
               : "flex flex-col items-center dark:text-gray-400 text-gray-800"
@@ -610,7 +611,7 @@ const ScrollNav = () => {
         {/*   */}
         <NavLink
           to="/archery"
-            className={({ isActive }) =>
+          className={({ isActive }) =>
             isActive
               ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
               : "flex flex-col items-center dark:text-gray-400 text-gray-800"
@@ -634,7 +635,7 @@ const ScrollNav = () => {
 
         <NavLink
           to="/golf"
-            className={({ isActive }) =>
+          className={({ isActive }) =>
             isActive
               ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
               : "flex flex-col items-center dark:text-gray-400 text-gray-800"
@@ -672,7 +673,7 @@ const ScrollNav = () => {
 
         <NavLink
           to="/athletics"
-            className={({ isActive }) =>
+          className={({ isActive }) =>
             isActive
               ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
               : "flex flex-col items-center dark:text-gray-400 text-gray-800"
@@ -692,7 +693,7 @@ const ScrollNav = () => {
         </NavLink>
         <NavLink
           to="/chess"
-            className={({ isActive }) =>
+          className={({ isActive }) =>
             isActive
               ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
               : "flex flex-col items-center dark:text-gray-400 text-gray-800"
@@ -718,7 +719,7 @@ const ScrollNav = () => {
         </NavLink>
         <NavLink
           to="/carrom"
-            className={({ isActive }) =>
+          className={({ isActive }) =>
             isActive
               ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
               : "flex flex-col items-center dark:text-gray-400 text-gray-800"
@@ -799,7 +800,7 @@ const ScrollNav = () => {
         </NavLink>
         <NavLink
           to="/boxing"
-            className={({ isActive }) =>
+          className={({ isActive }) =>
             isActive
               ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
               : "flex flex-col items-center dark:text-gray-400 text-gray-800"
@@ -855,7 +856,7 @@ const ScrollNav = () => {
         </NavLink>
         <NavLink
           to="/gymnastic"
-            className={({ isActive }) =>
+          className={({ isActive }) =>
             isActive
               ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
               : "flex flex-col items-center dark:text-gray-400 text-gray-800"
@@ -892,7 +893,7 @@ const ScrollNav = () => {
         </NavLink>
         <NavLink
           to="/iceskating"
-            className={({ isActive }) =>
+          className={({ isActive }) =>
             isActive
               ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
               : "flex flex-col items-center dark:text-gray-400 text-gray-800"
@@ -920,7 +921,7 @@ const ScrollNav = () => {
         </NavLink>
         <NavLink
           to="/basketball"
-            className={({ isActive }) =>
+          className={({ isActive }) =>
             isActive
               ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
               : "flex flex-col items-center dark:text-gray-400 text-gray-800"
@@ -945,7 +946,7 @@ const ScrollNav = () => {
         {/* className="flex flex-col items-center dark:text-gray-400 text-gray-800" */}
         <NavLink
           to="/weightlifting"
-            className={({ isActive }) =>
+          className={({ isActive }) =>
             isActive
               ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
               : "flex flex-col items-center dark:text-gray-400 text-gray-800"
@@ -998,7 +999,7 @@ const ScrollNav = () => {
         </NavLink>
         <NavLink
           to="/wrestling"
-            className={({ isActive }) =>
+          className={({ isActive }) =>
             isActive
               ? "flex flex-col items-center text-orange-600 text-lg italic dark:text-orange-400 border-b-4 rounded-sm border-orange-600 dark:border-orange-400 "
               : "flex flex-col items-center dark:text-gray-400 text-gray-800"

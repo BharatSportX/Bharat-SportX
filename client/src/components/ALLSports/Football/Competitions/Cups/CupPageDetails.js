@@ -1536,7 +1536,7 @@
 
 // export default CupPageDetails;
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, NavLink } from 'react-router-dom';
 import axios from 'axios';
 
 import Spinner from "../Leagues/Spinner";
@@ -1731,33 +1731,33 @@ const CupPageDetails = () => {
           filteredFixtures.map((fixture, index) => (
             <div key={fixture.fixture.id} className="fixture-card bg-gray-200 rounded-lg shadow-md p-4 my-4 mx-auto sm:max-w-xl lg:max-w-2xl xl:max-w-3xl">
               <div className="flex flex-wrap gap-2 justify-center">
-                <Link to="/events">
+                <NavLink to="/football/events">
                   <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded">
                     Events
                   </button>
-                </Link>
+                </NavLink>
                
-                <Link to={`/statistics/${fixture.fixture.id}`}>
+                <NavLink to={`/football/statistics/${fixture.fixture.id}`}>
                   <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded">
                     Statistics 
                   </button>
-                </Link>
-                <Link to={`/prediction/${fixture.fixture.id}`}>
+                </NavLink>
+                <NavLink to={`/football/prediction/${fixture.fixture.id}`}>
                   <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded">
                     Prediction
                   </button>
-                </Link>
+                </NavLink>
 
-                <Link to="/lineups">
+                <NavLink to="/football/lineups">
                   <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded">
                     Lineups
                   </button>
-                </Link>
-                <Link to="/players">
+                </NavLink>
+                <NavLink to="/football/players">
                   <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded">
                     Players
                   </button>
-                </Link>
+                </NavLink>
               </div>
               <p className={`font-semibold ${selectedSessionYear ? 'text-blue-500' : ''}`}> {index + 1}</p>
               <p className="font-semibold text-blue-500"> {fixture.league.country}</p>

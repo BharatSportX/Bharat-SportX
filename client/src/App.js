@@ -33,7 +33,7 @@ function App() {
       ),
     },
     {
-      path: "/footballhome",
+      path: "/football/home",
       element: (
         <>
           <Navbar />
@@ -42,7 +42,7 @@ function App() {
       ),
     },
     {
-      path: "/FootballLeagues",
+      path: "/football/FootballLeagues",
       element: (
         <>
           <Navbar />
@@ -51,7 +51,7 @@ function App() {
       ),
     },
     {
-      path: "/FootballWorldCup",
+      path: "/football/FootballWorldCup",
       element: (
         <>
           <Navbar />
@@ -60,7 +60,7 @@ function App() {
       ),
     },
     {
-      path: "/LeagueHome",
+      path: "/football/LeagueHome",
       element: (
         <>
           <Navbar />
@@ -69,7 +69,7 @@ function App() {
       ),
     },
     {
-      path: "/cup/:id",
+      path: "/football/cup/:id",
       element: (
         <>
           <Navbar />
@@ -78,7 +78,7 @@ function App() {
       ),
     },
     {
-      path: "/league/:id",
+      path: "/football/league/:id",
       element: (
         <>
           <Navbar />
@@ -87,7 +87,7 @@ function App() {
       ),
     },
     {
-      path: "/statistics/:id",
+      path: "/football/statistics/:id",
       element: (
         <>
           <Navbar />
@@ -97,7 +97,7 @@ function App() {
     },
 
     {
-      path: "/team-stat",
+      path: "/football/team-stat",
       element: (
         <>
           <Navbar />
@@ -106,7 +106,7 @@ function App() {
       ),
     },
     {
-      path: "/standings/:id",
+      path: "/football/standings/:id",
       element: (
         <>
           <Navbar />
@@ -115,7 +115,7 @@ function App() {
       ),
     },
     {
-      path: "/prediction/:id",
+      path: "/football/prediction/:id",
       element: (
         <>
           <Navbar />
@@ -125,7 +125,7 @@ function App() {
     },
 
     {
-      path: "/players",
+      path: "/football/players",
       element: (
         <>
           <Navbar />
@@ -135,7 +135,7 @@ function App() {
     },
 
     {
-      path: "/lineups",
+      path: "/football/lineups",
       element: (
         <>
           <Navbar />
@@ -144,7 +144,7 @@ function App() {
       ),
     },
     {
-      path: "/h2h",
+      path: "/football/h2h",
       element: (
         <>
           <Navbar />
@@ -153,7 +153,7 @@ function App() {
       ),
     },
     {
-      path: "/events",
+      path: "/football/events",
       element: (
         <>
           <Navbar />
@@ -163,7 +163,7 @@ function App() {
     },
 
     {
-      path: "/launching-soon",
+      path: "/football/launching-soon",
       element: (
         <>
           <LaunchingSoon />
@@ -172,7 +172,7 @@ function App() {
     },
 
     {
-      path: "/table-format/:id",
+      path: "/football/table-format/:id",
       element: (
         <>
           <Navbar/><TableFormat/>
@@ -180,7 +180,7 @@ function App() {
       ),
     },
     {
-      path: "*",
+      path: "/football*",
       element: <Error />,
     },
   ]);

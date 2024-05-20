@@ -448,7 +448,7 @@ function Cups() {
             key={cup.league.id}
             className="px-4 py-2 cursor-pointer hover:bg-gray-100 flex items-center"
           >
-            <Link to={`/cup/${cup.league.id}`} onClick={() => setSearchBox(false)}>
+            <Link to={`/football/cup/${cup.league.id}`} onClick={() => setSearchBox(false)}>
               <div className="flex items-center">
                 <svg
                   width="20"
