@@ -40,7 +40,7 @@ function Cups() {
   }, []);
 
   const handleCupClick = (cupId) => {
-    navigate(`/cup/${cupId}`);
+    navigate(`/football/cup/${cupId}`);
   };
 
   const handleVoiceSearch = () => {
