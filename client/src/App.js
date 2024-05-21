@@ -180,7 +180,7 @@ function App() {
       ),
     },
     {
-      path: "/football*",
+      path: "*",
       element: <Error />,
     },
   ]);
