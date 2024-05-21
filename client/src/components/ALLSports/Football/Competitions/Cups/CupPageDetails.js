@@ -1737,7 +1737,7 @@ const CupPageDetails = () => {
                   </button>
                 </NavLink>
                
-                <NavLink to={`/football/statistics/${fixture.fixture.id}`}>
+                <NavLink to={`/football/league/world-cup/match-statistics/${fixture.fixture.id}`}>
                   <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded">
                     Statistics 
                   </button>
@@ -1792,7 +1792,7 @@ const CupPageDetails = () => {
             </div>
           ))
         ) : (
-          <div className="text-center font-semibold text-gray-600 mt-8">
+          <div className="text-center font-semibold text-gray-600 mt-15">
             No match Found
           </div>
         )}

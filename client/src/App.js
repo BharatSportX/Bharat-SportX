@@ -87,7 +87,7 @@ function App() {
       ),
     },
     {
-      path: "/football/statistics/:id",
+      path: "/football/league/world-cup/match-statistics/:id",
       element: (
         <>
           <Navbar />
@@ -97,7 +97,7 @@ function App() {
     },
 
     {
-      path: "/football/team-stat",
+      path: "/football/league/world-cup/team-statistics",
       element: (
         <>
           <Navbar />
@@ -172,7 +172,7 @@ function App() {
     },
 
     {
-      path: "/football/table-format/:id",
+      path: "/football/league/world-cup/match-statistics/table-format/:id",
       element: (
         <>
           <Navbar/><TableFormat/>
