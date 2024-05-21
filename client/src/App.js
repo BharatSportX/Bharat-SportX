@@ -51,7 +51,7 @@ function App() {
       ),
     },
     {
-      path: "/football/FootballWorldCup",
+      path: "/football/league/world-cup",
       element: (
         <>
           <Navbar />
