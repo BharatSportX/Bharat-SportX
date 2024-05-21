@@ -40,7 +40,7 @@ function Cups() {
   }, []);
 
   const handleCupClick = (cupId) => {
-    navigate(`/football/cup/${cupId}`);
+    navigate(`/football/league/world-cup/cup/${cupId}`);
   };
 
   const handleVoiceSearch = () => {

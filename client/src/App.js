@@ -69,7 +69,7 @@ function App() {
       ),
     },
     {
-      path: "/football/cup/:id",
+      path: "/football/league/world-cup/cup/:id",
       element: (
         <>
           <Navbar />
