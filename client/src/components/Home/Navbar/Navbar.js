@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import "./Navbar.css";
-import { NavLink } from "react-router-dom";
+import { NavLink,useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import NavDrawer from "./NavDrawer";
 import ScrollNav from "./ScrollNav";
@@ -8,6 +8,31 @@ import NavContext from "./NavContext/NavContext";
 const Navbar = () => {
   const { isSearchOpen, closeSearch, toggleSearch } = useContext(NavContext);
 
+  const location = useLocation();
+  const isFootballmatchActive = () => {
+    const footballPaths = [
+      
+      
+      
+      "/football/FootballLeagues",
+      "/football/league/world-cup",
+      "/football/LeagueHome",
+      "/football/league/world-cup/cup/:id",
+      "/football/league/:id",
+      "/football/league/world-cup/match-statistics/:id",
+      "/football/league/world-cup/team-statistics",
+      "/football/standings/:id",
+      "/football/prediction/:id",
+      "/football/players",
+      "/football/lineups",
+      "/football/h2h",
+      "/football/events",
+      "/football/launching-soon",
+      "/football/league/world-cup/match-statistics/table-format/:id",
+      
+    ];
+    return footballPaths.some((path) => location.pathname.startsWith(path));
+  };
   return (
     <nav className="dark:bg-gray-800  h-auto z-40 fixed top-0 left-0 w-full  bg-white shadow-sm-light dark:shadow-none">
       <div className="px-4 md:px-14   lg:px-16 xl:px-12 ">
@@ -135,7 +160,7 @@ const Navbar = () => {
             <NavLink
               to="/football/LeagueHome"
               className={({ isActive }) =>
-                isActive
+                isFootballmatchActive() || isActive
                   ? "hidden xl:dark:text-white xl:text-black xl:block xl:font-semibold  xl:text-[1.1rem] "
                   : "hidden dark:hover:text-white hover:text-black xl:block xl:font-semibold xl:text-gray-600 xl:dark:text-gray-300 xl:text-[1.1rem]"
               }
@@ -355,7 +380,7 @@ const Navbar = () => {
             to="/football/LeagueHome"
             className={({ isActive }) =>
               `inline-flex flex-col items-center justify-center px-5 md:px-14 lg:px-16   group ${
-                isActive
+                isFootballmatchActive() || isActive
                   ? "text-red-600 dark:text-red-500"
                   : "text-gray-500 dark:text-gray-400"
               }`
