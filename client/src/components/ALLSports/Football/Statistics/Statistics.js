@@ -1895,7 +1895,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChartLine } from '@fortawesome/free-solid-svg-icons';
 import NoDataModal from './NoDataModal';
 import ResizableBox from './ResizableBox';
-import { AxisOptions, Chart } from 'react-charts';
+import {  Chart } from 'react-charts';
 
 const Statistics = () => {
   const [teamStats, setTeamStats] = useState(null);
