@@ -13,12 +13,13 @@ import ButtonModal from './ButtonModal';
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
 import { toPng } from 'html-to-image';
+import { useNavigate } from 'react-router-dom';
 
 const TableFormat = () => {
   const [teamStats, setTeamStats] = useState(null);
   const { id: fixtureId } = useParams();
   const tableRef = useRef(null);
-
+const navigate= useNavigate()
   useEffect(() => {
     const fetchStatistics = async () => {
       try {
@@ -101,6 +102,18 @@ const TableFormat = () => {
           handlePDFDownload={handlePDFDownload}
           handleImageDownload={handleImageDownload}
         />
+      </div>
+
+      <div className="flex justify-start items-start mt-3 ml-2">
+        
+      <button class="relative inline-flex items-center justify-center p-0.5  mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800"
+      onClick={()=>{
+        navigate(`/football/league/world-cup/team-statistics/${fixtureId}`)
+      }}>
+          <span class="relative px-5 py-2.5  transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+            See Team Statitics
+          </span>
+        </button>
       </div>
 
        <div className="overflow-x-auto mt-4">

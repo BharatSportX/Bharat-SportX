@@ -9,7 +9,7 @@ import Leagues from "./components/ALLSports/Football/Competitions/Leagues/League
 import Cups from "./components/ALLSports/Football/Competitions/Cups/Cup";
 import CupPageDetails from "./components/ALLSports/Football/Competitions/Cups/CupPageDetails";
 import LeaguesDetails from "./components/ALLSports/Football/Competitions/Leagues/LeaguesDetails";
-import Statistics from "./components/ALLSports/Football/Statistics/Statistics";
+import Statistics from "./components/ALLSports/Football/Statistics/MatchStatistics";
 import NavState from "./components/Home/Navbar/NavContext/NavState";
 import TeamStatistics from "./components/ALLSports/Football/Team Statistics/TeamStatistics";
 import Standings from "./components/ALLSports/Football/Standings/Standings";
@@ -97,7 +97,7 @@ function App() {
     },
 
     {
-      path: "/football/league/world-cup/team-statistics",
+      path: "/football/league/world-cup/team-statistics/:id",
       element: (
         <>
           <Navbar />
