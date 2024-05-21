@@ -4,7 +4,7 @@ const Blogs = () => {
   return (
     <div>
       <div className="">
-        <h1 className="text-4xl font-semibold ">Your Blogs</h1>
+        <h1 className="text-2xl font-semibold ">Your Blogs</h1>
       </div>
       <div className="container">
         <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">

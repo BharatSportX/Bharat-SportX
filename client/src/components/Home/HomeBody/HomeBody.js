@@ -15,7 +15,7 @@ const HomeBody = () => {
   return (
     <div className="relative top-36 m-4">
       <div className="">
-        <h1 className="text-4xl font-medium">Matches</h1>
+        <h1 className="text-3xl font-semibold " style={{fontFamily:'"Varela Round", sans-serif'}}>Matches</h1>
       </div>
       <div className="mt-5">
         <button
