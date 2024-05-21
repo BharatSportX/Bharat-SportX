@@ -23,7 +23,7 @@ const Navbar = () => {
       "/football/league/world-cup/team-statistics",
       "/football/standings/:id",
       "/football/prediction/:id",
-      "/football/players",
+      
       "/football/lineups",
       "/football/h2h",
       "/football/events",
