@@ -11,14 +11,15 @@ const ScrollNav = () => {
   const isFootballActive = () => {
     const footballPaths = [
       
+      
       "/football/home",
       "/football/FootballLeagues",
-      "/football/FootballWorldCup",
+      "/football/league/world-cup",
       "/football/LeagueHome",
-      "/football/cup/:id",
+      "/football/league/world-cup/cup/:id",
       "/football/league/:id",
-      "/football/statistics/:id",
-      "/football/team-stat",
+      "/football/league/world-cup/match-statistics/:id",
+      "/football/league/world-cup/team-statistics",
       "/football/standings/:id",
       "/football/prediction/:id",
       "/football/players",
@@ -26,7 +27,7 @@ const ScrollNav = () => {
       "/football/h2h",
       "/football/events",
       "/football/launching-soon",
-      "/football/table-format/:id",
+      "/football/league/world-cup/match-statistics/table-format/:id",
       
     ];
     return footballPaths.some((path) => location.pathname.startsWith(path));
