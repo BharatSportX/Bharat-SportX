@@ -3,7 +3,7 @@ import React from "react";
 const Blogs = () => {
   return (
     <div>
-      <div className="mx-20 mb-5 mt-10">
+      <div className="">
         <h1 className="text-4xl font-semibold ">Your Blogs</h1>
       </div>
       <div className="container">
