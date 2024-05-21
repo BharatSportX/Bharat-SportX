@@ -22,7 +22,7 @@ const HomeBody = () => {
           Matches
         </h1>
       </div>
-      <div className="mt-5">
+      <div className="mt-4">
         <button
           className={
             activeButtons[0]
