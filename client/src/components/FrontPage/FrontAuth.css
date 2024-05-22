@@ -1,0 +1,14 @@
+/* FrontAuth.css */
+input:-webkit-autofill {
+    background-color: rgba(77, 97, 138, 0.911) !important; /* #3e4553 with opacity 50% */
+    -webkit-box-shadow: 0 0 0px 1000px rgba(43, 62, 100, 0.886) inset !important; /* #3e4553 with opacity 50% */
+    box-shadow: 0 0 0px 1000px rgba(72, 96, 146, 0.87) inset !important; /* #3e4553 with opacity 50% */
+    opacity: 60%;
+}
+
+input:focus {
+      -webkit-text-fill-color: white !important;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.4); /* Focus ring with custom color */
+  }
+  

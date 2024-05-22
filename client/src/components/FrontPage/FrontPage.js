@@ -95,6 +95,7 @@ import FrontNavbar from "./FrontNavbar";
 import { Link } from "react-router-dom";
 import FrontBody from "./FrontBody/FrontBody";
 import Footer from "./Footer";
+import FrontAuth from "./FrontAuth";
 
 const FrontPage = () => {
   const [text, setText] = useState("");
@@ -142,27 +143,7 @@ const FrontPage = () => {
               </p>
             </p>
             <div className=" ">
-              <Link
-                to="/football/home"
-                className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-black rounded-lg bg-yellow-300 hover:bg-yellow-300  hover:font-semibold dark:focus:ring-blue-900 button shadow-lg     md:font-semibold  md:text-2xl font-[Josefin Sans,sans-serif]  sm:py-3  sm:px-5 "
-              >
-                Get Started
-                <svg
-                  className="w-3.5 h-3.5 ms-2 rtl:rotate-180 icon"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 14 10"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M1 5h12m0 0L9 1m4 4L9 9"
-                  />
-                </svg>
-              </Link>
+              <FrontAuth/>
             </div>
           </div>
         </section>

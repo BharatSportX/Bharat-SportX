@@ -21,6 +21,11 @@
     height: 150vh; /* Adjust maximum height for screens with height 400px or less */
   }
 }
+@media (max-width: 380px) {
+  .frontBody {
+    height: 120vh; /* Adjust maximum height for screens with height 400px or less */
+  }
+}
 
 .icon {
   width: 24px;
