@@ -42,7 +42,7 @@ function App() {
       ),
     },
     {
-      path: "/football/FootballLeagues",
+      path: "/football/leagues",
       element: (
         <>
           <Navbar />
