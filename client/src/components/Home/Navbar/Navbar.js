@@ -347,7 +347,7 @@ const Navbar = () => {
             )}
             {/* User profile */}
             <button
-              className="hover:rounded-full size-8 hover:border dark:hover:border-gray-700 dark:hover:focus:ring-slate-900 hover:border-gray-300 hover:focus:ring-slate-500 hover:focus:ring-4 items-center flex justify-center hover:bg-slate-200 hover:bg-opacity-5 border-2 border-black dark:border-white rounded-full "
+              className="hover:rounded-full size-8 hover:border dark:hover:border-gray-700 dark:hover:focus:ring-slate-900 hover:border-gray-300 hover:focus:ring-slate-500 hover:focus:ring-4 items-center flex justify-center hover:bg-slate-200 hover:bg-opacity-5 border-2 border-black dark:border-white rounded-full text-black dark:text-white"
               title="Search"
             >
               {/* <img
