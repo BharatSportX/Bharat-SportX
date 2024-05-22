@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import NavDrawer from "./NavDrawer";
 import ScrollNav from "./ScrollNav";
 import NavContext from "./NavContext/NavContext";
+import { FaRegUser } from "react-icons/fa6";
 const Navbar = () => {
   const { isSearchOpen, closeSearch, toggleSearch } = useContext(NavContext);
 
@@ -336,11 +337,12 @@ const Navbar = () => {
               className="hover:rounded-full size-8 hover:border hover:border-gray-700 hover:focus:ring-slate-900 hover:focus:ring-4 items-center flex justify-center hover:bg-slate-200 hover:bg-opacity-5"
               title="Search"
             >
-              <img
+              {/* <img
                 className="h-8 w-8 rounded-full"
                 src="https://via.placeholder.com/30"
                 alt="User"
-              />
+              /> */}
+              <FaRegUser />
             </button>
           </div>
         </div>
