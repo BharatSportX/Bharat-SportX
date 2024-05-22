@@ -31,7 +31,7 @@ const HomeBody = () => {
           }
           onClick={() => handleClick(0)}
         >
-          Live <span className="hidden xl:inline-block"> Matches</span>
+          Live<span className="hidden xl:inline-block"> Matches</span>
         </button>
         <button
           className={
@@ -41,7 +41,7 @@ const HomeBody = () => {
           }
           onClick={() => handleClick(1)}
         >
-          Recent <span className="hidden xl:inline-block"> Matches</span>
+          Recent<span className="hidden xl:inline-block"> Matches</span>
         </button>
         <button
           className={
@@ -51,19 +51,8 @@ const HomeBody = () => {
           }
           onClick={() => handleClick(2)}
         >
-          Upcoming <span className="hidden xl:inline-block"> Matches</span>
+          Upcoming<span className="hidden xl:inline-block"> Matches</span>
         </button>
-        <button
-          className={
-            activeButtons[2]
-              ? " border-2  text-lg font-medium me-2.5 px-4 py-0.5 pl-5 rounded-full  cursor-pointer border-orange-800 text-orange-800"
-              : " border-2 border-orange-800  text-lg font-medium me-2.5 px-4 py-0.5 pl-5 rounded-full cursor-poin9er bg-orange-800 text-orange-300"
-          }
-          onClick={() => handleClick(2)}
-        >
-          Odds 
-        </button>
-        
       </div>
       <LiveMatch />
       <Blogs />
