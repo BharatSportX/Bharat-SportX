@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import "./Navbar.css";
-import { NavLink,useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import NavDrawer from "./NavDrawer";
 import ScrollNav from "./ScrollNav";
@@ -12,9 +12,6 @@ const Navbar = () => {
   const location = useLocation();
   const isFootballmatchActive = () => {
     const footballPaths = [
-      
-      
-      
       "/football/FootballLeagues",
       "/football/league/world-cup",
       "/football/LeagueHome",
@@ -24,18 +21,17 @@ const Navbar = () => {
       "/football/league/world-cup/team-statistics",
       "/football/standings/:id",
       "/football/prediction/:id",
-      
+
       "/football/lineups",
       "/football/h2h",
       "/football/events",
       "/football/launching-soon",
       "/football/league/world-cup/match-statistics/table-format/:id",
-      
     ];
     return footballPaths.some((path) => location.pathname.startsWith(path));
   };
   return (
-    <nav className="dark:bg-gray-800  h-auto z-40 fixed top-0 left-0 w-full  bg-white shadow-sm-light dark:shadow-none">
+    <nav className="dark:bg-gray-800  h-auto z-40 fixed top-0 left-0 w-full  bg-gray-50 shadow-sm-light dark:shadow-none">
       <div className="px-4 md:px-14   lg:px-16 xl:px-12 ">
         <div className="flex items-center justify-between h-16">
           {/* Logo and Company Name */}
@@ -85,16 +81,13 @@ const Navbar = () => {
                         <g>
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            
                             version="1.1"
                             x="0"
                             y="0"
                             viewBox="4.1 5.7000002933936145 91.84680416452579 88.47791072939533"
-                           
-                            
                             height="44.50065393490629"
                             width="46.19506511239028"
-                            class="icon-dxe-0"
+                            className="icon-dxe-0"
                             data-fill-palette-color="quaternary"
                             id="dxe-0"
                           >
@@ -139,11 +132,23 @@ const Navbar = () => {
               </svg>
             </NavLink>
             <form>
-              <button
-                className="w-28 xl:w-24 px-0 font-semibold text-xs BtnEx1 z-10"
-                style={{ height: "31px" }}
-              >
-                SUBSCRIBE
+              <button className=" dark:hidden animated-button pl-4  lg:py-0.5 lg:pr-12 pr-8">
+                <svg
+                  viewBox="0 0 24 24"
+                  className="arr-2 size-5  "
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+                </svg>
+                <span className="text">Go Pro</span>
+                <span className="circle"></span>
+                <svg
+                  viewBox="0 0 24 24"
+                  className="arr-1"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+                </svg>
               </button>
             </form>
 
@@ -272,12 +277,12 @@ const Navbar = () => {
           {/* Mobile Search button */}
           <div className="flex xl:items-center xl:ml-4">
             <button
-              className="hover:rounded-full mx-4 my-0 size-8 hover:border hover:border-gray-700 hover:focus:ring-slate-900 hover:focus:ring-4 items-center flex justify-center xl:hidden  hover:bg-opacity-5 "
+              className="hover:rounded-full mx-4 my-0 size-8 hover:border dark:hover:border-gray-700 dark:hover:focus:ring-slate-900 hover:focus:ring-4 items-center flex justify-center xl:hidden  hover:bg-opacity-5 hover:border-gray-300 hover:focus:ring-slate-500  border-2 border-black dark:border-white rounded-full  "
               title="Search"
               onClick={toggleSearch}
             >
               <svg
-                className="size-6 dark:text-white  text-slate-900 xl:hidden"
+                className="size-5 dark:text-white  text-slate-900 xl:hidden"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="none"
@@ -300,7 +305,7 @@ const Navbar = () => {
                   <input
                     type="text"
                     placeholder="Search... Here!!"
-                    className="dark:bg-gray-700 bg-slate-300 w-full text-gray-700 dark:text-white rounded-full pl-12 pr-14 py-1 focus:outline-none dark:focus:bg-gray-900 focus:bg-gray-200"
+                    className="dark:bg-gray-700 bg-slate-300 w-full text-gray-700 dark:text-white rounded-full pl-12  pr-14 py-1 focus:outline-none dark:focus:bg-gray-900 focus:bg-gray-200"
                   />
                   <button className="absolute px-1 left-2 top-0 mt-[0.4rem] mr-2 ">
                     <svg
@@ -334,7 +339,7 @@ const Navbar = () => {
             )}
             {/* User profile */}
             <button
-              className="hover:rounded-full size-8 hover:border hover:border-gray-700 hover:focus:ring-slate-900 hover:focus:ring-4 items-center flex justify-center hover:bg-slate-200 hover:bg-opacity-5"
+              className="hover:rounded-full size-8 hover:border dark:hover:border-gray-700 dark:hover:focus:ring-slate-900 hover:border-gray-300 hover:focus:ring-slate-500 hover:focus:ring-4 items-center flex justify-center hover:bg-slate-200 hover:bg-opacity-5 border-2 border-black dark:border-white rounded-full "
               title="Search"
             >
               {/* <img
@@ -351,7 +356,7 @@ const Navbar = () => {
 
       {/* Mobile navbar */}
 
-      <div className="xl:hidden fixed bottom-0 left-0 z-50 w-full h-16 bg-white border-t border-gray-200 dark:bg-gray-900 dark:border-gray-600">
+      <div className="xl:hidden fixed bottom-0 left-0 z-50 w-full h-16 bg-gray-50 border-t border-gray-200 dark:bg-gray-900 dark:border-gray-600">
         <div className="grid h-full max-w-lg grid-cols-5 m-auto font-medium md:flex md:justify-center">
           <NavLink
             to="/football/home"
