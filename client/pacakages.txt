@@ -1,6 +1,7 @@
 
 22-05-24
 npm install react-router-dom@latest
+npm i react-icons
 20-5-24 pcakage addede
 
 npm install re-resizable
@@ -86,3 +87,12 @@ npm install aos --save
 18. npm i @mui/material,
 19. npm i  @mui/styled-engine-sc,
 20.npm i   @mui/x-charts:
+
+
+---------
+Server
+---------
+
+22-05-24
+---------
+npm install express multer cors mongodb mongoose cookie-parser jsonwebtoken
