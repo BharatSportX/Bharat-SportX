@@ -79,11 +79,11 @@ const LeaguesHome = () => {
                     <div>
                         <button
                             className={
-                                activeButtons[1]
+                                activeButtons[0]
                                     ? "w-full border-2 text-lg font-medium px-4 py-0.5 rounded-full cursor-pointer border-orange-800 text-orange-800 bg-orange-200"
                                     : "w-full border-2 border-orange-800 text-lg font-medium px-4 py-0.5 rounded-full cursor-pointer bg-orange-800 text-orange-300"
                             }
-                            onClick={() => handleClick(1, '/football/womens-football')}
+                            onClick={() => handleClick(0, '/football/womens-football')}
                         >
                             Womens <span className="hidden xl:inline-block"> Football</span>
                         </button>
@@ -91,11 +91,11 @@ const LeaguesHome = () => {
                     <div>
                         <button
                             className={
-                                activeButtons[2]
+                                activeButtons[0]
                                     ? "w-full border-2 text-lg font-medium px-4 py-0.5 rounded-full cursor-pointer border-orange-800 text-orange-800 bg-orange-200"
                                     : "w-full border-2 border-orange-800 text-lg font-medium px-4 py-0.5 rounded-full cursor-pointer bg-orange-800 text-orange-300"
                             }
-                            onClick={() => handleClick(2, '/football/leagues')}
+                            onClick={() => handleClick(0, '/football/leagues')}
                         >
                             Leagues
                         </button>
@@ -103,11 +103,11 @@ const LeaguesHome = () => {
                     <div>
                         <button
                             className={
-                                activeButtons[3]
+                                activeButtons[0]
                                     ? "w-full border-2 text-lg font-medium px-4 py-0.5 rounded-full cursor-pointer border-orange-800 text-orange-800 bg-orange-200"
                                     : "w-full border-2 border-orange-800 text-lg font-medium px-4 py-0.5 rounded-full cursor-pointer bg-orange-800 text-orange-300"
                             }
-                            onClick={() => handleClick(3, '/football/clubs')}
+                            onClick={() => handleClick(0, '/football/clubs')}
                         >
                             Clubs
                         </button>
@@ -115,11 +115,11 @@ const LeaguesHome = () => {
                     <div>
                         <button
                             className={
-                                activeButtons[4]
+                                activeButtons[0]
                                     ? "w-full border-2 text-lg font-medium px-4 py-0.5 rounded-full cursor-pointer border-orange-800 text-orange-800 bg-orange-200"
                                     : "w-full border-2 border-orange-800 text-lg font-medium px-4 py-0.5 rounded-full cursor-pointer bg-orange-800 text-orange-300"
                             }
-                            onClick={() => handleClick(4, '/football/international')}
+                            onClick={() => handleClick(0, '/football/international')}
                         >
                             International
                         </button>
@@ -128,11 +128,11 @@ const LeaguesHome = () => {
                     <div>
                         <button
                             className={
-                                activeButtons[4]
+                                activeButtons[0]
                                     ? "w-full border-2 text-lg font-medium px-4 py-0.5 rounded-full cursor-pointer border-orange-800 text-orange-800 bg-orange-200"
                                     : "w-full border-2 border-orange-800 text-lg font-medium px-4 py-0.5 rounded-full cursor-pointer bg-orange-800 text-orange-300"
                             }
-                            onClick={() => handleClick(4, '/football/international')}
+                            onClick={() => handleClick(0, '/football/international')}
                         >
                          Rankings
                         </button>
