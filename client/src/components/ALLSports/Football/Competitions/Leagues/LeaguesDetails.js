@@ -157,9 +157,9 @@ const LeagueDetails = () => {
   }) : sortedFixtures;
   
   return (
-    <div className="container mx-auto py-8">
+    <div className="container mx-auto py-8 relative overflow-x-hidden top-40">
       {loading && <Spinner />}
-      <div className="league-details">
+      <div className="league-details ">
         <h1 className="text-3xl font-bold mb-4">{year && year.name}</h1> {/* Displaying league name */}
         <div className="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
           <span className="font-medium">Alert!</span> The page is under construction. Thank you for your patience!
