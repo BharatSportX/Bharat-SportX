@@ -62,7 +62,7 @@ const LeaguesHome = () => {
 
     return (
         <section className="dark:bg-gray-900 h-full relative overflow-x-hidden top-36 bg-cover bg-center" style={{ backgroundImage: 'url()' }}>
-            <div className="py-2 px-3 mx-auto max-w-screen-xl lg:py-3 ">
+            <div className="py-2 px-3  mt-1 mx-auto max-w-screen-xl lg:py-3 ">
                 <div className="grid grid-cols-2 md:grid-cols-6 gap-4 justify-center mt-2 ">
                     <div>
                         <button
