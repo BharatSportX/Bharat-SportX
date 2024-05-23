@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import LiveMatch from "./LiveMatch";
 import Blogs from "./Blogs";
+import CarouselLive from "./CarouselLive";
 
 const HomeBody = () => {
   const [activeButtons, setActiveButtons] = useState([false, true, true]);
@@ -13,8 +14,8 @@ const HomeBody = () => {
   };
 
   return (
-    <div className="relative top-36 m-4">
-      <div className="">
+    <div className="relative top-36 ">
+      <div className="m-4">
         <h1
           className="text-3xl font-semibold "
           style={{ fontFamily: '"Varela Round", sans-serif' }}
@@ -22,7 +23,7 @@ const HomeBody = () => {
           Matches
         </h1>
       </div>
-      <div className="mt-4">
+      <div className="m-4 ">
         <button
           className={
             activeButtons[0]
@@ -55,7 +56,7 @@ const HomeBody = () => {
           Upcoming<span className="hidden xl:inline-block ml-2"> Matches</span>
         </button>
       </div>
-      <LiveMatch />
+      <CarouselLive/>
       <Blogs />
     </div>
   );
