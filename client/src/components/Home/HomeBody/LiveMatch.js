@@ -3,11 +3,11 @@ import { NavLink } from "react-router-dom";
 
 const LiveMatch = () => {
   return (
-    <div classNameName=" m-4">
-      <div classNameName="container">
+    <div className=" m-4">
+      <div className="container">
         <div className="bg-zinc-800 text-white p-4 rounded-lg max-w-sm mx-auto">
           <div className="flex justify-between items-center text-xs text-blue-400 mb-2">
-            <h1 classNameName="pb-4">UERO Europa Cup</h1>
+            <h1 className="pb-4">UERO Europa Cup</h1>
           </div>
           <div className="flex justify-between items-center mb-4">
             <img
