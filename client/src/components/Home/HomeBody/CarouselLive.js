@@ -7,6 +7,8 @@ const CarouselLive = () => {
     { component: <LiveMatch /> },
     { component: <LiveMatch /> },
     { component: <LiveMatch /> },
+    { component: <LiveMatch /> },
+    { component: <LiveMatch /> },
   ];
 
   const touchStartX = useRef(0);
@@ -19,9 +21,10 @@ const CarouselLive = () => {
   };
 
   const nextSlide = () => {
-    if (currentIndex < items.length - 1) {
-      setCurrentIndex((prevIndex) => prevIndex + 1);
+    if (currentIndex < items.length-1 ) {
+      setCurrentIndex((next) => next + 1);
     }
+    
   };
 
   const handleTouchStart = (e) => {
