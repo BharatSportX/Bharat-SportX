@@ -4,7 +4,12 @@ module.exports = {
     "./node_modules/flowbite/**/*.js",
   ],
   theme: {
-    extend: {},
+    extend: {
+      
+      columns: {
+        '4xs': '14rem',
+      }
+    },
   },
   plugins: [
     require('flowbite/plugin'),
