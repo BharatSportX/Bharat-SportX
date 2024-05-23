@@ -115,6 +115,19 @@ const TeamStatistics = () => {
           return;
         }
 
+        const fixtureDate = fixtureData.fixture.date;
+        const leagueId = fixtureData.league.id;
+        const season = fixtureData.league.season;
+        const homeTeamId = fixtureData.teams.home.id;
+        const awayTeamId = fixtureData.teams.away.id;
+
+
+        console.log("Date:", fixtureDate);
+        console.log("Home Team ID:", homeTeamId);
+        console.log("Away Team ID:", awayTeamId);
+        console.log("League ID:", leagueId);
+        console.log("Season:", season);
+
         setFixtureData(fixtureData);
         setLoading(false);
       } catch (error) {
