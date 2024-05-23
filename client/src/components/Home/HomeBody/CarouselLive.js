@@ -16,14 +16,15 @@ const CarouselLive = () => {
 
   const prevSlide = () => {
     if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
+      setCurrentIndex((prevIndex) => prevIndex - 1);
     }
   };
 
   const nextSlide = () => {
-    if (currentIndex < items.length - 1) {
-      setCurrentIndex(currentIndex + 1);
+    if (currentIndex < items.length-1 ) {
+      setCurrentIndex((next) => next + 1);
     }
+    
   };
 
   const handleTouchStart = (e) => {
@@ -48,9 +49,9 @@ const CarouselLive = () => {
   return (
     <div
       className="relative overflow-hidden"
-      onTouchStart={currentIndex === 0 ? undefined : handleTouchStart}
-      onTouchMove={currentIndex === 0 ? undefined : handleTouchMove}
-      onTouchEnd={currentIndex === 0 ? undefined : handleTouchEnd}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
     >
       <div
         className="flex transition-transform duration-700 ease-in-out"
