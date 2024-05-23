@@ -13,11 +13,15 @@ const CarouselLive = () => {
   const touchEndX = useRef(0);
 
   const prevSlide = () => {
-    setCurrentIndex((currentIndex - 1 + items.length) % items.length);
+    if (currentIndex > 0) {
+      setCurrentIndex((prevIndex) => prevIndex - 1);
+    }
   };
 
   const nextSlide = () => {
-    setCurrentIndex((currentIndex + 1) % items.length);
+    if (currentIndex < items.length - 1) {
+      setCurrentIndex((prevIndex) => prevIndex + 1);
+    }
   };
 
   const handleTouchStart = (e) => {
@@ -57,8 +61,11 @@ const CarouselLive = () => {
         ))}
       </div>
       <button
-        className="carousel-control-prev absolute top-1/2 transform -translate-y-1/2 -left-1 bg-gray-800 text-white p-2 rounded-full"
+        className={`carousel-control-prev absolute top-1/2 transform -translate-y-1/2 -left-1 bg-gray-800 text-white p-2 rounded-full ${
+          currentIndex === 0 ? "opacity-50 cursor-not-allowed" : ""
+        }`}
         onClick={prevSlide}
+        disabled={currentIndex === 0}
       >
         <span className="carousel-control-prev-icon" aria-hidden="true">
           <i className="fas fa-caret-left"></i>
@@ -66,8 +73,11 @@ const CarouselLive = () => {
         <span className="sr-only">Previous</span>
       </button>
       <button
-        className="carousel-control-next absolute top-1/2 transform -translate-y-1/2 -right-1 float-end bg-gray-800 text-white p-2 rounded-full"
+        className={`carousel-control-next absolute top-1/2 transform -translate-y-1/2 -right-1 float-end bg-gray-800 text-white p-2 rounded-full ${
+          currentIndex === items.length - 1 ? "opacity-50 cursor-not-allowed" : ""
+        }`}
         onClick={nextSlide}
+        disabled={currentIndex === items.length - 1}
       >
         <span className="carousel-control-next-icon" aria-hidden="true">
           <i className="fas fa-caret-right"></i>
