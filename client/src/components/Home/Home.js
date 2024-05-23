@@ -13,7 +13,7 @@ export default function Home() {
   }, [pathname]);
 
   return (
-    <div className=' text-black bg-gray-200 dark:text-white  dark:bg-gray-950 h-screen'>
+    <div className=' text-black bg-gray-200 dark:text-white  dark:bg-slate-950 h-screen'>
       <Navbar />
       <HomeBody/>
     </div>

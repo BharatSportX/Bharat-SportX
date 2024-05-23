@@ -4,7 +4,7 @@ import FrontNavbar from "./FrontNavbar";
 import { Link } from "react-router-dom";
 import FrontBody from "./FrontBody/FrontBody";
 import Footer from "./Footer";
-import FrontAuth from "./FrontAuth";
+
 
 const FrontPage = () => {
   const [text, setText] = useState("");

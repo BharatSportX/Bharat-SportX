@@ -67,8 +67,8 @@ const Navbar = () => {
                         cy="44.53473811839841"
                         fill="#c5170b"
                         stroke="transparent"
-                        stroke-width="0"
-                        fill-opacity="1"
+                        strokeWidth="0"
+                        fillOpacity="1"
                         data-fill-palette-color="accent"
                       />
                     </g>

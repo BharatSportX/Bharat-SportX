@@ -26,7 +26,7 @@ const HomeBody = () => {
         <button
           className={
             activeButtons[0]
-              ? " border-2  text-lg font-medium me-2.5 px-4   rounded-full  cursor-pointer border-orange-800 text-orange-800"
+              ? " border-2  text-lg font-medium me-2.5 px-4   rounded-full  cursor-pointer dark:text-orange-500 dark:border-orange-500 border-orange-800 text-orange-800"
               : " border-2 border-orange-800  text-lg font-medium me-2.5 px-4   rounded-full cursor-pointer bg-orange-800 text-orange-300  "
           }
           onClick={() => handleClick(0)}
@@ -37,7 +37,7 @@ const HomeBody = () => {
         <button
           className={
             activeButtons[1]
-              ? " border-2  text-lg font-medium me-2.5 px-4  rounded-full  cursor-pointer border-orange-800 text-orange-800"
+              ? " border-2  text-lg font-medium me-2.5 dark:text-orange-500 dark:border-orange-500  px-4  rounded-full  cursor-pointer border-orange-800 text-orange-800"
               : " border-2 border-orange-800  text-lg font-medium me-2.5 px-4  rounded-full cursor-poin9er bg-orange-800 text-orange-300"
           }
           onClick={() => handleClick(1)}
@@ -47,7 +47,7 @@ const HomeBody = () => {
         <button
           className={
             activeButtons[2]
-              ? " border-2  text-lg font-medium me-2.5 px-4  rounded-full  cursor-pointer border-orange-800 text-orange-800"
+              ? " border-2  text-lg font-medium me-2.5 dark:text-orange-500 dark:border-orange-500  px-4  rounded-full  cursor-pointer border-orange-800 text-orange-800"
               : " border-2 border-orange-800  text-lg font-medium me-2.5 px-4  rounded-full cursor-poin9er bg-orange-800 text-orange-300"
           }
           onClick={() => handleClick(2)}

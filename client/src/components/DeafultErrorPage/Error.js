@@ -1,6 +1,6 @@
 import React from 'react';
 import './Error.css'; 
-import Footer from '../FrontPage/Footer';
+
 
 export default function Error() {
   return (
