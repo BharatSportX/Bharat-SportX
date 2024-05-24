@@ -95,7 +95,7 @@ const CarouselLive = () => {
       onTouchEnd={handleTouchEnd}
     >
       <div
-        className="flex transition-transform duration-900  lg:transition-transform duration-500 ease-in-out carousel-content"
+        className="flex transition-transform duration-[600ms] lg:transition-transform  ease-in-out carousel-content"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
         {items.map((item, index) => (
