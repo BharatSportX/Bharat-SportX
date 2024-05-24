@@ -13,7 +13,7 @@ const LiveMatch = () => {
             <img
               src="https://placehold.co/50x50"
               alt="Sevilla U19"
-              className="w-12 h-12"
+              className=""
             />
             <div className="text-center">
               <div className="text-2xl font-bold text-red-500">1 - 2</div>

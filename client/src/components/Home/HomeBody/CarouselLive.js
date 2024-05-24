@@ -35,23 +35,23 @@ const CarouselLive = () => {
     touchEndX.current = e.targetTouches[0].clientX;
   };
 
-  const handleTouchEnd = () => {
-    if (touchStartX.current - touchEndX.current > 50) {
-      // Swiped left
-      nextSlide();
-    }
-    if (touchStartX.current - touchEndX.current < -50) {
-      // Swiped right
-      prevSlide();
-    }
-  };
+  // const handleTouchEnd = () => {
+  //   if (touchStartX.current - touchEndX.current > 50) {
+  //     // Swiped left
+  //     nextSlide();
+  //   }
+  //   if (touchStartX.current - touchEndX.current < -50) {
+  //     // Swiped right
+  //     prevSlide();
+  //   }
+  // };
 
   return (
     <div
       className="relative overflow-hidden"
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
+      // onTouchEnd={handleTouchEnd}
     >
       <div
         className="flex transition-transform duration-700 ease-in-out"
