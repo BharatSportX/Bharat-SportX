@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import LiveMatch from "./LiveMatch";
 
 const CarouselLive = () => {
@@ -13,6 +13,23 @@ const CarouselLive = () => {
 
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
+  const [isTouchEnabled, setIsTouchEnabled] = useState(true);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) { // lg breakpoint (>= 1024px)
+        setIsTouchEnabled(false);
+      } else {
+        setIsTouchEnabled(true);
+      }
+    };
+
+    handleResize(); // Set initial state
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const prevSlide = () => {
     if (currentIndex > 0) {
@@ -21,28 +38,33 @@ const CarouselLive = () => {
   };
 
   const nextSlide = () => {
-    if (currentIndex < items.length-1 ) {
+    if (currentIndex < items.length - 1) {
       setCurrentIndex((next) => next + 1);
     }
-    
   };
 
   const handleTouchStart = (e) => {
-    touchStartX.current = e.targetTouches[0].clientX;
+    if (isTouchEnabled) {
+      touchStartX.current = e.targetTouches[0].clientX;
+    }
   };
 
   const handleTouchMove = (e) => {
-    touchEndX.current = e.targetTouches[0].clientX;
+    if (isTouchEnabled) {
+      touchEndX.current = e.targetTouches[0].clientX;
+    }
   };
 
   const handleTouchEnd = () => {
-    if (touchStartX.current - touchEndX.current > 50) {
-      // Swiped left
-      nextSlide();
-    }
-    if (touchStartX.current - touchEndX.current < -50) {
-      // Swiped right
-      prevSlide();
+    if (isTouchEnabled) {
+      if (touchStartX.current - touchEndX.current > 50) {
+        // Swiped left
+        nextSlide();
+      }
+      if (touchStartX.current - touchEndX.current < -50) {
+        // Swiped right
+        prevSlide();
+      }
     }
   };
 
