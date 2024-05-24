@@ -141,7 +141,7 @@ const CarouselLive = () => {
       } else {
         setIsTouchEnabled(true);
       }
-    }; //touch ch not used fr lg device
+    }; //touch swipe  not used fr lg device
 
     handleResize(); // Set initial state
     window.addEventListener('resize', handleResize);
@@ -149,15 +149,15 @@ const CarouselLive = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-  
-//prev button
+
+//prev button slide
   const prevSlide = () => {
     if (currentIndex > 0 && !isTransitioning) {
       setIsTransitioning(true);
       setCurrentIndex((prevIndex) => prevIndex - 1);
     }
   };
-
+//next button slide
   const nextSlide = () => {
     if (currentIndex < items.length - 1 && !isTransitioning) {
       setIsTransitioning(true);
@@ -170,7 +170,7 @@ const CarouselLive = () => {
     const handleTransitionEnd = () => {
       setIsTransitioning(false);
     };
-
+//logic for prev error in case of mobile
     const carousel = document.querySelector('.carousel-content');
     if (carousel) {
       carousel.addEventListener('transitionend', handleTransitionEnd);
