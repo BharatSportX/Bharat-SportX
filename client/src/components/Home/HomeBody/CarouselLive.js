@@ -17,7 +17,7 @@ const CarouselLive = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 1024) { // lg breakpoint (>= 1024px)
+      if (window.innerWidth >= 768) { // lg breakpoint (>= 1024px)
         setIsTouchEnabled(false);
       } else {
         setIsTouchEnabled(true);
