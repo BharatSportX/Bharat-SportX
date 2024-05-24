@@ -141,7 +141,7 @@ const CarouselLive = () => {
       } else {
         setIsTouchEnabled(true);
       }
-    };
+    }; //touch ch not used fr lg device
 
     handleResize(); // Set initial state
     window.addEventListener('resize', handleResize);
@@ -149,7 +149,8 @@ const CarouselLive = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-
+  
+//prev button
   const prevSlide = () => {
     if (currentIndex > 0 && !isTransitioning) {
       setIsTransitioning(true);
