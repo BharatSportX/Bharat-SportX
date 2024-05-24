@@ -212,6 +212,7 @@ const CarouselLive = () => {
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
+      {/* /transition div  */}
       <div
         className="flex transition-transform duration-700 ease-in-out carousel-content"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
