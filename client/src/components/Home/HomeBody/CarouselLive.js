@@ -22,7 +22,7 @@ const CarouselLive = () => {
 
   const nextSlide = () => {
     if (currentIndex < items.length-1 ) {
-      setCurrentIndex((next) => next + 0.5);
+      setCurrentIndex((next) => next + 1);
     }
     
   };
