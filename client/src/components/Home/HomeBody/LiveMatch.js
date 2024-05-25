@@ -3,25 +3,14 @@
 
 import React, { useState } from "react";
 
-const LiveMatch = () => {
+const LiveMatch = (props) => {
   const [pin, setPin] = useState(false);
 
-  const togglePin = (e) => {
-    e.stopPropagation();
+  const togglePin = () => {
+    
     setPin(!pin);
   };
 
-  const handleSvgTouchStart = (e) => {
-    e.stopPropagation();
-  };
-
-  const handleSvgTouchMove = (e) => {
-    e.stopPropagation();
-  };
-
-  const handleSvgTouchEnd = (e) => {
-    e.stopPropagation();
-  };
 
   return (
     <div className="m-4">
@@ -32,9 +21,7 @@ const LiveMatch = () => {
             <div className="float-end space-x-2">
               <button
                 onClick={togglePin}
-                onTouchStart={handleSvgTouchStart}
-                onTouchMove={handleSvgTouchMove}
-                onTouchEnd={handleSvgTouchEnd}
+                
               >
                 {pin ? (
                   <svg
@@ -58,7 +45,7 @@ const LiveMatch = () => {
                   </svg>
                 )}
               </button>
-              <button>
+              <button onClick={props.slide_disable}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"

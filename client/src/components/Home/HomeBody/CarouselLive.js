@@ -5,18 +5,23 @@ import LiveMatch from "./LiveMatch";
 
 const CarouselLive = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const items = [
-    { component: <LiveMatch /> },
-    { component: <LiveMatch /> },
-    { component: <LiveMatch /> },
-    { component: <LiveMatch /> },
-    { component: <LiveMatch /> },
-  ];
-
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
   const [isTouchEnabled, setIsTouchEnabled] = useState(true);
   const [isTransitioning, setIsTransitioning] = useState(false);
+
+  const slide_disable=()=>{
+    setIsTouchEnabled(false);
+  }
+  const items = [
+    { component: <LiveMatch slide_disable={slide_disable}/> },
+    { component: <LiveMatch slide_disable={slide_disable}/> },
+    { component: <LiveMatch slide_disable={slide_disable}/> },
+    { component: <LiveMatch slide_disable={slide_disable}/> },
+    { component: <LiveMatch slide_disable={slide_disable}/> },
+   
+  ];
+
 
   useEffect(() => {
     const handleResize = () => {
