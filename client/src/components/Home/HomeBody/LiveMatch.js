@@ -1,16 +1,11 @@
-
-
-
 import React, { useState } from "react";
 
 const LiveMatch = (props) => {
   const [pin, setPin] = useState(false);
 
   const togglePin = () => {
-    
     setPin(!pin);
   };
-
 
   return (
     <div className="m-4">
@@ -19,10 +14,7 @@ const LiveMatch = (props) => {
           <div className="flex pb-4 justify-between items-center text-xs text-blue-400 mb-2">
             <h1 className="">UERO Europa Cup</h1>
             <div className="float-end space-x-2">
-              <button
-                onClick={togglePin}
-                
-              >
+              <button onClick={togglePin}>
                 {pin ? (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +37,7 @@ const LiveMatch = (props) => {
                   </svg>
                 )}
               </button>
-              <button onClick={props.slide_disable}>
+              <button onClick={() => props.slide_disable()}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"

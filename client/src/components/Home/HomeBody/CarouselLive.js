@@ -1,5 +1,3 @@
-
-
 import React, { useState, useRef, useEffect } from "react";
 import LiveMatch from "./LiveMatch";
 
@@ -9,19 +7,19 @@ const CarouselLive = () => {
   const touchEndX = useRef(0);
   const [isTouchEnabled, setIsTouchEnabled] = useState(true);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [disableTouch, setDisableTouch] = useState(false);
 
-  const slide_disable=()=>{
-    setIsTouchEnabled(false);
-  }
+  const slide_disable = () => {
+    setDisableTouch(true);
+  };
+
   const items = [
-    { component: <LiveMatch slide_disable={slide_disable}/> },
-    { component: <LiveMatch slide_disable={slide_disable}/> },
-    { component: <LiveMatch slide_disable={slide_disable}/> },
-    { component: <LiveMatch slide_disable={slide_disable}/> },
-    { component: <LiveMatch slide_disable={slide_disable}/> },
-   
+    { component: <LiveMatch slide_disable={slide_disable} /> },
+    { component: <LiveMatch slide_disable={slide_disable} /> },
+    { component: <LiveMatch slide_disable={slide_disable} /> },
+    { component: <LiveMatch slide_disable={slide_disable} /> },
+    { component: <LiveMatch slide_disable={slide_disable} /> },
   ];
-
 
   useEffect(() => {
     const handleResize = () => {
@@ -68,19 +66,19 @@ const CarouselLive = () => {
   }, [currentIndex]);
 
   const handleTouchStart = (e) => {
-    if (isTouchEnabled) {
+    if (isTouchEnabled && !disableTouch) {
       touchStartX.current = e.targetTouches[0].clientX;
     }
   };
 
   const handleTouchMove = (e) => {
-    if (isTouchEnabled) {
+    if (isTouchEnabled && !disableTouch) {
       touchEndX.current = e.targetTouches[0].clientX;
     }
   };
 
   const handleTouchEnd = () => {
-    if (isTouchEnabled) {
+    if (isTouchEnabled && !disableTouch) {
       if (touchStartX.current - touchEndX.current > 50) {
         // Swiped left
         nextSlide();
@@ -100,7 +98,7 @@ const CarouselLive = () => {
       onTouchEnd={handleTouchEnd}
     >
       <div
-        className="flex transition-transform duration-[600ms] lg:transition-transform  ease-in-out carousel-content"
+        className="flex transition-transform duration-[600ms] lg:transition-transform ease-in-out carousel-content"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
         {items.map((item, index) => (
@@ -138,5 +136,3 @@ const CarouselLive = () => {
 };
 
 export default CarouselLive;
-
-
