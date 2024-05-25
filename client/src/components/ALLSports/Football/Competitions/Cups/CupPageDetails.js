@@ -354,29 +354,30 @@ const CupPageDetails = () => {
                   </button>
                 
               </span>
-              {/* Dropdown menu */}
-              {isDropdownOpen &&(
-                <div className="z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-35 mt-1 dark:bg-gray-700">
-                  <ul className="py-2 text-sm text-gray-700 dark:text-gray-200 "  aria-labelledby="dropdownHoverButton">
-                    {cupData.seasons.map((season, index) => (
-                      <li key={index}>
-                        <button
-                          onClick={() => handleYearChange(index)
-                           
-                          }
-                          className="block px-4 py-2 hover:bg-gray-100 dark
-                          :hover:bg-gray-600 dark:hover:text-white"
-                          >
-                            {season.year}
-                          </button>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-                <div className="h-2 bg-gray-200 rounded-lg overflow-hidden mt-3">
-                  <div className="h-full bg-blue-500" style={{ width: '10%' }}></div> {/* Adjust the width as needed */}
-                </div>
+    
+{isDropdownOpen && (
+  <div className="z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-35 mt-1 dark:bg-gray-700">
+    <ul className="py-2 text-sm text-gray-700 dark:text-gray-200 overflow-y-auto max-h-48" aria-labelledby="dropdownHoverButton">
+      
+      {cupData.seasons.map((season, index) => (
+        <li key={index}>
+        
+            
+
+            <div class="flex items-center ps-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600"  onClick={() => handleYearChange(index)}>
+           
+            <label for="checkbox-item-12" class="w-full py-2 ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">{season.year}</label>
+          </div>
+         
+        </li>
+      ))}
+    </ul>
+  </div>
+)}
+<div className="h-2 bg-gray-200 rounded-lg overflow-hidden mt-3">
+  <div className="h-full bg-blue-500" style={{ width: '10%' }}></div> 
+</div>
+
                 <div className="flex justify-between mt-1">
                   <p>{selectedYear !== null ? formatDate(cupData.seasons[selectedYear].start) : 'Start Date'}</p>
                   <p>{selectedYear !== null ? formatDate(cupData.seasons[selectedYear].end) : 'End Date'}</p>
