@@ -47,7 +47,12 @@
   .searchbox{
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   }
-
+.spekaborder{
+  border: 1px,solid,blue;
+}
+.dark .spekaborder{
+  border: 1px,solid,red;
+}
   /* Dark mode styles */
 /* Dark mode styles */
 .dark .cup-card {
