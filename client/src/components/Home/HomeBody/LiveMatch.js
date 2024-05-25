@@ -15,11 +15,7 @@ const LiveMatch = () => {
       // Disable slide when dropdown is opened
     }
   };
-  const deviceWidth = window.innerWidth;
-  const x = (432 - deviceWidth) / 16;
-  const cardWidth = 22.5 - x;
 
-  // console.log(`w-[${cardWidth}rem]`)
 
   return (
     <>
