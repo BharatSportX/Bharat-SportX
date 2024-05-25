@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import LiveMatch from "./LiveMatch";
 import Blogs from "./Blogs";
-import CarouselLive from "./CarouselLive";
+
 
 const HomeBody = () => {
   const [activeButtons, setActiveButtons] = useState([false, true, true]);
@@ -30,28 +30,28 @@ const HomeBody = () => {
           Matches
         </h1>
       </div>
-      <div className="m-4">
+      <div className="m-4 space-x-2.5 max-370:space-x-1.5 mr-0">
         <button
           className={
             activeButtons[0]
-              ? "relative border-2 text-lg font-medium me-2.5 px-6 rounded-full cursor-pointer dark:text-orange-500 dark:border-orange-500 border-orange-800 text-orange-800"
-              : "relative border-2 border-orange-800 dark:border-orange-500 dark:bg-orange-500 dark:text-orange-950 text-lg font-medium me-2.5 px-6 rounded-full cursor-pointer bg-orange-800 text-orange-300"
+              ? "relative border-2 text-lg font-medium  px-6 rounded-full cursor-pointer dark:text-orange-500 dark:border-orange-500 border-orange-800 text-orange-800"
+              : "relative border-2 border-orange-800 dark:border-orange-500 dark:bg-orange-500 dark:text-orange-950 text-lg font-medium  px-6 rounded-full cursor-pointer bg-orange-800 text-orange-300"
           }
           onClick={() => handleClick(0)}
         >
           <span
-            className={`absolute top-[0.6rem] left-2.5 flex size-2 ${indicatorColor} rounded-full `}
+            className={`absolute top-2.5 left-2.5 flex size-[0.4rem] ${indicatorColor} rounded-full `}
           ></span>
           <span
-            className={`absolute top-[0.6rem] left-2.5 flex size-2  ${indicatorColor} rounded-full animate-ping`}
+            className={`absolute top-[0.615rem] left-[0.6rem] flex size-2  ${indicatorColor} rounded-full animate-ping`}
           ></span>
           Live(2)<span className="hidden xl:inline-block ml-2"> Matches</span>
         </button>
         <button
           className={
             activeButtons[1]
-              ? "border-2 text-lg font-medium me-2.5 dark:text-orange-500 dark:border-orange-500 px-4 rounded-full cursor-pointer border-orange-800 text-orange-800"
-              : "border-2 border-orange-800 dark:border-orange-500 dark:bg-orange-500 dark:text-orange-950 text-lg font-medium me-2.5 px-4 rounded-full cursor-pointer bg-orange-800 text-orange-300"
+              ? "border-2 text-lg font-medium  dark:text-orange-500 dark:border-orange-500 px-4 rounded-full cursor-pointer border-orange-800 text-orange-800"
+              : "border-2 border-orange-800 dark:border-orange-500 dark:bg-orange-500 dark:text-orange-950 text-lg font-medium  px-4 rounded-full cursor-pointer bg-orange-800 text-orange-300"
           }
           onClick={() => handleClick(1)}
         >
@@ -68,7 +68,7 @@ const HomeBody = () => {
           Upcoming<span className="hidden xl:inline-block ml-2"> Matches</span>
         </button>
       </div>
-      <CarouselLive />
+      <LiveMatch/>
       <Blogs />
     </div>
   );
