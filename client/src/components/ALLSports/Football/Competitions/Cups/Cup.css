@@ -41,6 +41,26 @@
   .searchbox{
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   }
+
+  /* Dark mode styles */
+/* Dark mode styles */
+.dark .cup-card {
+  box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.2); /* Increased opacity */
+}
+
+.dark .cup-card:hover {
+  box-shadow: 0px 15px 30px rgba(255, 255, 255, 0.3); /* Increased opacity and spread */
+}
+
+
+
+
+
+
+/* Dark mode image adjustments */
+.dark .invert {
+  filter: invert(1);
+}
   /* .searchul
   {
     width: 1255px;

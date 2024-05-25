@@ -142,7 +142,7 @@ function Cups() {
   );
 
   return (
-    <div className="container mx-auto py-8 relative overflow-x-hidden top-36 dark:bg-slate-950 text-white">
+    <div className="container mx-auto py-8 relative overflow-x-hidden top-36 dark:bg-slate-800 text-white">
       <h1 className="text-3xl font-bold mb-4">Cups</h1>
 
       {/* Speak Now Div */}
@@ -164,79 +164,7 @@ function Cups() {
         </div>
       )}
 
-      {/* Search Form */}
-      {/* <form
-        className="relative flex items-center max-w-lg mx-auto"
-        onSubmit={(e) => {
-          e.preventDefault();
-          handleSearch();
-        }}
-      > */}
-      {/* <label htmlFor="voice-search" className="sr-only">
-          Search
-        </label>
-        <input
-          type="text"
-          id="voice-search"
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          placeholder="World Cup Name,International Women WorldCup Name .."
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          required
-        /> */}
-
-      {/* Clear button */}
-      {/* {searchQuery && (
-          <button
-            type="button"
-            onClick={handleClearSearch}
-            className="absolute inset-y-0 right-0 flex items-center px-2 text-gray-400 hover:text-gray-600 focus:outline-none cross-button"
-            style={{ top: '50%', transform: 'translateY(-50%)', marginRight: '35px' }}
-          >
-            <svg
-              className="w-5 h-5"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        )} */}
-      {/* Microphone icon */}
-      {/* <button
-          type="button"
-          onClick={handleVoiceSearch}
-          className="absolute inset-y-0 right-0 flex items-center px-3 focus:outline-none microphone-button"
-          style={{ top: '50%', transform: 'translateY(-50%)', marginRight: '5px' }}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-          >
-            <path fill="none" d="M0 0h24v24H0z" />
-            <path
-              fill="#4285F4"
-              d="M12 15c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v7c0 1.66 1.34 3 3 3z"
-            />
-            <path fill="#34A853" d="M11 18.92h2V22h-2z" />
-            <path
-              fill="#F4B400"
-              d="M7 12H5c0 1.93.78 3.68 2.05 4.95l1.41-1.41C7.56 14.63 7 13.38 7 12z"
-            />
-            <path
-              fill="#EA4335"
-              d="M12 17c-1.38 0-2.63-.56-3.54-1.47l-1.41 1.41A6.99 6.99 0 0 0 12.01 19c3.87 0 6.98-3.14 6.98-7h-2c0 2.76-2.23 5-4.99 5z"
-            />
-          </svg>
-        </button> */}
-      {/* Submit button (hidden) */}
-      {/* <button type="submit" className="hidden"></button>
-      </form> */}
+      
 
       <div className='relative'>
         <form
@@ -326,118 +254,7 @@ function Cups() {
         </div>
 
       )}
-      {/* {isSearchBox && (
-        <div className='searchbox'>
-          <ul className="absolute z-10 bg-white border border-gray-200 rounded-lg w-full mt-1">
-            {filteredCups.map((cup) => (
-              <li
-                key={cup.league.id}
-                className="px-4 py-2 cursor-pointer hover:bg-gray-100"
-                onClick={() => setSearchQuery(cup.league.name)}
-              >
-                {cup.league.name}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )} */}
-
-
-      {/* {isSearchBox && (
-        <div className='searchbox absolute z-50 mt-2 w-full'>
-          <ul className="bg-white border border-gray-200 rounded-lg w-auto shadow-md sm:w-full lg:w-[80%] md:w-[80%]">
-            {filteredCups.map((cup) => (
-              <li
-                key={cup.league.id}
-                className="px-4 py-2 cursor-pointer hover:bg-gray-100 flex items-center"
-              >
-                <Link to={`/cup/${cup.league.id}`} onClick={() => setSearchBox(false)}>
-                  <div className="flex items-center"> 
-                    <svg
-                      width="20"
-                      height="20"
-                      className="DocSearch-Search-Icon mr-2"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        d="M14.386 14.386l4.0877 4.0877-4.0877-4.0877c-2.9418 2.9419-7.7115 2.9419-10.6533 0-2.9419-2.9418-2.9419-7.7115 0-10.6533 2.9418-2.9419 7.7115-2.9419 10.6533 0 2.9419 2.9418 2.9419 7.7115 0 10.6533z"
-                        stroke="currentColor"
-                        fill="none"
-                        fill-rule="evenodd"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                    <span>{cup.league.name}</span>
-                  </div>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )} */}
-
-{/* 
-      {isSearchBox && (
-  <div className='searchbox absolute z-50 mt-2 w-full'>
-    <ul className="bg-white border border-gray-200 rounded-lg w-auto shadow-md sm:w-full lg:w-[80%] md:w-[80%]">
-      {filteredCups.map((cup) => {
-        const parts = cup.league.name.split(new RegExp(`(${searchQuery})`, 'gi'));
-        return (
-          <li
-            key={cup.league.id}
-            className="px-4 py-2 cursor-pointer hover:bg-gray-100 flex items-center"
-          >
-            <Link to={`/cup/${cup.league.id}`} onClick={() => setSearchBox(false)}>
-              <div className="flex items-center">
-                {parts.map((part, index) => (
-                  <span
-                    key={index}
-                    style={part.toLowerCase() === searchQuery.toLowerCase() ? { fontWeight: 'bold' } : {}}
-                  >
-                    {part}
-                  </span>
-                ))}
-              </div>
-            </Link>
-          </li>
-        );
-      })}
-    </ul>
-  </div>
-)} */}
-
-{/* {isSearchBox && (
-  <div className='searchbox absolute z-50 mt-2 w-full'>
-    <ul className="bg-white border border-gray-200 rounded-lg w-auto shadow-md sm:w-full lg:w-[80%] md:w-[80%]">
-      {filteredCups.map((cup) => {
-        const parts = cup.league.name.split(new RegExp(`(${searchQuery})`, 'gi'));
-        return (
-          <li
-            key={cup.league.id}
-            className="px-4 py-2 cursor-pointer hover:bg-gray-100 flex items-center"
-          >
-            <Link to={`/cup/${cup.league.id}`} onClick={() => setSearchBox(false)}>
-              <div className="flex items-center">
-                {parts.map((part, index) => (
-                  <React.Fragment key={index}>
-                    {part.toLowerCase() === searchQuery.toLowerCase() ? (
-                      <span style={{ fontWeight: 'bold' }}>{part}</span>
-                    ) : (
-                      <span>{part}</span>
-                    )}
-                  </React.Fragment>
-                ))}
-              </div>
-            </Link>
-          </li>
-        );
-      })}
-    </ul>
-  </div>
-)}
-
- */}
+     
  {isSearchBox && (
   <div className='searchbox absolute z-50 mt-2 w-full'>
     <ul className="bg-white border border-gray-200 rounded-lg w-auto shadow-md sm:w-full lg:w-[80%] md:w-[90%] darK:bg-black-border dark:border-gray-500">
@@ -501,30 +318,33 @@ function Cups() {
       </div>
     </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-6">
-          {filteredCups.map((cup) => (
-            <div
-              key={cup.league.id}
-              onClick={() => handleCupClick(cup.league.id)}
-            >
-              <div className="rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300 ease-in-out cup-card ">
-                <img
-                  src={cup.league.logo || ''}
-                  alt={cup.league.name}
-                  className="w-20 h-auto mb-4 mx-auto"
-                  onError={(e) => {
-                    e.target.src =
-                      'https://rapidapi-prod-apis.s3.amazonaws.com/d6/bad4e75b994d49897a95a6e7b6363b/5e91326f658012bfeb00102fe790edcd.png';
-                    e.target.alt = 'Image not available';
-                  }}
-                />
-                <h2 className="text-xl font-semibold text-center text-black dark:text-white">
-                  {cup.league.name}
-                </h2>
-              </div>
-            </div>
-          ))}
-        </div>
+       
+
+<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-6">
+  {filteredCups.map((cup) => (
+    <div
+      key={cup.league.id}
+      onClick={() => handleCupClick(cup.league.id)}
+    >
+      <div className="rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300 ease-in-out dark:rounded-lg dark:shadow-md cup-card">
+        <img
+          src={cup.league.logo || ''}
+          alt={cup.league.name}
+          className="w-20 h-auto mb-4 mx-auto dark:invert"
+          onError={(e) => {
+            e.target.src =
+              'https://rapidapi-prod-apis.s3.amazonaws.com/d6/bad4e75b994d49897a95a6e7b6363b/5e91326f658012bfeb00102fe790edcd.png';
+            e.target.alt = 'Image not available';
+          }}
+        />
+        <h2 className="text-xl font-semibold text-center text-black dark:text-white">
+          {cup.league.name}
+        </h2>
+      </div>
+    </div>
+  ))}
+</div>
+
       )}
     </div>
   );
