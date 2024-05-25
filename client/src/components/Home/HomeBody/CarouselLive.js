@@ -1,37 +1,33 @@
+
+
 import React, { useState, useRef, useEffect } from "react";
 import LiveMatch from "./LiveMatch";
 
 const CarouselLive = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const items = [
+    { component: <LiveMatch /> },
+    { component: <LiveMatch /> },
+    { component: <LiveMatch /> },
+    { component: <LiveMatch /> },
+    { component: <LiveMatch /> },
+  ];
+
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
   const [isTouchEnabled, setIsTouchEnabled] = useState(true);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const [disableTouch, setDisableTouch] = useState(false);
-
-  const slide_disable = () => {
-    setDisableTouch(true);
-    setTimeout(() => setDisableTouch(false), 500); // Re-enable touch after 500ms
-  };
-
-  const items = [
-    { component: <LiveMatch slide_disable={slide_disable} /> },
-    { component: <LiveMatch slide_disable={slide_disable} /> },
-    { component: <LiveMatch slide_disable={slide_disable} /> },
-    { component: <LiveMatch slide_disable={slide_disable} /> },
-    { component: <LiveMatch slide_disable={slide_disable} /> },
-  ];
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 768) {
+      if (window.innerWidth >= 768) { // lg breakpoint (>= 1024px)
         setIsTouchEnabled(false);
       } else {
         setIsTouchEnabled(true);
       }
     };
 
-    handleResize();
+    handleResize(); // Set initial state
     window.addEventListener('resize', handleResize);
     return () => {
       window.removeEventListener('resize', handleResize);
@@ -67,23 +63,25 @@ const CarouselLive = () => {
   }, [currentIndex]);
 
   const handleTouchStart = (e) => {
-    if (isTouchEnabled && !disableTouch) {
+    if (isTouchEnabled) {
       touchStartX.current = e.targetTouches[0].clientX;
     }
   };
 
   const handleTouchMove = (e) => {
-    if (isTouchEnabled && !disableTouch) {
+    if (isTouchEnabled) {
       touchEndX.current = e.targetTouches[0].clientX;
     }
   };
 
   const handleTouchEnd = () => {
-    if (isTouchEnabled && !disableTouch) {
+    if (isTouchEnabled) {
       if (touchStartX.current - touchEndX.current > 50) {
+        // Swiped left
         nextSlide();
       }
       if (touchStartX.current - touchEndX.current < -50) {
+        // Swiped right
         prevSlide();
       }
     }
@@ -97,7 +95,7 @@ const CarouselLive = () => {
       onTouchEnd={handleTouchEnd}
     >
       <div
-        className="flex transition-transform duration-[600ms] lg:transition-transform ease-in-out carousel-content"
+        className="flex transition-transform duration-[600ms] lg:transition-transform  ease-in-out carousel-content"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
         {items.map((item, index) => (
@@ -135,3 +133,5 @@ const CarouselLive = () => {
 };
 
 export default CarouselLive;
+
+

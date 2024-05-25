@@ -1,19 +1,28 @@
 import React, { useState } from "react";
 
-const LiveMatch = (props) => {
+const LiveMatch = () => {
   const [pin, setPin] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const togglePin = () => {
     setPin(!pin);
   };
 
+  const toggleDropdown = (e) => {
+    e.stopPropagation(); // Prevent triggering carousel slide
+    setDropdownOpen(!dropdownOpen);
+    if (!dropdownOpen) {
+       // Disable slide when dropdown is opened
+    } 
+  };
+
   return (
-    <div className="m-4">
+    <div className="m-4 relative">
       <div className="container">
         <div className="bg-zinc-800 text-white p-4 rounded-lg max-w-sm mx-auto">
           <div className="flex pb-4 justify-between items-center text-xs text-blue-400 mb-2">
             <h1 className="">UERO Europa Cup</h1>
-            <div className="float-end space-x-2">
+            <div className="float-end space-x-2 relative">
               <button onClick={togglePin}>
                 {pin ? (
                   <svg
@@ -37,7 +46,7 @@ const LiveMatch = (props) => {
                   </svg>
                 )}
               </button>
-              <button onClick={() => { props.slide_disable(); }}>
+              <button onClick={(e) => { toggleDropdown(e); }}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -48,6 +57,13 @@ const LiveMatch = (props) => {
                   <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0" />
                 </svg>
               </button>
+              {dropdownOpen && (
+                <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-20">
+                  <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Option 1</a>
+                  <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Option 2</a>
+                  <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Option 3</a>
+                </div>
+              )}
             </div>
           </div>
           <div className="flex justify-between items-center mb-4">
