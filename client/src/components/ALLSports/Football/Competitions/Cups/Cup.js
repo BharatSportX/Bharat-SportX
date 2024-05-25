@@ -14,6 +14,8 @@ function Cups() {
   const [isDanger, setIsDanger] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [isSearchBox, setSearchBox] = useState(false);
+  const [currentCups, setCurrentCups] = useState([]);
+  const [showCurrent, setShowCurrent] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -38,6 +40,35 @@ function Cups() {
 
     fetchData();
   }, []);
+
+  const fetchCups = async () => {
+    try {
+      const res = await axios.get("https://api-football-v1.p.rapidapi.com/v3/leagues", {
+        params: {
+          type: "Cup",
+          current: "true"
+        },
+        headers: {
+          'X-RapidAPI-Key': '96d6e2db0bmshaefc24c363be681p18096ejsn20efc89ac5c0',
+          'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
+        }
+      });
+      setCups(res.data.response); // Assuming response is an array of cups
+      setCurrentCups(res.data.response.filter(cup => cup.seasons.some(season => season.current === true)));
+      setLoading(false);
+    } catch (error) {
+      console.error(error);
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchCups();
+  }, []);
+
+  const handleCurrentCupClick = () => {
+    setShowCurrent(true);
+  };
 
   const handleCupClick = (cupId) => {
     navigate(`/football/league/world-cup/cup/${cupId}`);
@@ -143,9 +174,10 @@ function Cups() {
 
   return (
     <div className="container mx-auto py-8 relative overflow-x-hidden top-36 dark:bg-slate-800 text-white">
-      <h1 className="text-3xl font-bold mb-4">Cups</h1>
+      <h1 className="text-3xl font-bold mb-4  text-black dark:text-white">Cups</h1>
 
       {/* Speak Now Div */}
+     
       {showSpeakNow && (
         <div className="fixed inset-0 flex items-center justify-center bg-opacity-50 z-50 lg:mt-15 sm:mt-25">
           <div className="bg-white rounded-lg p-8    text-black dark:bg-slate-700  dark:text-white spekaborder">
@@ -181,11 +213,12 @@ function Cups() {
             type="text"
             id="voice-search"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            placeholder="World Cup Name,International Women WorldCup Name .."
+            placeholder="World Cup Name,International Women"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             required
           />
+          
 
           {/* Clear button */}
           {searchQuery && (
@@ -241,6 +274,9 @@ function Cups() {
         </form>
       </div>
 
+      {/* Current Cups Button */}
+      <button type="button" class="text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2" onClick={handleCurrentCupClick}> Current <span>({currentCups.length})</span> Cups </button>
+
       {isDanger && (
         <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 mt-3 rounded relative dark:bg-slate-600  dark:text-violet-900  dark:bg-opacity-5 " role="alert">
           <strong className="font-bold">No result found!</strong>
@@ -256,6 +292,7 @@ function Cups() {
       )}
      
  {isSearchBox && (
+
   <div className='searchbox absolute z-50 mt-2 w-full'>
     <ul className="bg-white border border-gray-200 rounded-lg w-auto shadow-md sm:w-full lg:w-[80%] md:w-[90%] darK:bg-black-border dark:border-gray-500">
       {filteredCups.map((cup) => {   
