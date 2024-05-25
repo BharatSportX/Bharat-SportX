@@ -142,13 +142,13 @@ function Cups() {
   );
 
   return (
-    <div className="container mx-auto py-8 relative overflow-x-hidden top-36">
+    <div className="container mx-auto py-8 relative overflow-x-hidden top-36 dark:bg-slate-950 text-white">
       <h1 className="text-3xl font-bold mb-4">Cups</h1>
 
       {/* Speak Now Div */}
       {showSpeakNow && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div className="bg-white rounded-lg p-8">
+        <div className="fixed inset-0 flex items-center justify-center bg-opacity-50 z-50">
+          <div className="bg-white rounded-lg p-8  dark:bg-slate-700 text-white">
             <p className="text-xl font-semibold mb-4">Speak Now</p>
             <p className="mb-4">Speak into the microphone...</p>
             {isListening && (
@@ -314,14 +314,14 @@ function Cups() {
       </div>
 
       {isDanger && (
-        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 mt-3 rounded relative" role="alert">
+        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 mt-3 rounded relative dark:bg-slate-600  dark:text-violet-900  dark:bg-opacity-5 " role="alert">
           <strong className="font-bold">No result found!</strong>
           <span className="block sm:inline"> Please try a different search query.</span>
         </div>
       )}
       {isSuccess && (
-        <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 mt-4 rounded relative" role="alert">
-          <strong className="font-bold">Great!</strong>
+        <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 mt-4 rounded relative    dark:bg-slate-600  dark:text-violet-900  dark:bg-opacity-5" role="alert">
+          <strong className="font-bold ">Great!</strong>
           <span className="block sm:inline"> Showing the result for {searchQuery}</span>
         </div>
 
@@ -440,15 +440,15 @@ function Cups() {
  */}
  {isSearchBox && (
   <div className='searchbox absolute z-50 mt-2 w-full'>
-    <ul className="bg-white border border-gray-200 rounded-lg w-auto shadow-md sm:w-full lg:w-[80%] md:w-[80%]">
-      {filteredCups.map((cup) => {
+    <ul className="bg-white border border-gray-200 rounded-lg w-auto shadow-md sm:w-full lg:w-[80%] md:w-[90%] darK:bg-black-border dark:border-gray-500">
+      {filteredCups.map((cup) => {   
         const parts = cup.league.name.split(new RegExp(`(${searchQuery})`, 'gi'));
         return (
           <li
             key={cup.league.id}
-            className="px-4 py-2 cursor-pointer hover:bg-gray-100 flex items-center"
+            className="px-4 py-2 cursor-pointer flex items-center hover:bg-slate-300 bg-white text-black  dark:bg-black dark:text-slate-200 dark:hover:bg-slate-600"
           >
-            <Link to={`/football/cup/${cup.league.id}`} onClick={() => setSearchBox(false)}>
+            <Link to={`/football/league/world-cup/cup/${cup.league.id}`} onClick={() => setSearchBox(false)}>
               <div className="flex items-center">
                 <svg
                   width="20"
@@ -518,7 +518,7 @@ function Cups() {
                     e.target.alt = 'Image not available';
                   }}
                 />
-                <h2 className="text-xl font-semibold text-center">
+                <h2 className="text-xl font-semibold text-center text-black dark:text-white">
                   {cup.league.name}
                 </h2>
               </div>
