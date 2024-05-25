@@ -271,6 +271,7 @@ const CupPageDetails = () => {
 
   const handleYearChange = (index) => {
     setSelectedYear(index);
+    setIsDropdownOpen(false); 
     setLoading(true); // Set loading to true when a year is selected
   
     // Simulate loading for 1 second
@@ -374,7 +375,7 @@ const CupPageDetails = () => {
                   </div>
                 )}
                 <div className="h-2 bg-gray-200 rounded-lg overflow-hidden mt-3">
-                  <div className="h-full bg-blue-500" style={{ width: '50%' }}></div> {/* Adjust the width as needed */}
+                  <div className="h-full bg-blue-500" style={{ width: '10%' }}></div> {/* Adjust the width as needed */}
                 </div>
                 <div className="flex justify-between mt-1">
                   <p>{selectedYear !== null ? formatDate(cupData.seasons[selectedYear].start) : 'Start Date'}</p>
