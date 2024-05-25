@@ -147,8 +147,8 @@ function Cups() {
 
       {/* Speak Now Div */}
       {showSpeakNow && (
-        <div className="fixed inset-0 flex items-center justify-center bg-opacity-50 z-50">
-          <div className="bg-white rounded-lg p-8  dark:bg-slate-700 text-white">
+        <div className="fixed inset-0 flex items-center justify-center bg-opacity-50 z-50 lg:mt-15 sm:mt-25">
+          <div className="bg-white rounded-lg p-8    text-black dark:bg-slate-700  dark:text-white spekaborder">
             <p className="text-xl font-semibold mb-4">Speak Now</p>
             <p className="mb-4">Speak into the microphone...</p>
             {isListening && (
