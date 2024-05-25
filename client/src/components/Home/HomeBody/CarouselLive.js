@@ -11,6 +11,7 @@ const CarouselLive = () => {
 
   const slide_disable = () => {
     setDisableTouch(true);
+    setTimeout(() => setDisableTouch(false), 500); // Re-enable touch after 500ms
   };
 
   const items = [
@@ -23,14 +24,14 @@ const CarouselLive = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 768) { // lg breakpoint (>= 1024px)
+      if (window.innerWidth >= 768) {
         setIsTouchEnabled(false);
       } else {
         setIsTouchEnabled(true);
       }
     };
 
-    handleResize(); // Set initial state
+    handleResize();
     window.addEventListener('resize', handleResize);
     return () => {
       window.removeEventListener('resize', handleResize);
@@ -80,11 +81,9 @@ const CarouselLive = () => {
   const handleTouchEnd = () => {
     if (isTouchEnabled && !disableTouch) {
       if (touchStartX.current - touchEndX.current > 50) {
-        // Swiped left
         nextSlide();
       }
       if (touchStartX.current - touchEndX.current < -50) {
-        // Swiped right
         prevSlide();
       }
     }
