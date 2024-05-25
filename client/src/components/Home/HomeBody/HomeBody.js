@@ -43,7 +43,7 @@ const HomeBody = () => {
             className={`absolute top-2.5 left-2.5 flex size-[0.4rem] ${indicatorColor} rounded-full `}
           ></span>
           <span
-            className={`absolute top-[0.605rem] left-[0.61rem] flex size-2  ${indicatorColor} rounded-full animate-ping `}
+            className={`absolute top-[0.595rem] left-[0.62rem] flex size-2  ${indicatorColor} rounded-full animate-ping `}
           ></span>
           Live(2)<span className="hidden xl:inline-block ml-2"> Matches</span>
         </button>
