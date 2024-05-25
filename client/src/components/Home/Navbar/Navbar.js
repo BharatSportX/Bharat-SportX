@@ -191,7 +191,7 @@ const Navbar = () => {
                   : "hidden dark:hover:text-white hover:text-black xl:block xl:font-semibold xl:text-gray-600 xl:dark:text-gray-300 xl:text-[1.1rem]"
               }
             >
-              Players
+              Top Matches
             </NavLink>
             <NavLink
               to="/football/home2"
@@ -238,7 +238,7 @@ const Navbar = () => {
                     Help Center
                   </Link>
                   <Link id="bottom" to="/football/stat">
-                    Statistics
+                    Top Matches
                   </Link>
                 </div>
               </div>
