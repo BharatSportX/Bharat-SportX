@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PrevNext from "./PrevNext";
-
+import { Link } from "react-router-dom";
 const LiveMatch = () => {
   const [pin, setPin] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -72,24 +72,24 @@ const LiveMatch = () => {
                     </button>
                     {dropdownOpen && (
                       <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-20">
-                        <a
+                        <Link
                           href="#"
                           className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
                         >
                           Option 1
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                           href="#"
                           className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
                         >
                           Option 2
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                           href="#"
                           className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
                         >
                           Option 3
-                        </a>
+                        </Link>
                       </div>
                     )}
                   </div>
@@ -170,24 +170,24 @@ const LiveMatch = () => {
                     </button>
                     {dropdownOpen && (
                       <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-20">
-                        <a
+                        <Link
                           href="#"
                           className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
                         >
                           Option 1
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                           href="#"
                           className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
                         >
                           Option 2
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                           href="#"
                           className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
                         >
                           Option 3
-                        </a>
+                        </Link>
                       </div>
                     )}
                   </div>
@@ -268,24 +268,24 @@ const LiveMatch = () => {
                     </button>
                     {dropdownOpen && (
                       <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-20">
-                        <a
+                        <Link
                           href="#"
                           className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
                         >
                           Option 1
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                           href="#"
                           className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
                         >
                           Option 2
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                           href="#"
                           className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
                         >
                           Option 3
-                        </a>
+                        </Link>
                       </div>
                     )}
                   </div>
@@ -366,24 +366,24 @@ const LiveMatch = () => {
                     </button>
                     {dropdownOpen && (
                       <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-20">
-                        <a
+                        <Link
                           href="#"
                           className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
                         >
                           Option 1
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                           href="#"
                           className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
                         >
                           Option 2
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                           href="#"
                           className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
                         >
                           Option 3
-                        </a>
+                        </Link>
                       </div>
                     )}
                   </div>
