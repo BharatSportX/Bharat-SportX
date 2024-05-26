@@ -53,7 +53,7 @@ const CupPageDetails = () => {
 
     return (
         <>
-            <div className="grid sm:grid-cols-1 lg:grid-cols-3 lg:gap-2 relative overflow-x-hidden top-40">
+            <div className="grid sm:grid-cols-1 h-screen lg:grid-cols-3 lg:gap-2 relative overflow-x-hidden top-40">
                 <div className="col-span-2 sm:col-span-1 mr-3 lg:col-span-2 ml-3 ">
                     <div className="border rounded-lg bg-red-200 bg-opacity-75 p-4 flex items-center">
                         <div className="flex-none mr-4">

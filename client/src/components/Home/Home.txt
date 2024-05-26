@@ -9,8 +9,6 @@ overflow-x-auto is the things what i want for gaming navbar
  e. race walking
  f.cross country running
 
- ------searchbar problem -----
- if i open search bar at matches plays and go to home paGE searchbar will not close automatic.
+----------------------LiveMatch-----------------------------
 
- ---------navbar problrm------
- if i click on matches or home or platers then as a default football icon home active class will gone. (chnage this usings params)
+adding "w-[19rem] mr-5" for last one(card) in LiveMatch.js
