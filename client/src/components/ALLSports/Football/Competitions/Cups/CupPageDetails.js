@@ -61,8 +61,8 @@ const CupPageDetails = () => {
         <div className="grid sm:grid-cols-1 lg:grid-cols-3 lg:gap-2 relative overflow-x-hidden top-40 p-4">
             <div className="col-span-2 sm:col-span-1 sm:mb-4 lg:col-span-2 mr-3 ml-3">
                 <div className="border rounded-lg bg-gradient-to-r from-orange-500 to-slate-200   bg-opacity-75 p-4 flex items-center">
-                    <div className="flex-none mr-4">
-                        <img src={cupData.league.logo} alt="Club" className="w-16 h-16 rounded-full" />
+                    <div className="flex-none mr-4   lg:bg-white ">
+                        <img src={cupData.league.logo} alt="Club" className="w-18 h-19 sm: w-16 h-16 bg-repeat-space " />
                     </div>
                     <div className="flex flex-col">
                         <h2 className="text-xl font-semibold mb-2   bg-gradient-to-r from-slate-900 to-pink-800 bg-clip-text text-transparent">{cupData.league.name}</h2>
