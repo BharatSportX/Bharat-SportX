@@ -22,6 +22,7 @@ import Error from "./components/DeafultErrorPage/Error";
 import LaunchingSoon from "./components/LaunchingSoonPage/LaunchingSoon";
 import Navbar from "./components/Home/Navbar/Navbar";
 import TableFormat from "./components/ALLSports/Football/Statistics/TableFormat";
+import FootballSubscription from "./components/ALLSports/Football/FootballSubscription/FootballSubscription";
 function App() {
   const router = createBrowserRouter([
     {
@@ -176,6 +177,15 @@ function App() {
       element: (
         <>
           <Navbar/><TableFormat/>
+        </>
+      ),
+    },
+
+    {
+      path: "/football/subscription/IN",
+      element: (
+        <>
+          <Navbar/><FootballSubscription/>
         </>
       ),
     },

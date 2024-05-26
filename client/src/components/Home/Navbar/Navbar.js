@@ -152,12 +152,14 @@ const Navbar = () => {
               </button>
             </form>
             <form className="hidden dark:inline-block">
+              <Link to="/football/subscription/IN">
               <button
                 className="w-28 xl:w-24 px-0 font-semibold text-xs BtnEx1 z-10"
                 style={{ height: "31px" }}
               >
                 SUBSCRIBE
               </button>
+              </Link>
             </form>
 
             {/* Navigation */}
