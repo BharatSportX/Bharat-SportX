@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import LiveMatch from "./LiveMatch";
 import Blogs from "./Blogs";
 
-
 const HomeBody = () => {
   const [activeButtons, setActiveButtons] = useState([false, true, true]);
-  const [indicatorColor, setIndicatorColor] = useState("bg-green-900");
+  const [indicatorColor, setIndicatorColor] = useState("bg-[greenyellow] dark:bg-green-900");
 
   const handleClick = (index) => {
     const newActiveButtons = activeButtons.map((isActive, i) =>
@@ -14,9 +13,11 @@ const HomeBody = () => {
     setActiveButtons(newActiveButtons);
 
     if (index === 0) {
-      setIndicatorColor(newActiveButtons[0] ? "bg-[greenyellow]" : "bg-green-900");
+      setIndicatorColor(
+        newActiveButtons[0] ? "bg-red-600 dark:bg-[greenyellow]" : "bg-[greenyellow] dark:bg-green-900"
+      );
     } else {
-      setIndicatorColor("bg-[greenyellow]");
+      setIndicatorColor("bg-red-600 dark:bg-[greenyellow]");
     }
   };
 
@@ -34,8 +35,8 @@ const HomeBody = () => {
         <button
           className={
             activeButtons[0]
-              ? "relative border-2 text-lg font-medium  px-6 rounded-full cursor-pointer dark:text-orange-500 dark:border-orange-500 border-orange-800 text-orange-800"
-              : "relative border-2 border-orange-800 dark:border-orange-500 dark:bg-orange-500 dark:text-orange-950 text-lg font-medium  px-6 rounded-full cursor-pointer bg-orange-800 text-orange-300"
+              ? "relative border-2 text-lg font-medium px-6 rounded-full cursor-pointer dark:text-orange-500 dark:border-orange-500 border-orange-800 text-orange-800"
+              : "relative border-2 border-orange-800 dark:border-orange-500 dark:bg-orange-500 dark:text-orange-950 text-lg font-medium px-6 rounded-full cursor-pointer bg-orange-800 text-orange-300"
           }
           onClick={() => handleClick(0)}
         >
@@ -43,15 +44,15 @@ const HomeBody = () => {
             className={`absolute top-2.5 left-2.5 flex size-[0.4rem] ${indicatorColor} rounded-full `}
           ></span>
           <span
-            className={`absolute top-[0.59rem] left-[0.58rem] flex size-2  ${indicatorColor} rounded-full animate-ping `}
+            className={`absolute top-[0.59rem] left-[0.58rem] flex size-2 ${indicatorColor} rounded-full animate-ping `}
           ></span>
           Live(2)<span className="hidden xl:inline-block ml-2"> Matches</span>
         </button>
         <button
           className={
             activeButtons[1]
-              ? "border-2 text-lg font-medium  dark:text-orange-500 dark:border-orange-500 px-4 rounded-full cursor-pointer border-orange-800 text-orange-800"
-              : "border-2 border-orange-800 dark:border-orange-500 dark:bg-orange-500 dark:text-orange-950 text-lg font-medium  px-4 rounded-full cursor-pointer bg-orange-800 text-orange-300"
+              ? "border-2 text-lg font-medium dark:text-orange-500 dark:border-orange-500 px-4 rounded-full cursor-pointer border-orange-800 text-orange-800"
+              : "border-2 border-orange-800 dark:border-orange-500 dark:bg-orange-500 dark:text-orange-950 text-lg font-medium px-4 rounded-full cursor-pointer bg-orange-800 text-orange-300"
           }
           onClick={() => handleClick(1)}
         >
@@ -60,15 +61,15 @@ const HomeBody = () => {
         <button
           className={
             activeButtons[2]
-              ? "border-2 text-lg font-medium  dark:text-orange-500 dark:border-orange-500 px-4 rounded-full cursor-pointer border-orange-800 text-orange-800"
-              : "border-2 border-orange-800 dark:border-orange-500 dark:bg-orange-500 dark:text-orange-950 text-lg font-medium  px-4 rounded-full cursor-pointer bg-orange-800 text-orange-300"
+              ? "border-2 text-lg font-medium dark:text-orange-500 dark:border-orange-500 px-4 rounded-full cursor-pointer border-orange-800 text-orange-800"
+              : "border-2 border-orange-800 dark:border-orange-500 dark:bg-orange-500 dark:text-orange-950 text-lg font-medium px-4 rounded-full cursor-pointer bg-orange-800 text-orange-300"
           }
           onClick={() => handleClick(2)}
         >
           Upcoming<span className="hidden xl:inline-block ml-2"> Matches</span>
         </button>
       </div>
-      <LiveMatch/>
+      <LiveMatch />
       <Blogs />
     </div>
   );
