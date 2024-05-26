@@ -60,12 +60,12 @@ const CupPageDetails = () => {
     return (
         <div className="grid sm:grid-cols-1 lg:grid-cols-3 lg:gap-2 relative overflow-x-hidden top-40 p-4">
             <div className="col-span-2 sm:col-span-1 sm:mb-4 lg:col-span-2 mr-3 ml-3">
-                <div className="border rounded-lg bg-red-200 bg-opacity-75 p-4 flex items-center">
+                <div className="border rounded-lg bg-gradient-to-r from-orange-500 to-slate-200   bg-opacity-75 p-4 flex items-center">
                     <div className="flex-none mr-4">
                         <img src={cupData.league.logo} alt="Club" className="w-16 h-16 rounded-full" />
                     </div>
                     <div className="flex flex-col">
-                        <h2 className="text-xl font-semibold mb-2">{cupData.league.name}</h2>
+                        <h2 className="text-xl font-semibold mb-2   bg-gradient-to-r from-slate-900 to-pink-800 bg-clip-text text-transparent">{cupData.league.name}</h2>
                         <p>{cupData.country.name}</p>
                         <div className="inline-flex">
                             <SeasonDropDownlist />
@@ -74,8 +74,8 @@ const CupPageDetails = () => {
                 </div>
             </div>
 
-            <div className="col-span-1 sm:col-span-1 lg:col-span-1 mr-3 ml-3 mt-5 md:mt-5 lg:mt-0 bg-slate-200 border rounded-lg p-4 shadow-md">
-                <h1 className="text-xl font-bold mb-4">Featured Match</h1>
+            <div className="col-span-1 sm:col-span-1 lg:col-span-1 mr-3 ml-3 mt-5 md:mt-5 lg:mt-0 bg-gradient-to-r from-amber-200 to-gray-200 border rounded-lg p-4 shadow-md">
+                <h1 className="text-xl font-bold mb-4  bg-gradient-to-r from-red-700 to-blue-700 bg-clip-text text-transparent">Featured Match</h1>
                 <div className="mb-4">
                     <p className="text-lg font-semibold">Club Name</p>
                     <p>Type of Club</p>
