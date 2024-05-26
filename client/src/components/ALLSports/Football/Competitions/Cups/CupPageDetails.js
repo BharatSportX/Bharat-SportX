@@ -71,7 +71,7 @@ const CupPageDetails = () => {
                     </div>
                 </div>
 
-                <div className="col-span-1 sm:col-span-1 ml-4 lg:col-span-1 mr-3 border rounded-lg p-4 shadow-md ">
+                <div className="col-span-1 bg-slate-200 sm:col-span-1 ml-4 lg:col-span-1 mr-3 border rounded-lg p-4 shadow-md final-card">
                     <h1 className="text-xl font-bold mb-4">Featured Match</h1>
 
                     <div className="mb-4">
