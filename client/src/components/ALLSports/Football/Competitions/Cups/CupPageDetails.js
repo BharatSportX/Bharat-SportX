@@ -60,7 +60,7 @@ const CupPageDetails = () => {
     return (
         <div className="grid sm:grid-cols-1 lg:grid-cols-3 lg:gap-2 relative overflow-x-hidden top-40 p-4">
             <div className="col-span-2 sm:col-span-1 sm:mb-4 lg:col-span-2 mr-3 ml-3">
-                <div className="border rounded-lg bg-gradient-to-r from-zinc-100 to-rose-300  bg-opacity-75 p-4 flex items-center">
+                <div className="border rounded-lg bg-gradient-to-r from-slate-100 to-slate-300 bg-opacity-75 p-4 flex items-center">
                     <div className="flex-none mr-4   lg:bg-white ">
                     <img
     src={cupData.league.logo}
