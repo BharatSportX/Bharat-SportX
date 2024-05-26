@@ -79,7 +79,7 @@ const CupPageDetails = () => {
                 </div>
             </div>
 
-            <div className="col-span-1 sm:col-span-1 lg:col-span-1 mr-3 ml-3 mt-5 md:mt-5 lg:mt-0 bg-gradient-to-r from-amber-200 to-gray-200 border rounded-lg p-4 shadow-md">
+            <div className="col-span-1 sm:col-span-1 lg:col-span-1 mr-3 ml-3 mt-5 md:mt-5 lg:mt-0  bg-gradient-to-r from-rose-100 to-zinc-100 border rounded-lg p-4 shadow-md">
                 <h1 className="text-xl font-bold mb-4  bg-gradient-to-r from-red-700 to-blue-700 bg-clip-text text-transparent">Featured Match</h1>
                 <div className="mb-4">
                     <p className="text-lg font-semibold">Club Name</p>
