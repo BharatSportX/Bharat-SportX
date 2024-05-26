@@ -58,6 +58,8 @@ const CupPageDetails = () => {
     }
 
     return (
+        // Cup Details Card
+        <>
         <div className="grid sm:grid-cols-1 lg:grid-cols-3 lg:gap-2 relative overflow-x-hidden top-40 p-4">
             <div className="col-span-2 sm:col-span-1 sm:mb-4 lg:col-span-2 mr-3 ml-3">
                 <div className="border rounded-lg bg-gradient-to-r from-slate-100 to-slate-300 bg-opacity-75 p-4 flex items-center">
@@ -79,11 +81,13 @@ const CupPageDetails = () => {
                 </div>
             </div>
 
+
+{/* Featured /Final Score Card */}
             <div className="col-span-1 sm:col-span-1 lg:col-span-1 mr-3 ml-3 mt-5 md:mt-5 lg:mt-0  bg-gradient-to-r from-rose-100 to-zinc-100 border rounded-lg p-4 shadow-md">
                 <h1 className="text-xl font-bold mb-4  bg-gradient-to-r from-red-700 to-blue-700 bg-clip-text text-transparent">Featured Match</h1>
                 <div className="mb-4">
-                    <p className="text-lg font-semibold">Club Name</p>
-                    <p>Type of Club</p>
+                    <p className="text-lg font-semibold">{cupData.league.name}</p>
+                    <p>{cupData.country.name}</p>
                     <p>Final Match</p>
                 </div>
                 <div className="flex flex-col items-center gap-4">
@@ -106,6 +110,26 @@ const CupPageDetails = () => {
                 </div>
             </div>
         </div>
+
+
+{/* Second Section of the body */}
+        <div>
+        Matches clcik on desktp sttsitics,line ups  page open for mobile ststistics option 
+        by date by group 
+        by round
+        </div>
+
+        {/* third  Section of the body */}
+        <div>
+       events knock out stages
+
+        </div>
+           {/* 4th Section of the body */}
+           <div>
+      add div
+
+        </div>
+        </>
     );
 };
 
