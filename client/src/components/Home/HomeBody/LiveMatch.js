@@ -318,8 +318,8 @@ const LiveMatch = () => {
               </div>
             </div>
             {/* addidng w-80 and mr-5 only for last one */}
-            <div className="flex-none w-80 mt-4 ">
-              <div className="bg-zinc-800 text-white mr-5 p-4 rounded-lg max-w-sm mx-auto">
+            <div className="flex-none  mt-4 ">
+              <div className="bg-zinc-800 text-white w-[19rem] mr-5 p-4 rounded-lg max-w-sm mx-auto">
                 <div className="flex pb-4 justify-between items-center text-xs text-blue-400 mb-2">
                   <h1 className="">UERO Europa Cup</h1>
                   <div className="float-end space-x-2 relative">
