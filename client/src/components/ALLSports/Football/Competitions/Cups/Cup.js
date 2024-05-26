@@ -1,9 +1,11 @@
 
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import './Cup.css';
+
 
 function Cups() {
   const [cups, setCups] = useState([]);
@@ -14,8 +16,7 @@ function Cups() {
   const [isDanger, setIsDanger] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [isSearchBox, setSearchBox] = useState(false);
-  const [currentCups, setCurrentCups] = useState([]);
-  const [showCurrent, setShowCurrent] = useState(false);
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -26,7 +27,7 @@ function Cups() {
             type: 'Cup'
           },
           headers: {
-            'X-RapidAPI-Key': '96d6e2db0bmshaefc24c363be681p18096ejsn20efc89ac5c0',
+            'X-RapidAPI-Key': '96aaecf1damsh08a26fec449dda1p149914jsn1d8a476e9c06',
             'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
           }
         });
@@ -41,35 +42,30 @@ function Cups() {
     fetchData();
   }, []);
 
-  const fetchCups = async () => {
-    try {
-      const res = await axios.get("https://api-football-v1.p.rapidapi.com/v3/leagues", {
-        params: {
-          type: "Cup",
-          current: "true"
-        },
-        headers: {
-          'X-RapidAPI-Key': '96d6e2db0bmshaefc24c363be681p18096ejsn20efc89ac5c0',
-          'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
-        }
-      });
-      setCups(res.data.response); // Assuming response is an array of cups
-      setCurrentCups(res.data.response.filter(cup => cup.seasons.some(season => season.current === true)));
-      setLoading(false);
-    } catch (error) {
-      console.error(error);
-      setLoading(false);
-    }
-  };
 
-  useEffect(() => {
-    fetchCups();
-  }, []);
+  // const handleCurrentCup = async () => {
+  //   try {
+  //     const res = await axios.get("https://api-football-v1.p.rapidapi.com/v3/leagues", {
+  //       params: {
+  //         type: "Cup",
+  //         current: "true"
+  //       },
+  //       headers: {
+  //         'X-RapidAPI-Key': '96aaecf1damsh08a26fec449dda1p149914jsn1d8a476e9c06',
+  //         'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
+  //       }
+  //     });
+  //     console.log(res); // Handle the response data
+  //   } catch (error) {
+  //     console.error(error); // Handle the error
+  //   }
+    
+    
+  // };
 
-  const handleCurrentCupClick = () => {
-    setShowCurrent(true);
-  };
-
+  // useEffect(() => {
+  //   handleCurrentCup();
+  // }, []);
   const handleCupClick = (cupId) => {
     navigate(`/football/league/world-cup/cup/${cupId}`);
   };
@@ -275,7 +271,7 @@ function Cups() {
       </div>
 
       {/* Current Cups Button */}
-      <button type="button" class="text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2" onClick={handleCurrentCupClick}> Current <span>({currentCups.length})</span> Cups </button>
+      <button type="button" class="text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 sm:mt-2" > Current <span>(2)</span> Cups </button>
 
       {isDanger && (
         <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 mt-3 rounded relative dark:bg-slate-600  dark:text-violet-900  dark:bg-opacity-5 " role="alert">
