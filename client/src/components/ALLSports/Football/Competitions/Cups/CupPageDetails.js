@@ -36,6 +36,14 @@ const CupPageDetails = () => {
     const [selectedYear, setSelectedYear] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedTeam, setSelectedTeam] = useState('home'); // State for selected team
+   
+
+const [selectedScore, setSelectedScore] = useState(null); // State for selected score
+
+const handleSelectScore = (score) => {
+    setSelectedScore(score);
+};
+
 
     useEffect(() => {
         const fetchCupDetails = async () => {
@@ -191,57 +199,107 @@ const CupPageDetails = () => {
                 )}
             </div>
 
-            {/* Modal for Score Card */}
-            {isModalOpen && (
-                <div className="fixed inset-0 bg-blue-300 bg-opacity-75 flex items-center justify-center z-50">
-                    <div className="bg-white rounded-lg p-6 w-3/4 md:w-1/2">
-                        <h2 className="text-xl font-bold mb-4 text-center">Score Card</h2>
-                        <div className="flex items-center justify-center mb-4 space-x-4">
-                            <img 
-                                src={matchDetails.teams.home.logo} 
-                                alt="Home Team Logo" 
-                                className={`w-16 h-auto cursor-pointer ${selectedTeam === 'home' ? 'border-b-4 border-blue-500' : ''}`} 
-                                onClick={() => handleSelectTeam('home')}
-                            />
-                            <img 
-                                src={matchDetails.teams.away.logo} 
-                                alt="Away Team Logo" 
-                                className={`w-16 h-auto cursor-pointer ${selectedTeam === 'away' ? 'border-b-4 border-blue-500' : ''}`} 
-                                onClick={() => handleSelectTeam('away')}
-                            />
-                        </div>
+           
+           {/* Modal for Score Card */}
+{isModalOpen && (
+    <div className="fixed inset-0 bg-blue-300 bg-opacity-75 flex items-center justify-center z-50">
+        <div className="bg-white rounded-lg p-6 w-3/4 md:w-1/2">
+            <h2 className="text-xl font-bold mb-4 text-center">Score Card</h2>
+            <div className="flex items-center justify-center mb-4 space-x-4">
+                <img 
+                    src={matchDetails.teams.home.logo} 
+                    alt="Home Team Logo" 
+                    className={`w-16 h-auto cursor-pointer ${selectedTeam === 'home' ? 'border-b-4 border-blue-500' : ''}`} 
+                    onClick={() => handleSelectTeam('home')}
+                />
+                <img 
+                    src={matchDetails.teams.away.logo} 
+                    alt="Away Team Logo" 
+                    className={`w-16 h-auto cursor-pointer ${selectedTeam === 'away' ? 'border-b-4 border-blue-500' : ''}`} 
+                    onClick={() => handleSelectTeam('away')}
+                />
+            </div>
 
-                        
-                       
-                        <div className="overflow-x-hidden">
-                            <div className="flex transition-transform duration-500" style={{ transform: `translateX(${selectedTeam === 'home' ? '0' : '-100%'})` }}>
-                                {/* Home team details */}
-                                <div className="min-w-full">
-                                    <h3 className="text-center text-lg font-bold mb-2">{matchDetails.teams.home.name} Details</h3>
-                                    <p>Halftime Score: {matchDetails.score.halftime.home}</p>
-                                    <p>Fulltime Score: {matchDetails.score.fulltime.home}</p>
-                                    <p>Extra Time Score: {matchDetails.score.extratime.home !== null ? matchDetails.score.extratime.home : '0'}</p>
-                                    <p>Penalty Score: {matchDetails.score.penalty.home !== null ? matchDetails.score.penalty.home : '0'}</p>
-                                </div>
-                                {/* Away team details */}
-                                <div className="min-w-full">
-                                    <h3 className="text-center text-lg font-bold mb-2">{matchDetails.teams.away.name} Details</h3>
-                                    <p>Halftime Score: {matchDetails.score.halftime.away}</p>
-                                    <p>Fulltime Score: {matchDetails.score.fulltime.away}</p>
-                                    <p>Extra Time Score: {matchDetails.score.extratime.away !== null ? matchDetails.score.extratime.away : '0'}</p>
-                                    <p>Penalty Score: {matchDetails.score.penalty.away !== null ? matchDetails.score.penalty.away : '0'}</p>
-                                </div>
-                            </div>
-                        </div>
-                        <button
-                            className="mt-4 bg-red-500 text-white px-4 py-2 rounded mx-auto block"
-                            onClick={handelOpenScoreModal}
-                        >
-                            Close
-                        </button>
-                    </div>
+            <div className="flex items-center justify-center mb-4 space-x-4">
+                <div className={`cursor-pointer ${selectedScore === 'halftime' ? 'border-b-4 border-blue-500' : ''}`} onClick={() => handleSelectScore('halftime')}>
+                    <h1>Halftime</h1>
                 </div>
+                <div className={`cursor-pointer ${selectedScore === 'fulltime' ? 'border-b-4 border-blue-500' : ''}`} onClick={() => handleSelectScore('fulltime')}>
+                    <h2>Full time</h2>
+                </div>
+                <div className={`cursor-pointer ${selectedScore === 'extratime' ? 'border-b-4 border-blue-500' : ''}`} onClick={() => handleSelectScore('extratime')}>
+                    <h2>Extra time</h2>
+                </div>
+                <div className={`cursor-pointer ${selectedScore === 'penalty' ? 'border-b-4 border-blue-500' : ''}`} onClick={() => handleSelectScore('penalty')}>
+                    <h2>Penalty</h2>
+                </div>
+            </div>
+
+            <div className="overflow-x-hidden">
+    <div className="flex transition-transform duration-500" style={{ transform: `translateX(${selectedTeam === 'home' ? '0' : '-100%'})` }}>
+        {/* Home team details */}
+        <div className="min-w-full">
+            <h3 className="text-center text-lg font-bold mb-2">{matchDetails.teams.home.name} Details</h3>
+            {selectedScore === 'halftime' && (
+                <>
+                    <p>Halftime Score: {matchDetails.score.halftime.home}</p>
+                </>
             )}
+            {selectedScore === 'fulltime' && (
+                <>
+                    <p>Fulltime Score: {matchDetails.score.fulltime.home}</p>
+                </>
+            )}
+            {selectedScore === 'extratime' && (
+                <>
+                    <p>Extra Time Score: {matchDetails.score.extratime.home !== null ? matchDetails.score.extratime.home : '0'}</p>
+                </>
+            )}
+            {selectedScore === 'penalty' && (
+                <>
+                    <p>Penalty Score: {matchDetails.score.penalty.home !== null ? matchDetails.score.penalty.home : '0'}</p>
+                </>
+            )}
+        </div>
+        {/* Away team details */}
+        <div className="min-w-full">
+            <h3 className="text-center text-lg font-bold mb-2">{matchDetails.teams.away.name} Details</h3>
+            {selectedScore === 'halftime' && (
+                <>
+                    <p>Halftime Score: {matchDetails.score.halftime.away}</p>
+                </>
+            )}
+            {selectedScore === 'fulltime' && (
+                <>
+                    <p>Fulltime Score: {matchDetails.score.fulltime.away}</p>
+                </>
+            )}
+            {selectedScore === 'extratime' && (
+                <>
+                    <p>Extra Time Score: {matchDetails.score.extratime.away !== null ? matchDetails.score.extratime.away : '0'}</p>
+                </>
+            )}
+            {selectedScore === 'penalty' && (
+                <>
+                    <p>Penalty Score: {matchDetails.score.penalty.away !== null ? matchDetails.score.penalty.away : '0'}</p>
+                </>
+            )}
+        </div>
+    </div>
+</div>
+
+            {/* <button className="mt-4 bg-red-500 text-white px-4 py-2 rounded mx-auto block" onClick={handelOpenScoreModal}>Close</button> */}
+            <div className="flex items-center justify-center">
+    <button type="button" className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+    onClick={handelOpenScoreModal}>
+        Close
+    </button>
+</div>
+
+        </div>
+    </div>
+)}
+
         </>
     );
 };
