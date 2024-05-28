@@ -220,20 +220,23 @@ const handleSelectScore = (score) => {
                 />
             </div>
 
-            <div className="flex items-center justify-center mb-4 space-x-4">
-                <div className={`cursor-pointer ${selectedScore === 'halftime' ? 'border-b-4 border-blue-500' : ''}`} onClick={() => handleSelectScore('halftime')}>
-                    <h1>Halftime</h1>
-                </div>
-                <div className={`cursor-pointer ${selectedScore === 'fulltime' ? 'border-b-4 border-blue-500' : ''}`} onClick={() => handleSelectScore('fulltime')}>
-                    <h2>Full time</h2>
-                </div>
-                <div className={`cursor-pointer ${selectedScore === 'extratime' ? 'border-b-4 border-blue-500' : ''}`} onClick={() => handleSelectScore('extratime')}>
-                    <h2>Extra time</h2>
-                </div>
-                <div className={`cursor-pointer ${selectedScore === 'penalty' ? 'border-b-4 border-blue-500' : ''}`} onClick={() => handleSelectScore('penalty')}>
-                    <h2>Penalty</h2>
-                </div>
-            </div>
+            <div className="flex flex-wrap justify-center mb-4 space-x-4">
+    <div className={`cursor-pointer border-b-4 lg p-3 transition duration-300 ${selectedScore === 'halftime' ? 'border-blue-500' : ''}`} onClick={() => handleSelectScore('halftime')}>
+        <h1>Halftime</h1>
+    </div>
+    <div className={`cursor-pointer border-b-4  lg p-3 transition duration-300 ${selectedScore === 'fulltime' ? 'border-blue-500' : ''}`} onClick={() => handleSelectScore('fulltime')}>
+        <h2>Full time</h2>
+    </div>
+    <div className={`cursor-pointer  border-b-4    lg p-3 transition duration-300 ${selectedScore === 'extratime' ? 'border-blue-500' : ''}`} onClick={() => handleSelectScore('extratime')}>
+        <h2>Extra time</h2>
+    </div>
+    <div className={`cursor-pointer  border-b-4  lg p-3 transition duration-300 ${selectedScore === 'penalty' ? 'border-blue-500' : ''}`} onClick={() => handleSelectScore('penalty')}>
+        <h2>Penalty</h2>
+    </div>
+</div>
+
+
+
 
             <div className="overflow-x-hidden">
     <div className="flex transition-transform duration-500" style={{ transform: `translateX(${selectedTeam === 'home' ? '0' : '-100%'})` }}>
@@ -290,7 +293,7 @@ const handleSelectScore = (score) => {
 
             {/* <button className="mt-4 bg-red-500 text-white px-4 py-2 rounded mx-auto block" onClick={handelOpenScoreModal}>Close</button> */}
             <div className="flex items-center justify-center">
-    <button type="button" className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+    <button type="button" className="text-white mt-6 bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
     onClick={handelOpenScoreModal}>
         Close
     </button>
