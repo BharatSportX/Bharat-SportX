@@ -126,16 +126,21 @@ const CupPageDetails = () => {
                                 <span className="mr-2">{matchDetails.teams.home.name}</span>
                             </div>
                             <div className="flex items-center">
-                                <span className="mr-2">{matchDetails.goals.home}</span>
+                                <span className={`mr-2 ${matchDetails.goals.home > matchDetails.goals.away ? 'font-bold text-lg' : ''}`}>
+                                    {matchDetails.goals.home}
+                                </span>
                                 <span className="mr-2 flex justify-center">Vs</span>
-                                <span className="mr-2">{matchDetails.goals.away}</span>
+                                <span className={`mr-2 ${matchDetails.goals.away > matchDetails.goals.home ? 'font-bold text-lg' : ''}`}>
+                                    {matchDetails.goals.away}
+                                </span>
                             </div>
+
                             <div className="flex items-center">
                                 <img src={matchDetails.teams.away.logo} alt="Away Team Logo" className="w-8 h-8 mr-2" />
                                 <span>{matchDetails.teams.away.name}</span>
                             </div>
                         </div>
-                        <div className="text-gray-500">Finished</div>
+                        <div className="text-gray-500 font-sans text-xl font-bold">Finished</div>
                     </div>
                 </div>
             )}
