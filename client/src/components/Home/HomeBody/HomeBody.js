@@ -23,7 +23,7 @@ const HomeBody = () => {
 
   return (
     <div className="relative top-36">
-      <div className="m-4">
+      <div className="m-4 lg:mx-10 lg:mt-10">
         <h1
           className="text-3xl font-semibold"
           style={{ fontFamily: '"Varela Round", sans-serif' }}
@@ -31,7 +31,7 @@ const HomeBody = () => {
           Matches
         </h1>
       </div>
-      <div className="m-4 space-x-2.5 max-370:space-x-1.5 mr-0">
+      <div className="m-4 lg:mx-10 space-x-2.5 max-370:space-x-1.5 mr-0">
         <button
           className={
             activeButtons[0]

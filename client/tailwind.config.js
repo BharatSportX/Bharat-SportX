@@ -15,17 +15,30 @@ module.exports = {
   },
   plugins: [
     require('flowbite/plugin'),
-    function ({ addUtilities }) {
+    function ({ addUtilities, addComponents }) {
+      // Adding the no-scrollbar utility
       addUtilities({
-          '.no-scrollbar': {
-              '-ms-overflow-style': 'none',  /* IE and Edge */
-              'scrollbar-width': 'none',  /* Firefox */
-          },
-          '.no-scrollbar::-webkit-scrollbar': {
-              'display': 'none',  /* Chrome, Safari and Opera */
-          },
+        '.no-scrollbar': {
+          '-ms-overflow-style': 'none',  /* IE and Edge */
+          'scrollbar-width': 'none',  /* Firefox */
+        },
+        '.no-scrollbar::-webkit-scrollbar': {
+          'display': 'none',  /* Chrome, Safari, and Opera */
+        },
       }, ['responsive']);
-  },
-],
-darkMode: 'media',
+
+      // Adding the container-none utility
+      addComponents({
+        '.container-none': {
+          width: '100%',
+          maxWidth: 'none',
+          marginLeft: '0',
+          marginRight: '0',
+          paddingLeft: '0',
+          paddingRight: '0',
+        },
+      });
+    },
+  ],
+  darkMode: 'media',
 }
