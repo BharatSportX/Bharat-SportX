@@ -38,7 +38,7 @@ const CupPageDetails = () => {
     const [selectedTeam, setSelectedTeam] = useState('home'); // State for selected team
    
 
-const [selectedScore, setSelectedScore] = useState(null); // State for selected score
+const [selectedScore, setSelectedScore] = useState('halftime'); // State for selected score
 
 const handleSelectScore = (score) => {
     setSelectedScore(score);
@@ -101,6 +101,7 @@ const handleSelectScore = (score) => {
     const handelOpenScoreModal = () => {
         setIsModalOpen(!isModalOpen);
         setSelectedTeam('home'); // Reset to 'home' when the modal is opened
+        setSelectedScore('halftime')
     };
 
     const handleSelectTeam = (team) => {
