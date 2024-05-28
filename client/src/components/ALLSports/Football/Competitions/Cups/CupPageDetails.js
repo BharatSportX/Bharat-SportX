@@ -234,7 +234,12 @@ const CupPageDetails = () => {
                     </select>
                 </div>
             </div>
-                        <div className='flex items-center'><p>Date: {convertToIST(matchDetails.fixture.date)}</p></div>
+            <div className='flex flex-col md:flex-row items-center justify-center p-2 md:p-4 bg-gradient-to-r from-brown-300 via-white to-gray-300 rounded-lg shadow-lg dark:bg-gradient-to-r dark:from-gray-800 dark:to-black w-full md:w-auto h-auto md:h-16'>
+  <p className='text-sm md:text-lg font-semibold text-gray-800 dark:text-gray-300 text-center md:text-left'>
+    Date: {convertToIST(matchDetails.fixture.date)}
+  </p>
+</div>
+
                     </div>
                     <div className="flex flex-col items-center gap-4">
                         <div className="flex items-center justify-between w-full">
