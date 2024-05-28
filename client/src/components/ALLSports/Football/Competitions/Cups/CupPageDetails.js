@@ -252,49 +252,49 @@ const handleSelectScore = (score) => {
     <div className="flex transition-transform duration-500" style={{ transform: `translateX(${selectedTeam === 'home' ? '0' : '-100%'})` }}>
         {/* Home team details */}
         <div className="min-w-full">
-            <h3 className="text-center text-lg font-bold mb-2">{matchDetails.teams.home.name} Details</h3>
+            <h3 className="text-center text-lg font-bold mb-2 underline">{matchDetails.teams.home.name} Details</h3>
             {selectedScore === 'halftime' && (
                 <>
-                    <p>Halftime Score: {matchDetails.score.halftime.home}</p>
+                    <p className=' mt-3 lg:mt-0'>Halftime Score: {matchDetails.score.halftime.home}</p>
                 </>
             )}
             {selectedScore === 'fulltime' && (
                 <>
-                    <p>Fulltime Score: {matchDetails.score.fulltime.home}</p>
+                    <p  className=' mt-3 lg:mt-0'>Fulltime Score: {matchDetails.score.fulltime.home}</p>
                 </>
             )}
             {selectedScore === 'extratime' && (
                 <>
-                    <p>Extra Time Score: {matchDetails.score.extratime.home !== null ? matchDetails.score.extratime.home : '0'}</p>
+                    <p  className=' mt-3 lg:mt-0'>Extra Time Score: {matchDetails.score.extratime.home !== null ? matchDetails.score.extratime.home : '0'}</p>
                 </>
             )}
             {selectedScore === 'penalty' && (
                 <>
-                    <p>Penalty Score: {matchDetails.score.penalty.home !== null ? matchDetails.score.penalty.home : '0'}</p>
+                    <p className=' mt-3 lg:mt-0'>Penalty Score: {matchDetails.score.penalty.home !== null ? matchDetails.score.penalty.home : '0'}</p>
                 </>
             )}
         </div>
         {/* Away team details */}
         <div className="min-w-full">
-            <h3 className="text-center text-lg font-bold mb-2">{matchDetails.teams.away.name} Details</h3>
+            <h3 className="text-center text-lg font-bold mb-2 underline">{matchDetails.teams.away.name} Details</h3>
             {selectedScore === 'halftime' && (
                 <>
-                    <p>Halftime Score: {matchDetails.score.halftime.away}</p>
+                    <p  className=' mt-3 lg:mt-0' >Halftime Score: {matchDetails.score.halftime.away}</p>
                 </>
             )}
             {selectedScore === 'fulltime' && (
                 <>
-                    <p>Fulltime Score: {matchDetails.score.fulltime.away}</p>
+                    <p  className=' mt-3 lg:mt-0'>Fulltime Score: {matchDetails.score.fulltime.away}</p>
                 </>
             )}
             {selectedScore === 'extratime' && (
                 <>
-                    <p>Extra Time Score: {matchDetails.score.extratime.away !== null ? matchDetails.score.extratime.away : '0'}</p>
+                    <p   className=' mt-3 lg:mt-0'>Extra Time Score: {matchDetails.score.extratime.away !== null ? matchDetails.score.extratime.away : '0'}</p>
                 </>
             )}
             {selectedScore === 'penalty' && (
                 <>
-                    <p>Penalty Score: {matchDetails.score.penalty.away !== null ? matchDetails.score.penalty.away : '0'}</p>
+                    <p  className=' mt-3 lg:mt-0'>Penalty Score: {matchDetails.score.penalty.away !== null ? matchDetails.score.penalty.away : '0'}</p>
                 </>
             )}
         </div>
