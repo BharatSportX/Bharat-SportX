@@ -188,7 +188,7 @@ const handleSelectScore = (score) => {
 
                         {/* Main div for score */}
                         <button
-                            className="relative inline-flex items-center justify-center mt-5 p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800"
+                            className="relative inline-flex items-center justify-center  mt-5  ml-14 lg:ml-0 p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800"
                             onClick={handelOpenScoreModal}
                         >
                             <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
@@ -206,19 +206,29 @@ const handleSelectScore = (score) => {
         <div className="bg-white rounded-lg p-6 w-3/4 md:w-1/2">
             <h2 className="text-xl font-bold mb-4 text-center">Score Card</h2>
             <div className="flex items-center justify-center mb-4 space-x-4">
-                <img 
-                    src={matchDetails.teams.home.logo} 
-                    alt="Home Team Logo" 
-                    className={`w-16 h-auto cursor-pointer ${selectedTeam === 'home' ? 'border-b-4 border-blue-500' : ''}`} 
-                    onClick={() => handleSelectTeam('home')}
-                />
-                <img 
-                    src={matchDetails.teams.away.logo} 
-                    alt="Away Team Logo" 
-                    className={`w-16 h-auto cursor-pointer ${selectedTeam === 'away' ? 'border-b-4 border-blue-500' : ''}`} 
-                    onClick={() => handleSelectTeam('away')}
-                />
-            </div>
+    <div 
+        className={`flex flex-col items-center cursor-pointer lg p-3  ${selectedTeam === 'home' ? 'border-b-4 border-blue-500 ' : ''}`} 
+        onClick={() => handleSelectTeam('home')}
+    >
+        <img 
+            src={matchDetails.teams.home.logo} 
+            alt="Home Team Logo" 
+            className="w-14 h-auto"
+        />
+    </div>
+    <div 
+        className={`flex flex-col items-center cursor-pointer  lg p-3   ${selectedTeam === 'away' ? 'border-b-4 border-blue-500 ' : ''}`} 
+        onClick={() => handleSelectTeam('away')}
+    >
+        <img 
+            src={matchDetails.teams.away.logo} 
+            alt="Away Team Logo" 
+            className="w-16 h-auto"
+        />
+    </div>
+</div>
+
+
 
             <div className="flex flex-wrap justify-center mb-4 space-x-4">
     <div className={`cursor-pointer border-b-4 lg p-3 transition duration-300 ${selectedScore === 'halftime' ? 'border-blue-500' : ''}`} onClick={() => handleSelectScore('halftime')}>
