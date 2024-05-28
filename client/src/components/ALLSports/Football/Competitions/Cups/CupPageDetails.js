@@ -1,3 +1,26 @@
+
+
+// // {/* 
+// // Second Section of the body */}
+// //         {/* <div>
+// //         Matches clcik on desktp sttsitics,line ups  page open for mobile ststistics option 
+// //         by date by group 
+// //         by round
+// //         </div>
+
+// //         {/* third  Section of the body */}
+// //         {/* <div>
+// //        events knock out stages
+
+// //         </div>
+// //            {/* 4th Section of the body */}
+          
+   
+
+
+// // export default CupPageDetails; 
+
+
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
@@ -11,6 +34,8 @@ const CupPageDetails = () => {
     const [matchDetails, setMatchDetails] = useState(null);
     const [seasons, setSeasons] = useState([]);
     const [selectedYear, setSelectedYear] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [selectedTeam, setSelectedTeam] = useState('home'); // State for selected team
 
     useEffect(() => {
         const fetchCupDetails = async () => {
@@ -64,7 +89,16 @@ const CupPageDetails = () => {
         setSelectedYear(year);
         fetchMatchDetails(year);
     };
-  
+
+    const handelOpenScoreModal = () => {
+        setIsModalOpen(!isModalOpen);
+        setSelectedTeam('home'); // Reset to 'home' when the modal is opened
+    };
+
+    const handleSelectTeam = (team) => {
+        setSelectedTeam(team);
+    };
+
     if (loading) {
         return (
             <div className="flex items-center justify-center w-full h-[100vh] text-gray-900 dark:text-gray-100 dark:bg-gray-950">
@@ -90,83 +124,128 @@ const CupPageDetails = () => {
     }
 
     return (
-        <div className="grid sm:grid-cols-1 lg:grid-cols-3 lg:gap-2 relative overflow-x-hidden top-40 p-4">
-            <div className="col-span-2 sm:col-span-1 sm:mb-4 lg:col-span-2 mr-3 ml-3">
-                <div className="border rounded-lg bg-gradient-to-r from-slate-100 to-slate-300 bg-opacity-75 p-4 flex items-center">
-                    <div className="flex-none mr-4 lg:bg-white">
-                        <img
-                            src={cupData.league.logo}
-                            alt="Club"
-                            className="w-16 h-16 lg:w-18 lg:w-19 bg-repeat-space"
-                        />
-                    </div>
-                    <div className="flex flex-col">
-                        <h2 className="text-xl font-semibold mb-2 bg-gradient-to-r from-slate-900 to-pink-800 bg-clip-text text-transparent">{cupData.league.name}</h2>
-                        <p>{cupData.country.name}</p>
-                        <div className="inline-flex">
-                            <SeasonDropDownlist onSelectSeason={handleSelectSeason} seasons={seasons} selectedYear={selectedYear}  />
+        <>
+            <div className="grid sm:grid-cols-1 lg:grid-cols-3 lg:gap-2 relative overflow-x-hidden top-40 p-4">
+                {/* CupDetails Card */}
+                <div className="col-span-2 sm:col-span-1 sm:mb-4 lg:col-span-2 mr-3 ml-3">
+                    <div className="border rounded-lg bg-gradient-to-r from-slate-100 to-slate-300 bg-opacity-75 p-4 flex items-center">
+                        <div className="flex-none mr-4 lg:bg-white">
+                            <img
+                                src={cupData.league.logo}
+                                alt="Club"
+                                className="w-16 h-16 lg:w-18 lg:w-19 bg-repeat-space"
+                            />
+                        </div>
+                        <div className="flex flex-col">
+                            <h2 className="text-xl font-semibold mb-2 bg-gradient-to-r from-slate-900 to-pink-800 bg-clip-text text-transparent">{cupData.league.name}</h2>
+                            <p>{cupData.country.name}</p>
+                            <div className="inline-flex">
+                                <SeasonDropDownlist onSelectSeason={handleSelectSeason} seasons={seasons} selectedYear={selectedYear} />
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                {/* Featured / Final Score Card */}
+                {matchDetails && (
+                    <div className="col-span-1 sm:col-span-1 lg:col-span-1 mr-3 ml-3 mt-5 md:mt-5 lg:mt-0 bg-gradient-to-r from-rose-100 to-zinc-100 border rounded-lg p-4 shadow-md">
+                        <h1 className="text-xl font-bold mb-4 bg-gradient-to-r from-red-700 to-blue-700 bg-clip-text text-transparent">Featured Match</h1>
+                        <div className="mb-4">
+                            <p className="text-lg font-semibold">{cupData.league.name}</p>
+                            <p>{cupData.country.name}</p>
+                            <p>Final Match</p>
+                        </div>
+                        <div className="flex flex-col items-center gap-4">
+                            <div className="flex items-center justify-between w-full">
+                                <div className="flex items-center">
+                                    <img src={matchDetails.teams.home.logo} alt="Home Team Logo" className="w-8 h-8 mr-2" />
+                                    <span className="mr-2">{matchDetails.teams.home.name}</span>
+                                </div>
+                                <div className="flex items-center">
+                                    <span className={`mr-2 ${matchDetails.goals.home > matchDetails.goals.away ? 'font-bold text-lg' : ''}`}>
+                                        {matchDetails.goals.home}
+                                    </span>
+                                    <span className="mr-2 flex justify-center">Vs</span>
+                                    <span className={`mr-2 ${matchDetails.goals.away > matchDetails.goals.home ? 'font-bold text-lg' : ''}`}>
+                                        {matchDetails.goals.away}
+                                    </span>
+                                </div>
+                                <div className="flex items-center">
+                                    <img src={matchDetails.teams.away.logo} alt="Away Team Logo" className="w-8 h-8 mr-2" />
+                                    <span>{matchDetails.teams.away.name}</span>
+                                </div>
+                            </div>
+                            <div className="text-gray-500 font-sans text-xl font-bold">Finished</div>
+                        </div>
+
+                        {/* Main div for score */}
+                        <button
+                            className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800"
+                            onClick={handelOpenScoreModal}
+                        >
+                            <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                                Score Card
+                            </span>
+                        </button>
+                    </div>
+                )}
             </div>
 
-            {/* Featured /Final Score Card */}
-            {matchDetails && (
-                <div className="col-span-1 sm:col-span-1 lg:col-span-1 mr-3 ml-3 mt-5 md:mt-5 lg:mt-0 bg-gradient-to-r from-rose-100 to-zinc-100 border rounded-lg p-4 shadow-md">
-                    <h1 className="text-xl font-bold mb-4 bg-gradient-to-r from-red-700 to-blue-700 bg-clip-text text-transparent">Featured Match</h1>
-                    <div className="mb-4">
-                        <p className="text-lg font-semibold">{cupData.league.name}</p>
-                        <p>{cupData.country.name}</p>
-                        <p>Final Match</p>
-                    </div>
-                    <div className="flex flex-col items-center gap-4">
-                        <div className="flex items-center justify-between w-full">
-                            <div className="flex items-center">
-                                <img src={matchDetails.teams.home.logo} alt="Home Team Logo" className="w-8 h-8 mr-2" />
-                                <span className="mr-2">{matchDetails.teams.home.name}</span>
-                            </div>
-                            <div className="flex items-center">
-                                <span className={`mr-2 ${matchDetails.goals.home > matchDetails.goals.away ? 'font-bold text-lg' : ''}`}>
-                                    {matchDetails.goals.home}
-                                </span>
-                                <span className="mr-2 flex justify-center">Vs</span>
-                                <span className={`mr-2 ${matchDetails.goals.away > matchDetails.goals.home ? 'font-bold text-lg' : ''}`}>
-                                    {matchDetails.goals.away}
-                                </span>
-                            </div>
+            {/* Modal for Score Card */}
+            {isModalOpen && (
+                <div className="fixed inset-0 bg-blue-300 bg-opacity-75 flex items-center justify-center z-50">
+                    <div className="bg-white rounded-lg p-6 w-3/4 md:w-1/2">
+                        <h2 className="text-xl font-bold mb-4 text-center">Score Card</h2>
+                        <div className="flex items-center justify-center mb-4 space-x-4">
+                            <img 
+                                src={matchDetails.teams.home.logo} 
+                                alt="Home Team Logo" 
+                                className={`w-16 h-auto cursor-pointer ${selectedTeam === 'home' ? 'border-b-4 border-blue-500' : ''}`} 
+                                onClick={() => handleSelectTeam('home')}
+                            />
+                            <img 
+                                src={matchDetails.teams.away.logo} 
+                                alt="Away Team Logo" 
+                                className={`w-16 h-auto cursor-pointer ${selectedTeam === 'away' ? 'border-b-4 border-blue-500' : ''}`} 
+                                onClick={() => handleSelectTeam('away')}
+                            />
+                        </div>
 
-                            <div className="flex items-center">
-                                <img src={matchDetails.teams.away.logo} alt="Away Team Logo" className="w-8 h-8 mr-2" />
-                                <span>{matchDetails.teams.away.name}</span>
+                        
+                       
+                        <div className="overflow-x-hidden">
+                            <div className="flex transition-transform duration-500" style={{ transform: `translateX(${selectedTeam === 'home' ? '0' : '-100%'})` }}>
+                                {/* Home team details */}
+                                <div className="min-w-full">
+                                    <h3 className="text-center text-lg font-bold mb-2">{matchDetails.teams.home.name} Details</h3>
+                                    <p>Halftime Score: {matchDetails.score.halftime.home}</p>
+                                    <p>Fulltime Score: {matchDetails.score.fulltime.home}</p>
+                                    <p>Extra Time Score: {matchDetails.score.extratime.home !== null ? matchDetails.score.extratime.home : '0'}</p>
+                                    <p>Penalty Score: {matchDetails.score.penalty.home !== null ? matchDetails.score.penalty.home : '0'}</p>
+                                </div>
+                                {/* Away team details */}
+                                <div className="min-w-full">
+                                    <h3 className="text-center text-lg font-bold mb-2">{matchDetails.teams.away.name} Details</h3>
+                                    <p>Halftime Score: {matchDetails.score.halftime.away}</p>
+                                    <p>Fulltime Score: {matchDetails.score.fulltime.away}</p>
+                                    <p>Extra Time Score: {matchDetails.score.extratime.away !== null ? matchDetails.score.extratime.away : '0'}</p>
+                                    <p>Penalty Score: {matchDetails.score.penalty.away !== null ? matchDetails.score.penalty.away : '0'}</p>
+                                </div>
                             </div>
                         </div>
-                        <div className="text-gray-500 font-sans text-xl font-bold">Finished</div>
+                        <button
+                            className="mt-4 bg-red-500 text-white px-4 py-2 rounded mx-auto block"
+                            onClick={handelOpenScoreModal}
+                        >
+                            Close
+                        </button>
                     </div>
                 </div>
             )}
-        </div>
+        </>
     );
 };
 
 export default CupPageDetails;
 
 
-// {/* 
-// Second Section of the body */}
-//         {/* <div>
-//         Matches clcik on desktp sttsitics,line ups  page open for mobile ststistics option 
-//         by date by group 
-//         by round
-//         </div>
-
-//         {/* third  Section of the body */}
-//         {/* <div>
-//        events knock out stages
-
-//         </div>
-//            {/* 4th Section of the body */}
-          
-   
-
-
-// export default CupPageDetails; 
