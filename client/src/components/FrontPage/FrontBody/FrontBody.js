@@ -83,7 +83,7 @@ const FrontBody = () => {
   content="Stream on smart TVs, gaming consoles, and more. Download shows for offline viewing. Your entertainment, your way."
   paragraphorder="1"
   imgorder="2"
-  img="https://source.unsplash.com/random/500x450/?footballer"
+  img="https://placehold.co/500x450"
 />
 <BodyCard
   header="Your Favorite Sports, Anytime"
@@ -91,7 +91,7 @@ const FrontBody = () => {
   content="Catch every thrilling sports match on-the-go. Stream on your phone, tablet, or laptop. Total sports excitement, always at hand."
   paragraphorder="2"
   imgorder="1"
-  img="https://source.unsplash.com/random/500x450/?cricket"
+  img="https://placehold.co/500x450"
 />
 <BodyCard
   header="Stream Unlimited Sports and More"
@@ -99,7 +99,7 @@ const FrontBody = () => {
   content="Dive into the world of entertainment on any screen. Stream movies, TV shows, and sports events. Your entertainment, unlimited."
   paragraphorder="1"
   imgorder="2"
-  img="https://source.unsplash.com/random/500x450/?hockey"
+  img="https://placehold.co/500x450"
 />
 <BodyCard
   header="Entertainment for the Whole Family"
@@ -107,7 +107,7 @@ const FrontBody = () => {
   content="Create kid-friendly profiles for free. Let children explore with their favorite characters. Fun for the whole family, on BharatSportX."
   paragraphorder="2"
   imgorder="1"
-  img="https://source.unsplash.com/random/500x450/?ludo"
+  img="https://placehold.co/500x450"
 />
 
 

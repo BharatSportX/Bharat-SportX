@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PrevNext from "./PrevNext";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 const LiveMatch = () => {
   const [pin, setPin] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -22,16 +22,18 @@ const LiveMatch = () => {
         <PrevNext />
         <div className=" no-scrollbar overflow-x-auto">
           <div className=" container inline-flex space-x-6 whitespace-nowrap ">
-            <div className="flex-none  w-full  md:w-[30rem] mt-4 md:mt-6 ">
-              <div className="bg-zinc-800 md:h-96     text-white p-4 rounded-lg  mx-auto ">
-                <div className="flex pb-4 justify-between items-center text-xs text-blue-400 mb-2">
+            <div className="flex-none md:relative   w-full  md:w-[30rem] mt-4 md:mt-6 ">
+              <div className="bg-zinc-800 md:h-96 p-4 md:p-0    text-white  rounded-lg  mx-auto ">
+                <div className="flex pb-3 md:p-4 md:pb-5 md:text-[#220000] md:bg-orange-700 md:rounded-t-lg justify-between items-center text-xs md:mb-0 mb-2">
                   <div className=" flex justify-center items-center space-x-2">
                     <img
                       class="size-7  rounded-full float-left"
                       src="https://thumbs.dreamstime.com/b/uefa-europa-conference-league-logo-vector-illustrated-official-210043040.jpg"
                       alt="logo"
                     />
-                    <span className="">UERO Europa Cup</span>
+                    <span className="md:text-base md:tracking-wide font-medium">
+                      UERO Europa Cup
+                    </span>
                   </div>
                   <div className="float-end space-x-2 relative">
                     <button onClick={togglePin}>
@@ -96,38 +98,60 @@ const LiveMatch = () => {
                     )}
                   </div>
                 </div>
-                <div className="flex justify-between items-center mb-4">
-                  <img
-                    src="https://placehold.co/50x50"
-                    alt="Sevilla U19"
-                    className=""
-                  />
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-red-500">1 - 2</div>
-                    <div className="text-xs text-zinc-400">ET-116:14</div>
-                  </div>
-                  <img
-                    src="https://placehold.co/50x50"
-                    alt="Real Betis"
-                    className="w-12 h-12"
-                  />
+                <div className=" md:absolute md:bottom-0 md:left-0 md:right-0 md:rounded-b-lg hidden md:flex md:flex-col md:text-[#220000] font-medium md:bg-orange-700 ">
+                  <hr className="  border-gray-900" />
+                  <NavLink to="/" className="text-center py-2">
+                    See More Details
+                  </NavLink>
+
                 </div>
-                <div className="flex justify-between text-sm">
-                  <div className="text-center">
-                    <div>Sevilla U19</div>
-                    <div className="text-zinc-400">B. Sow 36'</div>
-                  </div>
-                  <div className="text-center">
-                    <div>Real Betis</div>
-                    <div className="text-zinc-400">
-                      <div>Goal 96'</div>
-                      <div>Pablo García 48'</div>
+                <div className="hidden md:flex md:absolute md:bottom-1/2   md:right-[47%] translate-y-1/2">
+                        <span className="text-base text-green-400">Live</span>
+                      </div>
+                <section className="md:p-10 md:px-14">
+                  <div className="flex justify-between items-center mb-4">
+                    <img
+                      src="https://placehold.co/50x50"
+                      alt="Sevilla U19"
+                      className=""
+                    />
+                    <div className="text-center">
+                      <div className="text-2xl font-bold text-red-500">
+                        1 - 2
+                      </div>
+                      
+                      <div className="text-xs text-zinc-400">ET-116:14</div>
+                      
                     </div>
+                    <img
+                      src="https://placehold.co/50x50"
+                      alt="Real Betis"
+                      className="w-12 h-12"
+                    />
+                  </div>
+                  <div className="flex justify-between text-sm">
+                    <div className="text-center">
+                      <div>Sevilla U19</div>
+                      <div className="text-zinc-400">B. Sow 36'</div>
+                    </div>
+                    <div className="text-center">
+                      <div>Real Betis</div>
+                      <div className="text-zinc-400">
+                        <div>Goal 96'</div>
+                        <div>Pablo García 48'</div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <div className="hidden md:flex md:flex-col  md:justify-center md:items-center text-center ">
+                  <hr className="  border-gray-900 w-[28rem] " />
+                  <div className="py-2">
+                  <span className=" text-sm px-2 text-gray-300">Sevilla needs two More Goal to win this match . CRP 13.9 RRR 6.89</span>
+                  <p className=" text-xs text-gray-400 py-1.5">Play-Off . UERO Europa 78 of 20</p>
                   </div>
                 </div>
               </div>
-            </div >
-           
+            </div>
           </div>
         </div>
       </div>
