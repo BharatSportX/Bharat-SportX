@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PrevNext from "./PrevNext";
 import { Link, NavLink } from "react-router-dom";
+import ProgressStep from "./ProgressStep";
 const LiveMatch = () => {
   const [pin, setPin] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -23,7 +24,7 @@ const LiveMatch = () => {
         <div className=" no-scrollbar overflow-x-auto">
           <div className=" container inline-flex space-x-6 whitespace-nowrap ">
             <div className="flex-none md:relative   w-full  md:w-[30rem] mt-4 md:mt-6 ">
-              <div className="bg-zinc-800 md:h-96 p-4 md:p-0    text-white  rounded-lg  mx-auto ">
+              <div className="bg-zinc-800 md:h-[25rem] p-4 md:p-0    text-white  rounded-lg  mx-auto ">
                 <div className="flex pb-3 md:p-4 md:pb-5 md:text-[#220000] md:bg-orange-700 md:rounded-t-lg justify-between items-center text-xs md:mb-0 mb-2">
                   <div className=" flex justify-center items-center space-x-2">
                     <img
@@ -103,12 +104,11 @@ const LiveMatch = () => {
                   <NavLink to="/" className="text-center py-2">
                     See More Details
                   </NavLink>
-
                 </div>
                 <div className="hidden md:flex md:absolute md:bottom-1/2   md:right-[47%] translate-y-1/2">
-                        <span className="text-base text-green-400">Live</span>
-                      </div>
-                <section className="md:p-10 md:px-14">
+                  <span className="text-base text-green-400">Live</span>
+                </div>
+                <section className="md:pt-10 md:pb-4 md:px-14">
                   <div className="flex justify-between items-center mb-4">
                     <img
                       src="https://placehold.co/50x50"
@@ -119,9 +119,8 @@ const LiveMatch = () => {
                       <div className="text-2xl font-bold text-red-500">
                         1 - 2
                       </div>
-                      
+
                       <div className="text-xs text-zinc-400">ET-116:14</div>
-                      
                     </div>
                     <img
                       src="https://placehold.co/50x50"
@@ -143,11 +142,19 @@ const LiveMatch = () => {
                     </div>
                   </div>
                 </section>
+                <div className=" ">
+                  <ProgressStep />
+                </div>
                 <div className="hidden md:flex md:flex-col  md:justify-center md:items-center text-center ">
                   <hr className="  border-gray-900 w-[28rem] " />
                   <div className="py-2">
-                  <span className=" text-sm px-2 text-gray-300">Sevilla needs two More Goal to win this match . CRP 13.9 RRR 6.89</span>
-                  <p className=" text-xs text-gray-400 py-1.5">Play-Off . UERO Europa 78 of 20</p>
+                    <span className=" text-sm px-2 text-gray-300">
+                      Sevilla needs two More Goal to win this match . CRP 13.9
+                      RRR 6.89
+                    </span>
+                    <p className=" text-xs text-gray-400 py-1.5">
+                      Play-Off . UERO Europa 78 of 20
+                    </p>
                   </div>
                 </div>
               </div>
