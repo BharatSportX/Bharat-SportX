@@ -23,7 +23,7 @@ const HomeBody = () => {
 
   return (
     <div className="relative top-36">
-      <div className="m-4 lg:mx-10 lg:mt-10">
+      <div className="m-4 lg:mx-10 lg:mt-5">
         <h1
           className="text-3xl font-semibold"
           style={{ fontFamily: '"Varela Round", sans-serif' }}
