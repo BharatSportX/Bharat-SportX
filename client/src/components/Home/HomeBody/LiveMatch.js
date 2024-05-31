@@ -148,7 +148,7 @@ const LiveMatch = () => {
                   <div className=" ">
                     <ProgressStep />
                   </div>
-                  <div className="hidden overflow-y-hidden mt-6 md:flex md:flex-col  md:justify-center md:items-center text-center text-wrap ">
+                  <div className="hidden mt-6 md:flex md:flex-col  md:justify-center md:items-center text-center text-wrap ">
                     <hr className="  border-slate-600  w-[28rem] " />
                     <div className="py-2 pt-3">
                     {/* here just only few words are taken otherwise responsive ness break so use lenghth property else ('...') which leads to seemore */}
