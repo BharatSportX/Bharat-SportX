@@ -18,7 +18,7 @@ const NavDrawer = () => {
         <button onClick={toggleDrawer} className="">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className=" mb-2  text-gray-500 dark:text-gray-400 group-hover:text-red-600 dark:group-hover:text-red-500"
+            className=" mb-2  text-gray-500 dark:text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-500"
             width="44"
             height="44"
             fill="currentColor"
