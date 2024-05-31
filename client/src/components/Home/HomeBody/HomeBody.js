@@ -46,7 +46,7 @@ const HomeBody = () => {
           <span
             className={`absolute top-[0.59rem] left-[0.58rem] flex size-2 ${indicatorColor} rounded-full animate-ping `}
           ></span>
-          Live(2)<span className="hidden xl:inline-block ml-2"> Matches</span>
+          Live<span className="hidden xl:inline-block ml-2"> Matches</span><span className="">(2)</span>
         </button>
         <button
           className={
