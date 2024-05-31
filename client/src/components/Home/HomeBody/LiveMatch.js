@@ -102,7 +102,7 @@ const LiveMatch = () => {
                     </div>
                   </div>
                   <div className=" md:absolute md:bottom-0 md:left-0 md:right-0 md:rounded-b-lg hidden md:flex md:mx-5 md:flex-col md:text-[#220000] font-medium md:bg-orange-700 ">
-                    <hr className="border  border-gray-900" />
+                    
                     <NavLink to="/" className="text-center py-2">
                       See More Details
                     </NavLink>
