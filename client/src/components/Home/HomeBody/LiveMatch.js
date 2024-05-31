@@ -23,8 +23,8 @@ const LiveMatch = () => {
         <PrevNext />
         <div className=" no-scrollbar overflow-x-auto">
           <div className=" container inline-flex  space-x-6 whitespace-nowrap ">
-            <section className="md:px-5 ">
               <div className="flex-none md:relative    w-full  md:w-[30rem] mt-4 md:mt-6 ">
+            <section className="md:mx-5 ">
                 <div className=" bg-gray-900   md:h-[25.3rem] p-4 md:p-0    text-white  rounded-lg  mx-auto ">
                 {/* text-[#220000] */}
                   <div className="flex pb-3 md:p-4 md:pb-5 md:text-[#220000] md:bg-orange-700 md:rounded-t-lg justify-between items-center text-xs md:mb-0 mb-2">
@@ -101,8 +101,8 @@ const LiveMatch = () => {
                       )}
                     </div>
                   </div>
-                  <div className=" md:absolute md:bottom-0 md:left-0 md:right-0 md:rounded-b-lg hidden md:flex md:flex-col md:text-[#220000] font-medium md:bg-orange-700 ">
-                    <hr className="  border-gray-900" />
+                  <div className=" md:absolute md:bottom-0 md:left-0 md:right-0 md:rounded-b-lg hidden md:flex md:mx-5 md:flex-col md:text-[#220000] font-medium md:bg-orange-700 ">
+                    <hr className="border  border-gray-900" />
                     <NavLink to="/" className="text-center py-2">
                       See More Details
                     </NavLink>
@@ -162,8 +162,8 @@ const LiveMatch = () => {
                   </div>
                   </div>
                 </div>
-              </div>
             </section>
+              </div>
           </div>
         </div>
       </div>
