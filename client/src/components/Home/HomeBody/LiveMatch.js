@@ -25,7 +25,7 @@ const LiveMatch = () => {
           <div className=" container inline-flex  space-x-6 whitespace-nowrap ">
               <div className="flex-none md:relative    w-full  md:w-[30rem] mt-4 md:mt-6 ">
             <section className="md:mx-5 ">
-                <div className=" bg-gray-900   md:h-[25.3rem] p-4 md:p-0    text-white  rounded-lg  mx-auto ">
+                <div className=" bg-slate-900   md:h-[25.3rem] p-4 md:p-0    text-white  rounded-lg  mx-auto ">
                 {/* text-[#220000] */}
                   <div className="flex pb-3 md:p-4 md:pb-5 md:text-[#220000] md:bg-orange-700 md:rounded-t-lg justify-between items-center text-xs md:mb-0 mb-2">
                     <div className=" flex justify-center items-center space-x-2">
