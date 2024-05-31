@@ -103,14 +103,14 @@ const LiveMatch = () => {
                   </div>
                   <div className=" md:absolute md:bottom-0 md:left-0 md:right-0 md:rounded-b-lg hidden md:flex md:mx-5 md:flex-col md:text-[#220000] font-medium md:bg-orange-700 ">
                     
-                    <NavLink to="/" className="text-center py-2">
-                      See More Details
+                    <NavLink to="/" className="  text-center py-2">
+                      <span className="hover:underline">See More Details</span>
                     </NavLink>
                   </div>
                   <div className="hidden md:flex md:absolute md:bottom-1/2   md:right-[47%] translate-y-1/2">
                     <span className="text-base text-green-400">Live</span>
                   </div>
-                  <div className=" border-x border-slate-800">
+                  <div className=" border-x border-slate-700">
                   <section className="md:pt-10 md:pb-4 md:px-14">
                     <div className="flex justify-between items-center mb-4">
                       <img
