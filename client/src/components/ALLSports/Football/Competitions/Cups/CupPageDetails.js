@@ -22,7 +22,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import SeasonDropDownlist from './SeasonDropDownlist';
-
+import Standings from '../../Standings/Standings';
 const CupPageDetails = () => {
     const { id } = useParams();
     const [cupData, setCupData] = useState(null);
@@ -199,6 +199,9 @@ const CupPageDetails = () => {
 <p>{cupData.country.name}</p>
 <div className="inline-flex">
 <SeasonDropDownlist onSelectSeason={handleSelectSeason} seasons={seasons} selectedYear={selectedYear} />
+</div>
+<div className='flex justify-between items-center mb-4'>
+<Standings selectedYear={selectedYear} leagueId={id} />
 </div>
 </div>
 </div>
