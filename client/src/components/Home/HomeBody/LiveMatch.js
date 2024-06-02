@@ -107,9 +107,7 @@ const LiveMatch = () => {
                   {/* <div className=" md:absolute md:bottom-0 md:left-0 md:right-0 md:rounded-b-lg hidden md:flex md:mx-5 md:flex-col md:text-[#220000] font-medium md:bg-orange-700 "> */}
                   
                   
-                  <div className="hidden md:flex md:absolute md:bottom-1/2   md:right-[47%] translate-y-1/2">
-                    <span className="text-base text-green-400">Live</span>
-                  </div>
+                 
                   <div className=" border-x border-slate-700 mx-[0.5px] md:ml-0 md:mr-[0.45px]">
                   <section className="md:pt-10 pb-4 md:px-14 px-4 pt-6">
                     <div className="flex justify-between items-center mb-4">
@@ -125,12 +123,16 @@ const LiveMatch = () => {
 
                         <div className="text-xs md:text-zinc-400 text-red-500 font-normal">ET-116:14</div>
                       </div>
+                      
                       <img
                         src="https://placehold.co/50x50"
                         alt="Real Betis"
                         className="w-12 h-12"
                       />
                     </div>
+                    <div className=" ">
+                    <span className="text-base text-center flex justify-center text-green-400">Live</span>
+                  </div>
                     <div className="flex justify-between text-sm">
                       <div className="text-center">
                         <div>Sevilla U19</div>
