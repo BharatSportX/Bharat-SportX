@@ -23,18 +23,19 @@ const LiveMatch = () => {
         <PrevNext />
         <div className=" no-scrollbar overflow-x-auto">
           <div className=" container inline-flex  space-x-6 whitespace-nowrap ">
-              <div className="flex-none md:relative    w-full  md:w-[30rem] mt-4 md:mt-6 ">
+              <div className="flex-none md:relative    w-full  md:w-[30rem] my-4 md:my-6 ">
             <section className="md:mx-5 ">
-                <div className=" bg-[#1e2026]   md:h-[25.3rem] p-4 md:p-0    text-white  rounded-lg  mx-auto ">
+                {/* <div className=" bg-[#1e2026]   md:h-[25.3rem] p-4 md:p-0    text-white  rounded-lg  mx-auto "> */}
+                <div className=" bg-[#1e2026]   h-auto p-0    text-white  rounded-lg  mx-auto ">
                 {/* text-[#220000] */}
-                  <div className="flex pb-3 md:p-4 md:pb-5 md:text-[#220000] md:bg-orange-700 md:rounded-t-lg justify-between items-center text-xs md:mb-0 mb-2">
+                  <div className="flex pb-3 p-4 md:pb-5 text-[#220000] bg-orange-700 rounded-t-lg justify-between items-center text-xs md:mb-0 mb-2">
                     <div className=" flex justify-center items-center space-x-2">
                       <img
-                        class="size-7  rounded-full float-left"
+                        className="size-7  rounded-full float-left"
                         src="https://thumbs.dreamstime.com/b/uefa-europa-conference-league-logo-vector-illustrated-official-210043040.jpg"
                         alt="logo"
                       />
-                      <span className="md:text-base md:tracking-wide font-medium">
+                      <span className="text-sm md:text-base tracking-wide font-medium">
                         UERO Europa Cup
                       </span>
                     </div>
@@ -43,8 +44,8 @@ const LiveMatch = () => {
                         {pin ? (
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            width="20"
-                            height="20"
+                            
+                            className="size-[18px] md:size-5"
                             fill="currentColor"
                             viewBox="0 0 16 16"
                           >
@@ -53,8 +54,8 @@ const LiveMatch = () => {
                         ) : (
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            width="20"
-                            height="20"
+                            
+                            className="size-[18px] md:size-5"
                             fill="currentColor"
                             viewBox="0 0 16 16"
                           >
@@ -69,8 +70,8 @@ const LiveMatch = () => {
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          width="20"
-                          height="20"
+                          
+                          className="size-[18px] md:size-5"
                           fill="currentColor"
                           viewBox="0 0 16 16"
                         >
@@ -83,13 +84,13 @@ const LiveMatch = () => {
                             href="#"
                             className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
                           >
-                            Option 1
+                            AI Predicton
                           </Link>
                           <Link
                             href="#"
                             className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
                           >
-                            Option 2
+                            Set Reminder
                           </Link>
                           <Link
                             href="#"
@@ -101,17 +102,14 @@ const LiveMatch = () => {
                       )}
                     </div>
                   </div>
-                  <div className=" md:absolute md:bottom-0 md:left-0 md:right-0 md:rounded-b-lg hidden md:flex md:mx-5 md:flex-col md:text-[#220000] font-medium md:bg-orange-700 ">
-                    
-                    <NavLink to="/" className="  text-center py-2">
-                      <span className="hover:underline">See More Details</span>
-                    </NavLink>
-                  </div>
+                  {/* <div className=" md:absolute md:bottom-0 md:left-0 md:right-0 md:rounded-b-lg hidden md:flex md:mx-5 md:flex-col md:text-[#220000] font-medium md:bg-orange-700 "> */}
+                  
+                  
                   <div className="hidden md:flex md:absolute md:bottom-1/2   md:right-[47%] translate-y-1/2">
                     <span className="text-base text-green-400">Live</span>
                   </div>
-                  <div className=" border-x border-slate-700">
-                  <section className="md:pt-10 md:pb-4 md:px-14">
+                  <div className=" md:border-x md:border-slate-700 mr-[0.45px]">
+                  <section className="md:pt-10 pb-4 md:px-14 px-4 pt-6">
                     <div className="flex justify-between items-center mb-4">
                       <img
                         src="https://placehold.co/50x50"
@@ -123,7 +121,7 @@ const LiveMatch = () => {
                           1 - 2
                         </div>
 
-                        <div className="text-xs text-zinc-400">ET-116:14</div>
+                        <div className="text-xs md:text-zinc-400 text-red-500 font-normal">ET-116:14</div>
                       </div>
                       <img
                         src="https://placehold.co/50x50"
@@ -141,11 +139,13 @@ const LiveMatch = () => {
                         <div className="text-zinc-400">
                           <div>Goal 96'</div>
                           <div>Pablo García 48'</div>
+                          
                         </div>
                       </div>
                     </div>
                   </section>
                   <div className=" ">
+                    <hr className="  border-slate-600  mx-2 w-auto md:hidden mb-4" />
                     <ProgressStep />
                   </div>
                   <div className="hidden mt-6 md:flex md:flex-col  md:justify-center md:items-center text-center text-wrap ">
@@ -160,6 +160,12 @@ const LiveMatch = () => {
                       </p>
                     </div>
                   </div>
+                  </div>
+                  <div className=" rounded-b-lg  flex  flex-col text-[#220000] font-medium bg-orange-700  ">
+                    
+                    <NavLink to="/" className="  text-center py-2">
+                      <span className="hover:underline">See More Details</span>
+                    </NavLink>
                   </div>
                 </div>
             </section>
