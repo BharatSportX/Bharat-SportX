@@ -110,7 +110,7 @@ const LiveMatch = () => {
                   <div className="hidden md:flex md:absolute md:bottom-1/2   md:right-[47%] translate-y-1/2">
                     <span className="text-base text-green-400">Live</span>
                   </div>
-                  <div className=" md:border-x md:border-slate-700 mr-[0.45px]">
+                  <div className=" border-x border-slate-700 mx-[0.5px] md:ml-0 md:mr-[0.45px]">
                   <section className="md:pt-10 pb-4 md:px-14 px-4 pt-6">
                     <div className="flex justify-between items-center mb-4">
                       <img
