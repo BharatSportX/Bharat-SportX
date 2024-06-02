@@ -26,7 +26,9 @@ const LiveMatch = () => {
               <div className="flex-none md:relative    w-full  md:w-[30rem] my-4 md:my-6 ">
             <section className="md:mx-5 ">
                 {/* <div className=" bg-[#1e2026]   md:h-[25.3rem] p-4 md:p-0    text-white  rounded-lg  mx-auto "> */}
-                <div className=" bg-[#1e2026]   h-auto p-0    text-white  rounded-lg  mx-auto ">
+                <div className=" bg-[#1e2026]   h-auto p-0    text-white  rounded-lg  mx-auto " style={{
+                  backgroundImage: 'radial-gradient(circle at 16% 83%, rgba(148, 148, 148,0.06) 0%, rgba(148, 148, 148,0.06) 50%,rgba(63, 63, 63,0.06) 50%, rgba(63, 63, 63,0.06) 100%),radial-gradient(circle at 68% 87%, rgba(66, 66, 66,0.06) 0%, rgba(66, 66, 66,0.06) 50%,rgba(105, 105, 105,0.06) 50%, rgba(105, 105, 105,0.06) 100%),radial-gradient(circle at 38% 50%, rgba(123, 123, 123,0.06) 0%, rgba(123, 123, 123,0.06) 50%,rgba(172, 172, 172,0.06) 50%, rgba(172, 172, 172,0.06) 100%),linear-gradient(90deg, hsl(18,0%,1%),hsl(18,0%,1%))'
+                }}>
                 {/* text-[#220000] */}
                   <div className="flex pb-3 p-4 md:pb-5 text-[#220000] bg-orange-700 rounded-t-lg justify-between items-center text-xs md:mb-0 mb-2">
                     <div className=" flex justify-center items-center space-x-2">
