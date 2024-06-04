@@ -23,6 +23,7 @@ import LaunchingSoon from "./components/LaunchingSoonPage/LaunchingSoon";
 import Navbar from "./components/Home/Navbar/Navbar";
 import TableFormat from "./components/ALLSports/Football/Statistics/TableFormat";
 import FootballSubscription from "./components/ALLSports/Football/FootballSubscription/FootballSubscription";
+import LiveMatchDetails from "./components/Home/HomeBody/LiveMatchDetails";
 function App() {
   const router = createBrowserRouter([
     {
@@ -186,6 +187,15 @@ function App() {
       element: (
         <>
           <Navbar/><FootballSubscription/>
+        </>
+      ),
+    },
+
+    {
+      path: "/live-match-details",
+      element: (
+        <>
+          <Navbar/><LiveMatchDetails/>
         </>
       ),
     },

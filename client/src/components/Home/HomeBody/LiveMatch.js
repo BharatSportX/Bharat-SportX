@@ -619,7 +619,7 @@ const LiveMatch = () => {
                   </div>
                   </div>
                   <div className=" rounded-b-lg  flex  flex-col text-[#220000] font-medium bg-orange-700  ">
-                    
+                    {/* Add  route link by /:id when backend will be added by fetching livematch id  */}
                     <NavLink to="/" className="  text-center py-2">
                       <span className="hover:underline">See More Details</span>
                     </NavLink>
