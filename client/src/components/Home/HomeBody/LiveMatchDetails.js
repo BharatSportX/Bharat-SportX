@@ -88,29 +88,26 @@ export default function LiveMatchDetails() {
   };
 
   return (
-    <div className="flex items-center justify-stretch w-full text-gray-900 dark:text-gray-100 dark:bg-gray-950">
-      <div className="grid sm:grid-cols-1 lg:grid-cols-3 gap-4 p-4 top-40 relative">
-        {/* CupDetails Card */}
-        <div className="col-span-1 bg-gradient-to-r from-slate-100 to-slate-300 border rounded-lg p-4 shadow-md">
-          <div className="flex items-center mb-4">
-            <img src={dummyCupData.league.logo} alt="Club" className="w-16 h-16 mr-4" />
+    <div className="w-full p-6 text-gray-900 dark:text-gray-100 dark:bg-gray-950 flex flex-col items-center overflow-x-hidden top-45 mt-20">
+      <div className="w-full lg:w-2/3 grid gap-6">
+        {/* CupDetails Section */}
+        <section className="bg-gradient-to-r from-blue-500 to-green-500 text-white rounded-lg shadow-lg p-6">
+          <div className="flex items-center mb-6">
+            <img src={dummyCupData.league.logo} alt="Club" className="w-16 h-16 mr-4 rounded-full border-2 border-white" />
             <div>
-              <h2 className="text-xl font-semibold mb-2 bg-gradient-to-r from-slate-900 to-pink-800 bg-clip-text text-transparent">
-                {dummyCupData.league.name}
-              </h2>
+              <h2 className="text-2xl font-bold mb-1">{dummyCupData.league.name}</h2>
               <p>{dummyCupData.country.name}</p>
             </div>
           </div>
           <div>
-            {/* Season Dropdown */}
-            <label htmlFor="season" className="block text-sm font-medium text-gray-700 mb-2">
+            <label htmlFor="season" className="block text-sm font-medium mb-2">
               Select Season:
             </label>
             <select
               id="season"
               onChange={(e) => handleSelectSeason(e.target.value)}
               value={selectedYear}
-              className="block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-pink-500 focus:border-pink-500 sm:text-sm mb-4"
+              className="block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900"
             >
               {dummySeasons.map((season, index) => (
                 <option key={index} value={season}>
@@ -119,93 +116,85 @@ export default function LiveMatchDetails() {
               ))}
             </select>
           </div>
-          <p className="text-sm font-medium text-gray-700">Standings for {selectedYear}</p>
-        </div>
+          <p className="text-sm font-medium mt-4">Standings for {selectedYear}</p>
+        </section>
 
-        {/* MatchDetails Card */}
+        {/* MatchDetails Section */}
         {dummyMatchDetails && (
-          <div className="col-span-1 bg-gradient-to-r from-rose-100 to-zinc-100 border rounded-lg p-4 shadow-md">
-            <h1 className="text-xl font-bold mb-4 bg-gradient-to-r from-red-700 to-blue-700 bg-clip-text text-transparent">
-              Featured Match
-            </h1>
-            <div className="mb-4">
+          <section className="bg-gradient-to-r from-green-500 to-blue-500 text-white rounded-lg shadow-lg p-6">
+            <h1 className="text-2xl font-bold mb-6">Featured Match</h1>
+            <div className="mb-6">
               <p className="text-lg font-semibold">{dummyCupData.league.name}</p>
               <p>{dummyCupData.country.name}</p>
               <p>{selectedRound}</p>
 
-              {/* Dropdown for selecting round */}
-              <div>
-                <label htmlFor="round" className="block text-sm font-medium text-gray-700 mb-2">
-                  Select Round:
-                </label>
-                <select
-                  id="round"
-                  name="round"
-                  className="block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-pink-500 focus:border-pink-500 sm:text-sm mb-4"
-                  value={selectedRound}
-                  onChange={(e) => handleSelectRound(e.target.value)}
-                >
-                  {dummyRounds.map((round, index) => (
-                    <option key={index} value={round}>
-                      {round}
-                    </option>
-                  ))}
-                </select>
-              </div>
+              <label htmlFor="round" className="block text-sm font-medium mt-4 mb-2">
+                Select Round:
+              </label>
+              <select
+                id="round"
+                name="round"
+                className="block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900"
+                value={selectedRound}
+                onChange={(e) => handleSelectRound(e.target.value)}
+              >
+                {dummyRounds.map((round, index) => (
+                  <option key={index} value={round}>
+                    {round}
+                  </option>
+                ))}
+              </select>
 
-              <div className="flex flex-col md:flex-row items-center justify-center p-2 md:p-4 bg-gradient-to-r from-brown-300 via-white to-gray-300 rounded-lg shadow-lg dark:bg-gradient-to-r dark:from-gray-800 dark:to-black w-full md:w-auto h-auto md:h-16 mb-4">
-                <p className="text-sm md:text-lg font-semibold text-gray-800 dark:text-gray-300 text-center md:text-left">
+              <div className="flex items-center justify-between p-4 bg-white text-gray-900 rounded-lg shadow-inner mt-4">
+                <p className="text-sm md:text-lg font-semibold">
                   Date: {convertToIST(dummyMatchDetails.fixture.date)}
                 </p>
               </div>
             </div>
 
-            <div className="flex flex-col items-center gap-4 mb-4">
+            <div className="flex flex-col items-center gap-6 mb-6">
               <div className="flex items-center justify-between w-full">
                 <div className="flex items-center">
-                  <img src={dummyMatchDetails.teams.home.logo} alt="Home Team Logo" className="w-8 h-8 mr-2" />
-                  <span className="mr-2">{dummyMatchDetails.teams.home.name}</span>
+                  <img src={dummyMatchDetails.teams.home.logo} alt="Home Team Logo" className="w-10 h-10 mr-3" />
+                  <span className="text-lg font-semibold">{dummyMatchDetails.teams.home.name}</span>
                 </div>
-                <div className="flex items-center">
-                  <span className={`mr-2 ${dummyMatchDetails.goals.home > dummyMatchDetails.goals.away ? 'font-bold text-lg' : ''}`}>
+                <div className="flex items-center text-lg font-semibold">
+                  <span className={`mr-3 ${dummyMatchDetails.goals.home > dummyMatchDetails.goals.away ? 'text-blue-600' : ''}`}>
                     {dummyMatchDetails.goals.home}
                   </span>
-                  <span className="mr-2">Vs</span>
-                  <span className={`mr-2 ${dummyMatchDetails.goals.away > dummyMatchDetails.goals.home ? 'font-bold text-lg' : ''}`}>
+                  <span className="mx-3">Vs</span>
+                  <span className={`ml-3 ${dummyMatchDetails.goals.away > dummyMatchDetails.goals.home ? 'text-blue-600' : ''}`}>
                     {dummyMatchDetails.goals.away}
                   </span>
                 </div>
                 <div className="flex items-center">
-                  <img src={dummyMatchDetails.teams.away.logo} alt="Away Team Logo" className="w-8 h-8 mr-2" />
-                  <span>{dummyMatchDetails.teams.away.name}</span>
+                  <img src={dummyMatchDetails.teams.away.logo} alt="Away Team Logo" className="w-10 h-10 ml-3" />
+                  <span className="text-lg font-semibold">{dummyMatchDetails.teams.away.name}</span>
                 </div>
               </div>
-              <div className="text-gray-500 font-sans text-xl font-bold">Status: {dummyMatchDetails.fixture.status.short}</div>
+              <div className="text-gray-100 text-lg font-semibold">Status: {dummyMatchDetails.fixture.status.short}</div>
             </div>
 
-            {/* Main div for score */}
             <button
-              className="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800"
+              className="relative inline-flex items-center justify-center px-5 py-2.5 mb-2 overflow-hidden text-sm font-medium text-gray-900 bg-white rounded-lg shadow-lg group"
               onClick={handleOpenScoreModal}
             >
-              <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-                Score Card
-              </span>
+              <span className="absolute inset-0 w-full h-full bg-gradient-to-br from-blue-500 to-green-500 group-hover:from-blue-500 group-hover:to-green-500 transition-all duration-200"></span>
+              <span className="relative text-white">Score Card</span>
             </button>
-          </div>
+          </section>
         )}
 
-        {/* Additional Card */}
-        <div className="col-span-1 bg-gradient-to-r from-rose-100 to-zinc-100 border rounded-lg p-4 shadow-md">
-          <h1 className="text-xl font-bold mb-4">Additional Card</h1>
-          <p>Content for the additional card goes here.</p>
-        </div>
+        {/* Additional Section */}
+        <section className="bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg shadow-lg p-6">
+          <h1 className="text-2xl font-bold mb-4">Additional Information</h1>
+          <p>This section can be used to display more information about the league, matches, or any other relevant details.</p>
+        </section>
       </div>
 
-      {/* Modal for Score Card */}
       {isModalOpen && (
-        <div className="fixed inset-0 bg-blue-300 bg-opacity-75 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg p-6 w-3/4 md:w-1/2">
+        <div className="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg p-6 w-11/12 md:w-3/4 lg:w-1/2">
             <h2 className="text-xl font-bold mb-4 text-center">Score Card</h2>
             <div className="flex items-center justify-center mb-4 space-x-4">
               <div
@@ -233,13 +222,13 @@ export default function LiveMatchDetails() {
                 className={`cursor-pointer border-b-4 p-3 transition duration-300 ${selectedScore === 'fulltime' ? 'border-blue-500' : ''}`}
                 onClick={() => handleSelectScore('fulltime')}
               >
-                <h2>Full time</h2>
+                <h2>Fulltime</h2>
               </div>
               <div
                 className={`cursor-pointer border-b-4 p-3 transition duration-300 ${selectedScore === 'extratime' ? 'border-blue-500' : ''}`}
                 onClick={() => handleSelectScore('extratime')}
               >
-                <h2>Extra time</h2>
+                <h2>Extratime</h2>
               </div>
               <div
                 className={`cursor-pointer border-b-4 p-3 transition duration-300 ${selectedScore === 'penalty' ? 'border-blue-500' : ''}`}
@@ -255,57 +244,41 @@ export default function LiveMatchDetails() {
                 <div className="min-w-full">
                   <h3 className="text-center text-lg font-bold mb-2 underline">{dummyMatchDetails.teams.home.name} Details</h3>
                   {selectedScore === 'halftime' && (
-                    <>
-                      <p className='mt-3 lg:mt-0'>Halftime Score: {dummyMatchDetails.score.halftime.home}</p>
-                    </>
+                    <p className="mt-3">Halftime Score: {dummyMatchDetails.score.halftime.home}</p>
                   )}
                   {selectedScore === 'fulltime' && (
-                    <>
-                      <p className='mt-3 lg:mt-0'>Fulltime Score: {dummyMatchDetails.score.fulltime.home}</p>
-                    </>
+                    <p className="mt-3">Fulltime Score: {dummyMatchDetails.score.fulltime.home}</p>
                   )}
                   {selectedScore === 'extratime' && (
-                    <>
-                      <p className='mt-3 lg:mt-0'>Extra Time Score: {dummyMatchDetails.score.extratime.home !== null ? dummyMatchDetails.score.extratime.home : '0'}</p>
-                    </>
+                    <p className="mt-3">Extra Time Score: {dummyMatchDetails.score.extratime.home || '0'}</p>
                   )}
                   {selectedScore === 'penalty' && (
-                    <>
-                      <p className='mt-3 lg:mt-0'>Penalty Score: {dummyMatchDetails.score.penalty.home !== null ? dummyMatchDetails.score.penalty.home : '0'}</p>
-                    </>
+                    <p className="mt-3">Penalty Score: {dummyMatchDetails.score.penalty.home || '0'}</p>
                   )}
                 </div>
                 {/* Away team details */}
                 <div className="min-w-full">
                   <h3 className="text-center text-lg font-bold mb-2 underline">{dummyMatchDetails.teams.away.name} Details</h3>
                   {selectedScore === 'halftime' && (
-                    <>
-                      <p className='mt-3 lg:mt-0'>Halftime Score: {dummyMatchDetails.score.halftime.away}</p>
-                    </>
+                    <p className="mt-3">Halftime Score: {dummyMatchDetails.score.halftime.away}</p>
                   )}
                   {selectedScore === 'fulltime' && (
-                    <>
-                      <p className='mt-3 lg:mt-0'>Fulltime Score: {dummyMatchDetails.score.fulltime.away}</p>
-                    </>
+                    <p className="mt-3">Fulltime Score: {dummyMatchDetails.score.fulltime.away}</p>
                   )}
                   {selectedScore === 'extratime' && (
-                    <>
-                      <p className='mt-3 lg:mt-0'>Extra Time Score: {dummyMatchDetails.score.extratime.away !== null ? dummyMatchDetails.score.extratime.away : '0'}</p>
-                    </>
+                    <p className="mt-3">Extra Time Score: {dummyMatchDetails.score.extratime.away || '0'}</p>
                   )}
                   {selectedScore === 'penalty' && (
-                    <>
-                      <p className='mt-3 lg:mt-0'>Penalty Score: {dummyMatchDetails.score.penalty.away !== null ? dummyMatchDetails.score.penalty.away : '0'}</p>
-                    </>
+                    <p className="mt-3">Penalty Score: {dummyMatchDetails.score.penalty.away || '0'}</p>
                   )}
                 </div>
               </div>
             </div>
 
-            <div className="flex items-center justify-center">
+            <div className="flex items-center justify-center mt-6">
               <button
                 type="button"
-                className="text-white mt-6 bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+                className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg font-medium rounded-lg text-sm px-5 py-2.5"
                 onClick={handleOpenScoreModal}
               >
                 Close
