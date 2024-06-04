@@ -88,10 +88,10 @@ export default function LiveMatchDetails() {
   };
 
   return (
-    <div className="w-full p-6 text-gray-900 dark:text-gray-100 dark:bg-gray-950 flex flex-col items-center overflow-x-hidden top-45 mt-20">
+    <div className="w-full p-6 text-gray-900 flex flex-col items-center mt-28">
       <div className="w-full lg:w-2/3 grid gap-6">
         {/* CupDetails Section */}
-        <section className="bg-gradient-to-r from-blue-500 to-green-500 text-white rounded-lg shadow-lg p-6">
+        <section className="bg-gradient-to-r from-blue-200 to-green-200 text-gray-900 rounded-lg shadow-lg p-6">
           <div className="flex items-center mb-6">
             <img src={dummyCupData.league.logo} alt="Club" className="w-16 h-16 mr-4 rounded-full border-2 border-white" />
             <div>
@@ -121,7 +121,7 @@ export default function LiveMatchDetails() {
 
         {/* MatchDetails Section */}
         {dummyMatchDetails && (
-          <section className="bg-gradient-to-r from-green-500 to-blue-500 text-white rounded-lg shadow-lg p-6">
+          <section className="bg-gradient-to-r from-green-200 to-blue-200 text-gray-900 rounded-lg shadow-lg p-6">
             <h1 className="text-2xl font-bold mb-6">Featured Match</h1>
             <div className="mb-6">
               <p className="text-lg font-semibold">{dummyCupData.league.name}</p>
@@ -172,22 +172,35 @@ export default function LiveMatchDetails() {
                   <span className="text-lg font-semibold">{dummyMatchDetails.teams.away.name}</span>
                 </div>
               </div>
-              <div className="text-gray-100 text-lg font-semibold">Status: {dummyMatchDetails.fixture.status.short}</div>
+              <div className="text-gray-900 text-lg font-semibold">Status: {dummyMatchDetails.fixture.status.short}</div>
             </div>
 
             <button
               className="relative inline-flex items-center justify-center px-5 py-2.5 mb-2 overflow-hidden text-sm font-medium text-gray-900 bg-white rounded-lg shadow-lg group"
               onClick={handleOpenScoreModal}
             >
-              <span className="absolute inset-0 w-full h-full bg-gradient-to-br from-blue-500 to-green-500 group-hover:from-blue-500 group-hover:to-green-500 transition-all duration-200"></span>
-              <span className="relative text-white">Score Card</span>
+              <span className="absolute inset-0 w-full h-full bg-gradient-to-br from-blue-200 to-green-200 group-hover:from-blue-200 group-hover:to-green-200 transition-all duration-200"></span>
+              <span className="relative">Score Card</span>
             </button>
           </section>
         )}
 
         {/* Additional Section */}
-        <section className="bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg shadow-lg p-6">
+        <section className="bg-gradient-to-r from-purple-200 to-pink-200 text-gray-900 rounded-lg shadow-lg p-6">
           <h1 className="text-2xl font-bold mb-4">Additional Information</h1>
+          <p>This section can be used to display more information about the league, matches, or any other relevant details.</p>
+        </section>
+
+          {/* Additional Section - Blog Posts */}
+          <section className="bg-gradient-to-r from-yellow-200 to-orange-200 text-gray-900 rounded-lg shadow-lg p-6">
+          {/* Blog Posts Content */}
+          <h1 className="text-2xl font-bold mb-4">Blog Post</h1>
+          <p>This section can be used to display more information about the league, matches, or any other relevant details.</p>
+        </section>
+
+        {/* Additional Section - Player Names */}
+        <section className="bg-gradient-to-r from-red-200 to-purple-200 text-gray-900 rounded-lg shadow-lg p-6">
+        <h1 className="text-2xl font-bold mb-4">Player Section</h1>
           <p>This section can be used to display more information about the league, matches, or any other relevant details.</p>
         </section>
       </div>
@@ -278,7 +291,7 @@ export default function LiveMatchDetails() {
             <div className="flex items-center justify-center mt-6">
               <button
                 type="button"
-                className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg font-medium rounded-lg text-sm px-5 py-2.5"
+                className="text-white bg-gradient-to-r from-pink-400 via-purple-500 to-blue-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg font-medium rounded-lg text-sm px-5 py-2.5"
                 onClick={handleOpenScoreModal}
               >
                 Close
