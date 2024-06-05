@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react"
+import PrevNext from "./PrevNext";
 import LiveMatch from "./LiveMatch";
 import Blogs from "./Blogs";
 
 const HomeBody = () => {
   const [activeButtons, setActiveButtons] = useState([false, true, true]);
-  const [indicatorColor, setIndicatorColor] = useState("bg-[greenyellow] dark:bg-green-900");
+  const [indicatorColor, setIndicatorColor] = useState(
+    "bg-[greenyellow] dark:bg-green-900"
+  );
 
   const handleClick = (index) => {
     const newActiveButtons = activeButtons.map((isActive, i) =>
@@ -14,7 +17,9 @@ const HomeBody = () => {
 
     if (index === 0) {
       setIndicatorColor(
-        newActiveButtons[0] ? "bg-red-600 dark:bg-[greenyellow]" : "bg-[greenyellow] dark:bg-green-900"
+        newActiveButtons[0]
+          ? "bg-red-600 dark:bg-[greenyellow]"
+          : "bg-[greenyellow] dark:bg-green-900"
       );
     } else {
       setIndicatorColor("bg-red-600 dark:bg-[greenyellow]");
@@ -46,7 +51,8 @@ const HomeBody = () => {
           <span
             className={`absolute top-[0.59rem] left-[0.58rem] flex size-2 ${indicatorColor} rounded-full animate-ping `}
           ></span>
-          Live<span className="hidden xl:inline-block ml-2"> Matches</span><span className="">(2)</span>
+          Live<span className="hidden xl:inline-block ml-2"> Matches</span>
+          <span className="">(2)</span>
         </button>
         <button
           className={
@@ -69,7 +75,15 @@ const HomeBody = () => {
           Upcoming<span className="hidden xl:inline-block ml-2"> Matches</span>
         </button>
       </div>
-      <LiveMatch />
+      <div className="m-4 md:mx-7   relative z-10">
+        <PrevNext />
+        <div className=" no-scrollbar overflow-x-auto">
+          <div className=" container inline-flex  space-x-6 whitespace-nowrap ">
+            <LiveMatch />
+          </div>
+        </div>
+      </div>
+
       <Blogs />
     </div>
   );
