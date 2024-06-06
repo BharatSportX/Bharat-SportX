@@ -28,7 +28,7 @@ const LiveMatch = () => {
                 "radial-gradient(circle at 16% 83%, rgba(148, 148, 148,0.06) 0%, rgba(148, 148, 148,0.06) 50%,rgba(63, 63, 63,0.06) 50%, rgba(63, 63, 63,0.06) 100%),radial-gradient(circle at 68% 87%, rgba(66, 66, 66,0.06) 0%, rgba(66, 66, 66,0.06) 50%,rgba(105, 105, 105,0.06) 50%, rgba(105, 105, 105,0.06) 100%),radial-gradient(circle at 38% 50%, rgba(123, 123, 123,0.06) 0%, rgba(123, 123, 123,0.06) 50%,rgba(172, 172, 172,0.06) 50%, rgba(172, 172, 172,0.06) 100%),linear-gradient(90deg, rgb(24,24,24),rgb(24,24,24))",
             }}
           >
-            <div className="flex pb-3 p-4 md:pb-5  bg-[#FF7D29] md:dark:bg-[#FF400A] md:dark:text-[#23050a] dark:bg-orange-500 dark:text-orange-950  rounded-t-lg justify-between items-center text-xs md:mb-0 mb-2  shadow-sm  md:shadow-orange-500">
+            <div className="flex pb-3 p-4 md:pb-5  bg-[#FF7D29]  dark:bg-orange-500 dark:text-orange-950  rounded-t-lg justify-between items-center text-xs md:mb-0 mb-2  shadow-sm  shadow-orange-700">
               <div className=" flex justify-center items-center space-x-2">
                 {/* <span className=" hover:border-2 hover:border-white p-[0.8px] rounded-full"> */}
                   <img
@@ -37,7 +37,7 @@ const LiveMatch = () => {
                     alt="logo"
                   />
                 {/* </span> */}
-                <span className="text-sm md:text-base tracking-wide font-medium">
+                <span className=" text-base tracking-wide font-medium">
                   UERO Europa Cup
                 </span>
               </div>
@@ -161,7 +161,7 @@ const LiveMatch = () => {
                 </div>
               </div>
             </div>
-            <div className=" rounded-b-lg  flex  flex-col md:dark:bg-[#FF400A] md:dark:text-[#23050a] dark:bg-orange-500 dark:text-orange-950 font-medium bg-orange-700    shadow-sm  md:shadow-orange-500">
+            <div className=" rounded-b-lg  flex  flex-col  dark:bg-orange-500 dark:text-orange-950 font-medium bg-orange-700    shadow-sm  md:shadow-orange-500">
               <NavLink to="/" className="  text-center py-2">
                 <span className="hover:underline">See More Details</span>
               </NavLink>
