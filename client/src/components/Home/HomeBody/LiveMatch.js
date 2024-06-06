@@ -28,15 +28,15 @@ const LiveMatch = () => {
                 "radial-gradient(circle at 16% 83%, rgba(148, 148, 148,0.06) 0%, rgba(148, 148, 148,0.06) 50%,rgba(63, 63, 63,0.06) 50%, rgba(63, 63, 63,0.06) 100%),radial-gradient(circle at 68% 87%, rgba(66, 66, 66,0.06) 0%, rgba(66, 66, 66,0.06) 50%,rgba(105, 105, 105,0.06) 50%, rgba(105, 105, 105,0.06) 100%),radial-gradient(circle at 38% 50%, rgba(123, 123, 123,0.06) 0%, rgba(123, 123, 123,0.06) 50%,rgba(172, 172, 172,0.06) 50%, rgba(172, 172, 172,0.06) 100%),linear-gradient(90deg, rgb(24,24,24),rgb(24,24,24))",
             }}
           >
-            <div className="flex pb-3 p-4 md:pb-5  bg-[#FF7D29] dark:bg-[#FF400A] dark:text-[#23050a]  rounded-t-lg justify-between items-center text-xs md:mb-0 mb-2">
+            <div className="flex pb-3 p-4 md:pb-5  bg-[#FF7D29] dark:bg-[#FF400A] dark:text-[#23050a]  rounded-t-lg justify-between items-center text-xs md:mb-0 mb-2  shadow-sm  shadow-orange-500">
               <div className=" flex justify-center items-center space-x-2">
-                
+                {/* <span className=" hover:border-2 hover:border-white p-[0.8px] rounded-full"> */}
                   <img
                     className="size-7  rounded-full float-left  cursor-pointer"
                     src="https://thumbs.dreamstime.com/b/uefa-europa-conference-league-logo-vector-illustrated-official-210043040.jpg"
                     alt="logo"
                   />
-                
+                {/* </span> */}
                 <span className="text-sm md:text-base tracking-wide font-medium">
                   UERO Europa Cup
                 </span>
@@ -161,7 +161,7 @@ const LiveMatch = () => {
                 </div>
               </div>
             </div>
-            <div className=" rounded-b-lg  flex  flex-col dark:bg-[#FF400A] dark:text-[#23050a] font-medium bg-orange-700  ">
+            <div className=" rounded-b-lg  flex  flex-col dark:bg-[#FF400A] dark:text-[#23050a] font-medium bg-orange-700    shadow-sm  shadow-orange-500">
               <NavLink to="/" className="  text-center py-2">
                 <span className="hover:underline">See More Details</span>
               </NavLink>
