@@ -161,7 +161,7 @@ const LiveMatch = () => {
                 </div>
               </div>
             </div>
-            <div className=" rounded-b-lg  flex  flex-col  dark:bg-orange-500 dark:text-orange-950 font-medium bg-orange-700    shadow-sm  md:shadow-orange-500">
+            <div className=" rounded-b-lg  flex  flex-col  dark:bg-orange-500 dark:text-orange-950 font-medium bg-orange-700    shadow-sm  shadow-orange-500">
               <NavLink to="/" className="  text-center py-2">
                 <span className="hover:underline">See More Details</span>
               </NavLink>
