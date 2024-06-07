@@ -3,6 +3,7 @@ const getUserDetailsFromToken = require('../helpers/getUserDetailsfromToken');
 async function userDetails(req, res) {
     try {
         const token = req.cookies && req.cookies.Token ? req.cookies.Token : "";
+        
         if (!token) {
             return res.status(401).json({
                 message: "Token not found in cookies",
