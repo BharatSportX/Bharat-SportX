@@ -4,6 +4,7 @@ const registerUser=require('../controller/registerUser')
 const checkEmail=require('../controller/CheckEmail')
 const checkPassword=require('../controller/checkPassword')
 const userDetails=require('../controller/userDetails')
+const updateUser=require('../controller/updateUserDetails')
 const logout=require('../controller/Logout')
 
 //user create (register user)
@@ -14,6 +15,8 @@ router.post('/check-email',checkEmail)
 router.post('/password',checkPassword)
 //login user details
 router.get('/user-detail',userDetails)
+//update user details
+router.post('/update-user',updateUser)
 //logout
 router.post('/logout',logout)
 module.exports=router
