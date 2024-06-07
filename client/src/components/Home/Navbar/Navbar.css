@@ -105,7 +105,8 @@
 }
 
 .paste-button:hover .dropdown-content {
-  display: block;
+  display:flex;
+  width:max-content;
 }
 .animate-paste-arrow {
   display: inline-block;

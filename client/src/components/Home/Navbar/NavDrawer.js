@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import {NavLink} from "react-router-dom";
 const NavDrawer = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -63,7 +63,7 @@ const NavDrawer = () => {
           </h5>
         </div>
         <div className="grid grid-cols-3 gap-4 p-4 xl:grid-cols-4">
-          <div className="p-4 rounded-lg cursor-pointer bg-gray-100 hover:bg-gray-200 dark:hover:bg-opacity-15 dark:bg-gray-800">
+          <NavLink className="p-4 rounded-lg cursor-pointer bg-gray-100 hover:bg-gray-200 dark:hover:bg-opacity-15 dark:bg-gray-800" to="/">
             <div className="flex justify-center items-center p-2 mx-auto mb-2 bg-gray-300 dark:bg-gray-700 rounded-full w-[48px] h-[48px] max-w-[48px] max-h-[48px]">
               <svg
                 viewBox="0 0 640 512"
@@ -77,8 +77,8 @@ const NavDrawer = () => {
             <div className="font-medium text-center text-black dark:text-gray-400">
               Premium
             </div>
-          </div>
-          <div className="p-4 rounded-lg cursor-pointer bg-gray-100 hover:bg-gray-200 dark:hover:bg-opacity-15 dark:bg-gray-800">
+          </NavLink>
+          <NavLink className="p-4 rounded-lg cursor-pointer bg-gray-100 hover:bg-gray-200 dark:hover:bg-opacity-15 dark:bg-gray-800" to="/">
             <div className="flex justify-center items-center p-2 mx-auto mb-2 bg-gray-300 dark:bg-gray-700 rounded-full w-[48px] h-[48px] max-w-[48px] max-h-[48px]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -95,8 +95,8 @@ const NavDrawer = () => {
             <div className="font-medium text-center text-black dark:text-gray-400">
               Top News
             </div>
-          </div>
-          <div className="p-4 rounded-lg cursor-pointer bg-gray-100 hover:bg-gray-200 dark:hover:bg-opacity-15 dark:bg-gray-800">
+          </NavLink>
+          <NavLink className="p-4 rounded-lg cursor-pointer bg-gray-100 hover:bg-gray-200 dark:hover:bg-opacity-15 dark:bg-gray-800" to="/">
             <div className="flex justify-center items-center p-2 mx-auto mb-2 bg-gray-300 dark:bg-gray-700 rounded-full w-[48px] h-[48px] max-w-[48px] max-h-[48px]">
               <svg
                 className="inline size-8 text-black dark:text-white"
@@ -125,8 +125,8 @@ const NavDrawer = () => {
             <div className="font-medium text-center text-black dark:text-gray-400">
               Match Predictor
             </div>
-          </div>
-          <div className="p-4 rounded-lg cursor-pointer bg-gray-100 hover:bg-gray-200 dark:hover:bg-opacity-15 dark:bg-gray-800">
+          </NavLink>
+          <NavLink className="p-4 rounded-lg cursor-pointer bg-gray-100 hover:bg-gray-200 dark:hover:bg-opacity-15 dark:bg-gray-800" to="/">
             <div className="flex justify-center items-center p-2 mx-auto mb-2 bg-gray-300 dark:bg-gray-700 rounded-full w-[48px] h-[48px] max-w-[48px] max-h-[48px]">
               <svg
                 className="inline size-7 text-black dark:text-white"
@@ -142,8 +142,8 @@ const NavDrawer = () => {
             <div className="font-medium text-center text-black dark:text-gray-400">
               Settings
             </div>
-          </div>
-          <div className="p-4 rounded-lg cursor-pointer bg-gray-100 hover:bg-gray-200 dark:hover:bg-opacity-15 dark:bg-gray-800">
+          </NavLink>
+          <NavLink className="p-4 rounded-lg cursor-pointer bg-gray-100 hover:bg-gray-200 dark:hover:bg-opacity-15 dark:bg-gray-800" to="/">
             <div className="flex justify-center items-center p-2 mx-auto mb-2 bg-gray-300 dark:bg-gray-700 rounded-full w-[48px] h-[48px] max-w-[48px] max-h-[48px]">
               <svg
                 className="inline size-6 text-black dark:text-white"
@@ -158,7 +158,7 @@ const NavDrawer = () => {
             <div className="font-medium text-center text-black dark:text-gray-400">
               Saved Blogs
             </div>
-          </div>
+          </NavLink>
         </div>
         <div className="p-4  ">
           <h5 className="inline-flex mb-2 items-center text-base text-gray-600 dark:text-white font-medium">

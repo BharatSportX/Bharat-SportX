@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import ProgressStep from "./ProgressStep";
+import "./LiveMatch.css";
 const LiveMatch = () => {
   const [pin, setPin] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -31,11 +32,11 @@ const LiveMatch = () => {
             <div className="flex pb-3 p-4 md:pb-5  bg-[#FF7D29]  dark:bg-orange-500 dark:text-orange-950  rounded-t-lg justify-between items-center text-xs md:mb-0 mb-2  shadow-sm  shadow-orange-700">
               <div className=" flex justify-center items-center space-x-2">
                 {/* <span className=" hover:border-2 hover:border-white p-[0.8px] rounded-full"> */}
-                  <img
-                    className="size-7  rounded-full float-left  cursor-pointer"
-                    src="https://thumbs.dreamstime.com/b/uefa-europa-conference-league-logo-vector-illustrated-official-210043040.jpg"
-                    alt="logo"
-                  />
+                <img
+                  className="size-7  rounded-full float-left  cursor-pointer"
+                  src="https://thumbs.dreamstime.com/b/uefa-europa-conference-league-logo-vector-illustrated-official-210043040.jpg"
+                  alt="logo"
+                />
                 {/* </span> */}
                 <span className=" text-base tracking-wide font-medium">
                   UERO Europa Cup
@@ -63,42 +64,125 @@ const LiveMatch = () => {
                     </svg>
                   )}
                 </button>
-                <button
-                  onClick={(e) => {
-                    toggleDropdown(e);
-                  }}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="size-[18px] md:size-5"
-                    fill="currentColor"
-                    viewBox="0 0 16 16"
-                  >
-                    <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0" />
-                  </svg>
-                </button>
-                {dropdownOpen && (
-                  <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-20">
-                    <Link
-                      href="#"
-                      className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-                    >
-                      AI Predicton
-                    </Link>
-                    <Link
-                      href="#"
-                      className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-                    >
-                      Set Reminder
-                    </Link>
-                    <Link
-                      href="#"
-                      className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-                    >
-                      Option 3
-                    </Link>
+
+                <label className="popup">
+                  <input type="checkbox" />
+                  <div className="burger size-[18px] md:size-5 " tabIndex="0">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                   </div>
-                )}
+                  <nav className="popup-window">
+                    <legend>Actions</legend>
+                    <ul>
+                      <li>
+                        <button className="">
+                          <svg
+                            strokeLinejoin="round"
+                            strokeLinecap="round"
+                            strokeWidth="2"
+                            stroke="currentColor"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            height="20"
+                            width="20"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle r="4" cy="7" cx="9"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                          </svg>
+                          <span>Colloborators</span>
+                        </button>
+                      </li>
+                      <li>
+                        <button>
+                          <svg
+                            strokeLinejoin="round"
+                            strokeLinecap="round"
+                            strokeWidth="2"
+                            stroke="currentColor"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            height="14"
+                            width="14"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                          </svg>
+                          <span>Magic Link</span>
+                        </button>
+                      </li>
+                      <hr />
+                      <li>
+                        <button>
+                          <svg
+                            strokeLinejoin="round"
+                            strokeLinecap="round"
+                            strokeWidth="2"
+                            stroke="currentColor"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            height="14"
+                            width="14"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect
+                              ry="2"
+                              rx="2"
+                              height="13"
+                              width="13"
+                              y="9"
+                              x="9"
+                            ></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                          </svg>
+                          <span>Clone</span>
+                        </button>
+                      </li>
+                      <li>
+                        <button>
+                          <svg
+                            strokeLinejoin="round"
+                            strokeLinecap="round"
+                            strokeWidth="2"
+                            stroke="currentColor"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            height="14"
+                            width="14"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <polygon points="16 3 21 8 8 21 3 21 3 16 16 3"></polygon>
+                          </svg>
+                          <span>Edit</span>
+                        </button>
+                      </li>
+                      <hr />
+                      <li>
+                        <button>
+                          <svg
+                            strokeLinejoin="round"
+                            strokeLinecap="round"
+                            strokeWidth="2"
+                            stroke="currentColor"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            height="14"
+                            width="14"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <line y2="18" x2="6" y1="6" x1="18"></line>
+                            <line y2="18" x2="18" y1="6" x1="6"></line>
+                          </svg>
+                          <span>Delete</span>
+                        </button>
+                      </li>
+                    </ul>
+                  </nav>
+                </label>
               </div>
             </div>
             {/* <div className=" md:absolute md:bottom-0 md:left-0 md:right-0 md:rounded-b-lg hidden md:flex md:mx-5 md:flex-col md:text-[#220000] font-medium md:bg-orange-700 "> */}
