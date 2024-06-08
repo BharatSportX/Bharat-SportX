@@ -249,7 +249,7 @@ const Navbar = () => {
                     </div>
                     <div className="grid grid-cols-3 gap-4 p-4 xl:grid-cols-4">
                       <NavLink
-                       className="p-4 rounded-lg cursor-pointer bg-gray-100 hover:bg-gray-200 dark:hover:bg-opacity-15 dark:bg-gray-800" to="/">
+                       className="p-4 rounded-lg cursor-pointer bg-gray-100 hover:bg-gray-200 dark:hover:bg-opacity-15  dark:bg-gray-800 " to="/">
                         <div className="flex justify-center items-center p-2 mx-auto mb-2 bg-gray-300 dark:bg-gray-700 rounded-full w-[48px] h-[48px] max-w-[48px] max-h-[48px]">
                           <svg
                             viewBox="0 0 640 512"
@@ -265,7 +265,7 @@ const Navbar = () => {
                         </div>
                       </NavLink>
                       <NavLink
-                       className="p-4 rounded-lg cursor-pointer bg-gray-100 hover:bg-gray-200 dark:hover:bg-opacity-15 dark:bg-gray-800" to="/">
+                       className="p-4 rounded-lg cursor-pointer bg-gray-100 hover:bg-gray-200 dark:hover:bg-opacity-15  dark:bg-gray-800 " to="/">
                         <div className="flex justify-center items-center p-2 mx-auto mb-2 bg-gray-300 dark:bg-gray-700 rounded-full w-[48px] h-[48px] max-w-[48px] max-h-[48px]">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -284,7 +284,7 @@ const Navbar = () => {
                         </div>
                       </NavLink>
                       <NavLink
-                       className="p-4 rounded-lg cursor-pointer bg-gray-100 hover:bg-gray-200 dark:hover:bg-opacity-15 dark:bg-gray-800" to="/">
+                       className="p-4 rounded-lg cursor-pointer bg-gray-100 hover:bg-gray-200 dark:hover:bg-opacity-15  dark:bg-gray-800 " to="/">
                         <div className="flex justify-center items-center p-2 mx-auto mb-2 bg-gray-300 dark:bg-gray-700 rounded-full w-[48px] h-[48px] max-w-[48px] max-h-[48px]">
                           <svg
                             className="inline size-8 text-black dark:text-white"
@@ -315,7 +315,7 @@ const Navbar = () => {
                         </div>
                       </NavLink>
                       <NavLink
-                       className="p-4 rounded-lg cursor-pointer bg-gray-100 hover:bg-gray-200 dark:hover:bg-opacity-15 dark:bg-gray-800" to="/">
+                       className="p-4 rounded-lg cursor-pointer bg-gray-100 hover:bg-gray-200 dark:hover:bg-opacity-15  dark:bg-gray-800 " to="/">
                         <div className="flex justify-center items-center p-2 mx-auto mb-2 bg-gray-300 dark:bg-gray-700 rounded-full w-[48px] h-[48px] max-w-[48px] max-h-[48px]">
                           <svg
                             className="inline size-7 text-black dark:text-white"
@@ -333,7 +333,7 @@ const Navbar = () => {
                         </div>
                       </NavLink>
                       <NavLink
-                       className="p-4 rounded-lg cursor-pointer bg-gray-100 hover:bg-gray-200 dark:hover:bg-opacity-15 dark:bg-gray-800" to="/">
+                       className="p-4 rounded-lg cursor-pointer bg-gray-100 hover:bg-gray-200 dark:hover:bg-opacity-15  dark:bg-gray-800 " to="/">
                         <div className="flex justify-center items-center p-2 mx-auto mb-2 bg-gray-300 dark:bg-gray-700 rounded-full w-[48px] h-[48px] max-w-[48px] max-h-[48px]">
                           <svg
                             className="inline size-6 text-black dark:text-white"
