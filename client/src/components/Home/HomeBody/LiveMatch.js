@@ -15,13 +15,12 @@ const LiveMatch = () => {
         <section className="md:mx-5 ">
           {/* <div className=" bg-[#1e2026]   md:h-[25.3rem] p-4 md:p-0    text-white  rounded-lg  mx-auto "> */}
           <div
-            className="   h-auto p-0    text-white  rounded-lg  mx-auto "
+            className=" bg-custom-radial-gradient dark:match h-auto p-0    text-white  rounded-lg  mx-auto "
             style={{
-              backgroundImage:
-                "radial-gradient(circle at 16% 83%, rgba(148, 148, 148,0.06) 0%, rgba(148, 148, 148,0.06) 50%,rgba(63, 63, 63,0.06) 50%, rgba(63, 63, 63,0.06) 100%),radial-gradient(circle at 68% 87%, rgba(66, 66, 66,0.06) 0%, rgba(66, 66, 66,0.06) 50%,rgba(105, 105, 105,0.06) 50%, rgba(105, 105, 105,0.06) 100%),radial-gradient(circle at 38% 50%, rgba(123, 123, 123,0.06) 0%, rgba(123, 123, 123,0.06) 50%,rgba(172, 172, 172,0.06) 50%, rgba(172, 172, 172,0.06) 100%),linear-gradient(90deg, rgb(24,24,24),rgb(24,24,24))",
+              // background:'black'
             }}
           >
-            <div className="flex pb-3 p-4 md:pb-5  bg-[#FF7D29]  dark:bg-orange-500 dark:text-orange-950  rounded-t-lg justify-between items-center text-xs md:mb-0 mb-2  shadow-sm  shadow-orange-700">
+            <div className="flex pb-3 p-4 md:pb-5 bg-orange-800 text-orange-300 shadow-orange-950  dark:bg-orange-500 dark:text-orange-950  rounded-t-lg justify-between items-center text-xs md:mb-0 mb-2  shadow-sm  dark:shadow-orange-700">
               <div className=" flex justify-center items-center space-x-2">
                 {/* <span className=" hover:border-2 hover:border-white p-[0.8px] rounded-full"> */}
                 <img
@@ -185,9 +184,9 @@ const LiveMatch = () => {
                     className=""
                   />
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-red-500">1 - 2</div>
+                    <div className="text-2xl text-black font-bold dark:text-red-500">1 - 2</div>
 
-                    <div className="text-xs md:text-zinc-400 text-red-500 font-normal">
+                    <div className="text-xs text-black dark:md:text-zinc-400 dark:text-red-500 font-normal">
                       ET-116:14
                     </div>
                   </div>
@@ -205,12 +204,12 @@ const LiveMatch = () => {
                 </div>
                 <div className="flex justify-between text-sm">
                   <div className="text-center">
-                    <div>Sevilla U19</div>
-                    <div className="text-zinc-400">B. Sow 36'</div>
+                    <div className="dark:text-white text-black">Sevilla U19</div>
+                    <div className="text-black dark:text-zinc-400">B. Sow 36'</div>
                   </div>
                   <div className="text-center">
-                    <div>Real Betis</div>
-                    <div className="text-zinc-400">
+                    <div className="dark:text-white text-black">Real Betis</div>
+                    <div className="text-black dark:text-zinc-400">
                       <div>Goal 96'</div>
                       <div>Pablo García 48'</div>
                     </div>
@@ -218,23 +217,23 @@ const LiveMatch = () => {
                 </div>
               </section>
               <div className=" ">
-                <hr className="  border-slate-600  mx-2 w-auto md:hidden mb-4" />
+                <hr className="  dark:border-slate-600  mx-2 w-auto md:hidden mb-4" />
                 <ProgressStep />
               </div>
               <div className="hidden mt-6 md:flex md:flex-col  md:justify-center md:items-center text-center text-wrap ">
-                <hr className="  border-slate-600  w-[26rem] " />
+                <hr className="  dark:border-slate-600  w-[26rem] " />
                 <div className="py-2 pt-3">
                   {/* here just only few words are taken otherwise responsive ness break so use lenghth property else ('...') which leads to seemore */}
-                  <span className=" text-sm px-2  text-gray-300">
+                  <span className="text-black text-sm px-2  dark:text-gray-300">
                     Sevilla nedds Two more goal to Win. CRO 13.9. PPR 89
                   </span>
-                  <p className=" text-xs text-gray-400 py-1.5">
+                  <p className="text-black text-xs dark:text-gray-400 py-1.5">
                     Play-Off . UERO Europa 78 of 20
                   </p>
                 </div>
               </div>
             </div>
-            <div className=" rounded-b-lg  flex  flex-col  dark:bg-orange-500 dark:text-orange-950 font-medium bg-orange-700    shadow-sm  shadow-orange-500">
+            <div className=" rounded-b-lg  flex  flex-col bg-orange-800 text-orange-300 shadow-orange-950  dark:bg-orange-500 dark:text-orange-950 font-medium   shadow-sm  dark:shadow-orange-500">
               <NavLink to="/" className="  text-center py-2">
                 <span className="hover:underline">See More Details</span>
               </NavLink>
