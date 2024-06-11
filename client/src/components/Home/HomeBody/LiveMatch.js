@@ -198,17 +198,17 @@ const LiveMatch = () => {
                   />
                 </div>
                 <div className=" ">
-                  <span className="text-base text-center flex justify-center dark:text-green-400  text-green-800 font-medium">
+                  <span className="text-base text-center btn-shine dark:live-dark-shine live-light-shine flex justify-center dark:text-green-400  text-green-800 font-medium">
                     Live
                   </span>
                 </div>
                 <div className="flex justify-between text-sm">
                   <div className="text-center">
-                    <div className="dark:text-white text-black">Sevilla U19</div>
+                    <div className="dark:text-white font-medium text-black">Sevilla U19</div>
                     <div className="text-zinc-800 dark:text-zinc-400">B. Sow 36'</div>
                   </div>
                   <div className="text-center">
-                    <div className="dark:text-white text-black">Real Betis</div>
+                    <div className="dark:text-white font-medium text-black">Real Betis</div>
                     <div className="text-zinc-800 dark:text-zinc-400">
                       <div>Goal 96'</div>
                       <div>Pablo García 48'</div>
