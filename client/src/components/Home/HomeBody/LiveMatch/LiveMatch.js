@@ -3,11 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import ProgressStep from "./ProgressStep";
 import "./LiveMatch.css";
 const LiveMatch = () => {
-  const [pin, setPin] = useState(false);
-
-  const togglePin = () => {
-    setPin(!pin);
-  };
+  
 
   return (
     <>

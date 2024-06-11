@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react"
 import PrevNext from "./PrevNext";
-import LiveMatch from "./LiveMatch";
+
 import Blogs from "./Blogs";
+import LiveMatch from "./LiveMatch/LiveMatch";
 
 const HomeBody = () => {
   const [activeButtons, setActiveButtons] = useState([false, true, true]);
@@ -79,7 +80,7 @@ const HomeBody = () => {
         <PrevNext />
         <div className=" no-scrollbar overflow-x-auto">
           <div className=" container inline-flex  space-x-6 whitespace-nowrap ">
-            <LiveMatch />
+            <LiveMatch/>
            
           </div>
         </div>
