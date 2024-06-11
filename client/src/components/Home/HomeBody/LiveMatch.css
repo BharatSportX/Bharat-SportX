@@ -144,7 +144,7 @@
   background: none;
   display: flex;
   align-items: center;
-  /* color: #333; */
+  color: #333; 
   font-size: var(--nav-button-font-size);
   padding: var(--nav-button-padding-y) var(--nav-button-padding-x);
   white-space: nowrap;
