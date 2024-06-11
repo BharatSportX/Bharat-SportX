@@ -266,11 +266,11 @@
   /* transform: translate(-50%, -50%); */
   /* padding: 12px 48px; */
   /* color: #fff; */
-  /* background: linear-gradient(to right, #149d49 20%, #fff 10%, #05e03b 5%); */
+  background: linear-gradient(to right, #033215 20%, #fff 10%, #0a6120 5%);
   background-position: 0;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: shine 2s infinite linear;
+  animation: shine_btn 2s infinite linear;
   animation-fill-mode: forwards;
   -webkit-text-size-adjust: none;
   font-weight: 600;
@@ -279,7 +279,7 @@
   white-space: nowrap;
   font-family: "Poppins", sans-serif;
 }
-@-moz-keyframes shine {
+@-moz-keyframes shine_btn {
   0% {
     background-position: 0;
   }
@@ -290,7 +290,7 @@
     background-position: 180px;
   }
 }
-@-webkit-keyframes shine {
+@-webkit-keyframes shine_btn {
   0% {
     background-position: 0;
   }
@@ -301,7 +301,7 @@
     background-position: 180px;
   }
 }
-@-o-keyframes shine {
+@-o-keyframes shine_btn {
   0% {
     background-position: 0;
   }
@@ -312,7 +312,7 @@
     background-position: 180px;
   }
 }
-@keyframes shine {
+@keyframes shine_btn {
   0% {
     background-position: 0;
   }
