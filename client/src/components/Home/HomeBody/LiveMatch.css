@@ -5,7 +5,7 @@
   --burger-line-height: 0.125em;
   --burger-offset: 0.625em;
   --burger-bg: rgba(0, 0, 0, 0.15);
-  --burger-color: #333;
+  --burger-color:currentColor;
   --burger-line-border-radius: 0.1875em;
   --burger-diameter: 2.125em;
   --burger-btn-border-radius: calc(var(--burger-diameter) / 2);
@@ -83,7 +83,7 @@
 .burger span {
   height: var(--burger-line-height);
   width: var(--burger-line-width);
-  background: var(--burger-color);
+  /* background:#333; */
   border-radius: var(--burger-line-border-radius);
   position: absolute;
   transition: var(--burger-line-transition);
@@ -144,7 +144,7 @@
   background: none;
   display: flex;
   align-items: center;
-  color: var(--burger-color);
+  /* color: #333; */
   font-size: var(--nav-button-font-size);
   padding: var(--nav-button-padding-y) var(--nav-button-padding-x);
   white-space: nowrap;
@@ -237,19 +237,19 @@
   justify-content: center;
   cursor: pointer;
   border-radius: 50%;
-  color: #333;
+  /* color: #333; */
   transition: all 0.1s ease-in-out;
 }
 
 .container_box input:checked ~ .pin {
-  fill: rgb(64, 14, 14);
+  fill:currentColor;
   stroke: white;
 }
 .container_box input:checked ~ .pin line {
-  stroke: rgb(64, 14, 14);
+  stroke:currentColor;
 }
 .container_box input:checked ~ .pin path {
-  stroke: rgb(64, 14, 14);
+  stroke:currentColor;
 }
 .container_box:hover {
   background-color: rgba(0, 0, 0, 0.15);

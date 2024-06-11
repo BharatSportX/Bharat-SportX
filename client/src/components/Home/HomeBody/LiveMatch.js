@@ -40,7 +40,7 @@ const LiveMatch = () => {
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 75 100"
-                    className="pin size-4"
+                    className="pin dark:text-[#333] size-4"
                   >
                     <line
                       strokeWidth="12"
@@ -61,9 +61,9 @@ const LiveMatch = () => {
                 <label className="popup">
                   <input type="checkbox" />
                   <div className="burger size-[18px] md:size-5 " tabIndex="0">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <span className="dark:bg-[#333] bg-current "></span>
+                    <span className="dark:bg-[#333] bg-current "></span>
+                    <span className="dark:bg-[#333] bg-current "></span>
                   </div>
                   <nav className="popup-window">
                     <legend>More Details</legend>
@@ -86,7 +86,7 @@ const LiveMatch = () => {
                             <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
                             <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                           </svg>
-                          <span>Voters</span>
+                          <span>Votes</span>
                         </button>
                       </li>
                       <li>
@@ -175,7 +175,7 @@ const LiveMatch = () => {
             </div>
             {/* <div className=" md:absolute md:bottom-0 md:left-0 md:right-0 md:rounded-b-lg hidden md:flex md:mx-5 md:flex-col md:text-[#220000] font-medium md:bg-orange-700 "> */}
 
-            <div className=" border-x border-slate-700 mx-[0.5px] md:ml-0 md:mr-[0.45px]">
+            <div className=" border-x dark:border-slate-700 border-slate-500  mx-[0.5px] md:ml-0 md:mr-[0.45px]">
               <section className="md:pt-10 pb-4 md:px-14 px-4 pt-6">
                 <div className="flex justify-between items-center mb-4">
                   <img
@@ -184,9 +184,9 @@ const LiveMatch = () => {
                     className=""
                   />
                   <div className="text-center">
-                    <div className="text-2xl text-black font-bold dark:text-red-500">1 - 2</div>
+                    <div className="text-2xl  font-bold dark:text-red-500 text-red-700">1 - 2</div>
 
-                    <div className="text-xs text-black dark:md:text-zinc-400 dark:text-red-500 font-normal">
+                    <div className="text-xs  dark:md:text-zinc-400 dark:text-red-500  text-blue-800 font-medium dark:font-medium">
                       ET-116:14
                     </div>
                   </div>
@@ -198,18 +198,18 @@ const LiveMatch = () => {
                   />
                 </div>
                 <div className=" ">
-                  <span className="text-base text-center flex justify-center text-green-400 font-medium">
+                  <span className="text-base text-center flex justify-center dark:text-green-400  text-green-800 font-medium">
                     Live
                   </span>
                 </div>
                 <div className="flex justify-between text-sm">
                   <div className="text-center">
                     <div className="dark:text-white text-black">Sevilla U19</div>
-                    <div className="text-black dark:text-zinc-400">B. Sow 36'</div>
+                    <div className="text-zinc-800 dark:text-zinc-400">B. Sow 36'</div>
                   </div>
                   <div className="text-center">
                     <div className="dark:text-white text-black">Real Betis</div>
-                    <div className="text-black dark:text-zinc-400">
+                    <div className="text-zinc-800 dark:text-zinc-400">
                       <div>Goal 96'</div>
                       <div>Pablo García 48'</div>
                     </div>
@@ -217,7 +217,7 @@ const LiveMatch = () => {
                 </div>
               </section>
               <div className=" ">
-                <hr className="  dark:border-slate-600  mx-2 w-auto md:hidden mb-4" />
+                <hr className="  dark:border-slate-600 border-slate-500  mx-2 w-auto md:hidden mb-4" />
                 <ProgressStep />
               </div>
               <div className="hidden mt-6 md:flex md:flex-col  md:justify-center md:items-center text-center text-wrap ">
