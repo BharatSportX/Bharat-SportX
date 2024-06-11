@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "./Navbar.css";
 import { NavLink, useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -9,6 +9,11 @@ import { FaRegUser } from "react-icons/fa6";
 const Navbar = () => {
   const { isSearchOpen, closeSearch, toggleSearch } = useContext(NavContext);
 
+  const [dropdown, setDropdown] = useState(false);
+
+  const toogle_dropdown = () => {
+    setDropdown(!dropdown);
+  };
   const location = useLocation();
   const isFootballmatchActive = () => {
     const footballPaths = [
@@ -249,7 +254,9 @@ const Navbar = () => {
                     </div>
                     <div className="grid grid-cols-3 gap-4 p-4 xl:grid-cols-4">
                       <NavLink
-                       className="p-4 rounded-lg cursor-pointer bg-gray-100 hover:bg-gray-200 dark:hover:bg-opacity-15  dark:bg-gray-800 " to="/">
+                        className="p-4 rounded-lg cursor-pointer bg-gray-100 hover:bg-gray-200 dark:hover:bg-opacity-15  dark:bg-gray-800 "
+                        to="/"
+                      >
                         <div className="flex justify-center items-center p-2 mx-auto mb-2 bg-gray-300 dark:bg-gray-700 rounded-full w-[48px] h-[48px] max-w-[48px] max-h-[48px]">
                           <svg
                             viewBox="0 0 640 512"
@@ -265,7 +272,9 @@ const Navbar = () => {
                         </div>
                       </NavLink>
                       <NavLink
-                       className="p-4 rounded-lg cursor-pointer bg-gray-100 hover:bg-gray-200 dark:hover:bg-opacity-15  dark:bg-gray-800 " to="/">
+                        className="p-4 rounded-lg cursor-pointer bg-gray-100 hover:bg-gray-200 dark:hover:bg-opacity-15  dark:bg-gray-800 "
+                        to="/"
+                      >
                         <div className="flex justify-center items-center p-2 mx-auto mb-2 bg-gray-300 dark:bg-gray-700 rounded-full w-[48px] h-[48px] max-w-[48px] max-h-[48px]">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -284,7 +293,9 @@ const Navbar = () => {
                         </div>
                       </NavLink>
                       <NavLink
-                       className="p-4 rounded-lg cursor-pointer bg-gray-100 hover:bg-gray-200 dark:hover:bg-opacity-15  dark:bg-gray-800 " to="/">
+                        className="p-4 rounded-lg cursor-pointer bg-gray-100 hover:bg-gray-200 dark:hover:bg-opacity-15  dark:bg-gray-800 "
+                        to="/"
+                      >
                         <div className="flex justify-center items-center p-2 mx-auto mb-2 bg-gray-300 dark:bg-gray-700 rounded-full w-[48px] h-[48px] max-w-[48px] max-h-[48px]">
                           <svg
                             className="inline size-8 text-black dark:text-white"
@@ -315,7 +326,9 @@ const Navbar = () => {
                         </div>
                       </NavLink>
                       <NavLink
-                       className="p-4 rounded-lg cursor-pointer bg-gray-100 hover:bg-gray-200 dark:hover:bg-opacity-15  dark:bg-gray-800 " to="/">
+                        className="p-4 rounded-lg cursor-pointer bg-gray-100 hover:bg-gray-200 dark:hover:bg-opacity-15  dark:bg-gray-800 "
+                        to="/"
+                      >
                         <div className="flex justify-center items-center p-2 mx-auto mb-2 bg-gray-300 dark:bg-gray-700 rounded-full w-[48px] h-[48px] max-w-[48px] max-h-[48px]">
                           <svg
                             className="inline size-7 text-black dark:text-white"
@@ -333,7 +346,9 @@ const Navbar = () => {
                         </div>
                       </NavLink>
                       <NavLink
-                       className="p-4 rounded-lg cursor-pointer bg-gray-100 hover:bg-gray-200 dark:hover:bg-opacity-15  dark:bg-gray-800 " to="/">
+                        className="p-4 rounded-lg cursor-pointer bg-gray-100 hover:bg-gray-200 dark:hover:bg-opacity-15  dark:bg-gray-800 "
+                        to="/"
+                      >
                         <div className="flex justify-center items-center p-2 mx-auto mb-2 bg-gray-300 dark:bg-gray-700 rounded-full w-[48px] h-[48px] max-w-[48px] max-h-[48px]">
                           <svg
                             className="inline size-6 text-black dark:text-white"
@@ -489,8 +504,9 @@ const Navbar = () => {
             )}
             {/* User profile */}
             <button
-              className="hover:rounded-full size-8 hover:border dark:hover:border-gray-700 dark:hover:focus:ring-slate-900 hover:border-gray-300 hover:focus:ring-slate-500 hover:focus:ring-4 items-center flex justify-center hover:bg-slate-200 hover:bg-opacity-5 border-2 border-black dark:border-white rounded-full text-black dark:text-white"
+              className="hover:rounded-full size-8 hover:border dark:hover:border-gray-700 dark:hover:focus:ring-slate-900 hover:border-gray-300 hover:focus:ring-slate-500 hover:focus:ring-4 items-center flex justify-center hover:bg-slate-200 hover:bg-opacity-5 border-2 border-black dark:border-white rounded-full text-black dark:text-white relative"
               title="Search"
+              onClick={toogle_dropdown}
             >
               {/* <img
                 className="h-8 w-8 rounded-full"
@@ -498,6 +514,55 @@ const Navbar = () => {
                 alt="User"
               /> */}
               <FaRegUser />
+
+              {dropdown && (
+                <div
+                  id="userDropdown"
+                  className="z-10  absolute top-10 -right-1  bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
+                >
+                  <div className=" py-3 text-sm text-gray-900 dark:text-white">
+                    <div>Bonnie Green</div>
+                    <div className="font-medium truncate">name@flowbite.com</div>
+                  </div>
+                  <ul
+                    className="py-2 text-sm space-y-1 text-gray-700 dark:text-gray-200"
+                    aria-labelledby="avatarButton"
+                  >
+                    <li>
+                      <NavLink
+                        to="/"
+                        className="block  py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >
+                        Dashboard
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
+                        to="/"
+                        className="block  py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >
+                        Settings
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
+                        to="/"
+                        className="block  py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >
+                        Earnings
+                      </NavLink>
+                    </li>
+                  </ul>
+                  <div className="py-1">
+                    <NavLink
+                      to="/"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                    >
+                      Sign out
+                    </NavLink>
+                  </div>
+                </div>
+              )}
             </button>
           </div>
         </div>
