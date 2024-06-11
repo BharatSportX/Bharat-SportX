@@ -51,7 +51,7 @@ module.exports = {
       });
       addUtilities({
         ".live-light-shine":{
-          background: "linear-gradient(to right, #033215 20%, #fff 10%, #11491f 5%)",
+          background: "linear-gradient(to right, #033215 20%, #fff 10%, #0a6120 5%)",
         },
         ".live-dark-shine":{
           background: "linear-gradient(to right, #149d49 20%, #fff 10%, #05e03b 5%)",
