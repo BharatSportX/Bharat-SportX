@@ -200,9 +200,10 @@ const CupPageDetails = () => {
                             <div className="inline-flex">
                                 <SeasonDropDownlist onSelectSeason={handleSelectSeason} seasons={seasons} selectedYear={selectedYear} />
                             </div>
-                            <div className='flex justify-between items-center mb-4'>
+                             {/* Standings card added soon */}
+                            {/* <div className='flex justify-between items-center mb-4'>
                                 <Standings selectedYear={selectedYear} leagueId={id} />
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
