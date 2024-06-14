@@ -16,5 +16,6 @@ adding "w-[19rem] mr-5" for last one(card) in LiveMatch.js
 ---->
 
 
-----set font style for match
+----set font style for match22
 
+---->{elapsed} do the time(football minutes) in status section
