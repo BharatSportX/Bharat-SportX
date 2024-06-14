@@ -6,7 +6,7 @@ const ProgressStep = () => {
       <ol className="flex flex-row justify-center items-center w-full max-w-md">
         <li className="flex w-full items-center text-green-200  dark:dark:text-green-200  after:content-[''] after:w-full after:h-1 after:border-b after:border-green-900 after:border-4 after:inline-block dark:after:border-[#46c252]">
           <span className="flex items-center justify-center lg:w-5 lg:h-5 w-4 h-4  rounded-full   shrink-0">
-            <span className="text-2xs font-bold text-green-950 border-2 rounded-full dark:border-green-300 border-green-900 dark:bg-[#46c252]  bg-green-400 p-0.5 ">ST</span>
+            <span className="text-2xs font-bold text-green-950 border-2 rounded-full dark:border-green-900 border-green-900 dark:bg-[#46c252]  bg-green-400 p-0.5 ">ST</span>
           </span>
         </li>
             
