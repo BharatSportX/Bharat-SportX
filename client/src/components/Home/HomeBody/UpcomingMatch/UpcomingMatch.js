@@ -6,7 +6,7 @@ import ProgressStep from "../LiveMatch/ProgressStep";
 const UpcomingMatch = () => {
   return (
     <>
-      <div className="flex-none md:relative    w-full  md:w-[30rem] my-4 md:my-6 ">
+      <div className="flex-none relative    w-full  md:w-[30rem] my-4 md:my-6 ">
         <section className="md:mx-5 ">
           {/* <div className=" bg-[#1e2026]   md:h-[25.3rem] p-4 md:p-0    text-white  rounded-lg  mx-auto "> */}
           <div
@@ -194,7 +194,7 @@ const UpcomingMatch = () => {
                   />
                 </div>
                 <div className=" ">
-                  <span className="text-base text-center flex justify-center dark:text-stone-400  text-stone-700 font-medium">
+                  <span className="text-base text-center  absolute top-[45%] left-[40%] md:left-[44%] flex justify-center dark:text-stone-400  text-stone-700 font-medium">
                     9.30 PM
                   </span>
                 </div>
@@ -243,6 +243,7 @@ const UpcomingMatch = () => {
           </div>
         </section>
       </div>
+      
     </>
   );
 };

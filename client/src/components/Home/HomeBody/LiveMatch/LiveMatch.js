@@ -3,18 +3,18 @@ import { Link, NavLink } from "react-router-dom";
 import ProgressStep from "./ProgressStep";
 import "./LiveMatch.css";
 const LiveMatch = () => {
-  
-
   return (
     <>
-      <div className="flex-none md:relative    w-full  md:w-[30rem] my-4 md:my-6 ">
+      <div className="flex-none relative    w-full  md:w-[30rem] my-4 md:my-6 ">
         <section className="md:mx-5 ">
           {/* <div className=" bg-[#1e2026]   md:h-[25.3rem] p-4 md:p-0    text-white  rounded-lg  mx-auto "> */}
           <div
             className=" bg-custom-radial-gradient dark:match h-auto p-0    text-white  rounded-lg  mx-auto "
-            style={{
-              // background:'black'
-            }}
+            style={
+              {
+                // background:'black'
+              }
+            }
           >
             <div className="flex pb-3 p-4 md:pb-5 bg-orange-800 text-orange-300 shadow-orange-950  dark:bg-orange-500 dark:text-orange-950  rounded-t-lg justify-between items-center text-xs md:mb-0 mb-2  shadow-sm  dark:shadow-orange-700">
               <div className=" flex justify-center items-center space-x-2">
@@ -180,7 +180,9 @@ const LiveMatch = () => {
                     className=""
                   />
                   <div className="text-center">
-                    <div className="text-2xl  font-bold dark:text-red-500 text-red-700">1 - 2</div>
+                    <div className="text-2xl  font-bold dark:text-red-500 text-red-700">
+                      1 - 2
+                    </div>
 
                     <div className="text-xs  dark:md:text-zinc-400 dark:text-red-500  text-blue-800 font-medium dark:font-medium">
                       ET-116:14
@@ -194,17 +196,23 @@ const LiveMatch = () => {
                   />
                 </div>
                 <div className=" ">
-                  <span className="text-base text-center btn-shine dark:live-dark-shine live-light-shine flex justify-center dark:text-green-400  text-green-800 font-medium">
-                    Live
+                  <span className="text-base  absolute top-[45%] left-[45%] md:left-[47%] dark:text-green-400  text-green-800 font-medium">
+                    <span className=" btn-shine dark:live-dark-shine live-light-shine ">Live</span>
                   </span>
                 </div>
                 <div className="flex justify-between text-sm">
                   <div className="text-center">
-                    <div className="dark:text-white font-medium text-black">Sevilla U19</div>
-                    <div className="text-zinc-800 dark:text-zinc-400">B. Sow 36'</div>
+                    <div className="dark:text-white font-medium text-black">
+                      Sevilla U19
+                    </div>
+                    <div className="text-zinc-800 dark:text-zinc-400">
+                      B. Sow 36'
+                    </div>
                   </div>
                   <div className="text-center">
-                    <div className="dark:text-white font-medium text-black">Real Betis</div>
+                    <div className="dark:text-white font-medium text-black">
+                      Real Betis
+                    </div>
                     <div className="text-zinc-800 dark:text-zinc-400">
                       <div>Goal 96'</div>
                       <div>Pablo García 48'</div>
@@ -238,7 +246,7 @@ const LiveMatch = () => {
         </section>
       </div>
      
-      
+     
     </>
   );
 };

@@ -260,66 +260,23 @@
   transform: scale(0.9);
 }
 .btn-shine {
-  /* position: absolute; */
-  /* top: 50%; */
-  /* left: 50%; */
-  /* transform: translate(-50%, -50%); */
-  /* padding: 12px 48px; */
-  /* color: #fff; */
   
-  background-position: 0;
+  background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: shine_btn 2s infinite linear;
-  animation-fill-mode: forwards;
-  -webkit-text-size-adjust: none;
   font-weight: 600;
   font-size: 16px;
   text-decoration: none;
   white-space: nowrap;
   font-family: "Poppins", sans-serif;
 }
-@-moz-keyframes shine_btn {
-  0% {
-    background-position: 0;
-  }
-  60% {
-    background-position: 180px;
-  }
-  100% {
-    background-position: 180px;
-  }
-}
-@-webkit-keyframes shine_btn {
-  0% {
-    background-position: 0;
-  }
-  60% {
-    background-position: 180px;
-  }
-  100% {
-    background-position: 180px;
-  }
-}
-@-o-keyframes shine_btn {
-  0% {
-    background-position: 0;
-  }
-  60% {
-    background-position: 180px;
-  }
-  100% {
-    background-position: 180px;
-  }
-}
+
 @keyframes shine_btn {
   0% {
-    background-position: 0;
-  }
-  60% {
-    background-position: 180px;
+    background-position: 200% center;
   }
   100% {
-    background-position: 180px;
+    background-position: -200% center;
   }
 }
