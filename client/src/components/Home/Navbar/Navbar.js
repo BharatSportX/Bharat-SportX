@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import "./Navbar.css";
 import { NavLink, useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -10,10 +10,35 @@ const Navbar = () => {
   const { isSearchOpen, closeSearch, toggleSearch } = useContext(NavContext);
 
   const [dropdown, setDropdown] = useState(false);
+  const dropdownRef = useRef(null);
+  const backdropRef = useRef(null);
 
-  const toogle_dropdown = () => {
+  const toggleDropdown = () => {
     setDropdown(!dropdown);
   };
+
+  const handleClickOutside = (event) => {
+    if (
+      dropdownRef.current &&
+      !dropdownRef.current.contains(event.target) &&
+      backdropRef.current &&
+      backdropRef.current.contains(event.target)
+    ) {
+      setDropdown(false);
+    }
+  };
+
+  useEffect(() => {
+    if (dropdown) {
+      window.addEventListener("click", handleClickOutside);
+    } else {
+      window.removeEventListener("click", handleClickOutside);
+    }
+    return () => {
+      window.removeEventListener("click", handleClickOutside);
+    };
+  }, [dropdown]);
+
   const location = useLocation();
   const isFootballmatchActive = () => {
     const footballPaths = [
@@ -506,7 +531,7 @@ const Navbar = () => {
             <button
               className="hover:rounded-full size-8 hover:border dark:hover:border-gray-700 dark:hover:focus:ring-slate-900 hover:border-gray-300 hover:focus:ring-slate-500 hover:focus:ring-4 items-center flex justify-center hover:bg-slate-200 hover:bg-opacity-5 border-2 border-black dark:border-white rounded-full text-black dark:text-white relative"
               title="Search"
-              onClick={toogle_dropdown}
+              onClick={toggleDropdown}
             >
               {/* <img
                 className="h-8 w-8 rounded-full"
@@ -516,52 +541,133 @@ const Navbar = () => {
               <FaRegUser />
 
               {dropdown && (
-                <div
-                  id="userDropdown"
-                  className="z-10  absolute top-10 -right-1  bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
-                >
-                  <div className=" py-3 text-sm text-gray-900 dark:text-white">
-                    <div>Bonnie Green</div>
-                    <div className="font-medium truncate">name@flowbite.com</div>
-                  </div>
-                  <ul
-                    className="py-2 text-sm space-y-1 text-gray-700 dark:text-gray-200"
-                    aria-labelledby="avatarButton"
+                <>
+                  <div
+                    ref={backdropRef}
+                    className="fixed inset-0 bg-black opacity-50 z-10"
+                  ></div>
+                  <div
+                    ref={dropdownRef}
+                    id="userDropdown"
+                    className="z-20 absolute top-10 -right-1 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
                   >
-                    <li>
-                      <NavLink
-                        to="/"
-                        className="block  py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                      >
-                        Dashboard
-                      </NavLink>
-                    </li>
-                    <li>
-                      <NavLink
-                        to="/"
-                        className="block  py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                      >
-                        Settings
-                      </NavLink>
-                    </li>
-                    <li>
-                      <NavLink
-                        to="/"
-                        className="block  py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                      >
-                        Earnings
-                      </NavLink>
-                    </li>
-                  </ul>
-                  <div className="py-1">
-                    <NavLink
-                      to="/"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                    <div className="py-3 text-sm text-gray-900 dark:text-white">
+                      <div>Bonnie Green</div>
+                      <div className="font-medium truncate">
+                        name@flowbite.com
+                      </div>
+                    </div>
+                    <ul
+                      className="py-2 text-sm space-y-1 px-6 text-gray-700 dark:text-gray-200"
+                      aria-labelledby="avatarButton"
                     >
-                      Sign out
-                    </NavLink>
+                      <li>
+                        <NavLink
+                          to="/"
+                          className="flex py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="18"
+                            height="18"
+                            fill="currentColor"
+                            className="mr-2"
+                            viewBox="0 0 16 16"
+                          >
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                            <path
+                              fill-rule="evenodd"
+                              d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"
+                            />
+                          </svg>
+                          Profile
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/"
+                          className="flex py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="18"
+                            height="18"
+                            fill="currentColor"
+                            className="mr-2"
+                            viewBox="0 0 16 16"
+                          >
+                            <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.995-14.901a1 1 0 1 0-1.99 0A5 5 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901" />
+                          </svg>
+                          Notification
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/"
+                          className="flex py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="18"
+                            height="18"
+                            fill="currentColor"
+                            className="mr-2"
+                            viewBox="0 0 16 16"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M8.49 10.92C19.412 3.382 11.28-2.387 8 .986 4.719-2.387-3.413 3.382 7.51 10.92l-.234.468a.25.25 0 1 0 .448.224l.04-.08c.009.17.024.315.051.45.068.344.208.622.448 1.102l.013.028c.212.422.182.85.05 1.246-.135.402-.366.751-.534 1.003a.25.25 0 0 0 .416.278l.004-.007c.166-.248.431-.646.588-1.115.16-.479.212-1.051-.076-1.629-.258-.515-.365-.732-.419-1.004a2 2 0 0 1-.037-.289l.008.017a.25.25 0 1 0 .448-.224l-.235-.468ZM6.726 1.269c-1.167-.61-2.8-.142-3.454 1.135-.237.463-.36 1.08-.202 1.85.055.27.467.197.527-.071.285-1.256 1.177-2.462 2.989-2.528.234-.008.348-.278.14-.386"
+                            />
+                          </svg>
+                          Favourite Blogs
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/"
+                          className="flex py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="18"
+                            height="18"
+                            fill="currentColor"
+                            className="mr-2"
+                            viewBox="0 0 16 16"
+                          >
+                            <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z" />
+                          </svg>
+                          Settings
+                        </NavLink>
+                      </li>
+                    </ul>
+                    <div className="py-1">
+                      <NavLink
+                        to="/"
+                        className="flex justify-center text-center  px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          fill="currentColor"
+                          className=" mr-2"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"
+                          />
+                          <path
+                            fill-rule="evenodd"
+                            d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"
+                          />
+                        </svg>
+                        Sign out
+                      </NavLink>
+                    </div>
                   </div>
-                </div>
+                </>
               )}
             </button>
           </div>

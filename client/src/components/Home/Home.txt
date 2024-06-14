@@ -15,3 +15,5 @@ adding "w-[19rem] mr-5" for last one(card) in LiveMatch.js
 
 ---->
 This is my code update this code in such a way . that when i click on live button then livematch.js page open in that particular div,when i click on upcoming livematch.js change into upcoming .js again if i click on recent it changes into recent.js..vice-versa.after live match.js i add <blogs/>. dont effect on it(means if i click on live button livematch.js open on that particular div, blogs should not reload,blog stay as it is to its portion)
+
+----set font style for match
