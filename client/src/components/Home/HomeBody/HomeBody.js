@@ -31,7 +31,7 @@ const HomeBody = () => {
   };
 
   return (
-    <div className="relative top-36">
+    <div className="relative top-36 mb-44 lg:mb-0">
       <div className="m-4 lg:mx-10 lg:mt-5">
         <h1
           className="text-3xl font-semibold"
