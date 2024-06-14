@@ -181,13 +181,10 @@ const UpcomingMatch = () => {
                     className=""
                   />
                   <div className="text-center">
-                    <div className="text-2xl  font-bold dark:text-red-500 text-red-700">
-                      1 - 2
+                    <div className="text-xl  font-medium dark:text-indigo-400 text-indigo-900">
+                      17/06/2024
                     </div>
 
-                    <div className="text-xs  dark:md:text-zinc-400 dark:text-red-500  text-blue-800 font-medium dark:font-medium">
-                      ET-116:14
-                    </div>
                   </div>
 
                   <img
@@ -197,7 +194,7 @@ const UpcomingMatch = () => {
                   />
                 </div>
                 <div className=" ">
-                  <span className="text-base text-center btn-shine dark:live-dark-shine live-light-shine flex justify-center dark:text-green-400  text-green-800 font-medium">
+                  <span className="text-base text-center flex justify-center dark:text-stone-400  text-stone-700 font-medium">
                     9.30 PM
                   </span>
                 </div>

@@ -197,7 +197,7 @@ const RecentMatch = () => {
                   />
                 </div>
                 <div className=" ">
-                  <span className="text-base text-center btn-shine dark:live-dark-shine live-light-shine flex justify-center dark:text-green-400  text-green-800 font-medium">
+                  <span className="text-base text-center flex justify-center dark:text-stone-400  text-stone-700 font-medium">
                     Finished
                   </span>
                 </div>
