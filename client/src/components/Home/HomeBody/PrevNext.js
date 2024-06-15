@@ -27,7 +27,7 @@ const PrevNext = () => {
         <span className="sr-only">Previous</span>
       </button>
       <button
-        className={`carousel-control-next absolute top-1/2 transform -translate-y-1/2 -right-4 dark:bg-gray-800 bg-[#b4beca] dark:text-white  text-black p-2 rounded-md `}
+        className={`carousel-control-next absolute z-40 top-1/2 transform -translate-y-1/2 -right-4 dark:bg-gray-800 bg-[#b4beca] dark:text-white  text-black p-2 rounded-md `}
         onClick={nextSlide}
         // disabled={currentIndex === items.length - 1 }
       >
