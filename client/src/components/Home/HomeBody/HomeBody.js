@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import PrevNext from "./PrevNext";
 import Blogs from "./Blogs";
 import LiveMatch from "./LiveMatch/LiveMatch";
@@ -11,6 +11,9 @@ const HomeBody = () => {
     "bg-[greenyellow] dark:bg-green-900"
   );
   const [currentComponent, setCurrentComponent] = useState("LiveMatch");
+
+  // Create a ref for the container holding the cards
+  const containerRef = useRef(null);
 
   const handleClick = (index, component) => {
     const newActiveButtons = activeButtons.map((isActive, i) =>
@@ -30,6 +33,13 @@ const HomeBody = () => {
     }
   };
 
+  // Use useEffect to scroll to the top when the component changes
+  useEffect(() => {
+    if (containerRef.current) {
+      containerRef.current.scrollLeft = 0;
+    }
+  }, [currentComponent]);
+
   return (
     <div className="relative top-36 mb-44 lg:mb-0">
       <div className="m-4 lg:mx-10 lg:mt-5">
@@ -41,7 +51,6 @@ const HomeBody = () => {
         </h1>
       </div>
       <div className="m-4 lg:mx-10 space-x-2.5 max-370:space-x-1.5 mr-0">
-     
         <button
           className={
             activeButtons[0]
@@ -59,7 +68,6 @@ const HomeBody = () => {
           Live<span className="hidden xl:inline-block ml-2"> Matches</span>
           <span className="">(2)</span>
         </button>
-        
         <button
           className={
             activeButtons[1]
@@ -70,7 +78,6 @@ const HomeBody = () => {
         >
           Recent<span className="hidden xl:inline-block ml-2"> Matches</span>
         </button>
-        
         <button
           className={
             activeButtons[2]
@@ -84,8 +91,8 @@ const HomeBody = () => {
       </div>
       <div className="m-4 md:mx-7 relative z-10">
         <PrevNext />
-        <div className="no-scrollbar  overflow-x-auto">
-          <div className=" container inline-flex  space-x-6 whitespace-nowrap ">
+        <div className="no-scrollbar overflow-x-auto" ref={containerRef}>
+          <div className="container inline-flex space-x-6 whitespace-nowrap">
             {currentComponent === "LiveMatch" && <LiveMatch />}
             {currentComponent === "RecentMatch" && <RecentMatch />}
             {currentComponent === "UpcomingMatch" && <UpcomingMatch />}
