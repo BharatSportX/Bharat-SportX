@@ -196,8 +196,8 @@ const LiveMatch = () => {
                   />
                 </div>
                 <div className=" ">
-                  <span className="text-base  absolute top-[45%] left-[45%] md:left-[47%] dark:text-green-400  text-green-800 font-medium">
-                    <span className=" btn-shine dark:live-dark-shine live-light-shine ">Live</span>
+                  <span className="text-base  absolute top-[45%] left-[45%] md:left-[47%] pos-tight dark:text-green-400  text-green-800 font-medium">
+                    <span className=" btn-shine dark:live-dark-shine  live-light-shine ">Live</span>
                   </span>
                 </div>
                 <div className="flex justify-between text-sm">

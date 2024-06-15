@@ -102,6 +102,7 @@
   transform: translateY(-50%);
 }
 
+
 .popup-window {
   transform: scale(var(--nav-default-scale));
   visibility: hidden;
@@ -280,5 +281,18 @@
   }
   100% {
     background-position: -200% center;
+  }
+}
+
+
+@media (max-height: 400px) {
+  .pos-tight {
+      left: 47%;
+  }
+  .pos-tight2 {
+      left: 46%;
+  }
+  .pos-tight3 {
+      left: 45%;
   }
 }

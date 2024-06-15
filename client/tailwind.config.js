@@ -4,6 +4,7 @@ module.exports = {
     extend: {
       screens: {
         "max-370": { max: "370px" },
+        
       },
       columns: {
         "4xs": "14rem",
