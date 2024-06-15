@@ -121,6 +121,7 @@
   left: var(--nav-position-left);
   right: var(--nav-position-right);
   transition: var(--burger-transition);
+  z-index: 20;
 }
 
 .popup-window legend {
