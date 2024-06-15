@@ -17,7 +17,7 @@ const PrevNext = () => {
   return (
     <div>
       <button
-        className={`carousel-control-prev absolute top-1/2 transform -translate-y-1/2 -left-4 dark:bg-gray-800 bg-[#b4beca] dark:text-white  text-black p-2 rounded-md `}
+        className={`carousel-control-prev absolute z-40 top-1/2 transform -translate-y-1/2 -left-4 dark:bg-gray-800 bg-[#b4beca] dark:text-white  text-black p-2 rounded-md `}
         onClick={prevSlide}
         // disabled={currentIndex === 0 }
       >
