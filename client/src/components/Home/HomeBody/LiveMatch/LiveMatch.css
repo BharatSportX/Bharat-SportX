@@ -244,6 +244,7 @@
 .container_box input:checked ~ .pin {
   fill:currentColor;
   stroke: white;
+  transform: rotate(0deg);
 }
 .container_box input:checked ~ .pin line {
   stroke:currentColor;

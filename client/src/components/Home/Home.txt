@@ -19,3 +19,7 @@ adding "w-[19rem] mr-5" for last one(card) in LiveMatch.js
 ----set font style for match22
 
 ---->{elapsed} do the time(football minutes) in status section
+
+--->
+(i) once a msg pin its move at first
+(ii) when i click on upcoming.js or recent.js or live.js i see my match card from first not at the position where i scroll before in livematch.js or upcoming.js or recent.js
