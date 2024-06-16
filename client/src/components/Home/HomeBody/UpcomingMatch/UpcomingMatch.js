@@ -10,7 +10,7 @@ const UpcomingMatch = () => {
         <section className="md:mx-5 ">
           {/* <div className=" bg-[#1e2026]   md:h-[25.3rem] p-4 md:p-0    text-white  rounded-lg  mx-auto "> */}
           <div
-            className=" bg-custom-radial-gradient dark:match h-auto p-0    text-white  rounded-lg  mx-auto "
+            className=" bg-custom-radial-gradient dark:match h-[21.22rem] md:h-[26.47rem] p-0    text-white  rounded-lg  mx-auto "
             style={
               {
                 // background:'black'
@@ -172,19 +172,21 @@ const UpcomingMatch = () => {
             </div>
             {/* <div className=" md:absolute md:bottom-0 md:left-0 md:right-0 md:rounded-b-lg hidden md:flex md:mx-5 md:flex-col md:text-[#220000] font-medium md:bg-orange-700 "> */}
 
-            <div className=" border-x dark:border-slate-700 border-slate-500  mx-[0.5px] md:ml-0 md:mr-[0.45px]">
+            <div className=" border-x dark:border-slate-700 border-slate-500 h-56 md:h-80  mx-[0.5px] md:ml-0 md:mr-[0.45px]">
               <section className="md:pt-10 pb-4 md:px-14 px-4 pt-6">
-                <div className="flex justify-between items-center mb-4">
+                <div className="flex justify-between items-center mb-4 mt-4">
                   <img
                     src="https://placehold.co/50x50"
                     alt="Sevilla U19"
                     className=""
                   />
-                  <div className="text-center">
+                  <div className="text-center space-y-2">
                     <div className="text-xl  font-medium dark:text-indigo-400 text-indigo-900">
                       17/06/2024
                     </div>
-
+                    <div className="text-base  dark:text-stone-400  text-stone-700   font-medium dark:font-medium">
+                      9:30 PM
+                    </div>
                   </div>
 
                   <img
@@ -193,11 +195,7 @@ const UpcomingMatch = () => {
                     className="w-12 h-12"
                   />
                 </div>
-                <div className=" ">
-                  <span className="text-base text-center  absolute top-[45%] md:top-[42%] left-[40%] md:left-[44%] pos-tight2 flex justify-center dark:text-stone-400  text-stone-700 font-medium">
-                    9.30 PM
-                  </span>
-                </div>
+               
                 <div className="flex justify-between text-sm">
                   <div className="text-center">
                     <div className="dark:text-white font-medium text-black">
@@ -218,7 +216,7 @@ const UpcomingMatch = () => {
                   </div>
                 </div>
               </section>
-              <div className=" ">
+              <div className="absolute bottom-10 left-0 right-0 mx-auto md:mx-5 ">
                 <hr className="  dark:border-slate-600 border-slate-500  mx-2 w-auto md:hidden mb-4" />
                 <ProgressStep />
               </div>
@@ -235,7 +233,7 @@ const UpcomingMatch = () => {
                 </div>
               </div>
             </div>
-            <div className=" rounded-b-lg  flex  flex-col bg-orange-800 text-orange-300 shadow-orange-950  dark:bg-orange-500 dark:text-orange-950 font-medium   shadow-sm  dark:shadow-orange-500">
+            <div className=" rounded-b-lg  flex  flex-col bg-orange-800 text-orange-300 shadow-orange-950  dark:bg-orange-500 dark:text-orange-950 font-medium absolute bottom-0 left-0 right-0 md:mx-5 mx-auto   shadow-sm  dark:shadow-orange-500">
               <NavLink to="/" className="  text-center py-2">
                 <span className="hover:underline">See More Details</span>
               </NavLink>
