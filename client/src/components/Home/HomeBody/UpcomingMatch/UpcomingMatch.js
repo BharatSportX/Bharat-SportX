@@ -194,7 +194,7 @@ const UpcomingMatch = () => {
                   />
                 </div>
                 <div className=" ">
-                  <span className="text-base text-center  absolute top-[42%] left-[40%] md:left-[44%] pos-tight2 flex justify-center dark:text-stone-400  text-stone-700 font-medium">
+                  <span className="text-base text-center  absolute top-[45%] md:top-[42%] left-[40%] md:left-[44%] pos-tight2 flex justify-center dark:text-stone-400  text-stone-700 font-medium">
                     9.30 PM
                   </span>
                 </div>
