@@ -23,3 +23,8 @@ adding "w-[19rem] mr-5" for last one(card) in LiveMatch.js
 --->
 (i) once a msg pin its move at first
 (ii) when i click on upcoming.js or recent.js or live.js i see my match card from first not at the position where i scroll before in livematch.js or upcoming.js or recent.js
+
+
+-------
+only show the goal of recent striker(2 only)
+anf if lenghts of commentry is greaer than 24 then ...
