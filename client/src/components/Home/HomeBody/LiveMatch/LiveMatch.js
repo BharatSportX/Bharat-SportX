@@ -208,7 +208,7 @@ const LiveMatch = () => {
                     <div className="text-zinc-800 dark:text-zinc-400">
                       B. Sow 36'
                     </div>
-                    <span className=" hover:underline hover:text-sky-400 cursor-pointer mx-1">. . .</span>
+                    <span className="text-zinc-800 dark:text-zinc-400 hover:underline hover:text-blue-800 dark:hover:text-sky-400 cursor-pointer mx-1">. . .</span>
                   </div>
                   <div className="text-center">
                     <div className="dark:text-white font-medium text-black">
@@ -217,7 +217,7 @@ const LiveMatch = () => {
                     <div className="text-zinc-800 dark:text-zinc-400">
                       <div>Goal 96'</div>
                       <div>Pablo García 48'</div>
-                      <span className=" hover:underline hover:text-sky-400 cursor-pointer mx-1">. . .</span>
+                      <span className=" hover:underline hover:text-blue-800 dark:hover:text-sky-400 cursor-pointer mx-1">. . .</span>
                     </div>
                   </div>
                 </div>
@@ -232,7 +232,7 @@ const LiveMatch = () => {
                   {/* here just only few words are taken otherwise responsive ness break so use lenghth property else ('...') which leads to seemore */}
                   <span className="text-black text-sm px-2  dark:text-gray-300">
                     Sevilla nedds Two more goal to Win. CRO 13.9. PPR 89
-                    <span className=" hover:underline hover:text-sky-400 cursor-pointer mx-1">. . .</span>
+                    <span className=" hover:underline dark:hover:text-sky-400 hover:text-blue-800 cursor-pointer mx-1">. . .</span>
                   </span>
                   <p className="text-black text-xs dark:text-gray-400 py-1.5">
                     Play-Off . UERO Europa 78 of 20
