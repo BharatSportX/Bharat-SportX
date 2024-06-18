@@ -1,52 +1,22 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useContext } from "react";
 import PrevNext from "./PrevNext";
 import Blogs from "./Blogs";
 import LiveMatch from "./LiveMatch/LiveMatch";
 import RecentMatch from "./RecentMatch/RecentMatch";
 import UpcomingMatch from "./UpcomingMatch/UpcomingMatch";
+import NoLive from "./LiveMatch/NoLive"; // Import NoLive
+import NavContext from "../Navbar/NavContext/NavContext";
 
 const HomeBody = () => {
-  const [activeButtons, setActiveButtons] = useState([true, false, false]);
-  const [indicatorColor, setIndicatorColor] = useState(
-    "bg-[greenyellow] dark:bg-green-900"
-  );
-  const [currentComponent, setCurrentComponent] = useState("LiveMatch");
-
-  // Create a ref for the container holding the cards
-  const containerRef = useRef(null);
-
-  const handleClick = (index, component) => {
-    const newActiveButtons = activeButtons.map((isActive, i) =>
-      i === index ? true : false
-    );
-    setActiveButtons(newActiveButtons);
-    setCurrentComponent(component);
-
-    if (index === 0) {
-      setIndicatorColor(
-        newActiveButtons[0]
-          ? "bg-[greenyellow] dark:bg-green-900"
-          : "bg-red-600 dark:bg-[greenyellow]"
-      );
-    } else {
-      setIndicatorColor("bg-red-600 dark:bg-[greenyellow]");
-    }
-  };
-
-  // Use useEffect to scroll to the top when the component changes
-  useEffect(() => {
-    if (containerRef.current) {
-      containerRef.current.scrollLeft = 0;
-    }
-  }, [currentComponent]);
+  const {activeButtons,containerRef,currentComponent,indicatorColor,handleClick}=useContext(NavContext)
+ 
+  
+  
 
   return (
     <div className="relative top-36 mb-44 lg:mb-0">
       <div className="m-4 lg:mx-10 lg:mt-5">
-        <h1
-          className="text-3xl font-semibold"
-          style={{ fontFamily: '"Varela Round", sans-serif' }}
-        >
+        <h1 className="text-3xl font-semibold" style={{ fontFamily: '"Varela Round", sans-serif' }}>
           Matches
         </h1>
       </div>
@@ -59,12 +29,8 @@ const HomeBody = () => {
           }
           onClick={() => handleClick(0, "LiveMatch")}
         >
-          <span
-            className={`absolute top-2.5 left-2.5 flex size-[0.4rem] ${indicatorColor} rounded-full `}
-          ></span>
-          <span
-            className={`absolute top-[0.59rem] left-[0.58rem] flex size-2 ${indicatorColor} rounded-full animate-ping `}
-          ></span>
+          <span className={`absolute top-2.5 left-2.5 flex size-[0.4rem] ${indicatorColor} rounded-full `}></span>
+          <span className={`absolute top-[0.59rem] left-[0.58rem] flex size-2 ${indicatorColor} rounded-full animate-ping `}></span>
           Live<span className="hidden xl:inline-block ml-2"> Matches</span>
           <span className="">(2)</span>
         </button>
@@ -99,6 +65,7 @@ const HomeBody = () => {
           </div>
         </div>
       </div>
+      
       <Blogs />
     </div>
   );

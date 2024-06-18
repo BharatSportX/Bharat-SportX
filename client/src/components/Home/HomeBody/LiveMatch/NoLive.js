@@ -1,10 +1,10 @@
 import React from "react";
 import "./NoLive.css";
 
-const NoLive = () => {
+const NoLive = ({ onUpcomingClick }) => {
   return (
-    <div className=" md:my-[3.7rem] overflow-hidden whitespace-normal  md:w-screen md:mx-32 ">
-      <div className="main_wrapper ">
+    <div className="md:my-[3.7rem] overflow-hidden whitespace-normal md:w-screen md:mx-32">
+      <div className="main_wrapper">
         <div className="main space-y-3">
           <div className="antenna">
             <div className="antenna_shadow"></div>
@@ -66,8 +66,18 @@ const NoLive = () => {
         </div>
       </div>
       <div className="container flex justify-center flex-col items-center">
-        <h3 className="md:text-4xl text-2xl font-semibold mb-2 mt-6 text-center">There are no Live events at the moment.</h3>
-        <p className="md:text-xl text-xl my-1 text-center">Please Check again Later. Or View <span className="hover:underline dark:text-blue-500 text-blue-800 cursor-pointer">Upcoming Matches.</span></p>
+        <h3 className="md:text-4xl text-2xl font-semibold mb-2 mt-6 text-center">
+          There are no Live events at the moment.
+        </h3>
+        <p className="md:text-xl text-xl my-1 text-center">
+          Please Check again Later. Or View{" "}
+          <span
+            className="hover:underline dark:text-blue-500 text-blue-800 cursor-pointer"
+            onClick={onUpcomingClick}
+          >
+            Upcoming Matches.
+          </span>
+        </p>
       </div>
     </div>
   );
