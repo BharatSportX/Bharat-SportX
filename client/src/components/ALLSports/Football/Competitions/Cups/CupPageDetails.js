@@ -37,7 +37,7 @@ const CupPageDetails = () => {
     const [rounds, setRounds] = useState([]);
     const [selectedRound, setSelectedRound] = useState(null);
 
-    const apiKey = '96aaecf1damsh08a26fec449dda1p149914jsn1d8a476e9c06';
+    const apiKey = '96d6e2db0bmshaefc24c363be681p18096ejsn20efc89ac5c0';
 
     useEffect(() => {
         const fetchCupDetails = async () => {
