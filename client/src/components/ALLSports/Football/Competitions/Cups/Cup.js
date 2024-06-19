@@ -27,7 +27,7 @@ function Cups() {
             type: 'Cup'
           },
           headers: {
-            'X-RapidAPI-Key': '96aaecf1damsh08a26fec449dda1p149914jsn1d8a476e9c06',
+            'X-RapidAPI-Key': '96d6e2db0bmshaefc24c363be681p18096ejsn20efc89ac5c0',
             'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
           }
         });
