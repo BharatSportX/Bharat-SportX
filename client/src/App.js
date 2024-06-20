@@ -25,6 +25,7 @@ import TableFormat from "./components/ALLSports/Football/Statistics/TableFormat"
 import FootballSubscription from "./components/ALLSports/Football/FootballSubscription/FootballSubscription";
 
 import LiveMatchDetails from "./components/Home/HomeBody/LiveMatch/LiveMatchDetails";
+import Test from "./components/Test/Test";
 function App() {
   const router = createBrowserRouter([
     {
@@ -41,6 +42,14 @@ function App() {
         <>
           <Navbar />
           <Home />
+        </>
+      ),
+    },
+    {
+      path: "/test",
+      element: (
+        <>
+          <Test/>
         </>
       ),
     },
