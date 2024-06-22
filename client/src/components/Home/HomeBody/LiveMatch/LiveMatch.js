@@ -4,6 +4,7 @@ import ProgressStep from "./ProgressStep";
 import "./LiveMatch.css";
 import NoLive from "./NoLive";
 import NavContext from "../../Navbar/NavContext/NavContext";
+import MatchLoading from "../MatchLoading";
 
 const LiveMatch = () => {
   const { handleExternalLinkClick } = useContext(NavContext);

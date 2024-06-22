@@ -3,7 +3,7 @@ import React from "react";
 const MatchLoading = () => {
   return (
     <>
-      <div role="status" className="flex justify-center items-center h-[23.22rem] md:h-[29.47rem]">
+      <div role="status" className="flex justify-center items-center w-full h-[23.22rem] md:h-[29.47rem]">
         <svg
           aria-hidden="true"
           className="w-8 h-8 text-gray-400 animate-spin dark:text-gray-600 dark:fill-sky-600  fill-gray-700 border-0"

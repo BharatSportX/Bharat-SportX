@@ -4,6 +4,7 @@ import LiveMatch from "./LiveMatch/LiveMatch";
 import RecentMatch from "./RecentMatch/RecentMatch";
 import UpcomingMatch from "./UpcomingMatch/UpcomingMatch";
 import NavContext from "../Navbar/NavContext/NavContext";
+import MatchLoading from "./MatchLoading"
 
 const HomeBody = () => {
   const {
