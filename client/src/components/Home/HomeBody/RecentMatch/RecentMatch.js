@@ -6,6 +6,7 @@ import ProgressStep from "../LiveMatch/ProgressStep";
 const RecentMatch = () => {
   return (
     <>
+      
       <div className="flex-none relative    w-full  md:w-[30rem] my-4 md:my-6 ">
         <section className="md:mx-5 ">
           {/* <div className=" bg-[#1e2026]   md:h-[25.3rem] p-4 md:p-0    text-white  rounded-lg  mx-auto "> */}
@@ -202,7 +203,7 @@ const RecentMatch = () => {
                   </span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <div className="text-center">
+                  <div className="">
                     <div className="dark:text-white font-semibold md:font-medium text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
                       Sevilla U19
                     </div>
@@ -211,7 +212,7 @@ const RecentMatch = () => {
                     </div>
                     <span className="text-zinc-800 dark:text-zinc-400 hover:text-blue-800 hover:underline dark:hover:text-sky-400 cursor-pointer mx-1">. . .</span>
                   </div>
-                  <div className="text-center">
+                  <div className="text-end">
                     <div className="dark:text-white font-semibold md:font-medium text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
                       Real Betis
                     </div>
@@ -445,7 +446,7 @@ const RecentMatch = () => {
                   </span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <div className="text-center">
+                  <div className="">
                     <div className="dark:text-white font-semibold md:font-medium text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
                       Sevilla U19
                     </div>
@@ -454,7 +455,7 @@ const RecentMatch = () => {
                     </div>
                     <span className="text-zinc-800 dark:text-zinc-400 hover:text-blue-800 hover:underline dark:hover:text-sky-400 cursor-pointer mx-1">. . .</span>
                   </div>
-                  <div className="text-center">
+                  <div className="text-end">
                     <div className="dark:text-white font-semibold md:font-medium text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
                       Real Betis
                     </div>

@@ -209,7 +209,7 @@ const LiveMatch = () => {
                   </span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <div className="text-center">
+                  <div className="">
                     <div className="dark:text-white font-semibold text-sm md:font-medium text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
                       Sevilla U19
                     </div>
@@ -220,14 +220,14 @@ const LiveMatch = () => {
                       . . .
                     </span>
                   </div>
-                  <div className="text-center">
+                  <div className="text-end   ">
                     <div className="dark:text-white font-semibold md:font-medium text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }} >
                       Real Betis
                     </div>
-                    <div className="text-zinc-800 dark:text-zinc-400">
-                      <div style={{ fontFamily: '"Andika", sans-serif'}}>Goal 96'</div>
-                      <div style={{ fontFamily: '"Andika", sans-serif'}}>Pablo García 48'</div>
-                      <span className=" hover:underline hover:text-blue-800 dark:hover:text-sky-400 cursor-pointer mx-1">
+                    <div className="text-zinc-800   dark:text-zinc-400">
+                      <div className="" style={{ fontFamily: '"Andika", sans-serif'}}>Goal 96'</div>
+                      <div className="" style={{ fontFamily: '"Andika", sans-serif'}}>Pablo García 48'</div>
+                      <span className="  hover:underline hover:text-blue-800 dark:hover:text-sky-400 cursor-pointer mx-1">
                         . . .
                       </span>
                     </div>
@@ -460,7 +460,7 @@ const LiveMatch = () => {
                   </span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <div className="text-center">
+                  <div className="">
                     <div className="dark:text-white font-semibold text-sm md:font-medium text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
                       Sevilla U19
                     </div>
@@ -471,14 +471,14 @@ const LiveMatch = () => {
                       . . .
                     </span>
                   </div>
-                  <div className="text-center">
+                  <div className="text-end   ">
                     <div className="dark:text-white font-semibold md:font-medium text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }} >
                       Real Betis
                     </div>
-                    <div className="text-zinc-800 dark:text-zinc-400">
-                      <div style={{ fontFamily: '"Andika", sans-serif'}}>Goal 96'</div>
-                      <div style={{ fontFamily: '"Andika", sans-serif'}}>Pablo García 48'</div>
-                      <span className=" hover:underline hover:text-blue-800 dark:hover:text-sky-400 cursor-pointer mx-1">
+                    <div className="text-zinc-800   dark:text-zinc-400">
+                      <div className="" style={{ fontFamily: '"Andika", sans-serif'}}>Goal 96'</div>
+                      <div className="" style={{ fontFamily: '"Andika", sans-serif'}}>Pablo García 48'</div>
+                      <span className="  hover:underline hover:text-blue-800 dark:hover:text-sky-400 cursor-pointer mx-1">
                         . . .
                       </span>
                     </div>
@@ -711,7 +711,7 @@ const LiveMatch = () => {
                   </span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <div className="text-center">
+                  <div className="">
                     <div className="dark:text-white font-semibold text-sm md:font-medium text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
                       Sevilla U19
                     </div>
@@ -722,14 +722,14 @@ const LiveMatch = () => {
                       . . .
                     </span>
                   </div>
-                  <div className="text-center">
+                  <div className="text-end   ">
                     <div className="dark:text-white font-semibold md:font-medium text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }} >
                       Real Betis
                     </div>
-                    <div className="text-zinc-800 dark:text-zinc-400">
-                      <div style={{ fontFamily: '"Andika", sans-serif'}}>Goal 96'</div>
-                      <div style={{ fontFamily: '"Andika", sans-serif'}}>Pablo García 48'</div>
-                      <span className=" hover:underline hover:text-blue-800 dark:hover:text-sky-400 cursor-pointer mx-1">
+                    <div className="text-zinc-800   dark:text-zinc-400">
+                      <div className="" style={{ fontFamily: '"Andika", sans-serif'}}>Goal 96'</div>
+                      <div className="" style={{ fontFamily: '"Andika", sans-serif'}}>Pablo García 48'</div>
+                      <span className="  hover:underline hover:text-blue-800 dark:hover:text-sky-400 cursor-pointer mx-1">
                         . . .
                       </span>
                     </div>
@@ -962,7 +962,7 @@ const LiveMatch = () => {
                   </span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <div className="text-center">
+                  <div className="">
                     <div className="dark:text-white font-semibold text-sm md:font-medium text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
                       Sevilla U19
                     </div>
@@ -973,14 +973,14 @@ const LiveMatch = () => {
                       . . .
                     </span>
                   </div>
-                  <div className="text-center">
+                  <div className="text-end   ">
                     <div className="dark:text-white font-semibold md:font-medium text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }} >
                       Real Betis
                     </div>
-                    <div className="text-zinc-800 dark:text-zinc-400">
-                      <div style={{ fontFamily: '"Andika", sans-serif'}}>Goal 96'</div>
-                      <div style={{ fontFamily: '"Andika", sans-serif'}}>Pablo García 48'</div>
-                      <span className=" hover:underline hover:text-blue-800 dark:hover:text-sky-400 cursor-pointer mx-1">
+                    <div className="text-zinc-800   dark:text-zinc-400">
+                      <div className="" style={{ fontFamily: '"Andika", sans-serif'}}>Goal 96'</div>
+                      <div className="" style={{ fontFamily: '"Andika", sans-serif'}}>Pablo García 48'</div>
+                      <span className="  hover:underline hover:text-blue-800 dark:hover:text-sky-400 cursor-pointer mx-1">
                         . . .
                       </span>
                     </div>
@@ -1213,7 +1213,7 @@ const LiveMatch = () => {
                   </span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <div className="text-center">
+                  <div className="">
                     <div className="dark:text-white font-semibold text-sm md:font-medium text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
                       Sevilla U19
                     </div>
@@ -1224,14 +1224,14 @@ const LiveMatch = () => {
                       . . .
                     </span>
                   </div>
-                  <div className="text-center">
+                  <div className="text-end   ">
                     <div className="dark:text-white font-semibold md:font-medium text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }} >
                       Real Betis
                     </div>
-                    <div className="text-zinc-800 dark:text-zinc-400">
-                      <div style={{ fontFamily: '"Andika", sans-serif'}}>Goal 96'</div>
-                      <div style={{ fontFamily: '"Andika", sans-serif'}}>Pablo García 48'</div>
-                      <span className=" hover:underline hover:text-blue-800 dark:hover:text-sky-400 cursor-pointer mx-1">
+                    <div className="text-zinc-800   dark:text-zinc-400">
+                      <div className="" style={{ fontFamily: '"Andika", sans-serif'}}>Goal 96'</div>
+                      <div className="" style={{ fontFamily: '"Andika", sans-serif'}}>Pablo García 48'</div>
+                      <span className="  hover:underline hover:text-blue-800 dark:hover:text-sky-400 cursor-pointer mx-1">
                         . . .
                       </span>
                     </div>
@@ -1266,6 +1266,7 @@ const LiveMatch = () => {
           </div>
         </section>
       </div>
+      
      
      
       
