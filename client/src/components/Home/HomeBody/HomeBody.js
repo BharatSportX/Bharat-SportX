@@ -3,7 +3,6 @@ import Blogs from "./Blogs";
 import LiveMatch from "./LiveMatch/LiveMatch";
 import RecentMatch from "./RecentMatch/RecentMatch";
 import UpcomingMatch from "./UpcomingMatch/UpcomingMatch";
-import NoLive from "./LiveMatch/NoLive"; // Import NoLive
 import NavContext from "../Navbar/NavContext/NavContext";
 
 const HomeBody = () => {
@@ -16,11 +15,14 @@ const HomeBody = () => {
   } = useContext(NavContext);
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [maxSlides, setMaxSlides] = useState(1); // Initialize maxSlides with a default value of 1
   const sliderRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      const index = Math.round(sliderRef.current.scrollLeft / sliderRef.current.clientWidth);
+      const index = Math.round(
+        sliderRef.current.scrollLeft / sliderRef.current.clientWidth
+      );
       setCurrentIndex(index);
     };
 
@@ -28,6 +30,24 @@ const HomeBody = () => {
     slider.addEventListener("scroll", handleScroll);
     return () => slider.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Update maxSlides when currentComponent changes
+  useEffect(() => {
+    switch (currentComponent) {
+      case "LiveMatch":
+        setMaxSlides(1);
+        break;
+      case "UpcomingMatch":
+        setMaxSlides(4);
+        break;
+      case "RecentMatch":
+        setMaxSlides(2);
+        break;
+      default:
+        setMaxSlides(1); // Default to a sensible value
+        break;
+    }
+  }, [currentComponent]);
 
   const prevSlide = () => {
     if (currentIndex > 0) {
@@ -40,7 +60,7 @@ const HomeBody = () => {
   };
 
   const nextSlide = () => {
-    if (currentIndex < 3) { // Adjust the limit according to your needs
+    if (currentIndex < maxSlides - 1) {
       setCurrentIndex((next) => next + 1);
       sliderRef.current.scrollBy({
         left: sliderRef.current.clientWidth,
@@ -51,7 +71,7 @@ const HomeBody = () => {
 
   const handleCategoryClick = (index, component) => {
     setCurrentIndex(0); // Reset the current index
-    sliderRef.current.scrollTo({ left: 0,  }); // Reset scroll position
+    sliderRef.current.scrollTo({ left: 0 }); // Reset scroll position
     handleClick(index, component); // Call existing handleClick function
   };
 
@@ -105,49 +125,52 @@ const HomeBody = () => {
         </button>
       </div>
       <div className="mx-7 lg:mx-9">
-      <div className="relative z-10">
-        <div className="overflow-hidden w-full">
-          <div ref={sliderRef} className="flex overflow-x-scroll no-scrollbar">
+        <div className="relative z-10">
+          <div className="overflow-hidden w-full">
             <div
-              className="w-full flex-shrink-0 px-2 py-3 flex min-w-full space-x-5 md:space-x-6"
-              ref={containerRef}
+              ref={sliderRef}
+              className="flex overflow-x-scroll no-scrollbar"
             >
-              {currentComponent === "LiveMatch" && <LiveMatch />}
-              {currentComponent === "RecentMatch" && <RecentMatch />}
-              {currentComponent === "UpcomingMatch" && <UpcomingMatch />}
+              <div
+                className="w-full flex-shrink-0 px-2 py-3 flex min-w-full space-x-5 md:space-x-6"
+                ref={containerRef}
+              >
+                {currentComponent === "LiveMatch" && <LiveMatch />}
+                {currentComponent === "RecentMatch" && <RecentMatch />}
+                {currentComponent === "UpcomingMatch" && <UpcomingMatch />}
+              </div>
             </div>
-          </div>
 
-          <button
-            className={`carousel-control-prev absolute z-40 top-1/2 transform -translate-y-1/2 -left-7 p-2 rounded-md ${
-              currentIndex === 0
-                ? "opacity-80  cursor-not-allowed dark:bg-gray-900 bg-[#b4beca8d] dark:text-white text-black"
-                : "dark:bg-gray-800 bg-[#b4beca] dark:text-white text-black"
-            }`}
-            onClick={prevSlide}
-            disabled={currentIndex === 0}
-          >
-            <span className="carousel-control-prev-icon" aria-hidden="true">
-              <i className="fas fa-caret-left"></i>
-            </span>
-            <span className="sr-only">Previous</span>
-          </button>
-          <button
-            className={`carousel-control-next absolute z-40 top-1/2 transform -translate-y-1/2 -right-7 p-2 rounded-md ${
-              currentIndex === 3
-                ? " opacity-80  cursor-not-allowed dark:bg-gray-900 bg-[#b4beca8d] dark:text-white text-black"
-                : "dark:bg-gray-800 bg-[#b4beca] dark:text-white text-black"
-            }`}
-            onClick={nextSlide}
-            disabled={currentIndex === 3}
-          >
-            <span className="carousel-control-next-icon" aria-hidden="true">
-              <i className="fas fa-caret-right"></i>
-            </span>
-            <span className="sr-only">Next</span>
-          </button>
+            <button
+              className={`carousel-control-prev absolute z-40 top-1/2 transform -translate-y-1/2 -left-7 p-2 rounded-md ${
+                currentIndex === 0
+                  ? "opacity-80 cursor-not-allowed dark:bg-gray-900 bg-[#b4beca8d] dark:text-white text-black"
+                  : "dark:bg-gray-800 bg-[#b4beca] dark:text-white text-black"
+              }`}
+              onClick={prevSlide}
+              disabled={currentIndex === 0}
+            >
+              <span className="carousel-control-prev-icon" aria-hidden="true">
+                <i className="fas fa-caret-left"></i>
+              </span>
+              <span className="sr-only">Previous</span>
+            </button>
+            <button
+              className={`carousel-control-next absolute z-40 top-1/2 transform -translate-y-1/2 -right-7 p-2 rounded-md ${
+                currentIndex === maxSlides - 1
+                  ? "opacity-80 cursor-not-allowed dark:bg-gray-900 bg-[#b4beca8d] dark:text-white text-black"
+                  : "dark:bg-gray-800 bg-[#b4beca] dark:text-white text-black"
+              }`}
+              onClick={nextSlide}
+              disabled={currentIndex === maxSlides - 1}
+            >
+              <span className="carousel-control-next-icon" aria-hidden="true">
+                <i className="fas fa-caret-right"></i>
+              </span>
+              <span className="sr-only">Next</span>
+            </button>
+          </div>
         </div>
-      </div>
       </div>
       <Blogs />
     </div>
