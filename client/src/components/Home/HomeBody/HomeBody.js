@@ -35,7 +35,7 @@ const HomeBody = () => {
   useEffect(() => {
     switch (currentComponent) {
       case "LiveMatch":
-        setMaxSlides(1);
+        setMaxSlides(5);
         break;
       case "UpcomingMatch":
         setMaxSlides(4);
@@ -146,7 +146,7 @@ const HomeBody = () => {
               className="flex overflow-x-scroll no-scrollbar"
             >
               <div
-                className="w-full flex-shrink-0 px-2 py-3 flex min-w-full space-x-5 md:space-x-6"
+                className="w-full flex-shrink-0 px-2 py-3 flex min-w-full space-x-4 md:space-x-6"
                 ref={containerRef}
               >
                 {currentComponent === "LiveMatch" && <LiveMatch />}
