@@ -26,8 +26,8 @@ const UpcomingMatch = () => {
                   alt="logo"
                 />
                 {/* </span> */}
-                <span className=" text-base tracking-wide font-medium">
-                  DURANDO cup
+                <span className=" text-sm font-semibold" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
+                  COPA America
                 </span>
               </div>
               <div className="float-end flex space-x-2 relative">
@@ -198,7 +198,7 @@ const UpcomingMatch = () => {
                
                 <div className="flex justify-between text-sm">
                   <div className="text-center">
-                    <div className="dark:text-white font-medium text-black">
+                    <div className="dark:text-white font-medium text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
                       Sevilla U19
                     </div>
                     <div className="text-zinc-800 dark:text-zinc-400">
@@ -206,7 +206,7 @@ const UpcomingMatch = () => {
                     </div>
                   </div>
                   <div className="text-center">
-                    <div className="dark:text-white font-medium text-black">
+                    <div className="dark:text-white font-medium text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
                       Real Betis
                     </div>
                     <div className="text-zinc-800 dark:text-zinc-400">
@@ -224,11 +224,11 @@ const UpcomingMatch = () => {
                 <hr className="  dark:border-slate-600  w-[26rem] " />
                 <div className="py-2 pt-3">
                   {/* here just only few words are taken otherwise responsive ness break so use lenghth property else ('...') which leads to seemore */}
-                  <span className="text-black text-sm px-2  dark:text-gray-300">
-                    Sevilla nedds Two more goal to Win. CRO 13.9. PPR 89
+                  <span className="text-black text-sm px-2  dark:text-gray-300" style={{ fontFamily: '"Andika", sans-serif'}}>
+                    Ready to 8:00 Pm to Watch The Live..!
                   </span>
-                  <p className="text-black text-xs dark:text-gray-400 py-1.5">
-                    Play-Off . UERO Europa 78 of 20
+                  <p className="text-black text-xs dark:text-gray-400 py-1.5" style={{ fontFamily: '"Andika", sans-serif'}}>
+                    Who Will Win?---→ Vote <span className="hover:text-blue-800 hover:underline dark:hover:text-sky-400 cursor-pointer mx-1">here</span>
                   </p>
                 </div>
               </div>
@@ -261,8 +261,8 @@ const UpcomingMatch = () => {
                   alt="logo"
                 />
                 {/* </span> */}
-                <span className=" text-base tracking-wide font-medium">
-                  DURANDO cup
+                <span className=" text-sm font-semibold" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
+                  COPA America
                 </span>
               </div>
               <div className="float-end flex space-x-2 relative">
@@ -433,7 +433,7 @@ const UpcomingMatch = () => {
                
                 <div className="flex justify-between text-sm">
                   <div className="text-center">
-                    <div className="dark:text-white font-medium text-black">
+                    <div className="dark:text-white font-medium text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
                       Sevilla U19
                     </div>
                     <div className="text-zinc-800 dark:text-zinc-400">
@@ -441,7 +441,7 @@ const UpcomingMatch = () => {
                     </div>
                   </div>
                   <div className="text-center">
-                    <div className="dark:text-white font-medium text-black">
+                    <div className="dark:text-white font-medium text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
                       Real Betis
                     </div>
                     <div className="text-zinc-800 dark:text-zinc-400">
@@ -459,11 +459,11 @@ const UpcomingMatch = () => {
                 <hr className="  dark:border-slate-600  w-[26rem] " />
                 <div className="py-2 pt-3">
                   {/* here just only few words are taken otherwise responsive ness break so use lenghth property else ('...') which leads to seemore */}
-                  <span className="text-black text-sm px-2  dark:text-gray-300">
-                    Sevilla nedds Two more goal to Win. CRO 13.9. PPR 89
+                  <span className="text-black text-sm px-2  dark:text-gray-300" style={{ fontFamily: '"Andika", sans-serif'}}>
+                    Ready to 8:00 Pm to Watch The Live..!
                   </span>
-                  <p className="text-black text-xs dark:text-gray-400 py-1.5">
-                    Play-Off . UERO Europa 78 of 20
+                  <p className="text-black text-xs dark:text-gray-400 py-1.5" style={{ fontFamily: '"Andika", sans-serif'}}>
+                    Who Will Win?---→ Vote <span className="hover:text-blue-800 hover:underline dark:hover:text-sky-400 cursor-pointer mx-1">here</span>
                   </p>
                 </div>
               </div>
@@ -496,8 +496,8 @@ const UpcomingMatch = () => {
                   alt="logo"
                 />
                 {/* </span> */}
-                <span className=" text-base tracking-wide font-medium">
-                  DURANDO cup
+                <span className=" text-sm font-semibold" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
+                  COPA America
                 </span>
               </div>
               <div className="float-end flex space-x-2 relative">
@@ -668,7 +668,7 @@ const UpcomingMatch = () => {
                
                 <div className="flex justify-between text-sm">
                   <div className="text-center">
-                    <div className="dark:text-white font-medium text-black">
+                    <div className="dark:text-white font-medium text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
                       Sevilla U19
                     </div>
                     <div className="text-zinc-800 dark:text-zinc-400">
@@ -676,7 +676,7 @@ const UpcomingMatch = () => {
                     </div>
                   </div>
                   <div className="text-center">
-                    <div className="dark:text-white font-medium text-black">
+                    <div className="dark:text-white font-medium text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
                       Real Betis
                     </div>
                     <div className="text-zinc-800 dark:text-zinc-400">
@@ -694,11 +694,11 @@ const UpcomingMatch = () => {
                 <hr className="  dark:border-slate-600  w-[26rem] " />
                 <div className="py-2 pt-3">
                   {/* here just only few words are taken otherwise responsive ness break so use lenghth property else ('...') which leads to seemore */}
-                  <span className="text-black text-sm px-2  dark:text-gray-300">
-                    Sevilla nedds Two more goal to Win. CRO 13.9. PPR 89
+                  <span className="text-black text-sm px-2  dark:text-gray-300" style={{ fontFamily: '"Andika", sans-serif'}}>
+                    Ready to 8:00 Pm to Watch The Live..!
                   </span>
-                  <p className="text-black text-xs dark:text-gray-400 py-1.5">
-                    Play-Off . UERO Europa 78 of 20
+                  <p className="text-black text-xs dark:text-gray-400 py-1.5" style={{ fontFamily: '"Andika", sans-serif'}}>
+                    Who Will Win?---→ Vote <span className="hover:text-blue-800 hover:underline dark:hover:text-sky-400 cursor-pointer mx-1">here</span>
                   </p>
                 </div>
               </div>
@@ -731,8 +731,8 @@ const UpcomingMatch = () => {
                   alt="logo"
                 />
                 {/* </span> */}
-                <span className=" text-base tracking-wide font-medium">
-                  DURANDO cup
+                <span className=" text-sm font-semibold" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
+                  COPA America
                 </span>
               </div>
               <div className="float-end flex space-x-2 relative">
@@ -903,7 +903,7 @@ const UpcomingMatch = () => {
                
                 <div className="flex justify-between text-sm">
                   <div className="text-center">
-                    <div className="dark:text-white font-medium text-black">
+                    <div className="dark:text-white font-medium text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
                       Sevilla U19
                     </div>
                     <div className="text-zinc-800 dark:text-zinc-400">
@@ -911,7 +911,7 @@ const UpcomingMatch = () => {
                     </div>
                   </div>
                   <div className="text-center">
-                    <div className="dark:text-white font-medium text-black">
+                    <div className="dark:text-white font-medium text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
                       Real Betis
                     </div>
                     <div className="text-zinc-800 dark:text-zinc-400">
@@ -929,11 +929,11 @@ const UpcomingMatch = () => {
                 <hr className="  dark:border-slate-600  w-[26rem] " />
                 <div className="py-2 pt-3">
                   {/* here just only few words are taken otherwise responsive ness break so use lenghth property else ('...') which leads to seemore */}
-                  <span className="text-black text-sm px-2  dark:text-gray-300">
-                    Sevilla nedds Two more goal to Win. CRO 13.9. PPR 89
+                  <span className="text-black text-sm px-2  dark:text-gray-300" style={{ fontFamily: '"Andika", sans-serif'}}>
+                    Ready to 8:00 Pm to Watch The Live..!
                   </span>
-                  <p className="text-black text-xs dark:text-gray-400 py-1.5">
-                    Play-Off . UERO Europa 78 of 20
+                  <p className="text-black text-xs dark:text-gray-400 py-1.5" style={{ fontFamily: '"Andika", sans-serif'}}>
+                    Who Will Win?---→ Vote <span className="hover:text-blue-800 hover:underline dark:hover:text-sky-400 cursor-pointer mx-1">here</span>
                   </p>
                 </div>
               </div>

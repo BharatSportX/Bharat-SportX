@@ -31,7 +31,7 @@ const LiveMatch = () => {
                   alt="logo"
                 />
                 {/* </span> */}
-                <span className=" text-base tracking-wide font-medium">
+                <span className=" text-sm  font-semibold" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
                   UERO Europa Cup
                 </span>
               </div>
@@ -210,10 +210,10 @@ const LiveMatch = () => {
                 </div>
                 <div className="flex justify-between text-sm">
                   <div className="text-center">
-                    <div className="dark:text-white font-medium text-black">
+                    <div className="dark:text-white font-medium text-sm text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
                       Sevilla U19
                     </div>
-                    <div className="text-zinc-800 dark:text-zinc-400">
+                    <div className="text-zinc-800 dark:text-zinc-400" style={{ fontFamily: '"Andika", sans-serif'}}>
                       B. Sow 36'
                     </div>
                     <span className="text-zinc-800 dark:text-zinc-400 hover:underline hover:text-blue-800 dark:hover:text-sky-400 cursor-pointer mx-1">
@@ -221,12 +221,12 @@ const LiveMatch = () => {
                     </span>
                   </div>
                   <div className="text-center">
-                    <div className="dark:text-white font-medium text-black">
+                    <div className="dark:text-white font-medium text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }} >
                       Real Betis
                     </div>
                     <div className="text-zinc-800 dark:text-zinc-400">
-                      <div>Goal 96'</div>
-                      <div>Pablo García 48'</div>
+                      <div style={{ fontFamily: '"Andika", sans-serif'}}>Goal 96'</div>
+                      <div style={{ fontFamily: '"Andika", sans-serif'}}>Pablo García 48'</div>
                       <span className=" hover:underline hover:text-blue-800 dark:hover:text-sky-400 cursor-pointer mx-1">
                         . . .
                       </span>
@@ -242,13 +242,13 @@ const LiveMatch = () => {
                 <hr className="  dark:border-slate-600  w-[26rem] " />
                 <div className="py-2 pt-3">
                   {/* here just only few words are taken otherwise responsive ness break so use lenghth property else ('...') which leads to seemore */}
-                  <span className="text-black text-sm px-2  dark:text-gray-300">
+                  <span className="text-black text-sm px-2  dark:text-gray-300" style={{ fontFamily: '"Andika", sans-serif'}}>
                     Sevilla nedds Two more goal to Win. CRO 13.9. PPR 89
                     <span className=" hover:underline dark:hover:text-sky-400 hover:text-blue-800 cursor-pointer mx-1">
                       . . .
                     </span>
                   </span>
-                  <p className="text-black text-xs dark:text-gray-400 py-1.5">
+                  <p className="text-black text-xs dark:text-gray-400 py-1.5"  style={{ fontFamily: '"Andika", sans-serif'}}>
                     Play-Off . UERO Europa 78 of 20
                   </p>
                 </div>
@@ -256,7 +256,7 @@ const LiveMatch = () => {
             </div>
             <div className=" rounded-b-lg  flex  flex-col bg-orange-800 text-orange-300 shadow-orange-950  dark:bg-orange-500 dark:text-orange-950 font-medium   shadow-sm  dark:shadow-orange-500">
               <NavLink to="/" className="  text-center py-2">
-                <span className="hover:underline">See More Details</span>
+                <span className="hover:underline font-medium  text-base" >See More Details</span>
               </NavLink>
             </div>
           </div>
@@ -282,7 +282,7 @@ const LiveMatch = () => {
                   alt="logo"
                 />
                 {/* </span> */}
-                <span className=" text-base tracking-wide font-medium">
+                <span className=" text-sm  font-semibold" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
                   UERO Europa Cup
                 </span>
               </div>
@@ -461,10 +461,10 @@ const LiveMatch = () => {
                 </div>
                 <div className="flex justify-between text-sm">
                   <div className="text-center">
-                    <div className="dark:text-white font-medium text-black">
+                    <div className="dark:text-white font-medium text-sm text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
                       Sevilla U19
                     </div>
-                    <div className="text-zinc-800 dark:text-zinc-400">
+                    <div className="text-zinc-800 dark:text-zinc-400" style={{ fontFamily: '"Andika", sans-serif'}}>
                       B. Sow 36'
                     </div>
                     <span className="text-zinc-800 dark:text-zinc-400 hover:underline hover:text-blue-800 dark:hover:text-sky-400 cursor-pointer mx-1">
@@ -472,12 +472,12 @@ const LiveMatch = () => {
                     </span>
                   </div>
                   <div className="text-center">
-                    <div className="dark:text-white font-medium text-black">
+                    <div className="dark:text-white font-medium text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }} >
                       Real Betis
                     </div>
                     <div className="text-zinc-800 dark:text-zinc-400">
-                      <div>Goal 96'</div>
-                      <div>Pablo García 48'</div>
+                      <div style={{ fontFamily: '"Andika", sans-serif'}}>Goal 96'</div>
+                      <div style={{ fontFamily: '"Andika", sans-serif'}}>Pablo García 48'</div>
                       <span className=" hover:underline hover:text-blue-800 dark:hover:text-sky-400 cursor-pointer mx-1">
                         . . .
                       </span>
@@ -493,13 +493,13 @@ const LiveMatch = () => {
                 <hr className="  dark:border-slate-600  w-[26rem] " />
                 <div className="py-2 pt-3">
                   {/* here just only few words are taken otherwise responsive ness break so use lenghth property else ('...') which leads to seemore */}
-                  <span className="text-black text-sm px-2  dark:text-gray-300">
+                  <span className="text-black text-sm px-2  dark:text-gray-300" style={{ fontFamily: '"Andika", sans-serif'}}>
                     Sevilla nedds Two more goal to Win. CRO 13.9. PPR 89
                     <span className=" hover:underline dark:hover:text-sky-400 hover:text-blue-800 cursor-pointer mx-1">
                       . . .
                     </span>
                   </span>
-                  <p className="text-black text-xs dark:text-gray-400 py-1.5">
+                  <p className="text-black text-xs dark:text-gray-400 py-1.5"  style={{ fontFamily: '"Andika", sans-serif'}}>
                     Play-Off . UERO Europa 78 of 20
                   </p>
                 </div>
@@ -507,7 +507,7 @@ const LiveMatch = () => {
             </div>
             <div className=" rounded-b-lg  flex  flex-col bg-orange-800 text-orange-300 shadow-orange-950  dark:bg-orange-500 dark:text-orange-950 font-medium   shadow-sm  dark:shadow-orange-500">
               <NavLink to="/" className="  text-center py-2">
-                <span className="hover:underline">See More Details</span>
+                <span className="hover:underline font-medium  text-base" >See More Details</span>
               </NavLink>
             </div>
           </div>
@@ -533,7 +533,7 @@ const LiveMatch = () => {
                   alt="logo"
                 />
                 {/* </span> */}
-                <span className=" text-base tracking-wide font-medium">
+                <span className=" text-sm  font-semibold" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
                   UERO Europa Cup
                 </span>
               </div>
@@ -712,10 +712,10 @@ const LiveMatch = () => {
                 </div>
                 <div className="flex justify-between text-sm">
                   <div className="text-center">
-                    <div className="dark:text-white font-medium text-black">
+                    <div className="dark:text-white font-medium text-sm text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
                       Sevilla U19
                     </div>
-                    <div className="text-zinc-800 dark:text-zinc-400">
+                    <div className="text-zinc-800 dark:text-zinc-400" style={{ fontFamily: '"Andika", sans-serif'}}>
                       B. Sow 36'
                     </div>
                     <span className="text-zinc-800 dark:text-zinc-400 hover:underline hover:text-blue-800 dark:hover:text-sky-400 cursor-pointer mx-1">
@@ -723,12 +723,12 @@ const LiveMatch = () => {
                     </span>
                   </div>
                   <div className="text-center">
-                    <div className="dark:text-white font-medium text-black">
+                    <div className="dark:text-white font-medium text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }} >
                       Real Betis
                     </div>
                     <div className="text-zinc-800 dark:text-zinc-400">
-                      <div>Goal 96'</div>
-                      <div>Pablo García 48'</div>
+                      <div style={{ fontFamily: '"Andika", sans-serif'}}>Goal 96'</div>
+                      <div style={{ fontFamily: '"Andika", sans-serif'}}>Pablo García 48'</div>
                       <span className=" hover:underline hover:text-blue-800 dark:hover:text-sky-400 cursor-pointer mx-1">
                         . . .
                       </span>
@@ -744,13 +744,13 @@ const LiveMatch = () => {
                 <hr className="  dark:border-slate-600  w-[26rem] " />
                 <div className="py-2 pt-3">
                   {/* here just only few words are taken otherwise responsive ness break so use lenghth property else ('...') which leads to seemore */}
-                  <span className="text-black text-sm px-2  dark:text-gray-300">
+                  <span className="text-black text-sm px-2  dark:text-gray-300" style={{ fontFamily: '"Andika", sans-serif'}}>
                     Sevilla nedds Two more goal to Win. CRO 13.9. PPR 89
                     <span className=" hover:underline dark:hover:text-sky-400 hover:text-blue-800 cursor-pointer mx-1">
                       . . .
                     </span>
                   </span>
-                  <p className="text-black text-xs dark:text-gray-400 py-1.5">
+                  <p className="text-black text-xs dark:text-gray-400 py-1.5"  style={{ fontFamily: '"Andika", sans-serif'}}>
                     Play-Off . UERO Europa 78 of 20
                   </p>
                 </div>
@@ -758,7 +758,7 @@ const LiveMatch = () => {
             </div>
             <div className=" rounded-b-lg  flex  flex-col bg-orange-800 text-orange-300 shadow-orange-950  dark:bg-orange-500 dark:text-orange-950 font-medium   shadow-sm  dark:shadow-orange-500">
               <NavLink to="/" className="  text-center py-2">
-                <span className="hover:underline">See More Details</span>
+                <span className="hover:underline font-medium  text-base" >See More Details</span>
               </NavLink>
             </div>
           </div>
@@ -784,7 +784,7 @@ const LiveMatch = () => {
                   alt="logo"
                 />
                 {/* </span> */}
-                <span className=" text-base tracking-wide font-medium">
+                <span className=" text-sm  font-semibold" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
                   UERO Europa Cup
                 </span>
               </div>
@@ -963,10 +963,10 @@ const LiveMatch = () => {
                 </div>
                 <div className="flex justify-between text-sm">
                   <div className="text-center">
-                    <div className="dark:text-white font-medium text-black">
+                    <div className="dark:text-white font-medium text-sm text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
                       Sevilla U19
                     </div>
-                    <div className="text-zinc-800 dark:text-zinc-400">
+                    <div className="text-zinc-800 dark:text-zinc-400" style={{ fontFamily: '"Andika", sans-serif'}}>
                       B. Sow 36'
                     </div>
                     <span className="text-zinc-800 dark:text-zinc-400 hover:underline hover:text-blue-800 dark:hover:text-sky-400 cursor-pointer mx-1">
@@ -974,12 +974,12 @@ const LiveMatch = () => {
                     </span>
                   </div>
                   <div className="text-center">
-                    <div className="dark:text-white font-medium text-black">
+                    <div className="dark:text-white font-medium text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }} >
                       Real Betis
                     </div>
                     <div className="text-zinc-800 dark:text-zinc-400">
-                      <div>Goal 96'</div>
-                      <div>Pablo García 48'</div>
+                      <div style={{ fontFamily: '"Andika", sans-serif'}}>Goal 96'</div>
+                      <div style={{ fontFamily: '"Andika", sans-serif'}}>Pablo García 48'</div>
                       <span className=" hover:underline hover:text-blue-800 dark:hover:text-sky-400 cursor-pointer mx-1">
                         . . .
                       </span>
@@ -995,13 +995,13 @@ const LiveMatch = () => {
                 <hr className="  dark:border-slate-600  w-[26rem] " />
                 <div className="py-2 pt-3">
                   {/* here just only few words are taken otherwise responsive ness break so use lenghth property else ('...') which leads to seemore */}
-                  <span className="text-black text-sm px-2  dark:text-gray-300">
+                  <span className="text-black text-sm px-2  dark:text-gray-300" style={{ fontFamily: '"Andika", sans-serif'}}>
                     Sevilla nedds Two more goal to Win. CRO 13.9. PPR 89
                     <span className=" hover:underline dark:hover:text-sky-400 hover:text-blue-800 cursor-pointer mx-1">
                       . . .
                     </span>
                   </span>
-                  <p className="text-black text-xs dark:text-gray-400 py-1.5">
+                  <p className="text-black text-xs dark:text-gray-400 py-1.5"  style={{ fontFamily: '"Andika", sans-serif'}}>
                     Play-Off . UERO Europa 78 of 20
                   </p>
                 </div>
@@ -1009,7 +1009,7 @@ const LiveMatch = () => {
             </div>
             <div className=" rounded-b-lg  flex  flex-col bg-orange-800 text-orange-300 shadow-orange-950  dark:bg-orange-500 dark:text-orange-950 font-medium   shadow-sm  dark:shadow-orange-500">
               <NavLink to="/" className="  text-center py-2">
-                <span className="hover:underline">See More Details</span>
+                <span className="hover:underline font-medium  text-base" >See More Details</span>
               </NavLink>
             </div>
           </div>
@@ -1035,7 +1035,7 @@ const LiveMatch = () => {
                   alt="logo"
                 />
                 {/* </span> */}
-                <span className=" text-base tracking-wide font-medium">
+                <span className=" text-sm  font-semibold" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
                   UERO Europa Cup
                 </span>
               </div>
@@ -1214,10 +1214,10 @@ const LiveMatch = () => {
                 </div>
                 <div className="flex justify-between text-sm">
                   <div className="text-center">
-                    <div className="dark:text-white font-medium text-black">
+                    <div className="dark:text-white font-medium text-sm text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
                       Sevilla U19
                     </div>
-                    <div className="text-zinc-800 dark:text-zinc-400">
+                    <div className="text-zinc-800 dark:text-zinc-400" style={{ fontFamily: '"Andika", sans-serif'}}>
                       B. Sow 36'
                     </div>
                     <span className="text-zinc-800 dark:text-zinc-400 hover:underline hover:text-blue-800 dark:hover:text-sky-400 cursor-pointer mx-1">
@@ -1225,12 +1225,12 @@ const LiveMatch = () => {
                     </span>
                   </div>
                   <div className="text-center">
-                    <div className="dark:text-white font-medium text-black">
+                    <div className="dark:text-white font-medium text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }} >
                       Real Betis
                     </div>
                     <div className="text-zinc-800 dark:text-zinc-400">
-                      <div>Goal 96'</div>
-                      <div>Pablo García 48'</div>
+                      <div style={{ fontFamily: '"Andika", sans-serif'}}>Goal 96'</div>
+                      <div style={{ fontFamily: '"Andika", sans-serif'}}>Pablo García 48'</div>
                       <span className=" hover:underline hover:text-blue-800 dark:hover:text-sky-400 cursor-pointer mx-1">
                         . . .
                       </span>
@@ -1246,13 +1246,13 @@ const LiveMatch = () => {
                 <hr className="  dark:border-slate-600  w-[26rem] " />
                 <div className="py-2 pt-3">
                   {/* here just only few words are taken otherwise responsive ness break so use lenghth property else ('...') which leads to seemore */}
-                  <span className="text-black text-sm px-2  dark:text-gray-300">
+                  <span className="text-black text-sm px-2  dark:text-gray-300" style={{ fontFamily: '"Andika", sans-serif'}}>
                     Sevilla nedds Two more goal to Win. CRO 13.9. PPR 89
                     <span className=" hover:underline dark:hover:text-sky-400 hover:text-blue-800 cursor-pointer mx-1">
                       . . .
                     </span>
                   </span>
-                  <p className="text-black text-xs dark:text-gray-400 py-1.5">
+                  <p className="text-black text-xs dark:text-gray-400 py-1.5"  style={{ fontFamily: '"Andika", sans-serif'}}>
                     Play-Off . UERO Europa 78 of 20
                   </p>
                 </div>
@@ -1260,12 +1260,13 @@ const LiveMatch = () => {
             </div>
             <div className=" rounded-b-lg  flex  flex-col bg-orange-800 text-orange-300 shadow-orange-950  dark:bg-orange-500 dark:text-orange-950 font-medium   shadow-sm  dark:shadow-orange-500">
               <NavLink to="/" className="  text-center py-2">
-                <span className="hover:underline">See More Details</span>
+                <span className="hover:underline font-medium  text-base" >See More Details</span>
               </NavLink>
             </div>
           </div>
         </section>
       </div>
+     
      
       
 

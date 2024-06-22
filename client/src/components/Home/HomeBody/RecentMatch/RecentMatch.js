@@ -26,7 +26,7 @@ const RecentMatch = () => {
                   alt="logo"
                 />
                 {/* </span> */}
-                <span className=" text-base tracking-wide font-medium">
+                <span className=" text-sm font-semibold" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
                   FIFA World Cup
                 </span>
               </div>
@@ -203,19 +203,19 @@ const RecentMatch = () => {
                 </div>
                 <div className="flex justify-between text-sm">
                   <div className="text-center">
-                    <div className="dark:text-white font-medium text-black">
+                    <div className="dark:text-white font-medium text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
                       Sevilla U19
                     </div>
-                    <div className="text-zinc-800 dark:text-zinc-400">
+                    <div className="text-zinc-800 dark:text-zinc-400" style={{ fontFamily: '"Andika", sans-serif'}}>
                       B. Sow 36'
                     </div>
                     <span className="text-zinc-800 dark:text-zinc-400 hover:text-blue-800 hover:underline dark:hover:text-sky-400 cursor-pointer mx-1">. . .</span>
                   </div>
                   <div className="text-center">
-                    <div className="dark:text-white font-medium text-black">
+                    <div className="dark:text-white font-medium text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
                       Real Betis
                     </div>
-                    <div className="text-zinc-800 dark:text-zinc-400">
+                    <div className="text-zinc-800 dark:text-zinc-400" style={{ fontFamily: '"Andika", sans-serif'}}>
                       <div>Goal 96'</div>
                       <div>Pablo García 48'</div>
                       <span className=" hover:underline hover:text-blue-800 dark:hover:text-sky-400 cursor-pointer mx-1">. . .</span>
@@ -231,11 +231,11 @@ const RecentMatch = () => {
                 <hr className="  dark:border-slate-600  w-[26rem] " />
                 <div className="py-2 pt-3">
                   {/* here just only few words are taken otherwise responsive ness break so use lenghth property else ('...') which leads to seemore */}
-                  <span className="text-black text-sm px-2  dark:text-gray-300">
-                    Sevilla Win the match in 4 goals. Gespard Sahif got the red card    
+                  <span className="text-black text-sm px-2  dark:text-gray-300" style={{ fontFamily: '"Andika", sans-serif'}}>
+                    Sevilla Win the match in 4 goals. Gespard Sahif got red card    
                     <span className=" hover:underline hover:text-blue-800 dark:hover:text-sky-400 cursor-pointer mx-1">. . .</span>
                   </span>
-                  <p className="text-black text-xs dark:text-gray-400 py-1.5">
+                  <p className="text-black text-xs dark:text-gray-400 py-1.5" style={{ fontFamily: '"Andika", sans-serif'}}>
                     Play-Off . UERO Europa 78 of 20
                   </p>
                 </div>
@@ -269,7 +269,7 @@ const RecentMatch = () => {
                   alt="logo"
                 />
                 {/* </span> */}
-                <span className=" text-base tracking-wide font-medium">
+                <span className=" text-sm font-semibold" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
                   FIFA World Cup
                 </span>
               </div>
@@ -446,19 +446,19 @@ const RecentMatch = () => {
                 </div>
                 <div className="flex justify-between text-sm">
                   <div className="text-center">
-                    <div className="dark:text-white font-medium text-black">
+                    <div className="dark:text-white font-medium text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
                       Sevilla U19
                     </div>
-                    <div className="text-zinc-800 dark:text-zinc-400">
+                    <div className="text-zinc-800 dark:text-zinc-400" style={{ fontFamily: '"Andika", sans-serif'}}>
                       B. Sow 36'
                     </div>
                     <span className="text-zinc-800 dark:text-zinc-400 hover:text-blue-800 hover:underline dark:hover:text-sky-400 cursor-pointer mx-1">. . .</span>
                   </div>
                   <div className="text-center">
-                    <div className="dark:text-white font-medium text-black">
+                    <div className="dark:text-white font-medium text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
                       Real Betis
                     </div>
-                    <div className="text-zinc-800 dark:text-zinc-400">
+                    <div className="text-zinc-800 dark:text-zinc-400" style={{ fontFamily: '"Andika", sans-serif'}}>
                       <div>Goal 96'</div>
                       <div>Pablo García 48'</div>
                       <span className=" hover:underline hover:text-blue-800 dark:hover:text-sky-400 cursor-pointer mx-1">. . .</span>
@@ -474,11 +474,11 @@ const RecentMatch = () => {
                 <hr className="  dark:border-slate-600  w-[26rem] " />
                 <div className="py-2 pt-3">
                   {/* here just only few words are taken otherwise responsive ness break so use lenghth property else ('...') which leads to seemore */}
-                  <span className="text-black text-sm px-2  dark:text-gray-300">
-                    Sevilla Win the match in 4 goals. Gespard Sahif got the red card    
+                  <span className="text-black text-sm px-2  dark:text-gray-300" style={{ fontFamily: '"Andika", sans-serif'}}>
+                    Sevilla Win the match in 4 goals. Gespard Sahif got red card    
                     <span className=" hover:underline hover:text-blue-800 dark:hover:text-sky-400 cursor-pointer mx-1">. . .</span>
                   </span>
-                  <p className="text-black text-xs dark:text-gray-400 py-1.5">
+                  <p className="text-black text-xs dark:text-gray-400 py-1.5" style={{ fontFamily: '"Andika", sans-serif'}}>
                     Play-Off . UERO Europa 78 of 20
                   </p>
                 </div>
@@ -492,6 +492,7 @@ const RecentMatch = () => {
           </div>
         </section>
       </div>
+      
       
      
       
