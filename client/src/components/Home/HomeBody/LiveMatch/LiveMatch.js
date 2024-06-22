@@ -210,7 +210,7 @@ const LiveMatch = () => {
                 </div>
                 <div className="flex justify-between text-sm">
                   <div className="text-center">
-                    <div className="dark:text-white font-medium text-sm text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
+                    <div className="dark:text-white font-semibold text-sm text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
                       Sevilla U19
                     </div>
                     <div className="text-zinc-800 dark:text-zinc-400" style={{ fontFamily: '"Andika", sans-serif'}}>
@@ -221,7 +221,7 @@ const LiveMatch = () => {
                     </span>
                   </div>
                   <div className="text-center">
-                    <div className="dark:text-white font-medium text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }} >
+                    <div className="dark:text-white font-semibold text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }} >
                       Real Betis
                     </div>
                     <div className="text-zinc-800 dark:text-zinc-400">
@@ -461,7 +461,7 @@ const LiveMatch = () => {
                 </div>
                 <div className="flex justify-between text-sm">
                   <div className="text-center">
-                    <div className="dark:text-white font-medium text-sm text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
+                    <div className="dark:text-white font-semibold text-sm text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
                       Sevilla U19
                     </div>
                     <div className="text-zinc-800 dark:text-zinc-400" style={{ fontFamily: '"Andika", sans-serif'}}>
@@ -472,7 +472,7 @@ const LiveMatch = () => {
                     </span>
                   </div>
                   <div className="text-center">
-                    <div className="dark:text-white font-medium text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }} >
+                    <div className="dark:text-white font-semibold text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }} >
                       Real Betis
                     </div>
                     <div className="text-zinc-800 dark:text-zinc-400">
@@ -712,7 +712,7 @@ const LiveMatch = () => {
                 </div>
                 <div className="flex justify-between text-sm">
                   <div className="text-center">
-                    <div className="dark:text-white font-medium text-sm text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
+                    <div className="dark:text-white font-semibold text-sm text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
                       Sevilla U19
                     </div>
                     <div className="text-zinc-800 dark:text-zinc-400" style={{ fontFamily: '"Andika", sans-serif'}}>
@@ -723,7 +723,7 @@ const LiveMatch = () => {
                     </span>
                   </div>
                   <div className="text-center">
-                    <div className="dark:text-white font-medium text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }} >
+                    <div className="dark:text-white font-semibold text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }} >
                       Real Betis
                     </div>
                     <div className="text-zinc-800 dark:text-zinc-400">
@@ -963,7 +963,7 @@ const LiveMatch = () => {
                 </div>
                 <div className="flex justify-between text-sm">
                   <div className="text-center">
-                    <div className="dark:text-white font-medium text-sm text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
+                    <div className="dark:text-white font-semibold text-sm text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
                       Sevilla U19
                     </div>
                     <div className="text-zinc-800 dark:text-zinc-400" style={{ fontFamily: '"Andika", sans-serif'}}>
@@ -974,7 +974,7 @@ const LiveMatch = () => {
                     </span>
                   </div>
                   <div className="text-center">
-                    <div className="dark:text-white font-medium text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }} >
+                    <div className="dark:text-white font-semibold text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }} >
                       Real Betis
                     </div>
                     <div className="text-zinc-800 dark:text-zinc-400">
@@ -1214,7 +1214,7 @@ const LiveMatch = () => {
                 </div>
                 <div className="flex justify-between text-sm">
                   <div className="text-center">
-                    <div className="dark:text-white font-medium text-sm text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
+                    <div className="dark:text-white font-semibold text-sm text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
                       Sevilla U19
                     </div>
                     <div className="text-zinc-800 dark:text-zinc-400" style={{ fontFamily: '"Andika", sans-serif'}}>
@@ -1225,7 +1225,7 @@ const LiveMatch = () => {
                     </span>
                   </div>
                   <div className="text-center">
-                    <div className="dark:text-white font-medium text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }} >
+                    <div className="dark:text-white font-semibold text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }} >
                       Real Betis
                     </div>
                     <div className="text-zinc-800 dark:text-zinc-400">
