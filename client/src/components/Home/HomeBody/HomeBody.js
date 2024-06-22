@@ -109,7 +109,7 @@ const HomeBody = () => {
         <div className="overflow-hidden w-full">
           <div ref={sliderRef} className="flex overflow-x-scroll no-scrollbar">
             <div
-              className="w-full flex-shrink-0 px-2 py-3 flex min-w-full space-x-7 md:space-x-6"
+              className="w-full flex-shrink-0 px-2 py-3 flex min-w-full space-x-5 md:space-x-6"
               ref={containerRef}
             >
               {currentComponent === "LiveMatch" && <LiveMatch />}
