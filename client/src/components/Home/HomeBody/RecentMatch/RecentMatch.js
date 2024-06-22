@@ -203,7 +203,7 @@ const RecentMatch = () => {
                 </div>
                 <div className="flex justify-between text-sm">
                   <div className="text-center">
-                    <div className="dark:text-white font-semibold text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
+                    <div className="dark:text-white font-semibold md:font-medium text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
                       Sevilla U19
                     </div>
                     <div className="text-zinc-800 dark:text-zinc-400" style={{ fontFamily: '"Andika", sans-serif'}}>
@@ -212,7 +212,7 @@ const RecentMatch = () => {
                     <span className="text-zinc-800 dark:text-zinc-400 hover:text-blue-800 hover:underline dark:hover:text-sky-400 cursor-pointer mx-1">. . .</span>
                   </div>
                   <div className="text-center">
-                    <div className="dark:text-white font-semibold text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
+                    <div className="dark:text-white font-semibold md:font-medium text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
                       Real Betis
                     </div>
                     <div className="text-zinc-800 dark:text-zinc-400" style={{ fontFamily: '"Andika", sans-serif'}}>
@@ -446,7 +446,7 @@ const RecentMatch = () => {
                 </div>
                 <div className="flex justify-between text-sm">
                   <div className="text-center">
-                    <div className="dark:text-white font-semibold text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
+                    <div className="dark:text-white font-semibold md:font-medium text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
                       Sevilla U19
                     </div>
                     <div className="text-zinc-800 dark:text-zinc-400" style={{ fontFamily: '"Andika", sans-serif'}}>
@@ -455,7 +455,7 @@ const RecentMatch = () => {
                     <span className="text-zinc-800 dark:text-zinc-400 hover:text-blue-800 hover:underline dark:hover:text-sky-400 cursor-pointer mx-1">. . .</span>
                   </div>
                   <div className="text-center">
-                    <div className="dark:text-white font-semibold text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
+                    <div className="dark:text-white font-semibold md:font-medium text-black" style={{fontFamily:'"Playwrite NG Modern", cursive' }}>
                       Real Betis
                     </div>
                     <div className="text-zinc-800 dark:text-zinc-400" style={{ fontFamily: '"Andika", sans-serif'}}>
