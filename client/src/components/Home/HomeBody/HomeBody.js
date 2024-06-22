@@ -59,8 +59,20 @@ const HomeBody = () => {
     }
   };
 
+  let cardWidth=318.400;
   const nextSlide = () => {
-    if (currentIndex < maxSlides - 1) {
+    let maxSlides;
+  
+    // Determine the number of cards displayed per window based on device width
+    if (window.innerWidth >= 1024) { // Large devices
+      maxSlides = Math.ceil(sliderRef.current.clientWidth / cardWidth); // cardWidth is the width of each card
+    } else if (window.innerWidth >= 768) { // Medium devices
+      maxSlides = Math.ceil(sliderRef.current.clientWidth / cardWidth) - 1; // Adjust as needed
+    } else { // Small devices
+      maxSlides = 1; // Default to 1 for small devices
+    }
+  
+    if (currentIndex < maxSlides - 1 || maxSlides === 1) {
       setCurrentIndex((next) => next + 1);
       sliderRef.current.scrollBy({
         left: sliderRef.current.clientWidth,
@@ -68,6 +80,8 @@ const HomeBody = () => {
       });
     }
   };
+  
+  
 
   const handleCategoryClick = (index, component) => {
     setCurrentIndex(0); // Reset the current index
