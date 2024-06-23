@@ -4,7 +4,7 @@ import LiveMatch from "./LiveMatch/LiveMatch";
 import RecentMatch from "./RecentMatch/RecentMatch";
 import UpcomingMatch from "./UpcomingMatch/UpcomingMatch";
 import NavContext from "../Navbar/NavContext/NavContext";
-import MatchLoading from "./MatchLoading"
+import MatchLoading from "./MatchLoading";
 
 const HomeBody = () => {
   const {
@@ -19,6 +19,62 @@ const HomeBody = () => {
   const [maxSlides, setMaxSlides] = useState(1); // Initialize maxSlides with a default value of 1
   const sliderRef = useRef(null);
 
+  const updateMaxSlides = () => {
+    const isMediumDevice = window.matchMedia("(min-width: 900px) and (max-width: 1023px)").matches;
+    const isspecialMediumDevice = window.matchMedia("(min-width: 768px) and (max-width: 899px)").matches;
+    const isLargeDevice = window.matchMedia("(min-width: 1024px) and (max-width: 1279px)").matches;
+    const isXLargeDevice = window.matchMedia("(min-width: 1280px)").matches;
+
+    let totalSlideLive=5
+    let totalSlideUpcoming=8
+    let totalSlideRecent=6
+    // console.log(parseInt(totalSlideLive/1.5))
+    switch (currentComponent) {
+      case "LiveMatch":
+        if (isXLargeDevice) {
+          setMaxSlides(parseInt(totalSlideLive/3)+1);
+        } else if (isLargeDevice) {
+          setMaxSlides(parseInt(totalSlideLive/2));
+        } else if (isspecialMediumDevice) {
+          setMaxSlides(parseInt(totalSlideLive/1.35));
+        } else if (isMediumDevice) {
+          setMaxSlides(parseInt(totalSlideLive/1.5));
+        } else {
+          setMaxSlides(totalSlideLive); // Default for small devices
+        }
+        break;
+      case "UpcomingMatch":
+        if (isXLargeDevice) {
+          setMaxSlides(parseInt(totalSlideUpcoming/3)+1);
+        } else if (isLargeDevice) {
+          setMaxSlides(parseInt(totalSlideUpcoming/2));
+        } else if (isspecialMediumDevice) {
+          setMaxSlides(parseInt(totalSlideUpcoming/1.35)+1);
+        } else if (isMediumDevice) {
+          setMaxSlides(parseInt(totalSlideUpcoming/1.5));
+        } else {
+          setMaxSlides(totalSlideUpcoming); // Default for small devices
+        }
+        break;
+      case "RecentMatch":
+        if (isXLargeDevice) {
+          setMaxSlides(parseInt(totalSlideRecent/3)+1);
+        } else if (isLargeDevice) {
+          setMaxSlides(parseInt(totalSlideRecent/2));
+        } else if (isspecialMediumDevice) {
+          setMaxSlides(parseInt(totalSlideRecent/1.35));
+        } else if (isMediumDevice) {
+          setMaxSlides(parseInt(totalSlideRecent/1.5));
+        } else {
+          setMaxSlides(totalSlideRecent); // Default for small devices
+        }
+        break;
+      default:
+        setMaxSlides(1); // Default to a sensible value
+        break;
+    }
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       const index = Math.round(
@@ -32,22 +88,10 @@ const HomeBody = () => {
     return () => slider.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Update maxSlides when currentComponent changes
   useEffect(() => {
-    switch (currentComponent) {
-      case "LiveMatch":
-        setMaxSlides(5);
-        break;
-      case "UpcomingMatch":
-        setMaxSlides(4);
-        break;
-      case "RecentMatch":
-        setMaxSlides(2);
-        break;
-      default:
-        setMaxSlides(1); // Default to a sensible value
-        break;
-    }
+    updateMaxSlides(); // Update maxSlides on component mount
+    window.addEventListener("resize", updateMaxSlides); // Update maxSlides on window resize
+    return () => window.removeEventListener("resize", updateMaxSlides);
   }, [currentComponent]);
 
   const prevSlide = () => {
@@ -60,29 +104,13 @@ const HomeBody = () => {
     }
   };
 
-  let cardWidth=318.400;
   const nextSlide = () => {
-    let maxSlides;
-  
-    // Determine the number of cards displayed per window based on device width
-    if (window.innerWidth >= 1024) { // Large devices
-      maxSlides = Math.ceil(sliderRef.current.clientWidth / cardWidth); // cardWidth is the width of each card
-    } else if (window.innerWidth >= 768) { // Medium devices
-      maxSlides = Math.ceil(sliderRef.current.clientWidth / cardWidth) - 1; // Adjust as needed
-    } else { // Small devices
-      maxSlides = 1; // Default to 1 for small devices
-    }
-  
-    if (currentIndex < maxSlides - 1 || maxSlides === 1) {
-      setCurrentIndex((next) => next + 1);
-      sliderRef.current.scrollBy({
-        left: sliderRef.current.clientWidth,
-        behavior: "smooth",
-      });
-    }
+    setCurrentIndex((next) => next + 1);
+    sliderRef.current.scrollBy({
+      left: sliderRef.current.clientWidth,
+      behavior: "smooth",
+    });
   };
-  
-  
 
   const handleCategoryClick = (index, component) => {
     setCurrentIndex(0); // Reset the current index
@@ -147,7 +175,7 @@ const HomeBody = () => {
               className="flex overflow-x-scroll no-scrollbar"
             >
               <div
-                className="w-full flex-shrink-0 px-2 py-3 flex min-w-full space-x-4 md:space-x-6"
+                className="w-full flex-shrink-0 px-2 py-3 flex min-w-full space-x-4 md:space-x-5"
                 ref={containerRef}
               >
                 {currentComponent === "LiveMatch" && <LiveMatch />}
