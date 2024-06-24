@@ -25,9 +25,9 @@ const HomeBody = () => {
     const isLargeDevice = window.matchMedia("(min-width: 1024px) and (max-width: 1279px)").matches;
     const isXLargeDevice = window.matchMedia("(min-width: 1280px)").matches;
 
-    let totalSlideLive=5
-    let totalSlideUpcoming=8
-    let totalSlideRecent=6
+    let totalSlideLive=1
+    let totalSlideUpcoming=1
+    let totalSlideRecent=1
     // console.log(parseInt(totalSlideLive/1.5))
     switch (currentComponent) {
       case "LiveMatch":
@@ -175,7 +175,7 @@ const HomeBody = () => {
               className="flex overflow-x-scroll no-scrollbar"
             >
               <div
-                className="w-full flex-shrink-0 px-2 py-3 flex min-w-full space-x-4 md:space-x-5"
+                className="w-full flex-shrink-0 px-2 py-3 flex min-w-full space-x-4 md:space-x-4"
                 ref={containerRef}
               >
                 {currentComponent === "LiveMatch" && <LiveMatch />}
