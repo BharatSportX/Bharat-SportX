@@ -6,7 +6,7 @@ const MatchLoading = () => {
       <div role="status" className="flex justify-center items-center w-full h-[23.22rem] md:h-[29.47rem]">
         <svg
           aria-hidden="true"
-          className="w-8 h-8 text-gray-50 animate-spin  dark:fill-orange-600  fill-gray-700 border-0"
+          className="w-8 h-8 text-gray animate-spin  dark:fill-orange-600 dark:text-black fill-gray-700 border-0"
           viewBox="0 0 100 101"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
