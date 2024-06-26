@@ -25,7 +25,7 @@ const HomeBody = () => {
     const isLargeDevice = window.matchMedia("(min-width: 1024px) and (max-width: 1279px)").matches;
     const isXLargeDevice = window.matchMedia("(min-width: 1280px)").matches;
 
-    let totalSlideLive=1
+    let totalSlideLive=16
     let totalSlideUpcoming=1
     let totalSlideRecent=1
     // console.log(parseInt(totalSlideLive/1.5))

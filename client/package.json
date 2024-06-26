@@ -19,7 +19,7 @@
     "@testing-library/user-event": "^13.5.0",
     "aos": "^2.3.4",
     "apexcharts": "^3.49.1",
-    "axios": "^1.6.8",
+    "axios": "^1.7.2",
     "canvasjs-react-charts": "^1.0.5",
     "create-react-app": "^5.0.1",
     "express": "^4.19.2",

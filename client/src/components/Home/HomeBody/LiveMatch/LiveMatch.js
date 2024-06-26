@@ -1,17 +1,60 @@
-import React, { useContext } from "react";
-import {  NavLink } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 import ProgressStep from "./ProgressStep";
 import "./LiveMatch.css";
 import NoLive from "./NoLive";
+import axios from "axios";
 import NavContext from "../../Navbar/NavContext/NavContext";
 import MatchLoading from "../MatchLoading";
 
 const LiveMatch = () => {
   const { handleExternalLinkClick } = useContext(NavContext);
 
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  const LiveApi = async () => {
+    const options = {
+      method: "GET",
+      url: "https://api-football-v1.p.rapidapi.com/v3/fixtures",
+      params: { live: "all" },
+      headers: {
+        "x-rapidapi-key": "96d6e2db0bmshaefc24c363be681p18096ejsn20efc89ac5c0",
+        "x-rapidapi-host": "api-football-v1.p.rapidapi.com",
+      },
+    };
+
+    try {
+      const response = await axios.request(options);
+      setData(response.data.response); 
+      setLoading(false);
+    } catch (error) {
+      setError(error);
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    LiveApi();
+  }, []);
+
+  if (loading) {
+    return <MatchLoading />;
+  }
+
+  if (error) {
+    return <div>Error loading data: {error.message}</div>;
+  }
+
+  if (data.length === 0) {
+    return <NoLive onUpcomingClick={() => handleExternalLinkClick("UpcomingMatch")} />;
+  }
+
   return (
     <>
-      <div className="flex-none relative    w-full  md:w-[30rem] my-4 md:my-6 ">
+      {data.map((item, index) => (
+        <div key={index} className="flex-none relative    w-full  md:w-[30rem] my-4 md:my-6 ">
         <section className="md:mx-5 ">
           {/* <div className=" bg-[#1e2026]   md:h-[25.3rem] p-4 md:p-0    text-white  rounded-lg  mx-auto "> */}
           <div
@@ -262,8 +305,7 @@ const LiveMatch = () => {
           </div>
         </section>
       </div>
-
-      {/* <NoLive onUpcomingClick={() => handleExternalLinkClick("UpcomingMatch")} /> */}
+      ))}
     </>
   );
 };
