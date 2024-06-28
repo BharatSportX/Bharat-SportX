@@ -76,7 +76,7 @@ const LiveMatch = () => {
                 <div className=" flex justify-center items-center space-x-2">
                   {/* <span className=" hover:border-2 hover:border-white p-[0.8px] rounded-full"> */}
                   <img
-                    className="size-7  rounded-full float-left bg-black dark:bg-white  cursor-pointer"
+                    className="size-7  rounded-full float-left bg-white  cursor-pointer"
                     src={item.league.logo}
                     alt="logo"
                   />
