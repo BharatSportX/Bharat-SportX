@@ -255,7 +255,7 @@ const RecentMatch = () => {
                         className="dark:text-white font-semibold md:font-medium text-black"
                         style={{ fontFamily: '"Playwrite NG Modern", cursive' }}
                       >
-                        {item.teams.home.name.length >= 13 ? item.teams.home.name.substring(0, 13) : item.teams.home.name.substring(0, 13) + ' .'}
+                        {item.teams.home.name.length >= 11 ? item.teams.home.name.substring(0, 10)+' .' : item.teams.home.name.substring(0, 10) + ' .'}
                       </div>
                       <div className="text-zinc-800 dark:text-zinc-400"style={{ fontFamily: '"Andika", sans-serif' }}>B sow 36'{" "}</div>
                       <span className="text-zinc-800 dark:text-zinc-400 hover:text-blue-800 hover:underline dark:hover:text-sky-400 cursor-pointer mx-1">
@@ -267,7 +267,7 @@ const RecentMatch = () => {
                         className="dark:text-white font-semibold md:font-medium text-black"
                         style={{ fontFamily: '"Playwrite NG Modern", cursive' }}
                       >
-                         {item.teams.away.name.length >= 13 ? item.teams.away.name.substring(0, 13) : item.teams.away.name.substring(0, 13) + ' .'}
+                         {item.teams.away.name.length >= 11 ? item.teams.away.name.substring(0, 10)+' .' : item.teams.away.name.substring(0, 10) + ' .'}
                       </div>
                       <div className="text-zinc-800 dark:text-zinc-400">
                         <div
