@@ -33,3 +33,6 @@ anf if lenghts of commentry is greaer than 24 then ...
 =======
 noLive.js 
 MatchLoading.js
+
+
+adding pin functionality inside the Match card.
