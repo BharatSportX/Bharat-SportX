@@ -269,7 +269,8 @@ const LiveMatch = () => {
                         className="dark:text-white font-semibold text-sm md:font-medium text-black"
                         style={{ fontFamily: '"Playwrite NG Modern", cursive' }}
                       >
-                        {item.teams.home.name}
+                        {item.teams.home.name.length >= 13 ? item.teams.home.name.substring(0, 13) : item.teams.home.name.substring(0, 13) + ' .'}
+
                       </div>
 
                       {/* {item.events
@@ -299,7 +300,8 @@ const LiveMatch = () => {
                         className="dark:text-white font-semibold md:font-medium text-black"
                         style={{ fontFamily: '"Playwrite NG Modern", cursive' }}
                       >
-                        {item.teams.away.name}
+                        {item.teams.away.name.length >= 13 ? item.teams.away.name.substring(0, 13) : item.teams.away.name.substring(0, 13) + ' .'}
+
                       </div>
                       <div className="text-zinc-800   dark:text-zinc-400">
                         <div
