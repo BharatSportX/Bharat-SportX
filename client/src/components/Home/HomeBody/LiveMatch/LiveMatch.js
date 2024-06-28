@@ -232,7 +232,6 @@ const LiveMatch = () => {
 
               <div className=" border-x dark:border-slate-700 border-slate-500  mx-[0.5px] md:ml-0 md:mr-[0.45px]">
                 <section className="md:pt-10 pb-4 md:px-14 px-4 pt-6">
-                
                   <div className="flex justify-between items-center mb-4">
                     <img
                       src={item.teams.home.logo}
@@ -257,7 +256,7 @@ const LiveMatch = () => {
                     />
                   </div>
                   <div className=" ">
-                  <span className="text-base flex justify-center dark:text-green-400  text-green-800 font-medium">
+                    <span className="text-base flex justify-center dark:text-green-400  text-green-800 font-medium">
                       <span className=" btn-shine dark:live-dark-shine  live-light-shine ">
                         Live
                       </span>
@@ -269,8 +268,9 @@ const LiveMatch = () => {
                         className="dark:text-white font-semibold text-sm md:font-medium text-black"
                         style={{ fontFamily: '"Playwrite NG Modern", cursive' }}
                       >
-                        {item.teams.home.name.length >= 13 ? item.teams.home.name.substring(0, 13) : item.teams.home.name.substring(0, 13) + ' .'}
-
+                        {item.teams.home.name.length >= 13
+                          ? item.teams.home.name.substring(0, 13)
+                          : item.teams.home.name.substring(0, 13) + " ."}
                       </div>
 
                       {/* {item.events
@@ -290,7 +290,12 @@ const LiveMatch = () => {
                             </span>
                           </div>
                         ))} */}
-                        <div className="text-zinc-800 dark:text-zinc-400"style={{ fontFamily: '"Andika", sans-serif' }}>B sow 36'{" "}</div>
+                      <div
+                        className="text-zinc-800 dark:text-zinc-400"
+                        style={{ fontFamily: '"Andika", sans-serif' }}
+                      >
+                        B sow 36'{" "}
+                      </div>
                       <span className="text-zinc-800 dark:text-zinc-400 hover:underline hover:text-blue-800 dark:hover:text-sky-400 cursor-pointer mx-1">
                         . . .
                       </span>
@@ -300,8 +305,9 @@ const LiveMatch = () => {
                         className="dark:text-white font-semibold md:font-medium text-black"
                         style={{ fontFamily: '"Playwrite NG Modern", cursive' }}
                       >
-                        {item.teams.away.name.length >= 13 ? item.teams.away.name.substring(0, 13) : item.teams.away.name.substring(0, 13) + ' .'}
-
+                        {item.teams.away.name.length >= 13
+                          ? item.teams.away.name.substring(0, 13)
+                          : item.teams.away.name.substring(0, 13) + " ."}
                       </div>
                       <div className="text-zinc-800   dark:text-zinc-400">
                         <div
@@ -325,8 +331,8 @@ const LiveMatch = () => {
                                 </span>
                               </div>
                             ))} */}
-                            <div>Goal 96'</div>
-                            <div>Pablo García 48'</div>
+                          <div>Goal 96'</div>
+                          <div>Pablo García 48'</div>
                         </div>
                         <span className="  hover:underline hover:text-blue-800 dark:hover:text-sky-400 cursor-pointer mx-1">
                           . . .
@@ -347,8 +353,18 @@ const LiveMatch = () => {
                       className="text-black text-sm px-2  dark:text-gray-300"
                       style={{ fontFamily: '"Andika", sans-serif' }}
                     >
-                      Sevilla nedds Two more goal to Win. CRO 13.9. PPR 89
-                      <span className=" hover:underline dark:hover:text-sky-400 hover:text-blue-800 cursor-pointer mx-1">
+                      {`${item.teams.away.name.toString()} needs Two more goals to Win`
+                        .length >= 20
+                        ? `${item.teams.away.name.toString()} needs Two more goals to Win `.substring(
+                            0,
+                            53
+                          )
+                        : `${item.teams.away.name.toString()} needs Two more goals to Win`.substring(
+                            0,
+                            48
+                          )}
+
+                      <span className="hover:underline dark:hover:text-sky-400 hover:text-blue-800 cursor-pointer mx-1">
                         . . .
                       </span>
                     </span>
@@ -356,7 +372,7 @@ const LiveMatch = () => {
                       className="text-black text-xs dark:text-gray-400 py-1.5"
                       style={{ fontFamily: '"Andika", sans-serif' }}
                     >
-                      Play-Off . UERO Europa 78 of 20
+                      Play-Off . {item.league.name} 78 of 20
                     </p>
                   </div>
                 </div>

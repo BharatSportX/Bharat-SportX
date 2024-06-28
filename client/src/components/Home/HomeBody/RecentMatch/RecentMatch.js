@@ -296,8 +296,17 @@ const RecentMatch = () => {
                       className="text-black text-sm px-2  dark:text-gray-300"
                       style={{ fontFamily: '"Andika", sans-serif' }}
                     >
-                      Sevilla Win the match in 4 goals. Gespard Sahif got red
-                      card
+                    {`${item.teams.away.name.toString()}  Win the match in 4 goals. `
+                        .length >= 20
+                        ? `${item.teams.away.name.toString()}  Win the match in 4 goals.`.substring(
+                            0,
+                            53
+                          )
+                        : `${item.teams.away.name.toString()}  Win the match in 4 goals. `.substring(
+                            0,
+                            48
+                          )}
+                      
                       <span className=" hover:underline hover:text-blue-800 dark:hover:text-sky-400 cursor-pointer mx-1">
                         . . .
                       </span>
