@@ -232,6 +232,7 @@ const LiveMatch = () => {
 
               <div className=" border-x dark:border-slate-700 border-slate-500  mx-[0.5px] md:ml-0 md:mr-[0.45px]">
                 <section className="md:pt-10 pb-4 md:px-14 px-4 pt-6">
+                
                   <div className="flex justify-between items-center mb-4">
                     <img
                       src={item.teams.home.logo}
@@ -256,7 +257,7 @@ const LiveMatch = () => {
                     />
                   </div>
                   <div className=" ">
-                    <span className="text-base  absolute top-[45%] left-[45%] md:left-[47%] pos-tight dark:text-green-400  text-green-800 font-medium">
+                  <span className="text-base flex justify-center dark:text-green-400  text-green-800 font-medium">
                       <span className=" btn-shine dark:live-dark-shine  live-light-shine ">
                         Live
                       </span>
@@ -271,7 +272,7 @@ const LiveMatch = () => {
                         {item.teams.home.name}
                       </div>
 
-                      {item.events
+                      {/* {item.events
                         .filter(
                           (event) =>
                             event.team.id === item.teams.home.id &&
@@ -287,8 +288,8 @@ const LiveMatch = () => {
                               {goal.player.name} {goal.time.elapsed}'
                             </span>
                           </div>
-                        ))}
-
+                        ))} */}
+                        <div className="text-zinc-800 dark:text-zinc-400"style={{ fontFamily: '"Andika", sans-serif' }}>B sow 36'{" "}</div>
                       <span className="text-zinc-800 dark:text-zinc-400 hover:underline hover:text-blue-800 dark:hover:text-sky-400 cursor-pointer mx-1">
                         . . .
                       </span>
@@ -305,7 +306,7 @@ const LiveMatch = () => {
                           className=""
                           style={{ fontFamily: '"Andika", sans-serif' }}
                         >
-                          {item.events
+                          {/* {item.events
                             .filter(
                               (event) =>
                                 event.team.id === item.teams.away.id &&
@@ -321,7 +322,9 @@ const LiveMatch = () => {
                                   {goal.player.name} {goal.time.elapsed}'
                                 </span>
                               </div>
-                            ))}
+                            ))} */}
+                            <div>Goal 96'</div>
+                            <div>Pablo García 48'</div>
                         </div>
                         <span className="  hover:underline hover:text-blue-800 dark:hover:text-sky-400 cursor-pointer mx-1">
                           . . .
