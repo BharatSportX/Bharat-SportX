@@ -4,6 +4,7 @@ import LiveMatch from "./LiveMatch/LiveMatch";
 import RecentMatch from "./RecentMatch/RecentMatch";
 import UpcomingMatch from "./UpcomingMatch/UpcomingMatch";
 import NavContext from "../Navbar/NavContext/NavContext";
+import axios from 'axios'
 import MatchLoading from "./MatchLoading";
 
 const HomeBody = () => {
@@ -18,7 +19,32 @@ const HomeBody = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [maxSlides, setMaxSlides] = useState(1); // Initialize maxSlides with a default value of 1
   const sliderRef = useRef(null);
+  const [data, setData] = useState([]);
+  
 
+  const LiveApi = async () => {
+    const options = {
+      method: "GET",
+      url: "https://api-football-v1.p.rapidapi.com/v3/fixtures",
+      params: { live: "all" },
+      headers: {
+        "x-rapidapi-key": "96d6e2db0bmshaefc24c363be681p18096ejsn20efc89ac5c0",
+        "x-rapidapi-host": "api-football-v1.p.rapidapi.com",
+      },
+    };
+
+    try {
+      const response = await axios.request(options);
+      setData(response.data.response);
+      
+    } catch (error) {
+     
+    }
+  };
+
+  useEffect(() => {
+    LiveApi();
+  }, []);
   const updateMaxSlides = () => {
     const isMediumDevice = window.matchMedia("(min-width: 900px) and (max-width: 1023px)").matches;
     const isspecialMediumDevice = window.matchMedia("(min-width: 768px) and (max-width: 899px)").matches;
@@ -137,12 +163,12 @@ const HomeBody = () => {
           }
           onClick={() => handleCategoryClick(0, "LiveMatch")}
         >
-          <span
+         {!data.length==0 && <> <span
             className={`absolute top-2.5 left-2.5 flex size-[0.4rem] ${indicatorColor} rounded-full `}
           ></span>
           <span
             className={`absolute top-[0.59rem] left-[0.58rem] flex size-2 ${indicatorColor} rounded-full animate-ping `}
-          ></span>
+          ></span></>}
           Live<span className="hidden xl:inline-block ml-2"> Matches</span>
           <span className="">(2)</span>
         </button>
