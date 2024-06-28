@@ -19,7 +19,7 @@ const HomeBody = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [maxSlides, setMaxSlides] = useState(1); // Initialize maxSlides with a default value of 1
   const sliderRef = useRef(null);
-  const [data, setData] = useState([]);
+  const [data, setData] = useState({ results: 0 });
   
 
   const LiveApi = async () => {
@@ -35,7 +35,7 @@ const HomeBody = () => {
 
     try {
       const response = await axios.request(options);
-      setData(response.data.response);
+      setData(response.data);
       
     } catch (error) {
      
@@ -163,14 +163,14 @@ const HomeBody = () => {
           }
           onClick={() => handleCategoryClick(0, "LiveMatch")}
         >
-         {!data.length==0 && <> <span
-            className={`absolute top-2.5 left-2.5 flex size-[0.4rem] ${indicatorColor} rounded-full `}
-          ></span>
-          <span
-            className={`absolute top-[0.59rem] left-[0.58rem] flex size-2 ${indicatorColor} rounded-full animate-ping `}
-          ></span></>}
+          {data.results > 0 && (
+        <>
+          <span className={`absolute top-2.5 left-2.5 flex size-[0.4rem] ${indicatorColor} rounded-full `}></span>
+          <span className={`absolute top-[0.59rem] left-[0.58rem] flex size-2 ${indicatorColor} rounded-full animate-ping `}></span>
+        </>
+      )}
           Live<span className="hidden xl:inline-block ml-2"> Matches</span>
-          <span className="">(2)</span>
+          <span className="">({data.results})</span>
         </button>
         <button
           className={
