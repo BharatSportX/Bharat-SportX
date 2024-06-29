@@ -42,6 +42,11 @@ const LiveMatch = () => {
     const savedPinnedMatches = JSON.parse(localStorage.getItem("recentPinnedMatches")) || [];
     setPinnedMatches(savedPinnedMatches);
     LiveApi();
+    const interval = setInterval(() => {
+      LiveApi();
+    }, 2000);
+
+    return () => clearInterval(interval);
   }, []);
 
   // Update localStorage when pinnedMatches state changes
@@ -114,6 +119,7 @@ const LiveMatch = () => {
                 <div className=" flex justify-center items-center space-x-2">
                   {/* <span className=" hover:border-2 hover:border-white p-[0.8px] rounded-full"> */}
                   <img
+                   loading="lazy"
                     className="size-7  rounded-full float-left bg-white  cursor-pointer"
                     src={item.league.logo}
                     alt="logo"
@@ -163,6 +169,7 @@ const LiveMatch = () => {
                 <section className="md:pt-10 pb-4 md:px-14 px-4 pt-6">
                   <div className="flex justify-between items-center mb-4">
                     <img
+                     loading="lazy"
                       src={item.teams.home.logo}
                       alt="team logo"
                       className="w-12 h-12"
@@ -179,6 +186,7 @@ const LiveMatch = () => {
                     </div>
 
                     <img
+                     loading="lazy"
                       src={item.teams.away.logo}
                       alt="team logo2"
                       className="w-12 h-12"

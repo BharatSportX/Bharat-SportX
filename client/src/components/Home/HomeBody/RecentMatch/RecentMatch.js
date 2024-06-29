@@ -39,6 +39,11 @@ const RecentMatch = () => {
     const savedPinnedMatches = JSON.parse(localStorage.getItem("recentPinnedMatches")) || [];
     setPinnedMatches(savedPinnedMatches);
     fetchRecentMatches();
+    const interval = setInterval(() => {
+      fetchRecentMatches();
+    }, 2000);
+
+    return () => clearInterval(interval);
   }, []);
 
   // Update localStorage when pinnedMatches state changes
@@ -90,7 +95,7 @@ const RecentMatch = () => {
             <div className="bg-custom-radial-gradient dark:match h-[21.22rem] md:h-[26.47rem] p-0 text-white rounded-lg mx-auto">
               <div className="flex pb-3 p-4 md:pb-5 bg-orange-800 text-orange-300 shadow-orange-950 dark:bg-orange-500 dark:text-orange-950 rounded-t-lg justify-between items-center text-xs md:mb-0 mb-2 shadow-sm dark:shadow-orange-700">
                 <div className="flex justify-center items-center space-x-2">
-                  <img className="size-7 bg-white rounded-full float-left cursor-pointer" src={item.league.logo} alt="logo" />
+                  <img className="size-7 bg-white rounded-full float-left cursor-pointer"  loading="lazy" src={item.league.logo} alt="logo" />
                   <span className="text-sm font-semibold" style={{ fontFamily: '"Playwrite NG Modern", cursive' }}>
                   {item.league.name.length > 16
                           ? item.league.name.substring(0, 16)+ " ."
@@ -111,7 +116,7 @@ const RecentMatch = () => {
               <div className="border-x dark:border-slate-700 border-slate-500 mx-[0.5px] md:ml-0 md:mr-[0.45px]">
                 <section className="md:pt-10 pb-4 md:px-14 px-4 pt-6">
                   <div className="flex justify-between items-center mb-4">
-                    <img src={item.teams.home.logo} alt="team logo" className="w-12 h-12" />
+                    <img  loading="lazy" src={item.teams.home.logo} alt="team logo" className="w-12 h-12" />
                     <div className="text-center">
                       <div className="text-2xl font-bold dark:text-red-500 text-red-700">
                         {item.goals.home} - {item.goals.away}
@@ -120,7 +125,7 @@ const RecentMatch = () => {
                         {item.fixture.status.short} : {item.fixture.status.elapsed}'
                       </div>
                     </div>
-                    <img src={item.teams.away.logo} alt="team logo2" className="w-12 h-12" />
+                    <img  loading="lazy" src={item.teams.away.logo} alt="team logo2" className="w-12 h-12" />
                   </div>
                   <div>
                     <span className="text-base text-center flex justify-center dark:text-stone-400 text-stone-700 font-medium">Finished</span>
