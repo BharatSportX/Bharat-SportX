@@ -92,7 +92,9 @@ const RecentMatch = () => {
                 <div className="flex justify-center items-center space-x-2">
                   <img className="size-7 bg-white rounded-full float-left cursor-pointer" src={item.league.logo} alt="logo" />
                   <span className="text-sm font-semibold" style={{ fontFamily: '"Playwrite NG Modern", cursive' }}>
-                    {item.league.name}
+                  {item.league.name.length > 16
+                          ? item.league.name.substring(0, 16)+ " ."
+                          : item.league.name.substring(0, 16) + " ."}
                   </span>
                 </div>
                 <div className="float-end flex space-x-2 relative">

@@ -123,7 +123,10 @@ const LiveMatch = () => {
                     className=" text-sm  font-semibold"
                     style={{ fontFamily: '"Playwrite NG Modern", cursive' }}
                   >
-                    {item.league.name}
+                    
+                    {item.league.name.length > 16
+                          ? item.league.name.substring(0, 16)+ " ."
+                          : item.league.name.substring(0, 16) + " ."}
                   </span>
                 </div>
                 <div className="float-end flex space-x-2 relative">
