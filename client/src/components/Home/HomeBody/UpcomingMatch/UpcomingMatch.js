@@ -46,12 +46,11 @@ const UpcomingMatch = () => {
     }
   };
 
-    useEffect(() => {
+  useEffect(() => {
     const savedPinnedMatches = JSON.parse(localStorage.getItem("pinnedMatches")) || [];
     setPinnedMatches(savedPinnedMatches);
     UpcomingApi();
-
-    
+  }, []);
 
   useEffect(() => {
     localStorage.setItem("pinnedMatches", JSON.stringify(pinnedMatches));
@@ -112,16 +111,16 @@ const UpcomingMatch = () => {
   return (
     <>
       {sortedMatches.map((item, index) => (
-        <div key={index} className="flex-none relative w-full md:w-[30rem] my-4 md:my-6 " >
+        <div key={index} className="flex-none relative w-full md:w-[30rem] my-4 md:my-6 ">
           <section className="md:mx-5">
             <div className="bg-custom-radial-gradient dark:match h-[21.22rem] md:h-[26.47rem] p-0 text-white rounded-lg mx-auto">
               <div className="flex pb-3 p-4 md:pb-5 bg-orange-800 text-orange-300 shadow-orange-950 dark:bg-orange-500 dark:text-orange-950 rounded-t-lg justify-between items-center text-xs md:mb-0 mb-2 shadow-sm dark:shadow-orange-700">
                 <div className="flex justify-center items-center space-x-2">
-                  <img className="size-7 bg-white rounded-full float-left cursor-pointer"  loading="lazy" src={item.league.logo} alt="logo" />
+                  <img className="size-7 bg-white rounded-full float-left cursor-pointer" loading="lazy" src={item.league.logo} alt="logo" />
                   <span className="text-sm font-semibold" style={{ fontFamily: '"Playwrite NG Modern", cursive' }}>
-                  {item.league.name.length > 16
-                          ? item.league.name.substring(0, 16)+ " ."
-                          : item.league.name.substring(0, 16) + " ."}
+                    {item.league.name.length > 16
+                      ? item.league.name.substring(0, 16) + " ."
+                      : item.league.name.substring(0, 16) + " ."}
                   </span>
                 </div>
                 <div className="float-end flex space-x-2 relative">
@@ -139,7 +138,7 @@ const UpcomingMatch = () => {
               <div className="border-x dark:border-slate-700 border-slate-500 h-56 md:h-80 mx-[0.5px] md:ml-0 md:mr-[0.45px]">
                 <section className="md:pt-10 pb-4 md:px-14 px-4 pt-6">
                   <div className="flex justify-between items-center mb-4 mt-4">
-                    <img  loading="lazy" src={item.teams.home.logo} alt="home logo" className="w-12 h-12" />
+                    <img loading="lazy" src={item.teams.home.logo} alt="home logo" className="w-12 h-12" />
                     <div className="text-center space-y-2">
                       <div className="text-xl font-medium dark:text-indigo-400 text-indigo-900">
                         {formatDate(item.fixture.date)}
@@ -148,7 +147,7 @@ const UpcomingMatch = () => {
                         {formatTime(item.fixture.date)}
                       </div>
                     </div>
-                    <img src={item.teams.away.logo}  loading="lazy" alt="away logo" className="w-12 h-12" />
+                    <img src={item.teams.away.logo} loading="lazy" alt="away logo" className="w-12 h-12" />
                   </div>
 
                   <div className="flex justify-between text-sm">

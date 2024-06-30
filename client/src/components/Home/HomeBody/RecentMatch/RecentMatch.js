@@ -85,7 +85,7 @@ const RecentMatch = () => {
 
   return (
     <>
-      {sortedMatches.filter(item => item.fixture.status.long === "Match Finished").map((item, index) => (
+      {sortedMatches.map((item, index) => (
         <div key={index} className="flex-none relative w-full md:w-[30rem] my-4 md:my-6">
           <section className="md:mx-5">
             <div className="bg-custom-radial-gradient dark:match h-[21.22rem] md:h-[26.47rem] p-0 text-white rounded-lg mx-auto">

@@ -32,6 +32,7 @@ const LiveMatch = () => {
       setLoading(false);
     } catch (error) {
       setError(error);
+      console.log(error)
       setLoading(false);
     }
   };
@@ -42,11 +43,7 @@ const LiveMatch = () => {
     const savedPinnedMatches = JSON.parse(localStorage.getItem("recentPinnedMatches")) || [];
     setPinnedMatches(savedPinnedMatches);
     LiveApi();
-    const interval = setInterval(() => {
-      LiveApi();
-    }, 60000);
-
-    return () => clearInterval(interval);
+    
   }, []);
 
   // Update localStorage when pinnedMatches state changes
