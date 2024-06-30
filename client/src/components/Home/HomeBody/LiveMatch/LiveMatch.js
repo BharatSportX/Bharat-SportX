@@ -87,9 +87,9 @@ const LiveMatch = () => {
   }
 
   if (error) {
-    return <div>Error loading data: {error.message}</div>;
+    return <div className="h-[21.22rem] md:h-[26.47rem] flex justify-center items-center w-full   text-center">Error loading data: {error.message}</div>;
   }
-
+  
   if (data.length === 0) {
     return (
       <NoLive
