@@ -44,7 +44,7 @@ const LiveMatch = () => {
     LiveApi();
     const interval = setInterval(() => {
       LiveApi();
-    }, 1000);
+    }, 60000);
 
     return () => clearInterval(interval);
   }, []);
