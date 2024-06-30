@@ -51,12 +51,7 @@ const UpcomingMatch = () => {
     setPinnedMatches(savedPinnedMatches);
     UpcomingApi();
 
-    const interval = setInterval(() => {
-      UpcomingApi();
-    }, 2000);
-
-    return () => clearInterval(interval);
-  }, []);
+    
 
   useEffect(() => {
     localStorage.setItem("pinnedMatches", JSON.stringify(pinnedMatches));
