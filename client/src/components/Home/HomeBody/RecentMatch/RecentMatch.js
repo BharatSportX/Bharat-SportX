@@ -39,11 +39,7 @@ const RecentMatch = () => {
     const savedPinnedMatches = JSON.parse(localStorage.getItem("recentPinnedMatches")) || [];
     setPinnedMatches(savedPinnedMatches);
     fetchRecentMatches();
-    const interval = setInterval(() => {
-      fetchRecentMatches();
-    }, 1800000);
-
-    return () => clearInterval(interval);
+    
   }, []);
 
   // Update localStorage when pinnedMatches state changes
