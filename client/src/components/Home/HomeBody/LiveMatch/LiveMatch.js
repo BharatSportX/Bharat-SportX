@@ -53,7 +53,7 @@ const LiveMatch = () => {
 
   // Toggle pinning of a match
   const togglePinMatch = (e, matchId) => {
-    e.preventDefault();
+    
     setPinnedMatches((prevPinnedMatches) => {
       if (prevPinnedMatches.includes(matchId)) {
         return prevPinnedMatches.filter((id) => id !== matchId);
