@@ -146,7 +146,7 @@ const LiveMatch = () => {
           >
             <section className="md:mx-5">
             
-              <div className={`bg-custom-radial-gradient dark:match h-auto p-0 ${isOneOne ? 'h-[22.8rem] md:h-[28.05rem]' : 'h-auto'} text-white rounded-lg mx-auto`}>
+              <div className={`bg-custom-radial-gradient dark:match p-0 ${isOneOne ? 'h-[22.8rem] md:h-[28.05rem]' : 'h-auto'} text-white rounded-lg mx-auto`}>
                 <div className="flex pb-3 p-4 md:pb-5 bg-orange-800 text-orange-300 shadow-orange-950 dark:bg-orange-500 dark:text-orange-950 rounded-t-lg justify-between items-center text-xs md:mb-0 mb-2 shadow-sm dark:shadow-orange-700">
                   <div className="flex justify-center items-center space-x-2">
                     <img
