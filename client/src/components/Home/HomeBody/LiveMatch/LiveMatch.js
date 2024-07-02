@@ -102,14 +102,14 @@ const LiveMatch = () => {
             (event) =>
               event.team.id === item.teams.home.id && event.type === "Goal"
           )
-          .map((goal) => `${goal.player.name} ${goal.time.elapsed}'`);
+          .map((goal) => `${goal.player.name|| "Goal"} ${goal.time.elapsed}'`);
 
         const awayGoals = item.events
           .filter(
             (event) =>
               event.team.id === item.teams.away.id && event.type === "Goal"
           )
-          .map((goal) => `${goal.player.name} ${goal.time.elapsed}'`);
+          .map((goal) => `${goal.player.name|| "Goal"} ${goal.time.elapsed}'`);
 
         const homeGoalsDisplay = homeGoals.length ? (
           homeGoals.slice(-2).map((goal, index) => (
@@ -242,6 +242,7 @@ const LiveMatch = () => {
                         <div
                           className="text-zinc-800 dark:text-zinc-400"
                           style={{ fontFamily: '"Andika", sans-serif' }}
+                          loading="lazy"
                         >
                           {homeGoalsDisplay}{" "}
                           <div className="text-zinc-800 dark:text-zinc-400 hover:underline hover:text-blue-800 dark:hover:text-sky-400 cursor-pointer mx-1">
@@ -260,7 +261,7 @@ const LiveMatch = () => {
                             ? item.teams.away.name.substring(0, 10) + " ."
                             : item.teams.away.name.substring(0, 10) + " ."}
                         </div>
-                        <div className="text-zinc-800 dark:text-zinc-400">
+                        <div className="text-zinc-800 dark:text-zinc-400" loading="lazy">
                           <div style={{ fontFamily: '"Andika", sans-serif' }}>
                             {awayGoalsDisplay}{" "}
                             <div className="hover:underline hover:text-blue-800 dark:hover:text-sky-400 cursor-pointer mx-1">
