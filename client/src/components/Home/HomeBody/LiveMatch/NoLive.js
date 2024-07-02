@@ -1,7 +1,8 @@
 import React from "react";
 import "./NoLive.css";
 
-const NoLive = ({ onUpcomingClick }) => {
+const NoLive = (props) => {
+  const { onUpcomingClick,text}=props;
   return (
     <div className="md:my-[3.7rem] overflow-hidden whitespace-normal md:w-screen md:mx-32">
       <div className="main_wrapper">
@@ -32,7 +33,7 @@ const NoLive = ({ onUpcomingClick }) => {
               <div className="screen_out">
                 <div className="screen_out1">
                   <div className="screen">
-                    <span className="notfound_text"> NO LIVE</span>
+                    <span className="notfound_text capitalize">{text}</span>
                   </div>
                 </div>
               </div>

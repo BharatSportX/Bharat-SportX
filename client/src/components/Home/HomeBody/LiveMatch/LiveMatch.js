@@ -89,7 +89,7 @@ const LiveMatch = () => {
   
   if (data.length === 0) {
     return (
-      <NoLive
+      <NoLive text="No Live"
         onUpcomingClick={() => handleExternalLinkClick("UpcomingMatch")}
       />
     );

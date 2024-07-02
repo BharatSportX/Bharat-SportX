@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useContext } from "react";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 import MatchLoading from "../MatchLoading";
 import Details from "../Details";
 import ProgressStep from "../LiveMatch/ProgressStep";
+import NoLive from "../LiveMatch/NoLive";
+import NavContext from "../../Navbar/NavContext/NavContext";
 
 // Utility function to format timestamp to AM/PM
 const formatTime = (timestamp) => {
@@ -17,6 +19,7 @@ const formatTime = (timestamp) => {
 };
 
 const RecentMatch = () => {
+  const { handleExternalLinkClick } = useContext(NavContext);
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -99,7 +102,13 @@ const RecentMatch = () => {
       </div>
     );
   }
-
+  if (data.length === 0) {
+    return (
+      <NoLive text="No Recent Matches"
+        onUpcomingClick={() => handleExternalLinkClick("UpcomingMatch")}
+      />
+    );
+  }
   return (
     <>
       {filteredAndSortedMatches.map((item, index) => (
@@ -242,9 +251,11 @@ const RecentMatch = () => {
                     </div>
                   </div>
                 </section>
-                <div className=" dark:border-slate-600 border-slate-500 mx-4" />
-                <ProgressStep />
-              </div>
+                <div className=" ">
+                  <hr className="  dark:border-slate-600 border-slate-500  mx-2 w-auto md:hidden mb-4" />
+                  <ProgressStep />
+                </div>
+              
               <div className="hidden mt-6 md:flex md:flex-col md:justify-center md:items-center text-center text-wrap">
                 <hr className="dark:border-slate-600 w-[26rem]" />
                 <div className="py-2 pt-3">
@@ -255,11 +266,11 @@ const RecentMatch = () => {
                     >
                       {`${
                         item.teams.away.name.length >= 11
-                          ? item.teams.away.name.substring(0, 10) + " ."
+                          ? item.teams.away.name.substring(0, 10) 
                           : item.teams.away.name
                       } won with ${item.goals.away} goals against ${
                         item.teams.home.name.length >= 11
-                          ? item.teams.home.name.substring(0, 10) + " ."
+                          ? item.teams.home.name.substring(0, 10) 
                           : item.teams.home.name
                       }.`}
                       <span className="hover:underline hover:text-blue-800 dark:hover:text-sky-400 cursor-pointer mx-1">
@@ -273,11 +284,11 @@ const RecentMatch = () => {
                     >
                       {`${
                         item.teams.home.name.length >= 11
-                          ? item.teams.home.name.substring(0, 10) + " ."
+                          ? item.teams.home.name.substring(0, 10) 
                           : item.teams.home.name
                       } won with ${item.goals.home} goals against ${
                         item.teams.away.name.length >= 11
-                          ? item.teams.away.name.substring(0, 10) + " ."
+                          ? item.teams.away.name.substring(0, 10) 
                           : item.teams.away.name
                       }.`}
                       <span className="hover:underline hover:text-blue-800 dark:hover:text-sky-400 cursor-pointer mx-1">
@@ -300,6 +311,7 @@ const RecentMatch = () => {
                   See More Details
                 </span>
               </NavLink>
+            </div>
             </div>
           </section>
         </div>
