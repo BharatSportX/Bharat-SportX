@@ -92,13 +92,8 @@ const LiveMatch = () => {
 
   if (error) {
     return (
-<<<<<<< HEAD
       <div className="h-[24.62rem] md:h-[30.47rem] flex justify-center items-center w-full text-center">
-        Error loading data: {error.message||"There is an Issue in Serevr"}
-=======
-      <div className="h-[24.62rem] md:h-[28.05rem] flex justify-center items-center w-full text-center">
-        Error loading data: {error.message}
->>>>>>> caa7f35373a933b59958574b3ac7672e536fa5ae
+        Error loading data: {error.message||"There is an Issue in Serevr. "}
       </div>
     );
   }
@@ -336,8 +331,8 @@ const LiveMatch = () => {
                       : ""
                   } dark:shadow-orange-500`}
                 >
-                  <NavLink to="/live-match-details/league/"
-                    
+                  <NavLink to="/live-match-details"
+                 
                   
                   className="text-center py-2">
                     <span className="hover:underline font-medium text-base">
