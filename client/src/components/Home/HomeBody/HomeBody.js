@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useContext } from "react";
-import Blogs from "./Blogs";
+import Blogs from "./Blog/Blogs";
 import LiveMatch from "./LiveMatch/LiveMatch";
 import RecentMatch from "./RecentMatch/RecentMatch";
 import UpcomingMatch from "./UpcomingMatch/UpcomingMatch";
@@ -192,6 +192,7 @@ const HomeBody = () => {
         >
           Upcoming<span className="hidden xl:inline-block ml-2"> Matches</span>
         </button>
+        
       </div>
       <div className="mx-7 lg:mx-9">
         <div className="relative z-10">
