@@ -366,144 +366,196 @@
 // }
 
 
-import React from 'react';
+// import React from 'react';
 
-const matchEvents = [
-  {
-    time: {
-      elapsed: 2,
-      extra: null,
-    },
-    team: {
-      id: 21012,
-      name: 'Zhetisay',
-      logo: 'https://media.api-sports.io/football/teams/21012.png',
-    },
-    player: {
-      id: null,
-      name: 'R. Serikkul',
-    },
-    assist: {
-      id: null,
-      name: null,
-    },
-    type: 'Goal',
-    detail: 'Normal Goal',
-    comments: null,
-  },
-  {
-    time: {
-      elapsed: 4,
-      extra: null,
-    },
-    team: {
-      id: 16609,
-      name: 'SD Family',
-      logo: 'https://media.api-sports.io/football/teams/16609.png',
-    },
-    player: {
-      id: null,
-      name: 'S. Mazhit',
-    },
-    assist: {
-      id: null,
-      name: null,
-    },
-    type: 'Goal',
-    detail: 'Normal Goal',
-    comments: null,
-  },
-  {
-    time: {
-      elapsed: 12,
-      extra: null,
-    },
-    team: {
-      id: 21012,
-      name: 'Zhetisay',
-      logo: 'https://media.api-sports.io/football/teams/21012.png',
-    },
-    player: {
-      id: null,
-      name: 'T. Zuftarov',
-    },
-    assist: {
-      id: null,
-      name: null,
-    },
-    type: 'Goal',
-    detail: 'Normal Goal',
-    comments: null,
-  },
-];
+// const matchEvents = [
+//   {
+//     time: {
+//       elapsed: 2,
+//       extra: null,
+//     },
+//     team: {
+//       id: 21012,
+//       name: 'Zhetisay',
+//       logo: 'https://media.api-sports.io/football/teams/21012.png',
+//     },
+//     player: {
+//       id: null,
+//       name: 'R. Serikkul',
+//     },
+//     assist: {
+//       id: null,
+//       name: null,
+//     },
+//     type: 'Goal',
+//     detail: 'Normal Goal',
+//     comments: null,
+//   },
+//   {
+//     time: {
+//       elapsed: 4,
+//       extra: null,
+//     },
+//     team: {
+//       id: 16609,
+//       name: 'SD Family',
+//       logo: 'https://media.api-sports.io/football/teams/16609.png',
+//     },
+//     player: {
+//       id: null,
+//       name: 'S. Mazhit',
+//     },
+//     assist: {
+//       id: null,
+//       name: null,
+//     },
+//     type: 'Goal',
+//     detail: 'Normal Goal',
+//     comments: null,
+//   },
+//   {
+//     time: {
+//       elapsed: 12,
+//       extra: null,
+//     },
+//     team: {
+//       id: 21012,
+//       name: 'Zhetisay',
+//       logo: 'https://media.api-sports.io/football/teams/21012.png',
+//     },
+//     player: {
+//       id: null,
+//       name: 'T. Zuftarov',
+//     },
+//     assist: {
+//       id: null,
+//       name: null,
+//     },
+//     type: 'Goal',
+//     detail: 'Normal Goal',
+//     comments: null,
+//   },
+// ];
+
+// export default function LiveMatchDetails() {
+//   return (
+//     <div className="bg-gradient-to-r from-gray-400 via-gray-900 to-[#c2410c] text-white min-h-screen flex flex-col items-center justify-center p-4 mt-32">
+//       <div className="grid md:grid-cols-2 gap-16 lg:gap-32 w-full max-w-6xl">
+//         <div className="bg-[#57534e] p-6 rounded-lg flex flex-col items-center gap-4 shadow-lg">
+//           <div className="flex items-center gap-4">
+//             <img src="/placeholder.svg" width={48} height={48} alt="Home Team Logo" className="rounded-full" />
+//             <h2 className="text-2xl font-bold">Home Team</h2>
+//           </div>
+//           <div className="grid gap-2">
+//             <div className="flex items-center justify-between">
+//               <div className="text-gray-400">Player 1</div>
+//               <div className="truncate">John Doe</div>
+//             </div>
+//             <div className="flex items-center justify-between">
+//               <div className="text-gray-400">Player 2</div>
+//               <div className="truncate">Jane Smith</div>
+//             </div>
+//             <div className="flex items-center justify-between">
+//               <div className="text-gray-400">Player 3</div>
+//               <div className="truncate">Michael Johnson</div>
+//             </div>
+//             <div className="flex items-center justify-between">
+//               <div className="text-gray-400">Player 4</div>
+//               <div className="truncate">Emily Davis</div>
+//             </div>
+//           </div>
+//         </div>
+//         <div className="bg-[#6b7280] p-6 rounded-lg flex flex-col items-center gap-4 shadow-lg">
+//           <div className="flex items-center gap-4">
+//             <img src="/placeholder.svg" width={48} height={48} alt="Away Team Logo" className="rounded-full" />
+//             <h2 className="text-2xl font-bold">Away Team</h2>
+//           </div>
+//           <div className="grid gap-2">
+//             <div className="flex items-center justify-between">
+//               <div className="text-gray-400">Player 1</div>
+//               <div className="truncate">Sarah Wilson</div>
+//             </div>
+//             <div className="flex items-center justify-between">
+//               <div className="text-gray-400">Player 2</div>
+//               <div className="truncate">David Lee</div>
+//             </div>
+//             <div className="flex items-center justify-between">
+//               <div className="text-gray-400">Player 3</div>
+//               <div className="truncate">Jessica Thompson</div>
+//             </div>
+//             <div className="flex items-center justify-between">
+//               <div className="text-gray-400">Player 4</div>
+//               <div className="truncate">Robert Anderson</div>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//       <div className="w-full max-w-4xl mt-8">
+//         <h2 className="text-2xl font-bold mb-4">Match Events</h2>
+//         <div className="space-y-4">
+//           {matchEvents.map((event, index) => (
+//             <div key={index} className="flex items-center gap-4 p-4 border-b border-gray-700">
+//               <div className="text-lg font-semibold">{event.time.elapsed}'</div>
+//               <img src={event.team.logo} alt={event.team.name} className="w-12 h-12 rounded-full" />
+//               <div className="flex-1">
+//                 <div className="text-xl font-bold">{event.team.name}</div>
+//                 <div className="text-gray-300">{event.player.name}</div>
+//                 <div className="text-gray-400">{event.type} - {event.detail}</div>
+//               </div>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+import React from 'react';
 
 export default function LiveMatchDetails() {
   return (
-    <div className="bg-gradient-to-r from-gray-400 via-gray-900 to-[#c2410c] text-white min-h-screen flex flex-col items-center justify-center p-4 mt-32">
-      <div className="grid md:grid-cols-2 gap-16 lg:gap-32 w-full max-w-6xl">
-        <div className="bg-[#57534e] p-6 rounded-lg flex flex-col items-center gap-4 shadow-lg">
-          <div className="flex items-center gap-4">
-            <img src="/placeholder.svg" width={48} height={48} alt="Home Team Logo" className="rounded-full" />
-            <h2 className="text-2xl font-bold">Home Team</h2>
-          </div>
-          <div className="grid gap-2">
-            <div className="flex items-center justify-between">
-              <div className="text-gray-400">Player 1</div>
-              <div className="truncate">John Doe</div>
-            </div>
-            <div className="flex items-center justify-between">
-              <div className="text-gray-400">Player 2</div>
-              <div className="truncate">Jane Smith</div>
-            </div>
-            <div className="flex items-center justify-between">
-              <div className="text-gray-400">Player 3</div>
-              <div className="truncate">Michael Johnson</div>
-            </div>
-            <div className="flex items-center justify-between">
-              <div className="text-gray-400">Player 4</div>
-              <div className="truncate">Emily Davis</div>
-            </div>
-          </div>
-        </div>
-        <div className="bg-[#6b7280] p-6 rounded-lg flex flex-col items-center gap-4 shadow-lg">
-          <div className="flex items-center gap-4">
-            <img src="/placeholder.svg" width={48} height={48} alt="Away Team Logo" className="rounded-full" />
-            <h2 className="text-2xl font-bold">Away Team</h2>
-          </div>
-          <div className="grid gap-2">
-            <div className="flex items-center justify-between">
-              <div className="text-gray-400">Player 1</div>
-              <div className="truncate">Sarah Wilson</div>
-            </div>
-            <div className="flex items-center justify-between">
-              <div className="text-gray-400">Player 2</div>
-              <div className="truncate">David Lee</div>
-            </div>
-            <div className="flex items-center justify-between">
-              <div className="text-gray-400">Player 3</div>
-              <div className="truncate">Jessica Thompson</div>
-            </div>
-            <div className="flex items-center justify-between">
-              <div className="text-gray-400">Player 4</div>
-              <div className="truncate">Robert Anderson</div>
-            </div>
-          </div>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-gray-400 via-gray-900 to-[#c2410c] text-white mt-32">
+      <div className="text-center">
+        <h1 className="text-3xl font-bold">FULL TIME</h1>
+        <div className="flex items-center justify-center my-4">
+          <div className="flex items-center justify-center w-12 h-12 bg-white text-[#c2410c] font-bold rounded">4</div>
+          <span className="mx-2 text-3xl">|</span>
+          <div className="flex items-center justify-center w-12 h-12 bg-white text-[#c2410c] font-bold rounded">1</div>
         </div>
       </div>
-      <div className="w-full max-w-4xl mt-8">
-        <h2 className="text-2xl font-bold mb-4">Match Events</h2>
-        <div className="space-y-4">
-          {matchEvents.map((event, index) => (
-            <div key={index} className="flex items-center gap-4 p-4 border-b border-gray-700">
-              <div className="text-lg font-semibold">{event.time.elapsed}'</div>
-              <img src={event.team.logo} alt={event.team.name} className="w-12 h-12 rounded-full" />
-              <div className="flex-1">
-                <div className="text-xl font-bold">{event.team.name}</div>
-                <div className="text-gray-300">{event.player.name}</div>
-                <div className="text-gray-400">{event.type} - {event.detail}</div>
-              </div>
-            </div>
-          ))}
+      <div className="flex justify-between w-full max-w-4xl">
+        <div className="text-center">
+          <h2 className="text-2xl font-bold">SPAIN</h2>
+          <img src="/placeholder.svg" alt="Spain Logo" className="mx-auto my-4" />
+        </div>
+        <div className="text-center">
+          <h2 className="text-2xl font-bold">GEORGIA</h2>
+          <img src="/placeholder.svg" alt="Georgia Logo" className="mx-auto my-4" />
+        </div>
+      </div>
+      <div className="flex justify-between w-full max-w-4xl mt-8">
+        <div className="text-left">
+          <p>73% BALL POSSESSION</p>
+          <p>13 ATTEMPTS ON TARGET</p>
+          <p>36 TOTAL ATTEMPTS</p>
+          <p>0 SAVES</p>
+          <p>13 CORNERS</p>
+          <p>3 OFFSIDES</p>
+          <p>114.35 km DISTANCE COVERED</p>
+          <p>771 (94%) PASSES COMPLETED</p>
+          <p>11 FOULS COMMITTED</p>
+          <p>1/0 YELLOW/RED CARDS</p>
+        </div>
+        <div className="text-right">
+          <p>27% BALL POSSESSION</p>
+          <p>0 ATTEMPTS ON TARGET</p>
+          <p>4 TOTAL ATTEMPTS</p>
+          <p>9 SAVES</p>
+          <p>3 CORNERS</p>
+          <p>0 OFFSIDES</p>
+          <p>110.56 km DISTANCE COVERED</p>
+          <p>221 (81%) PASSES COMPLETED</p>
+          <p>5 FOULS COMMITTED</p>
+          <p>1/0 YELLOW/RED CARDS</p>
         </div>
       </div>
     </div>
