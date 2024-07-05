@@ -112,7 +112,7 @@ const UpcomingMatch = () => {
   }
 
   if (error) {
-    return <div className="h-[24.62rem] md:h-[30.47rem] flex justify-center items-center w-full   text-center">Error loading data: {error.message}</div>;
+    return <div className="h-[24.62rem] md:h-[28.05rem] flex justify-center items-center w-full   text-center">Error loading data: {error.message}</div>;
   }
 
   const sortedMatches = [...data]
@@ -130,7 +130,7 @@ const UpcomingMatch = () => {
       {sortedMatches.map((item, index) => (
         <div key={index} className="flex-none relative w-full md:w-[30rem] my-4 md:my-6 ">
           <section className="md:mx-5">
-            <div className="bg-custom-radial-gradient dark:match h-[22.92rem] md:h-[28.07rem] p-0 text-white rounded-lg mx-auto">
+            <div className="bg-custom-radial-gradient dark:match h-[22.55rem] md:h-[28.05rem] p-0 text-white rounded-lg mx-auto">
               <div className="flex pb-3 p-4 md:pb-5 bg-orange-800 text-orange-300 shadow-orange-950 dark:bg-orange-500 dark:text-orange-950 rounded-t-lg justify-between items-center text-xs md:mb-0 mb-2 shadow-sm dark:shadow-orange-700">
                 <div className="flex justify-center items-center space-x-2">
                   <img className="size-7 bg-white rounded-full float-left cursor-pointer" loading="lazy" src={item.league.logo} alt="logo" />
