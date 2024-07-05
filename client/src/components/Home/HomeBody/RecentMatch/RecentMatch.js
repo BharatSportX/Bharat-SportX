@@ -46,7 +46,7 @@ const RecentMatch = () => {
         .filter(
           (match) =>
             match.league.name === "Copa America" ||
-            match.league.name === "Euro Championship"
+match.league.name === "Euro Championship"
         )
         .map((match) => match.fixture.id);
 
