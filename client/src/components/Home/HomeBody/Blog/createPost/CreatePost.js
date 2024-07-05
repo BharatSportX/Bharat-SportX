@@ -38,7 +38,7 @@ const CreatePost = () => {
               </button>
             </span>
           </div>
-          <button className="w-full mt-4 p-2 bg-zinc-300 text-gray-900 rounded-lg hover:bg-zinc-400">
+          <button className="w-full mt-4 p-2 bg-slate-800 text-gray-200 rounded-lg hover:bg-[#1b2638]">
             <span className="font-bold  text-lg md:text-2xl">Create your post</span>
           </button>
         </div>
