@@ -50,7 +50,7 @@
     outline: none;
     border: none;
     border-bottom: 1px solid #ccc;
-    width: 100%;
+    
     overflow-wrap: break-word;
     border-radius: 0; /* Remove border-radius for the bottom border style */
 }
@@ -60,6 +60,6 @@
     box-shadow:none;
 }
 .textBtn {
-    width: 100%;
+    
     word-wrap: break-word;
   }
