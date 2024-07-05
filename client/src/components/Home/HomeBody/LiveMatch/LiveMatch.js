@@ -92,7 +92,7 @@ const LiveMatch = () => {
 
   if (error) {
     return (
-      <div className="h-[24.62rem] md:h-[30.47rem] flex justify-center items-center w-full text-center">
+      <div className="h-[24.62rem] md:h-[28.05rem] flex justify-center items-center w-full text-center">
         Error loading data: {error.message}
       </div>
     );

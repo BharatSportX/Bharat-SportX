@@ -113,7 +113,7 @@ match.league.name === "Euro Championship"
 
   if (error) {
     return (
-      <div className="h-[24.62rem] md:h-[30.47rem] flex justify-center items-center w-full text-center">
+      <div className="h-[24.62rem] md:h-[28.05rem] flex justify-center items-center w-full text-center">
         Error loading data: {error.message}
       </div>
     );
@@ -253,7 +253,7 @@ match.league.name === "Euro Championship"
                   </div>
                 </section>
                 <div
-                        className="text-zinc-800 text-center dark:text-zinc-400 mb-3"
+                        className="text-zinc-800 text-center dark:text-zinc-400 mb-3 md:mb-4"
                         style={{ fontFamily: '"Andika", sans-serif' }}
                       >
                       {item.league.round}
