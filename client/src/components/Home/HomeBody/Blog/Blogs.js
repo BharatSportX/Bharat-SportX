@@ -5,7 +5,7 @@ const Blogs = () => {
   return (
     <>
       <hr className="border-4 border-gray-900 my-2" />
-      <div className="h-auto mt-4 text-black bg-gray-200 dark:text-white dark:bg-slate-950 lg:px-24">
+      <div className=" min-h-screen mt-4 text-black bg-gray-200 dark:text-white dark:bg-slate-950 lg:px-24">
         <div className="w-full max-w-screen-2xl py-4 px-2 rounded-lg shadow-md">
           <div className="flex items-center space-x-2 px-2 py-4 lg:p-4 bg-slate-900 rounded-lg border border-gray-700">
             <div className="flex-shrink-0">
