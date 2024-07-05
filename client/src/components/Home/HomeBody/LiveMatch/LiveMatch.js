@@ -331,7 +331,7 @@ const LiveMatch = () => {
                       : ""
                   } dark:shadow-orange-500`}
                 >
-                  <NavLink to="/" className="text-center py-2">
+                  <NavLink to="/live-match-details" className="text-center py-2">
                     <span className="hover:underline font-medium text-base">
                       See More Details
                     </span>
