@@ -112,7 +112,7 @@ const UpcomingMatch = () => {
   }
 
   if (error) {
-    return <div className="h-[22.92rem] md:h-[28.07rem] flex justify-center items-center w-full   text-center">Error loading data: {error.message}</div>;
+    return <div className="h-[24.62rem] md:h-[30.47rem] flex justify-center items-center w-full   text-center">Error loading data: {error.message}</div>;
   }
 
   const sortedMatches = [...data]
