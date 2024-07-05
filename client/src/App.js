@@ -26,6 +26,7 @@ import FootballSubscription from "./components/ALLSports/Football/FootballSubscr
 
 import LiveMatchDetails from "./components/Home/HomeBody/LiveMatch/LiveMatchDetails";
 import Test from "./components/Test/Test";
+import AdminPanel from "./components/Home/HomeBody/LiveMatch/AdminPanel";
 function App() {
   const router = createBrowserRouter([
     {
@@ -206,6 +207,15 @@ function App() {
       element: (
         <>
           <Navbar/><LiveMatchDetails/>
+        </>
+      ),
+    },
+
+    {
+      path: "/admin",
+      element: (
+        <>
+          <AdminPanel/>
         </>
       ),
     },
