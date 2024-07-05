@@ -1,5 +1,5 @@
 import React from "react";
-import './Blog.css'
+import "./Blog.css";
 
 const Blogs = () => {
   return (
@@ -9,11 +9,15 @@ const Blogs = () => {
         <div className="w-full max-w-screen-2xl py-4 px-2 rounded-lg shadow-md">
           <div className="flex items-center space-x-2 px-2 py-4 lg:p-4 bg-slate-900 rounded-lg border border-gray-700">
             <div className="flex-shrink-0">
-              <img className="w-10 h-10 rounded-full" src="https://placehold.co/40x40" alt="User Avatar" />
+              <img
+                className="w-10 h-10 rounded-full"
+                src="https://placehold.co/40x40"
+                alt="User Avatar"
+              />
             </div>
-            <textarea 
-              placeholder="Write something on your mind..." 
-              className=" textBtn btn-input p-2.5 flex-grow pr-12 relative bg-transparent text-gray-100 border-0 border-b" 
+            <textarea
+              placeholder="Write something on your mind..."
+              className=" textBtn btn-input p-2.5 flex-grow pr-12 relative bg-transparent text-gray-100 border-0 border-b"
               rows="2"
               style={{ wordWrap: "break-word", resize: "none" }}
             ></textarea>
