@@ -113,7 +113,7 @@ match.league.name === "Euro Championship"
 
   if (error) {
     return (
-      <div className="h-[21.22rem] md:h-[26.47rem] flex justify-center items-center w-full text-center">
+      <div className="h-[22.92rem] md:h-[28.07rem] flex justify-center items-center w-full text-center">
         Error loading data: {error.message}
       </div>
     );
@@ -134,7 +134,7 @@ match.league.name === "Euro Championship"
           className="flex-none relative w-full md:w-[30rem] my-4 md:my-6"
         >
           <section className="md:mx-5">
-            <div className="bg-custom-radial-gradient dark:match h-[21.22rem] md:h-[26.47rem] p-0 text-white rounded-lg mx-auto">
+            <div className="bg-custom-radial-gradient dark:match h-auto p-0 text-white rounded-lg mx-auto">
               <div className="flex pb-3 p-4 md:pb-5 bg-orange-800 text-orange-300 shadow-orange-950 dark:bg-orange-500 dark:text-orange-950 rounded-t-lg justify-between items-center text-xs md:mb-0 mb-2 shadow-sm dark:shadow-orange-700">
                 <div className="flex justify-center items-center space-x-2">
                   <img
@@ -213,7 +213,7 @@ match.league.name === "Euro Championship"
                       Finished ({formatTime(item.fixture.periods.second)})
                     </span>
                   </div>
-                  <div className="flex justify-between text-sm">
+                  <div className="flex justify-between text-sm mt-3 mb-2">
                     <div>
                       <div
                         className="mt-1 dark:text-white font-semibold md:font-medium text-black"

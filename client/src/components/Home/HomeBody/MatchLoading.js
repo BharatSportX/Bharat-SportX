@@ -5,7 +5,7 @@ const MatchLoading = () => {
     <>
       <div
         role="status"
-        className="flex justify-center items-center w-full h-[23.22rem] md:h-[29.47rem]"
+        className="flex justify-center items-center w-full h-[24.62rem] md:h-[30.47rem]"
       >
         <button className="loader__btn">
           <div className=" border-2 border-orange-700 dark:border-white border-solid  loader"></div>
