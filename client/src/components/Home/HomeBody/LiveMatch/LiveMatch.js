@@ -22,8 +22,8 @@ const LiveMatch = () => {
       url: "https://api-football-v1.p.rapidapi.com/v3/fixtures",
       params: { live: "all" },
       headers: {
-        "x-rapidapi-key": "96d6e2db0bmshaefc24c363be681p18096ejsn20efc89ac5c0",
-        "x-rapidapi-host": "api-football-v1.p.rapidapi.com",
+        "x-rapidapi-key": process.env.REACT_APP_APIKEY,
+        "x-rapidapi-host": process.env.REACT_APP_APIHOST,
       },
     };
 
