@@ -93,7 +93,7 @@ const LiveMatch = () => {
   if (error) {
     return (
       <div className="h-[24.62rem] md:h-[30.47rem] flex justify-center items-center w-full text-center">
-        Error loading data: {error.message}
+        Error loading data: {error.message||"There is an Issue in Serevr"}
       </div>
     );
   }
@@ -331,7 +331,10 @@ const LiveMatch = () => {
                       : ""
                   } dark:shadow-orange-500`}
                 >
-                  <NavLink to="/live-match-details" className="text-center py-2">
+                  <NavLink to="/live-match-details"
+                    
+                  
+                  className="text-center py-2">
                     <span className="hover:underline font-medium text-base">
                       See More Details
                     </span>
