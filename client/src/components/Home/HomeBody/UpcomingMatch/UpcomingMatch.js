@@ -53,11 +53,28 @@ const UpcomingMatch = () => {
   }, []);
 
   useEffect(() => {
+    //pinned matches as default
+    if (data.length > 0) {
+      const defaultPinnedMatches = data
+        .filter(
+          (item) =>
+            item.league.name === "Copa America" || item.league.name === "Euro Championship"
+        )
+        .map((item) => item.fixture.id);
+
+      setPinnedMatches((prevPinnedMatches) => {
+        const newPinnedMatches = [...new Set([...prevPinnedMatches, ...defaultPinnedMatches])];
+        localStorage.setItem("pinnedMatches", JSON.stringify(newPinnedMatches));
+        return newPinnedMatches;
+      });
+    }
+  }, [data]);
+
+  useEffect(() => {
     localStorage.setItem("pinnedMatches", JSON.stringify(pinnedMatches));
   }, [pinnedMatches]);
 
   const togglePinMatch = (e, matchId) => {
-    
     setPinnedMatches((prevPinnedMatches) => {
       if (prevPinnedMatches.includes(matchId)) {
         return prevPinnedMatches.filter((id) => id !== matchId);

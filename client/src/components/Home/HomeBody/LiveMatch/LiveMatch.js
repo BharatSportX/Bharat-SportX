@@ -41,9 +41,22 @@ const LiveMatch = () => {
   useEffect(() => {
     const savedPinnedMatches =
       JSON.parse(localStorage.getItem("recentPinnedMatches")) || [];
-    setPinnedMatches(savedPinnedMatches);
-    LiveApi();
-  }, []);
+      //pinned matches as default
+    LiveApi().then(() => {
+      const defaultPinnedMatches = data
+        .filter(
+          (match) =>
+            match.league.name === "Copa America" ||
+            match.league.name === "Euro Championship"
+        )
+        .map((match) => match.fixture.id);
+
+      const initialPinnedMatches = [
+        ...new Set([...savedPinnedMatches, ...defaultPinnedMatches]),
+      ];
+      setPinnedMatches(initialPinnedMatches);
+    });
+  }, [data]);
 
   useEffect(() => {
     localStorage.setItem("recentPinnedMatches", JSON.stringify(pinnedMatches));
@@ -102,14 +115,14 @@ const LiveMatch = () => {
             (event) =>
               event.team.id === item.teams.home.id && event.type === "Goal"
           )
-          .map((goal) => `${goal.player.name|| "Goal"} ${goal.time.elapsed}'`);
+          .map((goal) => `${goal.player.name || "Goal"} ${goal.time.elapsed}'`);
 
         const awayGoals = item.events
           .filter(
             (event) =>
               event.team.id === item.teams.away.id && event.type === "Goal"
           )
-          .map((goal) => `${goal.player.name|| "Goal"} ${goal.time.elapsed}'`);
+          .map((goal) => `${goal.player.name || "Goal"} ${goal.time.elapsed}'`);
 
         const homeGoalsDisplay = homeGoals.length ? (
           homeGoals.slice(-2).map((goal, index) => (
@@ -142,11 +155,14 @@ const LiveMatch = () => {
         return (
           <div
             key={index}
-            className={`flex-none relative w-full md:w-[30rem]  my-4 md:my-6`}
+            className={`flex-none relative w-full md:w-[30rem]  mt-4 mb-3 md:mt-6 md:mb-5`}
           >
             <section className="md:mx-5">
-            
-              <div className={`bg-custom-radial-gradient dark:match p-0 ${isOneOne ? 'h-[22.8rem] md:h-[28.05rem]' : 'h-auto'} text-white rounded-lg mx-auto`}>
+              <div
+                className={`bg-custom-radial-gradient dark:match p-0 ${
+                  isOneOne ? "h-[22.8rem] md:h-[28.05rem]" : "h-auto"
+                } text-white rounded-lg mx-auto`}
+              >
                 <div className="flex pb-3 p-4 md:pb-5 bg-orange-800 text-orange-300 shadow-orange-950 dark:bg-orange-500 dark:text-orange-950 rounded-t-lg justify-between items-center text-xs md:mb-0 mb-2 shadow-sm dark:shadow-orange-700">
                   <div className="flex justify-center items-center space-x-2">
                     <img
@@ -261,12 +277,14 @@ const LiveMatch = () => {
                             ? item.teams.away.name.substring(0, 10) + " ."
                             : item.teams.away.name.substring(0, 10) + " ."}
                         </div>
-                        <div className="text-zinc-800 dark:text-zinc-400" loading="lazy">
-                          <div style={{ fontFamily: '"Andika", sans-serif' }}>
-                            {awayGoalsDisplay}{" "}
-                            <div className="hover:underline hover:text-blue-800 dark:hover:text-sky-400 cursor-pointer mx-1">
-                              . . .
-                            </div>
+                        <div
+                          className="text-zinc-800 dark:text-zinc-400"
+                          style={{ fontFamily: '"Andika", sans-serif' }}
+                          loading="lazy"
+                        >
+                          {awayGoalsDisplay}{" "}
+                          <div className="hover:underline hover:text-blue-800 dark:hover:text-sky-400 cursor-pointer mx-1">
+                            . . .
                           </div>
                         </div>
                       </div>
@@ -306,7 +324,13 @@ const LiveMatch = () => {
                     </div>
                   </div>
                 </div>
-                <div className={`rounded-b-lg flex flex-col bg-orange-800 text-orange-300 shadow-orange-950 dark:bg-orange-500 dark:text-orange-950 font-medium shadow-sm ${isOneOne ? ' absolute bottom-0 left-0 right-0 md:mx-5 mx-auto' : ''} dark:shadow-orange-500`}>
+                <div
+                  className={`rounded-b-lg flex flex-col bg-orange-800 text-orange-300 shadow-orange-950 dark:bg-orange-500 dark:text-orange-950 font-medium shadow-sm ${
+                    isOneOne
+                      ? " absolute bottom-0 left-0 right-0 md:mx-5 mx-auto"
+                      : ""
+                  } dark:shadow-orange-500`}
+                >
                   <NavLink to="/" className="text-center py-2">
                     <span className="hover:underline font-medium text-base">
                       See More Details

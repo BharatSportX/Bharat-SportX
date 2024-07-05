@@ -1,4 +1,4 @@
-import React, { useState, useEffect,useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 import MatchLoading from "../MatchLoading";
@@ -39,7 +39,27 @@ const RecentMatch = () => {
 
     try {
       const response = await axios.request(options);
-      setData(response.data.response);
+      const fetchedData = response.data.response;
+      
+      // Filter matches to be pinned by default
+      const defaultPinnedMatches = fetchedData
+        .filter(
+          (match) =>
+            match.league.name === "Copa America" ||
+            match.league.name === "Euro Championship"
+        )
+        .map((match) => match.fixture.id);
+
+      const savedPinnedMatches =
+        JSON.parse(localStorage.getItem("recentPinnedMatches")) || [];
+      
+      // Combine saved pinned matches with default pinned matches, ensuring no duplicates
+      const combinedPinnedMatches = Array.from(
+        new Set([...savedPinnedMatches, ...defaultPinnedMatches])
+      );
+
+      setData(fetchedData);
+      setPinnedMatches(combinedPinnedMatches);
       setLoading(false);
     } catch (error) {
       console.error(error);
@@ -48,11 +68,8 @@ const RecentMatch = () => {
     }
   };
 
-  // Load pinned matches from localStorage on initial render
+  // Load pinned matches from localStorage and fetch recent matches on initial render
   useEffect(() => {
-    const savedPinnedMatches =
-      JSON.parse(localStorage.getItem("recentPinnedMatches")) || [];
-    setPinnedMatches(savedPinnedMatches);
     fetchRecentMatches();
   }, []);
 
@@ -63,7 +80,6 @@ const RecentMatch = () => {
 
   // Toggle pinning of a match
   const togglePinMatch = (e, matchId) => {
-    
     setPinnedMatches((prevPinnedMatches) => {
       if (prevPinnedMatches.includes(matchId)) {
         return prevPinnedMatches.filter((id) => id !== matchId);
@@ -104,7 +120,8 @@ const RecentMatch = () => {
   }
   if (data.length === 0) {
     return (
-      <NoLive text="No Recent Matches"
+      <NoLive
+        text="No Recent Matches"
         onUpcomingClick={() => handleExternalLinkClick("UpcomingMatch")}
       />
     );
@@ -210,19 +227,18 @@ const RecentMatch = () => {
                         className="text-zinc-800 dark:text-zinc-400"
                         style={{ fontFamily: '"Andika", sans-serif' }}
                       >
-                        {item.goals.home === 0 ? (
+                        {/* {item.goals.home === 0 ? (
                           <div className="mt-1">No Goal</div>
                         ) : (
                           <div className="mt-1">
                             {item.goals.home} Goal
                             {item.goals.home > 1 ? "s" : ""}
                           </div>
-                        )}
-                        <span className="hover:text-blue-800 hover:underline dark:hover:text-sky-400 cursor-pointer mx-1">
-                          . . .
-                        </span>
+                        )} */}
+                        
                       </div>
                     </div>
+                    
                     <div className="text-end">
                       <div
                         className="mt-1 dark:text-white font-semibold md:font-medium text-black"
@@ -232,25 +248,18 @@ const RecentMatch = () => {
                           ? item.teams.away.name.substring(0, 10) + " ."
                           : item.teams.away.name}
                       </div>
-                      <div
-                        className="text-zinc-800 dark:text-zinc-400"
-                        style={{ fontFamily: '"Andika", sans-serif' }}
-                      >
-                        {item.goals.away === 0 ? (
-                          <div className="mt-1">No Goal</div>
-                        ) : (
-                          <div className="mt-1">
-                            {item.goals.away} Goal
-                            {item.goals.away > 1 ? "s" : ""}
-                          </div>
-                        )}
-                        <span className="hover:text-blue-800 hover:underline dark:hover:text-sky-400 cursor-pointer mx-1">
-                          . . .
-                        </span>
-                      </div>
+                     
                     </div>
                   </div>
                 </section>
+                <div
+                        className="text-zinc-800 text-center dark:text-zinc-400 mb-4"
+                        style={{ fontFamily: '"Andika", sans-serif' }}
+                      >
+                      {item.league.round}
+                        
+                        
+                      </div>
                 <div className=" ">
                   <hr className="  dark:border-slate-600 border-slate-500  mx-2 w-auto md:hidden mb-4" />
                   <ProgressStep />
