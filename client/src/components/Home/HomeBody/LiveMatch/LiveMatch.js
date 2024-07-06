@@ -99,7 +99,7 @@ const LiveMatch = () => {
   }
 
   if (error) {
-    return <div className="h-[24.62rem] md:h-[28.05rem] flex justify-center items-center w-full   text-center">Error loading data: {error.message}</div>;
+    return <div className="h-[24.62rem] md:h-[27.05rem] flex justify-center items-center w-full   text-center">Error loading data: {error.message}</div>;
   }
 
   const sortedMatches = [...data]
