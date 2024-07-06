@@ -38,23 +38,27 @@ const LiveMatch = () => {
   };
 
   useEffect(() => {
+    LiveApi();
+  }, []);
+
+  useEffect(() => {
     const savedPinnedMatches =
       JSON.parse(localStorage.getItem("recentPinnedMatches")) || [];
-    LiveApi().then(() => {
-      const defaultPinnedMatches = data
-        .filter(
-          (match) =>
-            match.league.name === "Copa America" ||
-            match.league.name === "Euro Championship"
-        )
-        .map((match) => match.fixture.id);
+    
+    const defaultPinnedMatches = data
+      .filter(
+        (match) =>
+          match.league.name === "Copa America" ||
+          match.league.name === "Euro Championship"
+      )
+      .map((match) => match.fixture.id);
 
-      const initialPinnedMatches = [
-        ...new Set([...savedPinnedMatches, ...defaultPinnedMatches]),
-      ];
-      setPinnedMatches(initialPinnedMatches);
-    });
-  }, []);
+    const initialPinnedMatches = [
+      ...new Set([...savedPinnedMatches, ...defaultPinnedMatches]),
+    ];
+
+    setPinnedMatches(initialPinnedMatches);
+  }, [data]);
 
   useEffect(() => {
     localStorage.setItem("recentPinnedMatches", JSON.stringify(pinnedMatches));
