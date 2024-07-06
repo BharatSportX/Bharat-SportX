@@ -19,8 +19,8 @@ const FrontNavbar = () => {
             </span>
           </NavLink>
 
-          <div class=" block w-auto" id="navbar-default">
-            <ul class="font-medium flex flex-col p-4 md:p-0   md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 ">
+          <div className=" block w-auto" id="navbar-default">
+            <ul className="font-medium flex flex-col p-4 md:p-0   md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 ">
               <form>
                 <button className=" w-24 py-0 md:py-3 text-sm max-320:text-xs max-320:w-20    md:w-36 BtnEx z-10  ">
                   SUBSCRIBE
