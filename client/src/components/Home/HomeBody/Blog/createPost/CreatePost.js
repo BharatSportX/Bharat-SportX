@@ -21,7 +21,7 @@ const CreatePost = () => {
             <span className="flex-grow relative">
               <textarea
                 placeholder="Write something on your mind..."
-                className="caret-[#129318] textBtn  text-base md:text-2xl btn-input pl-0 py-2.5 w-[84%] md:w-[90%] lg:w-[95%]  md:pr-16 bg-transparent text-gray-100 border-0 border-b"
+                className="caret-[#129318] textBtn text-lg md:text-2xl btn-input pl-0 py-2.5 w-[84%] md:w-[90%] lg:w-[95%]  md:pr-16 bg-transparent text-gray-100 border-0 border-b"
                 rows="2"
                 style={{ wordWrap: "break-word", resize: "none" }}
                 onChange={handleInputChange}
