@@ -2,7 +2,7 @@ import React from "react";
 import "./NoLive.css";
 
 const NoLive = (props) => {
-  const { onUpcomingClick,text}=props;
+  const { onUpcomingClick,text,text2}=props;
   return (
     <div className="md:my-[4.3rem] my-0 overflow-hidden whitespace-normal md:w-screen md:mx-32">
       <div className="main_wrapper">
@@ -68,7 +68,7 @@ const NoLive = (props) => {
       </div>
       <div className="container flex justify-center flex-col items-center">
         <h3 className="md:text-4xl text-2xl font-semibold mb-2 mt-6 text-center">
-          There are no Live events at the moment.
+          There are no {text2} events at the moment.
         </h3>
         <p className="md:text-xl text-xl my-1 text-center">
           Please Check again Later. Or View{" "}
