@@ -84,9 +84,14 @@ const PostBlogs = () => {
                             />
                           </svg>
                         </button>
+                        <button className="dark:text-white text-black hover:text-blue-500">
+                          <i className="far fa-bookmark text-2xl"></i>
+                        </button>
                       </div>
                       <button className="dark:text-white text-black hover:text-blue-500">
-                        <i className="far fa-bookmark text-2xl"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
+                          <path d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z" />
+                        </svg>
                       </button>
                     </div>
                     <div className=" px-4">
