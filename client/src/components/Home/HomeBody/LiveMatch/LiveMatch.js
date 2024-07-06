@@ -14,7 +14,7 @@ const LiveMatch = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [pinnedMatches, setPinnedMatches] = useState([]);
+  const [pinnedLiveMatch, setPinnedMatches] = useState([]);
 
   const LiveApi = async () => {
     const options = {
@@ -29,38 +29,54 @@ const LiveMatch = () => {
 
     try {
       const response = await axios.request(options);
-      setData(response.data.response);
+      const fetchedData = response.data.response;
+
+      setData(fetchedData);
+
+      // Update pinned matches to remove any invalid matches that no longer exist in the fetched data
+      setPinnedMatches((prevPinnedMatches) => {
+        const validPinnedMatches = prevPinnedMatches.filter((pinnedMatchId) =>
+          fetchedData.some((match) => match.fixture.id === pinnedMatchId)
+        );
+        localStorage.setItem("pinnedLiveMatch", JSON.stringify(validPinnedMatches));
+        return validPinnedMatches;
+      });
+
       setLoading(false);
     } catch (error) {
-      setError(error);
-      console.log(error);
+      console.error(error);
       setLoading(false);
+      setError(error);
     }
   };
 
   useEffect(() => {
-    const savedPinnedMatches =
-      JSON.parse(localStorage.getItem("recentPinnedMatches")) || [];
-      //pinned matches as default
-    LiveApi().then(() => {
-      const defaultPinnedMatches = data
-        .filter(
-          (match) =>
-            match.league.name === "Copa America" ||
-            match.league.name === "Euro Championship"
-        )
-        .map((match) => match.fixture.id);
-
-      const initialPinnedMatches = [
-        ...new Set([...savedPinnedMatches, ...defaultPinnedMatches]),
-      ];
-      setPinnedMatches(initialPinnedMatches);
-    });
+    const savedPinnedMatches1 = JSON.parse(localStorage.getItem("pinnedLiveMatch")) || [];
+    setPinnedMatches(savedPinnedMatches1);
+    LiveApi();
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("recentPinnedMatches", JSON.stringify(pinnedMatches));
-  }, [pinnedMatches]);
+    //pinned matches as default
+    if (data.length > 0) {
+      const defaultPinnedMatches = data
+        .filter(
+          (item) =>
+            item.league.name === "Copa America" || item.league.name === "Euro Championship"
+        )
+        .map((item) => item.fixture.id);
+
+      setPinnedMatches((prevPinnedMatches) => {
+        const newPinnedMatches = [...new Set([...prevPinnedMatches, ...defaultPinnedMatches])];
+        localStorage.setItem("pinnedLiveMatch", JSON.stringify(newPinnedMatches));
+        return newPinnedMatches;
+      });
+    }
+  }, [data]);
+
+  useEffect(() => {
+    localStorage.setItem("pinnedLiveMatch", JSON.stringify(pinnedLiveMatch));
+  }, [pinnedLiveMatch]);
 
   const togglePinMatch = (e, matchId) => {
     setPinnedMatches((prevPinnedMatches) => {
@@ -73,30 +89,28 @@ const LiveMatch = () => {
   };
 
   const isPinned = (matchId) => {
-    return pinnedMatches.includes(matchId);
+    return pinnedLiveMatch.includes(matchId);
   };
 
-  const sortedMatches = [...data].sort((a, b) => {
-    const isAPinned = isPinned(a.fixture.id);
-    const isBPinned = isPinned(b.fixture.id);
-
-    if (isAPinned && !isBPinned) return -1;
-    if (!isAPinned && isBPinned) return 1;
-
-    return 0;
-  });
+ 
 
   if (loading) {
     return <MatchLoading />;
   }
 
   if (error) {
-    return (
-      <div className="h-[24.62rem] md:h-[30.47rem] flex justify-center items-center w-full text-center">
-        Error loading data: {error.message||"There is an Issue in Serevr. "}
-      </div>
-    );
+    return <div className="h-[24.62rem] md:h-[28.05rem] flex justify-center items-center w-full   text-center">Error loading data: {error.message}</div>;
   }
+
+  const sortedMatches = [...data]
+    .sort((a, b) => {
+      const aPinned = isPinned(a.fixture.id);
+      const bPinned = isPinned(b.fixture.id);
+      if (aPinned && !bPinned) return -1;
+      if (!aPinned && bPinned) return 1;
+      return 0;
+    });
+
 
   if (data.length === 0) {
     return (

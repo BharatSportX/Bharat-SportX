@@ -140,7 +140,7 @@ const RecentMatch = () => {
   if (sortedMatches.length === 0) {
     return (
       <NoLive
-        text="No Recent Matches"
+        text="No Recent Matches" text2="Recent Matches"
         onUpcomingClick={() => handleExternalLinkClick("UpcomingMatch")}
       />
     );
