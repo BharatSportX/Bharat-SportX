@@ -4,7 +4,7 @@ import LiveMatch from "./LiveMatch/LiveMatch";
 import RecentMatch from "./RecentMatch/RecentMatch";
 import UpcomingMatch from "./UpcomingMatch/UpcomingMatch";
 import NavContext from "../Navbar/NavContext/NavContext";
-import axios from 'axios'
+import axios from "axios";
 import MatchLoading from "./MatchLoading";
 
 const HomeBody = () => {
@@ -20,7 +20,6 @@ const HomeBody = () => {
   const [maxSlides, setMaxSlides] = useState(1); // Initialize maxSlides with a default value of 1
   const sliderRef = useRef(null);
   const [data, setData] = useState({ results: 0 });
-  
 
   const LiveApi = async () => {
     const options = {
@@ -36,61 +35,64 @@ const HomeBody = () => {
     try {
       const response = await axios.request(options);
       setData(response.data);
-      
-    } catch (error) {
-     
-    }
+    } catch (error) {}
   };
 
   useEffect(() => {
     LiveApi();
   }, []);
   const updateMaxSlides = () => {
-    const isMediumDevice = window.matchMedia("(min-width: 900px) and (max-width: 1023px)").matches;
-    const isspecialMediumDevice = window.matchMedia("(min-width: 768px) and (max-width: 899px)").matches;
-    const isLargeDevice = window.matchMedia("(min-width: 1024px) and (max-width: 1279px)").matches;
+    const isMediumDevice = window.matchMedia(
+      "(min-width: 900px) and (max-width: 1023px)"
+    ).matches;
+    const isspecialMediumDevice = window.matchMedia(
+      "(min-width: 768px) and (max-width: 899px)"
+    ).matches;
+    const isLargeDevice = window.matchMedia(
+      "(min-width: 1024px) and (max-width: 1279px)"
+    ).matches;
     const isXLargeDevice = window.matchMedia("(min-width: 1280px)").matches;
 
-    let totalSlideLive=16
-    let totalSlideUpcoming=50
-    let totalSlideRecent=44
+    let totalSlideLive = 16;
+    let totalSlideUpcoming = 50;
+    let totalSlideRecent = 44;
     // console.log(parseInt(totalSlideLive/1.5))
     switch (currentComponent) {
       case "LiveMatch":
         if (isXLargeDevice) {
-          setMaxSlides(parseInt(totalSlideLive/3)+1);
+          setMaxSlides(parseInt(totalSlideLive / 3) + 1);
         } else if (isLargeDevice) {
-          setMaxSlides(parseInt(totalSlideLive/2));
+          setMaxSlides(parseInt(totalSlideLive / 2));
         } else if (isspecialMediumDevice) {
-          setMaxSlides(parseInt(totalSlideLive/1.35));
+          setMaxSlides(parseInt(totalSlideLive / 1.35));
         } else if (isMediumDevice) {
-          setMaxSlides(parseInt(totalSlideLive/1.5));
+          setMaxSlides(parseInt(totalSlideLive / 1.5));
         } else {
           setMaxSlides(totalSlideLive); // Default for small devices
         }
         break;
       case "UpcomingMatch":
         if (isXLargeDevice) {
-          setMaxSlides(parseInt(totalSlideUpcoming/3)+1);
+          setMaxSlides(parseInt(totalSlideUpcoming / 3) + 1);
         } else if (isLargeDevice) {
-          setMaxSlides(parseInt(totalSlideUpcoming/2));
+          setMaxSlides(parseInt(totalSlideUpcoming / 2));
         } else if (isspecialMediumDevice) {
-          setMaxSlides(parseInt(totalSlideUpcoming/1.35)+1);
+          setMaxSlides(parseInt(totalSlideUpcoming / 1.35) + 1);
         } else if (isMediumDevice) {
-          setMaxSlides(parseInt(totalSlideUpcoming/1.5));
+          setMaxSlides(parseInt(totalSlideUpcoming / 1.5));
         } else {
           setMaxSlides(totalSlideUpcoming); // Default for small devices
         }
         break;
       case "RecentMatch":
         if (isXLargeDevice) {
-          setMaxSlides(parseInt(totalSlideRecent/3)+1);
+          setMaxSlides(parseInt(totalSlideRecent / 3) + 1);
         } else if (isLargeDevice) {
-          setMaxSlides(parseInt(totalSlideRecent/2));
+          setMaxSlides(parseInt(totalSlideRecent / 2));
         } else if (isspecialMediumDevice) {
-          setMaxSlides(parseInt(totalSlideRecent/1.35));
+          setMaxSlides(parseInt(totalSlideRecent / 1.35));
         } else if (isMediumDevice) {
-          setMaxSlides(parseInt(totalSlideRecent/1.5));
+          setMaxSlides(parseInt(totalSlideRecent / 1.5));
         } else {
           setMaxSlides(totalSlideRecent); // Default for small devices
         }
@@ -154,46 +156,53 @@ const HomeBody = () => {
           Matches
         </h1>
       </div>
-      <div className="m-4 lg:mx-10 space-x-2.5 max-370:space-x-1.5 mr-0">
-        <button
-          className={
-            activeButtons[0]
-              ? "relative border-2 border-orange-800 dark:border-orange-500 dark:bg-orange-500 dark:text-orange-950 text-lg font-medium px-6 rounded-full cursor-pointer bg-orange-800 text-orange-300"
-              : "relative border-2 text-lg font-medium px-6 rounded-full cursor-pointer dark:text-orange-500 dark:border-orange-500 border-orange-800 text-orange-800"
-          }
-          onClick={() => handleCategoryClick(0, "LiveMatch")}
-        >
-          {data.results > 0 && (
-        <>
-          <span className={`absolute top-2.5 left-2.5 flex size-[0.4rem] ${indicatorColor} rounded-full `}></span>
-          <span className={`absolute top-[0.59rem] left-[0.58rem] flex size-2 ${indicatorColor} rounded-full animate-ping `}></span>
-        </>
-      )}
-          Live<span className="hidden xl:inline-block ml-2"> Matches</span>
-          <span className="">({data.results})</span>
-        </button>
-        <button
-          className={
-            activeButtons[1]
-              ? " border-2 border-orange-800 dark:border-orange-500 dark:bg-orange-500 dark:text-orange-950 text-lg font-medium px-4 rounded-full cursor-pointer bg-orange-800 text-orange-300"
-              : "border-2 text-lg font-medium dark:text-orange-500 dark:border-orange-500 px-4 rounded-full cursor-pointer border-orange-800 text-orange-800"
-          }
-          onClick={() => handleCategoryClick(1, "RecentMatch")}
-        >
-          Recent<span className="hidden xl:inline-block ml-2"> Matches</span>
-        </button>
-        <button
-          className={
-            activeButtons[2]
-              ? "border-2 border-orange-800 dark:border-orange-500 dark:bg-orange-500 dark:text-orange-950 text-lg font-medium px-4 rounded-full cursor-pointer bg-orange-800 text-orange-300"
-              : "border-2 text-lg font-medium dark:text-orange-500 dark:border-orange-500 px-4 rounded-full cursor-pointer border-orange-800 text-orange-800"
-          }
-          onClick={() => handleCategoryClick(2, "UpcomingMatch")}
-        >
-          Upcoming<span className="hidden xl:inline-block ml-2"> Matches</span>
-        </button>
-        
+      <div className=" overflow-x-scroll no-scrollbar">
+        <div className="m-4 lg:mx-10 space-x-2.5 inline-flex whitespace-nowrap max-370:space-x-1.5 mr-0">
+          <button
+            className={
+              activeButtons[0]
+                ? "relative border-2 border-orange-800 dark:border-orange-500 dark:bg-orange-500 dark:text-orange-950 text-lg font-medium px-6 rounded-full cursor-pointer bg-orange-800 text-orange-300"
+                : "relative border-2 text-lg font-medium px-6 rounded-full cursor-pointer dark:text-orange-500 dark:border-orange-500 border-orange-800 text-orange-800"
+            }
+            onClick={() => handleCategoryClick(0, "LiveMatch")}
+          >
+            {data.results > 0 && (
+              <>
+                <span
+                  className={`absolute top-2.5 left-2.5 flex size-[0.4rem] ${indicatorColor} rounded-full `}
+                ></span>
+                <span
+                  className={`absolute top-[0.59rem] left-[0.58rem] flex size-2 ${indicatorColor} rounded-full animate-ping `}
+                ></span>
+              </>
+            )}
+            Live<span className="hidden xl:inline-block ml-2"> Matches</span>
+            <span className="">({data.results})</span>
+          </button>
+          <button
+            className={
+              activeButtons[1]
+                ? " border-2 border-orange-800 dark:border-orange-500 dark:bg-orange-500 dark:text-orange-950 text-lg font-medium px-4 rounded-full cursor-pointer bg-orange-800 text-orange-300"
+                : "border-2 text-lg font-medium dark:text-orange-500 dark:border-orange-500 px-4 rounded-full cursor-pointer border-orange-800 text-orange-800"
+            }
+            onClick={() => handleCategoryClick(1, "RecentMatch")}
+          >
+            Recent<span className="hidden xl:inline-block ml-2"> Matches</span>
+          </button>
+          <button
+            className={
+              activeButtons[2]
+                ? "border-2 border-orange-800 dark:border-orange-500 dark:bg-orange-500 dark:text-orange-950 text-lg font-medium px-4 rounded-full cursor-pointer bg-orange-800 text-orange-300"
+                : "border-2 text-lg font-medium dark:text-orange-500 dark:border-orange-500 px-4 rounded-full cursor-pointer border-orange-800 text-orange-800"
+            }
+            onClick={() => handleCategoryClick(2, "UpcomingMatch")}
+          >
+            Upcoming
+            <span className="hidden xl:inline-block ml-2"> Matches</span>
+          </button>
+        </div>
       </div>
+
       <div className="mx-7 lg:mx-9">
         <div className="relative z-10">
           <div className="overflow-hidden w-full">
