@@ -30,7 +30,7 @@ const RecentMatch = () => {
     const options = {
       method: "GET",
       url: "https://api-football-v1.p.rapidapi.com/v3/fixtures",
-      params: { last: "50" },
+      params: { last: "90" },
       headers: {
         "x-rapidapi-key": process.env.REACT_APP_APIKEY,
         "x-rapidapi-host": process.env.REACT_APP_APIHOST,
@@ -96,7 +96,7 @@ const RecentMatch = () => {
 
   // Filter and sort matches to prioritize pinned ones and finished matches
   const filteredAndSortedMatches = [...data]
-    .filter((match) => match.fixture.status.long === "Match Finished")
+    // .filter((match) => match.fixture.status.long === "Match Finished")
     .sort((a, b) => {
       const isAPinned = isPinned(a.fixture.id);
       const isBPinned = isPinned(b.fixture.id);
