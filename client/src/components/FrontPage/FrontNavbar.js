@@ -10,8 +10,8 @@ const FrontNavbar = () => {
             to="/" className="cursor-pointer"
             // className="flex items-center space-x-3 rtl:space-x-reverse"
           >
-            <span className="self-center text-3xl  font-semibold whitespace-nowrap  font-[Charm,cursive] pl-3 md:text-[2.5rem]">
-              <span className="text-orange-700 text-4xl md:text-[2.9rem]">B</span>
+            <span className="self-center text-3xl  max-320:text-2xl font-semibold whitespace-nowrap  font-[Charm,cursive] pl-3 md:text-[2.5rem]">
+              <span className="text-orange-700 text-4xl md:text-[2.9rem] max-320:text-3xl">B</span>
               <span className="text-orange-700">h</span>
               <span className=" text-white">ar</span>
               <span className=" text-green-600">at</span>
