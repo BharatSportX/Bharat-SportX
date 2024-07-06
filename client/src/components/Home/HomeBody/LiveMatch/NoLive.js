@@ -4,7 +4,7 @@ import "./NoLive.css";
 const NoLive = (props) => {
   const { onUpcomingClick,text}=props;
   return (
-    <div className="md:my-[3.7rem] overflow-hidden whitespace-normal md:w-screen md:mx-32">
+    <div className="md:my-[4.3rem] overflow-hidden whitespace-normal md:w-screen md:mx-32">
       <div className="main_wrapper">
         <div className="main space-y-3">
           <div className="antenna">
