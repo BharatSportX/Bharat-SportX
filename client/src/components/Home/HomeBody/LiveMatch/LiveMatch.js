@@ -33,7 +33,6 @@ const LiveMatch = () => {
       setLoading(false);
     } catch (error) {
       setError(error);
-      console.log(error);
       setLoading(false);
     }
   };
@@ -41,7 +40,6 @@ const LiveMatch = () => {
   useEffect(() => {
     const savedPinnedMatches =
       JSON.parse(localStorage.getItem("recentPinnedMatches")) || [];
-      //pinned matches as default
     LiveApi().then(() => {
       const defaultPinnedMatches = data
         .filter(
@@ -56,7 +54,7 @@ const LiveMatch = () => {
       ];
       setPinnedMatches(initialPinnedMatches);
     });
-  }, [data]);
+  }, []);
 
   useEffect(() => {
     localStorage.setItem("recentPinnedMatches", JSON.stringify(pinnedMatches));
@@ -93,16 +91,14 @@ const LiveMatch = () => {
   if (error) {
     return (
       <div className="h-[24.62rem] md:h-[30.47rem] flex justify-center items-center w-full text-center">
-        Error loading data: {error.message||"There is an Issue in Serevr. "}
+        Error loading data: {error.message || "There is an Issue in Server."}
       </div>
     );
   }
 
   if (data.length === 0) {
     return (
-      <NoLive
-        onUpcomingClick={() => handleExternalLinkClick("UpcomingMatch")}
-      />
+      <NoLive onUpcomingClick={() => handleExternalLinkClick("UpcomingMatch")} />
     );
   }
 
@@ -331,10 +327,7 @@ const LiveMatch = () => {
                       : ""
                   } dark:shadow-orange-500`}
                 >
-                  <NavLink to="/live-match-details"
-                 
-                  
-                  className="text-center py-2">
+                  <NavLink to="/live-match-details" className="text-center py-2">
                     <span className="hover:underline font-medium text-base">
                       See More Details
                     </span>

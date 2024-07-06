@@ -40,19 +40,19 @@ const RecentMatch = () => {
     try {
       const response = await axios.request(options);
       const fetchedData = response.data.response;
-      
+
       // Filter matches to be pinned by default
       const defaultPinnedMatches = fetchedData
         .filter(
           (match) =>
             match.league.name === "Copa America" ||
-match.league.name === "Euro Championship"
+            match.league.name === "Euro Championship"
         )
         .map((match) => match.fixture.id);
 
       const savedPinnedMatches =
         JSON.parse(localStorage.getItem("recentPinnedMatches")) || [];
-      
+
       // Combine saved pinned matches with default pinned matches, ensuring no duplicates
       const combinedPinnedMatches = Array.from(
         new Set([...savedPinnedMatches, ...defaultPinnedMatches])
@@ -62,9 +62,9 @@ match.league.name === "Euro Championship"
       setPinnedMatches(combinedPinnedMatches);
       setLoading(false);
     } catch (error) {
-      console.error(error);
-      setLoading(false);
+      console.error("Error fetching recent matches:", error);
       setError(error);
+      setLoading(false);
     }
   };
 
@@ -113,12 +113,13 @@ match.league.name === "Euro Championship"
 
   if (error) {
     return (
-      <div className="h-[24.62rem] md:h-[28.05rem] flex justify-center items-center w-full text-center">
-        Error loading data: {error.message}
+      <div className="h-[24.62rem] md:h-[30.47rem] flex justify-center items-center w-full text-center">
+        Error loading data: {error.message || "There is an issue with the server."}
       </div>
     );
   }
-  if (data.length === 0) {
+
+  if (filteredAndSortedMatches.length === 0) {
     return (
       <NoLive
         text="No Recent Matches"
@@ -126,6 +127,7 @@ match.league.name === "Euro Championship"
       />
     );
   }
+
   return (
     <>
       {filteredAndSortedMatches.map((item, index) => (
