@@ -8,15 +8,6 @@ import NoLive from "../LiveMatch/NoLive";
 import NavContext from "../../Navbar/NavContext/NavContext";
 
 // Utility function to format timestamp to AM/PM
-const formatTime = (timestamp) => {
-  const date = new Date(timestamp * 1000);
-  const hours = date.getUTCHours();
-  const minutes = date.getUTCMinutes();
-  const ampm = hours >= 12 ? "PM" : "AM";
-  const formattedHours = hours % 12 || 12;
-  const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
-  return `${formattedHours}:${formattedMinutes} ${ampm}`;
-};
 
 const RecentMatch = () => {
   const { handleExternalLinkClick } = useContext(NavContext);
@@ -25,8 +16,7 @@ const RecentMatch = () => {
   const [error, setError] = useState(null);
   const [pinnedMatches, setPinnedMatches] = useState([]);
 
-  // Function to fetch recent matches from API
-  const fetchRecentMatches = async () => {
+  const UpcomingApi = async () => {
     const options = {
       method: "GET",
       url: "https://api-football-v1.p.rapidapi.com/v3/fixtures",
@@ -41,44 +31,60 @@ const RecentMatch = () => {
       const response = await axios.request(options);
       const fetchedData = response.data.response;
 
-      // Filter matches to be pinned by default
-      const defaultPinnedMatches = fetchedData
-        .filter(
-          (match) =>
-            match.league.name === "Copa America" ||
-            match.league.name === "Euro Championship"
-        )
-        .map((match) => match.fixture.id);
-
-      const savedPinnedMatches =
-        JSON.parse(localStorage.getItem("recentPinnedMatches")) || [];
-
-      // Combine saved pinned matches with default pinned matches, ensuring no duplicates
-      const combinedPinnedMatches = Array.from(
-        new Set([...savedPinnedMatches, ...defaultPinnedMatches])
-      );
-
       setData(fetchedData);
-      setPinnedMatches(combinedPinnedMatches);
+
+      // Update pinned matches to remove any invalid matches that no longer exist in the fetched data
+      setPinnedMatches((prevPinnedMatches) => {
+        const validPinnedMatches = prevPinnedMatches.filter((pinnedMatchId) =>
+          fetchedData.some((match) => match.fixture.id === pinnedMatchId)
+        );
+        localStorage.setItem(
+          "pinnedMatches",
+          JSON.stringify(validPinnedMatches)
+        );
+        return validPinnedMatches;
+      });
+
       setLoading(false);
     } catch (error) {
-      console.error("Error fetching recent matches:", error);
-      setError(error);
+      console.error(error);
       setLoading(false);
+      setError(error);
     }
   };
 
-  // Load pinned matches from localStorage and fetch recent matches on initial render
   useEffect(() => {
-    fetchRecentMatches();
+    const savedPinnedMatches =
+      JSON.parse(localStorage.getItem("pinnedMatches")) || [];
+    setPinnedMatches(savedPinnedMatches);
+    UpcomingApi();
   }, []);
 
-  // Update localStorage when pinnedMatches state changes
   useEffect(() => {
-    localStorage.setItem("recentPinnedMatches", JSON.stringify(pinnedMatches));
+    //pinned matches as default
+    if (data.length > 0) {
+      const defaultPinnedMatches = data
+        .filter(
+          (item) =>
+            item.league.name === "Copa America" ||
+            item.league.name === "Euro Championship"
+        )
+        .map((item) => item.fixture.id);
+
+      setPinnedMatches((prevPinnedMatches) => {
+        const newPinnedMatches = [
+          ...new Set([...prevPinnedMatches, ...defaultPinnedMatches]),
+        ];
+        localStorage.setItem("pinnedMatches", JSON.stringify(newPinnedMatches));
+        return newPinnedMatches;
+      });
+    }
+  }, [data]);
+
+  useEffect(() => {
+    localStorage.setItem("pinnedMatches", JSON.stringify(pinnedMatches));
   }, [pinnedMatches]);
 
-  // Toggle pinning of a match
   const togglePinMatch = (e, matchId) => {
     setPinnedMatches((prevPinnedMatches) => {
       if (prevPinnedMatches.includes(matchId)) {
@@ -89,23 +95,20 @@ const RecentMatch = () => {
     });
   };
 
-  // Check if a match is pinned
   const isPinned = (matchId) => {
     return pinnedMatches.includes(matchId);
   };
 
-  // Filter and sort matches to prioritize pinned ones and finished matches
-  const filteredAndSortedMatches = [...data]
-    // .filter((match) => match.fixture.status.long === "Match Finished")
-    .sort((a, b) => {
-      const isAPinned = isPinned(a.fixture.id);
-      const isBPinned = isPinned(b.fixture.id);
-
-      if (isAPinned && !isBPinned) return -1; // A is pinned, B is not, A comes first
-      if (!isAPinned && isBPinned) return 1; // B is pinned, A is not, B comes first
-
-      return 0; // Both are pinned or both are not pinned, maintain current order
-    });
+  const formatTime = (dateString) => {
+    const date = new Date(dateString);
+    const options = {
+      hour: "numeric",
+      minute: "numeric",
+      hour12: true,
+      timeZone: "Asia/Kolkata", // Change this to the timezone you want (e.g., "Asia/Kolkata" for India)
+    };
+    return date.toLocaleString("en-US", options);
+  };
 
   if (loading) {
     return <MatchLoading />;
@@ -113,13 +116,28 @@ const RecentMatch = () => {
 
   if (error) {
     return (
-      <div className="h-[24.62rem] md:h-[30.47rem] flex justify-center items-center w-full text-center">
-        Error loading data: {error.message || "There is an issue with the server."}
+      <div className="h-[24.62rem] md:h-[28.05rem] flex justify-center items-center w-full   text-center">
+        Error loading data: {error.message}
       </div>
     );
   }
 
-  if (filteredAndSortedMatches.length === 0) {
+  const sortedMatches = [...data]
+    .filter(
+      (item) =>
+        item.fixture.status.long === "Match Finished" ||
+        item.fixture.status.long === "Match Cancelled"
+    )
+
+    .sort((a, b) => {
+      const aPinned = isPinned(a.fixture.id);
+      const bPinned = isPinned(b.fixture.id);
+      if (aPinned && !bPinned) return -1;
+      if (!aPinned && bPinned) return 1;
+      return 0;
+    });
+
+  if (sortedMatches.length === 0) {
     return (
       <NoLive
         text="No Recent Matches"
@@ -130,7 +148,7 @@ const RecentMatch = () => {
 
   return (
     <>
-      {filteredAndSortedMatches.map((item, index) => (
+      {sortedMatches.map((item, index) => (
         <div
           key={index}
           className="flex-none relative w-full md:w-[30rem] my-4 md:my-6"
@@ -237,10 +255,9 @@ const RecentMatch = () => {
                             {item.goals.home > 1 ? "s" : ""}
                           </div>
                         )} */}
-                        
                       </div>
                     </div>
-                    
+
                     <div className="text-end">
                       <div
                         className="mt-1 dark:text-white font-semibold md:font-medium text-black"
@@ -250,79 +267,76 @@ const RecentMatch = () => {
                           ? item.teams.away.name.substring(0, 10) + " ."
                           : item.teams.away.name}
                       </div>
-                     
                     </div>
                   </div>
                 </section>
                 <div
-                        className="text-zinc-800 text-center dark:text-zinc-400 mb-3 md:mb-4"
-                        style={{ fontFamily: '"Andika", sans-serif' }}
-                      >
-                      {item.league.round}
-                        
-                        
-                      </div>
+                  className="text-zinc-800 text-center dark:text-zinc-400 mb-3 md:mb-4"
+                  style={{ fontFamily: '"Andika", sans-serif' }}
+                >
+                  {item.league.round}
+                </div>
                 <div className=" ">
                   <hr className="  dark:border-slate-600 border-slate-500  mx-2 w-auto md:hidden mb-4" />
                   <ProgressStep />
                 </div>
-              
-              <div className="hidden mt-6 md:flex md:flex-col md:justify-center md:items-center text-center text-wrap">
-                <hr className="dark:border-slate-600 w-[26rem]" />
-                <div className="py-2 pt-3">
-                  {item.goals.away > item.goals.home ? (
-                    <span
-                      className="text-black text-sm px-2 dark:text-gray-300"
+
+                <div className="hidden mt-6 md:flex md:flex-col md:justify-center md:items-center text-center text-wrap">
+                  <hr className="dark:border-slate-600 w-[26rem]" />
+                  <div className="py-2 pt-3">
+                    {item.goals.away > item.goals.home ? (
+                      <span
+                        className="text-black text-sm px-2 dark:text-gray-300"
+                        style={{ fontFamily: '"Andika", sans-serif' }}
+                      >
+                        {`${
+                          item.teams.away.name.length >= 11
+                            ? item.teams.away.name.substring(0, 10)
+                            : item.teams.away.name
+                        } won with ${item.goals.away} goals against ${
+                          item.teams.home.name.length >= 11
+                            ? item.teams.home.name.substring(0, 10)
+                            : item.teams.home.name
+                        }.`}
+                        <span className="hover:underline hover:text-blue-800 dark:hover:text-sky-400 cursor-pointer mx-1">
+                          . . .
+                        </span>
+                      </span>
+                    ) : (
+                      <span
+                        className="text-black text-sm px-2 dark:text-gray-300"
+                        style={{ fontFamily: '"Andika", sans-serif' }}
+                      >
+                        {`${
+                          item.teams.home.name.length >= 11
+                            ? item.teams.home.name.substring(0, 10)
+                            : item.teams.home.name
+                        } won with ${item.goals.home} goals against ${
+                          item.teams.away.name.length >= 11
+                            ? item.teams.away.name.substring(0, 10)
+                            : item.teams.away.name
+                        }.`}
+                        <span className="hover:underline hover:text-blue-800 dark:hover:text-sky-400 cursor-pointer mx-1">
+                          . . .
+                        </span>
+                      </span>
+                    )}
+                    <p
+                      className="text-black text-xs dark:text-gray-400 py-1.5"
                       style={{ fontFamily: '"Andika", sans-serif' }}
                     >
-                      {`${
-                        item.teams.away.name.length >= 11
-                          ? item.teams.away.name.substring(0, 10) 
-                          : item.teams.away.name
-                      } won with ${item.goals.away} goals against ${
-                        item.teams.home.name.length >= 11
-                          ? item.teams.home.name.substring(0, 10) 
-                          : item.teams.home.name
-                      }.`}
-                      <span className="hover:underline hover:text-blue-800 dark:hover:text-sky-400 cursor-pointer mx-1">
-                        . . .
-                      </span>
-                    </span>
-                  ) : (
-                    <span
-                      className="text-black text-sm px-2 dark:text-gray-300"
-                      style={{ fontFamily: '"Andika", sans-serif' }}
-                    >
-                      {`${
-                        item.teams.home.name.length >= 11
-                          ? item.teams.home.name.substring(0, 10) 
-                          : item.teams.home.name
-                      } won with ${item.goals.home} goals against ${
-                        item.teams.away.name.length >= 11
-                          ? item.teams.away.name.substring(0, 10) 
-                          : item.teams.away.name
-                      }.`}
-                      <span className="hover:underline hover:text-blue-800 dark:hover:text-sky-400 cursor-pointer mx-1">
-                        . . .
-                      </span>
-                    </span>
-                  )}
-                  <p
-                    className="text-black text-xs dark:text-gray-400 py-1.5"
-                    style={{ fontFamily: '"Andika", sans-serif' }}
-                  >
-                    {`${item.fixture.venue.name}, ${item.fixture.venue.city}.`}
-                  </p>
+                      {`${item.fixture.venue.name}, ${item.fixture.venue.city}.`}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="rounded-b-lg flex flex-col bg-orange-800 text-orange-300 shadow-orange-950 dark:bg-orange-500 dark:text-orange-950 font-medium shadow-sm dark:shadow-orange-500">
-              <NavLink to="/" className="text-center py-2">
-                <span className="hover:underline font-medium text-base">
-                  See More Details
-                </span>
-              </NavLink>
-            </div>
+              <div className="rounded-b-lg flex flex-col bg-orange-800 text-orange-300 shadow-orange-950 dark:bg-orange-500 dark:text-orange-950 font-medium shadow-sm dark:shadow-orange-500">
+                <NavLink to="/" className="text-center py-2">
+                  <span className="hover:underline font-medium text-base">
+                    See More Details
+                  </span>
+                </NavLink>
+              </div>
             </div>
           </section>
         </div>
