@@ -14,9 +14,9 @@ const RecentMatch = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [pinnedMatches, setPinnedMatches] = useState([]);
+  const [pinnedRecentMatch, setPinnedMatches] = useState([]);
 
-  const UpcomingApi = async () => {
+  const RecentApi = async () => {
     const options = {
       method: "GET",
       url: "https://api-football-v1.p.rapidapi.com/v3/fixtures",
@@ -39,7 +39,7 @@ const RecentMatch = () => {
           fetchedData.some((match) => match.fixture.id === pinnedMatchId)
         );
         localStorage.setItem(
-          "pinnedMatches",
+          "pinnedRecentMatch",
           JSON.stringify(validPinnedMatches)
         );
         return validPinnedMatches;
@@ -54,10 +54,10 @@ const RecentMatch = () => {
   };
 
   useEffect(() => {
-    const savedPinnedMatches =
-      JSON.parse(localStorage.getItem("pinnedMatches")) || [];
-    setPinnedMatches(savedPinnedMatches);
-    UpcomingApi();
+    const savedPinnedMatches3 =
+      JSON.parse(localStorage.getItem("pinnedRecentMatch")) || [];
+    setPinnedMatches(savedPinnedMatches3);
+    RecentApi();
   }, []);
 
   useEffect(() => {
@@ -75,15 +75,15 @@ const RecentMatch = () => {
         const newPinnedMatches = [
           ...new Set([...prevPinnedMatches, ...defaultPinnedMatches]),
         ];
-        localStorage.setItem("pinnedMatches", JSON.stringify(newPinnedMatches));
+        localStorage.setItem("pinnedRecentMatch", JSON.stringify(newPinnedMatches));
         return newPinnedMatches;
       });
     }
   }, [data]);
 
   useEffect(() => {
-    localStorage.setItem("pinnedMatches", JSON.stringify(pinnedMatches));
-  }, [pinnedMatches]);
+    localStorage.setItem("pinnedRecentMatch", JSON.stringify(pinnedRecentMatch));
+  }, [pinnedRecentMatch]);
 
   const togglePinMatch = (e, matchId) => {
     setPinnedMatches((prevPinnedMatches) => {
@@ -96,7 +96,7 @@ const RecentMatch = () => {
   };
 
   const isPinned = (matchId) => {
-    return pinnedMatches.includes(matchId);
+    return pinnedRecentMatch.includes(matchId);
   };
 
   const formatTime = (dateString) => {
