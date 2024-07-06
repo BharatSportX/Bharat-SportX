@@ -509,11 +509,66 @@
 //     </div>
 //   );
 // }
+
+
+
+// import React from 'react';
+
+// export default function LiveMatchDetails() {
+//   return (
+//     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-gray-400 via-gray-900 to-[#c2410c] text-white mt-32">
+//       <div className="text-center">
+//         <h1 className="text-3xl font-bold">FULL TIME</h1>
+//         <div className="flex items-center justify-center my-4">
+//           <div className="flex items-center justify-center w-12 h-12 bg-white text-[#c2410c] font-bold rounded">4</div>
+//           <span className="mx-2 text-3xl">|</span>
+//           <div className="flex items-center justify-center w-12 h-12 bg-white text-[#c2410c] font-bold rounded">1</div>
+//         </div>
+//       </div>
+//       <div className="flex justify-between w-full max-w-4xl">
+//         <div className="text-center">
+//           <h2 className="text-2xl font-bold">SPAIN</h2>
+//           <img src="/placeholder.svg" alt="Spain Logo" className="mx-auto my-4" />
+//         </div>
+//         <div className="text-center">
+//           <h2 className="text-2xl font-bold">GEORGIA</h2>
+//           <img src="/placeholder.svg" alt="Georgia Logo" className="mx-auto my-4" />
+//         </div>
+//       </div>
+//       <div className="flex justify-between w-full max-w-4xl mt-8">
+//         <div className="text-left">
+//           <p>73% BALL POSSESSION</p>
+//           <p>13 ATTEMPTS ON TARGET</p>
+//           <p>36 TOTAL ATTEMPTS</p>
+//           <p>0 SAVES</p>
+//           <p>13 CORNERS</p>
+//           <p>3 OFFSIDES</p>
+//           <p>114.35 km DISTANCE COVERED</p>
+//           <p>771 (94%) PASSES COMPLETED</p>
+//           <p>11 FOULS COMMITTED</p>
+//           <p>1/0 YELLOW/RED CARDS</p>
+//         </div>
+//         <div className="text-right">
+//           <p>27% BALL POSSESSION</p>
+//           <p>0 ATTEMPTS ON TARGET</p>
+//           <p>4 TOTAL ATTEMPTS</p>
+//           <p>9 SAVES</p>
+//           <p>3 CORNERS</p>
+//           <p>0 OFFSIDES</p>
+//           <p>110.56 km DISTANCE COVERED</p>
+//           <p>221 (81%) PASSES COMPLETED</p>
+//           <p>5 FOULS COMMITTED</p>
+//           <p>1/0 YELLOW/RED CARDS</p>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
 import React from 'react';
 
 export default function LiveMatchDetails() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-gray-400 via-gray-900 to-[#c2410c] text-white mt-32">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-gray-400 via-gray-900 to-[#c2410c] text-white mt-32 p-4">
       <div className="text-center">
         <h1 className="text-3xl font-bold">FULL TIME</h1>
         <div className="flex items-center justify-center my-4">
@@ -522,18 +577,18 @@ export default function LiveMatchDetails() {
           <div className="flex items-center justify-center w-12 h-12 bg-white text-[#c2410c] font-bold rounded">1</div>
         </div>
       </div>
-      <div className="flex justify-between w-full max-w-4xl">
-        <div className="text-center">
+      <div className="flex flex-col sm:flex-row justify-between w-full max-w-4xl mt-4 sm:mt-0">
+        <div className="text-center sm:text-left sm:w-1/2">
           <h2 className="text-2xl font-bold">SPAIN</h2>
-          <img src="/placeholder.svg" alt="Spain Logo" className="mx-auto my-4" />
+          <img src="/placeholder.svg" alt="Spain Logo" className="mx-auto my-4 w-20 h-20 sm:w-32 sm:h-32" />
         </div>
-        <div className="text-center">
+        <div className="text-center sm:text-right sm:w-1/2">
           <h2 className="text-2xl font-bold">GEORGIA</h2>
-          <img src="/placeholder.svg" alt="Georgia Logo" className="mx-auto my-4" />
+          <img src="/placeholder.svg" alt="Georgia Logo" className="mx-auto my-4 w-20 h-20 sm:w-32 sm:h-32" />
         </div>
       </div>
-      <div className="flex justify-between w-full max-w-4xl mt-8">
-        <div className="text-left">
+      <div className="flex flex-col sm:flex-row justify-between w-full max-w-4xl mt-8 text-sm sm:text-base">
+        <div className="text-left sm:w-1/2 mb-4 sm:mb-0">
           <p>73% BALL POSSESSION</p>
           <p>13 ATTEMPTS ON TARGET</p>
           <p>36 TOTAL ATTEMPTS</p>
@@ -545,7 +600,7 @@ export default function LiveMatchDetails() {
           <p>11 FOULS COMMITTED</p>
           <p>1/0 YELLOW/RED CARDS</p>
         </div>
-        <div className="text-right">
+        <div className="text-left sm:text-right sm:w-1/2">
           <p>27% BALL POSSESSION</p>
           <p>0 ATTEMPTS ON TARGET</p>
           <p>4 TOTAL ATTEMPTS</p>
