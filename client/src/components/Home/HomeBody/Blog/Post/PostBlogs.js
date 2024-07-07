@@ -59,18 +59,18 @@ const PostBlogs = () => {
                       />
                     </div>
                     <div className="flex items-center justify-between p-4">
-                      <div className="flex space-x-6">
+                      <div className="flex space-x-5">
                         <button className="dark:text-white text-black hover:text-blue-500">
-                          <i className="far fa-heart text-2xl"></i>
+                          <i className="far fa-heart text-xl"></i>
                         </button>
                         <button className="dark:text-white text-black hover:text-blue-500">
-                          <i className="far fa-comment text-2xl"></i>
+                          <i className="far fa-comment text-xl"></i>
                         </button>
                         <button className="dark:text-white text-black hover:text-blue-500">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
+                            width="20"
+                            height="20"
                             viewBox="0 0 24 24"
                             fill="none"
                           >
@@ -83,7 +83,7 @@ const PostBlogs = () => {
                           </svg>
                         </button>
                         <button className="dark:text-white text-black hover:text-blue-500">
-                          <i className="far fa-bookmark text-2xl"></i>
+                          <i className="far fa-bookmark text-xl"></i>
                         </button>
                       </div>
                       <button className="dark:text-white text-black hover:text-blue-500">
