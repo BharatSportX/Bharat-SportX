@@ -15,11 +15,8 @@ const PostBlogs = () => {
               <PostStruct />
               {/* <FriendCard/> */}
             </div>
-
             <div className="mx-auto mt-6 max-w-4xl flex-1 space-y-6 lg:mt-0 lg:w-full">
-             
-              <SuggestedFriend/>
-
+              <SuggestedFriend />
               {/* <SpecialGift/> */}
             </div>
           </div>
