@@ -3,11 +3,9 @@ import React from "react";
 const PostBlogs = () => {
   return (
     <>
-      <section className="bg-gray-200 py-8 antialiased dark:bg-slate-950 md:py-16">
-        <div className="mx-auto max-w-screen-xl px-2 2xl:px-0">
-          <h2 className="text-2xl px-4 font-semibold text-gray-900 dark:text-white ">
-            Blog Section
-          </h2>
+      <section className="bg-gray-200 py-1 antialiased dark:bg-slate-950 md:py-16">
+        <div className="mx-auto max-w-screen-xl px-4 2xl:px-0">
+         
 
           <div className="mt-6 sm:mt-8 md:gap-6 lg:flex lg:items-start xl:gap-8">
             <div className="mx-auto w-full flex-none lg:max-w-2xl xl:max-w-4xl">
@@ -22,11 +20,11 @@ const PostBlogs = () => {
                           alt="User avatar"
                         />
                         <div className="flex flex-col ml-4">
-                          <span className=" font-semibold italic">
+                          <span className=" font-semibold italic text-sm">
                             Suman Das.{" "}
                             <button
                               type="button"
-                              className="py-1.5 px-5 ml-3  text-sm font-medium text-gray-900  bg-white rounded-full border border-gray-200  dark:bg-gray-950 shadow-md dark:text-white dark:border-gray-600 "
+                              className="py-1 px-2   text-xs font-medium text-gray-900  bg-white rounded-full border border-gray-200  dark:bg-gray-950 shadow-md dark:text-white dark:border-gray-600 "
                             >
                               <span className="  font-bold mr-1">
                                 <i className="fas fa-plus "></i>
