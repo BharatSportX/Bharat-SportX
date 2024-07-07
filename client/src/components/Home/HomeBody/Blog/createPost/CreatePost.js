@@ -41,7 +41,7 @@ const CreatePost = () => {
           </div>
           {/* <button className="w-full mt-4 p-2  border   dark:border-gray-700 dark:bg-[#15202fb0]  text-gray-200 rounded-lg hover:bg-[#1b2638]"> */}
           <NavLink
-        to="/"
+        to="/Create-post"
         className="flex w-full items-center mt-4   justify-center rounded-md bg-sky-700 px-5 py-2.5 font-medium hover:bg-sky-800 focus:outline-none focus:ring-1 focus:ring-sky-300 dark:bg-sky-600 dark:hover:bg-sky-500 dark:focus:ring-sky-800 hover:underline text-blue-950 text-xl"
       >
         Create Your Post

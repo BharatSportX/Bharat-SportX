@@ -27,6 +27,7 @@ import FootballSubscription from "./components/ALLSports/Football/FootballSubscr
 import LiveMatchDetails from "./components/Home/HomeBody/LiveMatch/LiveMatchDetails";
 import Test from "./components/Test/Test";
 import AdminPanel from "./components/Home/HomeBody/LiveMatch/AdminPanel";
+import PostPage from "./components/Home/HomeBody/Blog/createPost/PostPage";
 function App() {
   const router = createBrowserRouter([
     {
@@ -207,6 +208,14 @@ function App() {
       element: (
         <>
           <Navbar/><LiveMatchDetails/>
+        </>
+      ),
+    },
+    {
+      path: "/Create-post",
+      element: (
+        <>
+          <PostPage/>
         </>
       ),
     },
