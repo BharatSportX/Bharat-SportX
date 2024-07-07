@@ -3,15 +3,15 @@ import React from "react";
 const PostBlogs = () => {
   return (
     <>
-      <section className="bg-gray-200 py-1 antialiased dark:bg-slate-950 md:py-">
-        <div className="mx-auto max-w-screen-xl px-4 md:px-16 2xl:px-0">
+      <section className="bg-gray-200 py-1 antialiased dark:bg-slate-950 ">
+        <div className="mx-auto max-w-screen-xl px-4 md:px-28 lg:px-0 lg:pr-16  2xl:px-0">
          
 
-          <div className="mt-6 sm:mt-8 md:gap-6 lg:flex lg:items-start xl:gap-8">
-            <div className="mx-auto w-full flex-none lg:max-w-2xl xl:max-w-4xl">
+          <div className="mt-6 sm:mt-8 md:gap-6 lg:gap-0 lg:flex lg:items-start ">
+            <div className="mx-auto lg:mx-0 w-full flex-none lg:max-w-2xl xl:max-w-4xl">
               <div className="space-y-6">
                 <div className=" flex flex-col items-center  rounded-lg">
-                  <div className="border-gray-200 bg-white   dark:border-gray-700 dark:bg-gray-800 w-full  rounded-lg   shadow-lg">
+                  <div className="border-gray-200 bg-white   dark:border-gray-700 dark:bg-gray-800 w-full lg:w-[80%]  rounded-lg   shadow-lg">
                     <div className="flex  items-center  py-4 px-3 justify-between  rounded-lg  ">
                       <div className=" flex justify-center items-center">
                         <img
@@ -22,10 +22,10 @@ const PostBlogs = () => {
                         <div className="flex flex-col ml-4">
                           <span className=" font-semibold mr-4  italic text-sm">
                           {/* max 15 letter(CAPS NOT ALLOWED) */}
-                            <span className="text-sm">i_am_souma_7889</span>
+                            <span className="text-sm md:text-base">i_am_souma_7889</span>
                             <button
                               type="button"
-                              className="py-1 px-2 mx-1 my-0.5 text-xs font-medium text-gray-900  bg-white rounded-full border border-gray-200  dark:bg-gray-950 shadow-md dark:text-white dark:border-gray-600 "
+                              className="py-1 px-2 mx-1  md:px-4 md:mx-3 my-0.5 md:text-sm text-xs font-medium text-gray-900  bg-white rounded-full border border-gray-200  dark:bg-gray-950 shadow-md dark:text-white dark:border-gray-600 "
                             >
                               <span className="  font-bold mr-1">
                                 <i className="fas fa-plus "></i>
@@ -33,7 +33,7 @@ const PostBlogs = () => {
                               Follow
                             </button>
                           </span>
-                          <div className=" text-sm text-gray-300 ">
+                          <div className=" text-sm text-gray-300 md:text-base">
                             <i className="far fa-clock"></i> . 2d
                           </div>
                         </div>
@@ -52,7 +52,7 @@ const PostBlogs = () => {
                       </span>
                     </div>
 
-                    <div className="bg-gray-200 flex items-center justify-center h-96">
+                    <div className="bg-gray-200 flex items-center justify-center h-96 md:h-[30rem] lg:h-[34rem]">
                       <img
                         className="w-full h-full object-cover"
                         src="https://placehold.co/500x500"
@@ -93,7 +93,7 @@ const PostBlogs = () => {
                         </svg>
                       </button>
                     </div>
-                    <div className=" px-4 text-xs">
+                    <div className=" px-4 text-xs md:text-sm">
                       341 Likes . 2589 Comments . 3 Share
                     </div>
                     <div className=" pt-2 p-4 text-black dark:text-white  text-xs pr-8">
