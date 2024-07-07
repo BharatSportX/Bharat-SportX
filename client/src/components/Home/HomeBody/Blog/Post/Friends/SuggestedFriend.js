@@ -25,7 +25,7 @@ const Tooltip = ({ text, children }) => {
 
 const SuggestedFriend = () => {
   return (
-    <div className="space-y-4 rounded-lg border border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-800">
+    <div className="space-y-4 rounded-lg  border-gray-200 bg-white shadow-sm  border   dark:border-gray-700 dark:bg-[#15202fb0]">
       <p className="text-xl font-semibold px-4 pt-3 text-gray-900 dark:text-white">
         Suggestions for you
       </p>

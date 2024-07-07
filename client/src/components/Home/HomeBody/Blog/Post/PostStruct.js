@@ -5,7 +5,7 @@ const PostStruct = () => {
     <>
       <div className="space-y-6">
         <div className=" flex flex-col items-center  rounded-lg">
-          <div className="border-gray-200 bg-white   dark:border-gray-700 dark:bg-gray-800 w-full lg:w-[80%]  rounded-lg   shadow-lg">
+          <div className="border-gray-200 bg-white border   dark:border-gray-700 dark:bg-[#15202fb0] w-full lg:w-[80%]  rounded-lg   shadow-lg">
             <div className="flex  items-center  py-4 px-3 justify-between  rounded-lg  ">
               <div className=" flex justify-center items-center">
                 <img
