@@ -8,7 +8,7 @@ const PostBlogs = () => {
         <div className="mx-auto max-w-screen-xl px-4 md:px-28 lg:px-0 lg:pr-16  2xl:px-0">
          
 
-          <div className="mt-6 sm:mt-8 md:gap-6 lg:gap-0 lg:flex lg:items-start ">
+          <div className="mt-6 2xl:mr-16 sm:mt-8 md:gap-6 lg:gap-0 lg:flex lg:items-start ">
             <div className="mx-auto lg:mx-0 w-full flex-none lg:max-w-2xl xl:max-w-4xl">
               <PostStruct/>
               <div className="hidden xl:mt-8 xl:block">
