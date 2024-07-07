@@ -3,8 +3,8 @@ import React from "react";
 const PostBlogs = () => {
   return (
     <>
-      <section className="bg-gray-200 py-1 antialiased dark:bg-slate-950 md:py-16">
-        <div className="mx-auto max-w-screen-xl px-4 2xl:px-0">
+      <section className="bg-gray-200 py-1 antialiased dark:bg-slate-950 md:py-">
+        <div className="mx-auto max-w-screen-xl px-4 md:px-16 2xl:px-0">
          
 
           <div className="mt-6 sm:mt-8 md:gap-6 lg:flex lg:items-start xl:gap-8">
