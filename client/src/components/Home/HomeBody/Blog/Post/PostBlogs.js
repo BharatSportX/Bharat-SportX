@@ -20,9 +20,9 @@ const PostBlogs = () => {
                           alt="User avatar"
                         />
                         <div className="flex flex-col ml-4">
-                          <span className=" font-semibold mr-10 italic text-sm">
-                          {/* max 15 letter */}
-                            <span className="text-xs">i_am_Souma-7889</span>
+                          <span className=" font-semibold mr-4  italic text-sm">
+                          {/* max 15 letter(CAPS NOT ALLOWED) */}
+                            <span className="text-sm">i_am_souma_7889</span>
                             <button
                               type="button"
                               className="py-1 px-2 mx-1 my-0.5 text-xs font-medium text-gray-900  bg-white rounded-full border border-gray-200  dark:bg-gray-950 shadow-md dark:text-white dark:border-gray-600 "
@@ -38,7 +38,7 @@ const PostBlogs = () => {
                           </div>
                         </div>
                       </div>
-                      <span className=" cursor-pointer">
+                      <span className=" cursor-pointer gap-1">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="20"
