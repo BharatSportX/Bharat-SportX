@@ -10,6 +10,7 @@ const Blogs = () => {
       <CreatePost />
       <hr className="border-4 border-[#272727] my-2" />
       <PostBlogs/>
+      <hr className="border-4 border-[#272727] my-8" />
     </>
   );
 };
