@@ -15,7 +15,7 @@ const Tooltip = ({ text, children }) => {
         {children}
       </div>
       {visible && (
-        <div className="absolute md:left-full md:top-1/2 md:transform md:-translate-y-1/2 md:ml-2 bg-black text-white text-sm p-2 rounded shadow-lg z-10 transition-opacity duration-300 opacity-100 top-auto bottom-full mb-2 md:mb-0 left-1/2 transform -translate-x-1/2 md:-translate-x-0">
+        <div className="absolute md:left-full  md:transform md:-translate-y-1/2 md:ml-2 bg-black text-white text-sm p-2 rounded shadow-lg z-10 transition-opacity duration-300 opacity-100 top-auto bottom-full mb-2 md:mb-0 left-1/2 transform -translate-x-1/2 md:-translate-x-0">
           {text}
         </div>
       )}
