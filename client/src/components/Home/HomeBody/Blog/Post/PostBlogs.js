@@ -12,7 +12,7 @@ const PostBlogs = () => {
               <div className="space-y-6">
                 <div className=" flex flex-col items-center  rounded-lg">
                   <div className="border-gray-200 bg-white   dark:border-gray-700 dark:bg-gray-800 w-full  rounded-lg   shadow-lg">
-                    <div className="flex  items-center  p-4 justify-between  rounded-lg  ">
+                    <div className="flex  items-center  py-4 px-3 justify-between  rounded-lg  ">
                       <div className=" flex justify-center items-center">
                         <img
                           className="size-12 rounded-full"
@@ -20,11 +20,12 @@ const PostBlogs = () => {
                           alt="User avatar"
                         />
                         <div className="flex flex-col ml-4">
-                          <span className=" font-semibold italic text-sm">
-                            Suman Das.{" "}
+                          <span className=" font-semibold mr-10 italic text-sm">
+                          {/* max 15 letter */}
+                            <span className="text-xs">i_am_Souma-7889</span>
                             <button
                               type="button"
-                              className="py-1 px-2   text-xs font-medium text-gray-900  bg-white rounded-full border border-gray-200  dark:bg-gray-950 shadow-md dark:text-white dark:border-gray-600 "
+                              className="py-1 px-2 mx-1 my-0.5 text-xs font-medium text-gray-900  bg-white rounded-full border border-gray-200  dark:bg-gray-950 shadow-md dark:text-white dark:border-gray-600 "
                             >
                               <span className="  font-bold mr-1">
                                 <i className="fas fa-plus "></i>
