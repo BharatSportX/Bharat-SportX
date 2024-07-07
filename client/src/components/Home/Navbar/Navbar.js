@@ -61,7 +61,7 @@ const Navbar = () => {
     return footballPaths.some((path) => location.pathname.startsWith(path));
   };
   return (
-    <nav className="dark:bg-gray-800  h-auto z-40 fixed top-0 left-0 w-full  bg-gray-50 shadow-sm-light dark:shadow-none">
+    <nav className="dark:bg-gray-800  h-auto z-40 fixed top-0 left-0 w-full  bg-gray-50 border-b border-gray-200  dark:border-gray-600 shadow-sm-light dark:shadow-none">
       <div className="px-4 md:px-14   lg:px-16 xl:px-12 ">
         <div className="flex items-center justify-between h-16">
           {/* Logo and Company Name */}
@@ -677,7 +677,7 @@ const Navbar = () => {
 
       {/* Mobile navbar */}
 
-      <div className="xl:hidden fixed bottom-0 left-0 z-50 w-full h-16 bg-gray-50 border-t border-gray-200 dark:bg-gray-900 dark:border-gray-600">
+      <div className="xl:hidden fixed bottom-0 left-0 z-50 w-full h-16 bg-gray-50 dark:bg-gray-800 border-t border-gray-200  dark:border-gray-600">
         <div className="grid h-full max-w-lg grid-cols-5 m-auto font-medium md:flex md:justify-center">
           <NavLink
             to="/football/home"
