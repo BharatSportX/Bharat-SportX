@@ -92,10 +92,10 @@ const PostBlogs = () => {
                         </svg>
                       </button>
                     </div>
-                    <div className=" px-4 text-sm">
+                    <div className=" px-4 text-xs">
                       341 Likes . 2589 Comments . 3 Share
                     </div>
-                    <div className=" pt-2 p-4 text-black dark:text-white  text-sm pr-8">
+                    <div className=" pt-2 p-4 text-black dark:text-white  text-xs pr-8">
                       <p className="">
                         <strong>john</strong> Wow, this photo is absolutely
                         stunning! 😍✨
