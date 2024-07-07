@@ -211,14 +211,7 @@ function App() {
         </>
       ),
     },
-    {
-      path: "/Create-post",
-      element: (
-        <>
-          <PostPage/>
-        </>
-      ),
-    },
+    
 
     {
       path: "/admin",
