@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 const PostPage = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -9,6 +9,10 @@ const PostPage = () => {
 
   const closeModal = () => {
     setModalOpen(false);
+  };
+
+  const stopPropagation = (e) => {
+    e.stopPropagation();
   };
 
   return (
@@ -27,15 +31,18 @@ const PostPage = () => {
         <div
           id="crud-modal"
           className="fixed top-0 right-0 left-0 z-50 flex justify-center items-center w-full h-full bg-black bg-opacity-50"
-          onClick={closeModal}
+          onClick={closeModal} // Close modal only if clicking outside the modal content
         >
-          <div className="relative p-4 w-full max-w-md">
+          <div
+            className="relative p-4 w-full max-w-md"
+            onClick={stopPropagation} // Prevent closing when clicking inside the modal content
+          >
             {/* Modal content */}
             <div className="relative text-white  bg-white rounded-lg shadow dark:bg-gray-700">
               {/* Modal header */}
               <div className="flex items-center justify-between p-4 border-b rounded-t">
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                  Create New Product
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-200">
+                  Create Your Post
                 </h3>
                 <button
                   onClick={closeModal}
@@ -65,89 +72,49 @@ const PostPage = () => {
                 <div className="grid gap-4 mb-4 grid-cols-2">
                   <div className="col-span-2">
                     <label
-                      htmlFor="name"
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      htmlFor="user_avatar"
                     >
-                      Name
+                      Choose Image Or Video
                     </label>
                     <input
-                      type="text"
-                      name="name"
-                      id="name"
-                      className="bg-gray-50 border border-gray-300 text-gray-900 dark:text-white text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                      placeholder="Type product name"
-                      required
+                      className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                      aria-describedby="user_avatar_help"
+                      id="user_avatar"
+                      type="file"
                     />
                   </div>
-                  <div className="col-span-2 sm:col-span-1">
-                    <label
-                      htmlFor="price"
-                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                    >
-                      Price
-                    </label>
-                    <input
-                      type="number"
-                      name="price"
-                      id="price"
-                      className="bg-gray-50 border border-gray-300 text-gray-900 dark:text-white text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                      placeholder="$2999"
-                      required
-                    />
-                  </div>
-                  <div className="col-span-2 sm:col-span-1">
-                    <label
-                      htmlFor="category"
-                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                    >
-                      Category
-                    </label>
-                    <select
-                      id="category"
-                      className="bg-gray-50 border border-gray-300 text-gray-900 dark:text-white text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                    >
-                      <option selected disabled>
-                        Select category
-                      </option>
-                      <option value="TV">TV/Monitors</option>
-                      <option value="PC">PC</option>
-                      <option value="GA">Gaming/Console</option>
-                      <option value="PH">Phones</option>
-                    </select>
-                  </div>
+
                   <div className="col-span-2">
                     <label
                       htmlFor="description"
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                     >
-                      Product Description
+                      Post Description
                     </label>
                     <textarea
                       id="description"
                       rows="4"
-                      className="block p-2.5 w-full text-sm text-gray-900 dark:text-white bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                      placeholder="Write product description here"
+                      className="block p-2.5 w-full text-sm text-gray-900  bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      placeholder="Write a Brief Description about Your post"
                     ></textarea>
                   </div>
                 </div>
-                <button
-                  type="submit"
-                  className="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                >
-                  <svg
-                    className="me-1 -ms-1 w-5 h-5"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
+                <div className="flex justify-center items-center mt-4">
+                  <button
+                    type="submit"
+                    className="mx-3 mt-4 focus:outline-none text-white bg-lime-700 hover:bg-lime-800 focus:ring-1 focus:ring-lime-300  rounded-full text-base px-8 py-2.5 me-2  dark:bg-lime-600 dark:text-lime-950 font-bold dark:hover:bg-lime-600 dark:focus:ring-lime-900"
                   >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
-                      clipRule="evenodd"
-                    ></path>
-                  </svg>
-                  Add new product
-                </button>
+                    Confirm Post
+                  </button>
+                  <button
+                    type="button"
+                    onClick={closeModal} // Close modal on cancel button click
+                    className="mx-3 mt-4 focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-1 focus:ring-red-300 font-bold rounded-full text-base px-8 py-2.5 me-2  dark:bg-[#bc2a20] dark:hover:bg-red-600 dark:text-red-950 dark:focus:ring-red-900"
+                  >
+                    Cancel Post
+                  </button>
+                </div>
               </form>
             </div>
           </div>
