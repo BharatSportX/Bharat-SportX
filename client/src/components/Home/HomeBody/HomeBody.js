@@ -204,7 +204,7 @@ const HomeBody = () => {
       </div>
 
       <div className="mx-7 lg:mx-9">
-        <div className="relative z-10">
+        <div className="relative">
           <div className="overflow-hidden w-full">
             <div
               ref={sliderRef}
@@ -221,7 +221,7 @@ const HomeBody = () => {
             </div>
 
             <button
-              className={`carousel-control-prev absolute z-40 top-1/2 transform -translate-y-1/2 -left-7 p-2 rounded-md ${
+              className={`carousel-control-prev absolute  top-1/2 transform -translate-y-1/2 -left-7 p-2 rounded-md ${
                 currentIndex === 0
                   ? "opacity-80 cursor-not-allowed dark:bg-gray-900 bg-[#b4beca8d] dark:text-white text-black"
                   : "dark:bg-gray-800 bg-[#b4beca] dark:text-white text-black"
@@ -235,7 +235,7 @@ const HomeBody = () => {
               <span className="sr-only">Previous</span>
             </button>
             <button
-              className={`carousel-control-next absolute z-40 top-1/2 transform -translate-y-1/2 -right-7 p-2 rounded-md ${
+              className={`carousel-control-next absolute  top-1/2 transform -translate-y-1/2 -right-7 p-2 rounded-md ${
                 currentIndex === maxSlides - 1
                   ? "opacity-80 cursor-not-allowed dark:bg-gray-900 bg-[#b4beca8d] dark:text-white text-black"
                   : "dark:bg-gray-800 bg-[#b4beca] dark:text-white text-black"
