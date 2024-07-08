@@ -103,14 +103,14 @@ const PostPage = () => {
                 <div className="flex justify-center items-center mt-4">
                   <button
                     type="submit"
-                    className="mx-3 mt-4 focus:outline-none text-white bg-lime-700 hover:bg-lime-800 focus:ring-1 focus:ring-lime-300  rounded-full text-base px-8 py-2.5 me-2  dark:bg-lime-600 dark:text-lime-950 font-bold dark:hover:bg-lime-600 dark:focus:ring-lime-900"
+                    className="mx-3 mt-4 focus:outline-none text-white bg-lime-700 hover:bg-lime-800 focus:ring-1 focus:ring-lime-300  rounded-full text-base px-4 md:px-8 py-2.5 me-2  dark:bg-lime-600 dark:text-lime-950 border border-lime-900 font-bold dark:hover:bg-lime-600 dark:focus:ring-lime-900"
                   >
                     Confirm Post
                   </button>
                   <button
                     type="button"
                     onClick={closeModal} // Close modal on cancel button click
-                    className="mx-3 mt-4 focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-1 focus:ring-red-300 font-bold rounded-full text-base px-8 py-2.5 me-2  dark:bg-[#bc2a20] dark:hover:bg-red-600 dark:text-red-950 dark:focus:ring-red-900"
+                    className="mx-3 mt-4 focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-1 focus:ring-red-300 font-bold rounded-full text-base px-4 md:px-8 py-2.5 me-2  dark:bg-rose-600 border border-rose-900 dark:hover:bg-red-600 dark:text-red-950 dark:focus:ring-red-900"
                   >
                     Cancel Post
                   </button>
