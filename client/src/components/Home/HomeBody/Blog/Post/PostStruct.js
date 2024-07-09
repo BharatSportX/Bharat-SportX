@@ -1,16 +1,29 @@
 import React, { useState } from "react";
 
 const PostStruct = () => {
-  const [heartIcon, setHeartIcon] = useState("far fa-heart");
+  const [heartIcon, setHeartIcon] = useState("far fa-heart text-xl");
+
+  const handleHeartIconClick = () => {
+    if (heartIcon === "far fa-heart text-xl") {
+      setHeartIcon("fas fa-heart text-red-600 text-xl");
+    } else if (heartIcon === "fas fa-heart text-red-600 text-xl") {
+      setHeartIcon("fas fa-heart-broken text-red-600 text-xl");
+    } else {
+      setHeartIcon("far fa-heart text-xl");
+    }
+  };
+  
   let clickCount = 0;
+  let clickTimer = null;
 
   const handlePostBodyClick = () => {
     clickCount += 1;
-    setTimeout(() => {
+    clearTimeout(clickTimer);
+    clickTimer = setTimeout(() => {
       if (clickCount === 2) {
-        setHeartIcon("fas fa-heart");
+        setHeartIcon("fas fa-heart text-red-600 text-xl");
       } else if (clickCount === 3) {
-        setHeartIcon("fas fa-heart-broken");
+        setHeartIcon("fas fa-heart-broken text-red-600 text-xl");
       }
       clickCount = 0;
     }, 250); // Adjust the delay to differentiate between double and triple clicks
@@ -19,7 +32,7 @@ const PostStruct = () => {
   return (
     <>
       <div className="space-y-6">
-        <div className=" flex flex-col items-center  rounded-lg">
+        <div className="flex flex-col items-center rounded-lg">
           <div className="border-gray-200 bg-white border dark:border-gray-700 dark:bg-[#15202fb0] w-full lg:w-[80%] rounded-lg shadow-lg">
             <div className="flex items-center py-4 px-3 justify-between rounded-lg">
               <div className="flex justify-center items-center">
@@ -30,7 +43,6 @@ const PostStruct = () => {
                 />
                 <div className="flex flex-col ml-4">
                   <span className="font-semibold mr-4 italic text-sm">
-                    {/* max 15 letter(CAPS NOT ALLOWED) */}
                     <span className="text-sm md:text-base">
                       i_am_souma_7889
                     </span>
@@ -62,11 +74,9 @@ const PostStruct = () => {
                 </svg>
               </span>
             </div>
-            {/* Description */}
             <div className="px-4 mb-4 text-sm">
               Hey!! I am New User of Bhaart SportX Can you Suggest me what is the basic importance for this website?
             </div>
-
             <div
               className="bg-gray-200 flex items-center justify-center h-96 md:h-[30rem] lg:h-[34rem]"
               onClick={handlePostBodyClick}
@@ -79,13 +89,16 @@ const PostStruct = () => {
             </div>
             <div className="flex items-center justify-between p-4">
               <div className="flex space-x-5">
-                <button className="dark:text-white text-black hover:text-blue-500">
-                  <i className={heartIcon + " text-xl"}></i>
+                <button
+                  className="dark:text-white text-black "
+                  onClick={handleHeartIconClick}
+                >
+                  <i className={heartIcon}></i>
                 </button>
-                <button className="dark:text-white text-black hover:text-blue-500">
+                <button className="dark:text-white text-black hover:text-gray-300">
                   <i className="far fa-comment text-xl"></i>
                 </button>
-                <button className="dark:text-white text-black hover:text-blue-500">
+                <button className="dark:text-white text-black hover:text-gray-300">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="20"
@@ -101,11 +114,11 @@ const PostStruct = () => {
                     />
                   </svg>
                 </button>
-                <button className="dark:text-white text-black hover:text-blue-500">
+                <button className="dark:text-white text-black ">
                   <i className="far fa-bookmark text-xl"></i>
                 </button>
               </div>
-              <button className="dark:text-white text-black hover:text-blue-500">
+              <button className="dark:text-white text-black hover:text-gray-500">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
