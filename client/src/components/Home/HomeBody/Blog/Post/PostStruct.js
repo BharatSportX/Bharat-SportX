@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 const PostStruct = () => {
   const [heartIcon, setHeartIcon] = useState("far fa-heart text-xl");
+  const [bookmarkIcon, setBookmarkIcon] = useState("far fa-bookmark text-xl");
 
   const handleHeartIconClick = () => {
     if (heartIcon === "far fa-heart text-xl") {
@@ -27,6 +28,15 @@ const PostStruct = () => {
       }
       clickCount = 0;
     }, 250); // Adjust the delay to differentiate between double and triple clicks
+  };
+
+  const handleBookmarkClick = () => {
+    // Toggle bookmark icon
+    if (bookmarkIcon === "far fa-bookmark text-xl") {
+      setBookmarkIcon("fas fa-bookmark text-xl text-white");
+    } else {
+      setBookmarkIcon("far fa-bookmark text-xl");
+    }
   };
 
   return (
@@ -74,8 +84,9 @@ const PostStruct = () => {
                 </svg>
               </span>
             </div>
+            {/* Description */}
             <div className="px-4 mb-4 text-sm">
-              Hey!! I am New User of Bhaart SportX Can you Suggest me what is the basic importance for this website?
+              Hey!! I am New User of Bhaart SportX Can you Suggest me what is the basic importance for this website?<span className="text-zinc-800 dark:text-zinc-400 hover:underline hover:text-blue-800 dark:hover:text-sky-400 cursor-pointer mx-1"> . . .</span>
             </div>
             <div
               className="bg-gray-200 flex items-center justify-center h-96 md:h-[30rem] lg:h-[34rem]"
@@ -114,8 +125,8 @@ const PostStruct = () => {
                     />
                   </svg>
                 </button>
-                <button className="dark:text-white text-black ">
-                  <i className="far fa-bookmark text-xl"></i>
+                <button className="dark:text-white text-black " onClick={handleBookmarkClick}>
+                <i className={bookmarkIcon}></i>
                 </button>
               </div>
               <button className="dark:text-white text-black hover:text-gray-500">
