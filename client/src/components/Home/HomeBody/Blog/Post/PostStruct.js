@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import './postStruct.css'
 
 const PostStruct = () => {
   const [heartIcon, setHeartIcon] = useState("far fa-heart text-xl");
-  const [bookmarkIcon, setBookmarkIcon] = useState("far fa-bookmark text-xl");
+  // const [bookmarkIcon, setBookmarkIcon] = useState("far fa-bookmark text-xl");
 
   const handleHeartIconClick = () => {
     if (heartIcon === "far fa-heart text-xl") {
@@ -13,7 +14,7 @@ const PostStruct = () => {
       setHeartIcon("far fa-heart text-xl");
     }
   };
-  
+
   let clickCount = 0;
   let clickTimer = null;
 
@@ -30,14 +31,14 @@ const PostStruct = () => {
     }, 250); // Adjust the delay to differentiate between double and triple clicks
   };
 
-  const handleBookmarkClick = () => {
-    // Toggle bookmark icon
-    if (bookmarkIcon === "far fa-bookmark text-xl") {
-      setBookmarkIcon("fas fa-bookmark text-xl text-white");
-    } else {
-      setBookmarkIcon("far fa-bookmark text-xl");
-    }
-  };
+  // const handleBookmarkClick = () => {
+  //   // Toggle bookmark icon
+  //   if (bookmarkIcon === "far fa-bookmark text-xl") {
+  //     setBookmarkIcon("fas fa-bookmark text-xl text-white");
+  //   } else {
+  //     setBookmarkIcon("far fa-bookmark text-xl");
+  //   }
+  // };
 
   return (
     <>
@@ -86,7 +87,12 @@ const PostStruct = () => {
             </div>
             {/* Description */}
             <div className="px-4 mb-4 text-sm">
-              Hey!! I am New User of Bhaart SportX Can you Suggest me what is the basic importance for this website?<span className="text-zinc-800 dark:text-zinc-400 hover:underline hover:text-blue-800 dark:hover:text-sky-400 cursor-pointer mx-1"> . . .</span>
+              Hey!! I am New User of Bhaart SportX Can you Suggest me what is
+              the basic importance for this website?
+              <span className="text-zinc-800 dark:text-zinc-400 hover:underline hover:text-blue-800 dark:hover:text-sky-400 cursor-pointer mx-1">
+                {" "}
+                . . .
+              </span>
             </div>
             <div
               className="bg-gray-200 flex items-center justify-center h-96 md:h-[30rem] lg:h-[34rem]"
@@ -125,9 +131,25 @@ const PostStruct = () => {
                     />
                   </svg>
                 </button>
-                <button className="dark:text-white text-black " onClick={handleBookmarkClick}>
+                {/* <button className="dark:text-white text-black  " onClick={handleBookmarkClick}>
                 <i className={bookmarkIcon}></i>
-                </button>
+                </button> */}
+                <label for="checkboxInput" className="bookmark">
+                  <input type="checkbox" id="checkboxInput" />
+                  <svg
+                    width="15"
+                    viewBox="0 0 50 70"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="svgIcon"
+                  >
+                    <path
+                      d="M46 62.0085L46 3.88139L3.99609 3.88139L3.99609 62.0085L24.5 45.5L46 62.0085Z"
+                      stroke="black"
+                      stroke-width="7"
+                    ></path>
+                  </svg>
+                </label>
               </div>
               <button className="dark:text-white text-black hover:text-gray-500">
                 <svg
