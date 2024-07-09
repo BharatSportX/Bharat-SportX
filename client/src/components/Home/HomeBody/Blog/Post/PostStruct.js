@@ -86,7 +86,7 @@ const PostStruct = () => {
               </span>
             </div>
             {/* Description */}
-            <div className="px-4 mb-4 text-sm">
+            <div className="px-4 mb-4 text-xs md:text-sm">
               Hey!! I am New User of Bhaart SportX Can you Suggest me what is
               the basic importance for this website?
               <span className="text-zinc-800 dark:text-zinc-400 hover:underline hover:text-blue-800 dark:hover:text-sky-400 cursor-pointer mx-1">
