@@ -1,40 +1,55 @@
-import React from "react";
+import React, { useState } from "react";
 
 const PostStruct = () => {
+  const [heartIcon, setHeartIcon] = useState("far fa-heart");
+  let clickCount = 0;
+
+  const handlePostBodyClick = () => {
+    clickCount += 1;
+    setTimeout(() => {
+      if (clickCount === 2) {
+        setHeartIcon("fas fa-heart");
+      } else if (clickCount === 3) {
+        setHeartIcon("fas fa-heart-broken");
+      }
+      clickCount = 0;
+    }, 250); // Adjust the delay to differentiate between double and triple clicks
+  };
+
   return (
     <>
       <div className="space-y-6">
         <div className=" flex flex-col items-center  rounded-lg">
-          <div className="border-gray-200 bg-white border   dark:border-gray-700 dark:bg-[#15202fb0] w-full lg:w-[80%]  rounded-lg   shadow-lg">
-            <div className="flex  items-center  py-4 px-3 justify-between  rounded-lg  ">
-              <div className=" flex justify-center items-center">
+          <div className="border-gray-200 bg-white border dark:border-gray-700 dark:bg-[#15202fb0] w-full lg:w-[80%] rounded-lg shadow-lg">
+            <div className="flex items-center py-4 px-3 justify-between rounded-lg">
+              <div className="flex justify-center items-center">
                 <img
                   className="size-12 rounded-full"
                   src="https://placehold.co/40x40"
                   alt="User avatar"
                 />
                 <div className="flex flex-col ml-4">
-                  <span className=" font-semibold mr-4  italic text-sm">
+                  <span className="font-semibold mr-4 italic text-sm">
                     {/* max 15 letter(CAPS NOT ALLOWED) */}
                     <span className="text-sm md:text-base">
                       i_am_souma_7889
                     </span>
                     <button
                       type="button"
-                      className="py-1 px-2 mx-1  md:px-4 md:mx-3 my-0.5 md:text-sm text-xs font-medium text-gray-900  bg-white rounded-full border border-gray-200  dark:bg-gray-950 shadow-md dark:text-white dark:border-gray-600 "
+                      className="py-1 px-2 mx-1 md:px-4 md:mx-3 my-0.5 md:text-sm text-xs font-medium text-gray-900 bg-white rounded-full border border-gray-200 dark:bg-gray-950 shadow-md dark:text-white dark:border-gray-600"
                     >
-                      <span className="  font-bold mr-1">
-                        <i className="fas fa-plus "></i>
+                      <span className="font-bold mr-1">
+                        <i className="fas fa-plus"></i>
                       </span>{" "}
                       Follow
                     </button>
                   </span>
-                  <div className=" text-sm text-gray-300 md:text-base">
+                  <div className="text-sm text-gray-300 md:text-base">
                     <i className="far fa-clock"></i> . 2d
                   </div>
                 </div>
               </div>
-              <span className=" cursor-pointer gap-1">
+              <span className="cursor-pointer gap-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -47,8 +62,15 @@ const PostStruct = () => {
                 </svg>
               </span>
             </div>
+            {/* Description */}
+            <div className="px-4 mb-4 text-sm">
+              Hey!! I am New User of Bhaart SportX Can you Suggest me what is the basic importance for this website?
+            </div>
 
-            <div className="bg-gray-200 flex items-center justify-center h-96 md:h-[30rem] lg:h-[34rem]">
+            <div
+              className="bg-gray-200 flex items-center justify-center h-96 md:h-[30rem] lg:h-[34rem]"
+              onClick={handlePostBodyClick}
+            >
               <img
                 className="w-full h-full object-cover"
                 src="https://placehold.co/500x500"
@@ -58,7 +80,7 @@ const PostStruct = () => {
             <div className="flex items-center justify-between p-4">
               <div className="flex space-x-5">
                 <button className="dark:text-white text-black hover:text-blue-500">
-                  <i className="far fa-heart text-xl"></i>
+                  <i className={heartIcon + " text-xl"}></i>
                 </button>
                 <button className="dark:text-white text-black hover:text-blue-500">
                   <i className="far fa-comment text-xl"></i>
@@ -89,17 +111,17 @@ const PostStruct = () => {
                   width="20"
                   height="20"
                   fill="currentColor"
-                  class="bi bi-bar-chart-fill"
+                  className="bi bi-bar-chart-fill"
                   viewBox="0 0 16 16"
                 >
                   <path d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z" />
                 </svg>
               </button>
             </div>
-            <div className=" px-4 text-xs md:text-sm">
+            <div className="px-4 text-xs md:text-sm">
               341 Likes . 2589 Comments . 3 Share
             </div>
-            <div className=" pt-2 p-4 text-black dark:text-white  text-xs pr-8">
+            <div className="pt-2 p-4 text-black dark:text-white text-xs pr-8">
               <p className="">
                 <strong>john</strong> Wow, this photo is absolutely stunning!
                 😍✨
