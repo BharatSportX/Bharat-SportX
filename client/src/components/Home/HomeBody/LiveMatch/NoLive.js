@@ -32,7 +32,7 @@ const NoLive = (props) => {
             <div className="display_div">
               <div className="screen_out">
                 <div className="screen_out1">
-                  <div className="screen z-0">
+                  <div className=" z-0 screen ">
                     <span className="notfound_text capitalize">{text}</span>
                   </div>
                 </div>
