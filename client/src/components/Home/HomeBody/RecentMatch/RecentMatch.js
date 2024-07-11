@@ -105,9 +105,9 @@ const RecentMatch = () => {
       hour: "numeric",
       minute: "numeric",
       hour12: true,
-      timeZone: "Asia/Kolkata", // Change this to the timezone you want (e.g., "Asia/Kolkata" for India)
+      timeZone: "Asia/Kolkata", // Timezone for Indian Standard Time
     };
-    return date.toLocaleString("en-US", options);
+    return new Intl.DateTimeFormat("en-US", options).format(date);
   };
 
   if (loading) {
@@ -230,7 +230,7 @@ const RecentMatch = () => {
                   </div>
                   <div>
                     <span className="text-base text-center flex justify-center dark:text-stone-400 text-stone-700 font-medium">
-                      Finished ({formatTime(item.fixture.periods.second)})
+                    Finished ({formatTime(item.fixture.date)})
                     </span>
                   </div>
                   <div className="flex justify-between text-sm mt-3 mb-2">
