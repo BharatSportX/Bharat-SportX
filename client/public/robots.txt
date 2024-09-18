@@ -6,5 +6,5 @@ Disallow: /admin/
 Disallow: /cgi-bin/
 
 # Sitemaps
-Sitemap: https://bharat-sport-x.vercel.app/sitemap.xml
-Sitemap: https://bharat-sport-x.vercel.app/sitemap-news.xml
+Sitemap: https://ganny.live/sitemap.xml
+Sitemap: https://ganny.live/sitemap-news.xml
