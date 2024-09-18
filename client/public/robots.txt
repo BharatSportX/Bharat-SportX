@@ -1,3 +1,10 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /private/
+Disallow: /admin/
+Disallow: /cgi-bin/
+
+# Sitemaps
+Sitemap: https://bharat-sport-x.vercel.app/sitemap.xml
+Sitemap: https://bharat-sport-x.vercel.app/sitemap-news.xml

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+  <url>
+    <loc>https://bharat-sport-x.vercel.app/news/article1</loc>
+    <news:news>
+      <news:publication>
+        <news:name>BharatSportX</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2024-03-18T13:00:00+00:00</news:publication_date>
+      <news:title>Latest Sports Update</news:title>
+    </news:news>
+  </url>
+  <!-- Add more news article URLs -->
+</urlset>

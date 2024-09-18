@@ -1,9 +1,10 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "BharatSportX",
+  "name": "BharatSportX - Live Sports Scores & AI Predictions",
+  "description": "Get real-time sports scores, AI-generated predictions, and comprehensive sports news for various sports.",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "https://bharat-sport-x.vercel.app/sportlogo.svg",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
@@ -21,5 +22,13 @@
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "categories": ["sports", "news", "live scores"],
+  "screenshots": [
+    {
+      "src": "screenshot1.jpg",
+      "type": "image/jpeg",
+      "sizes": "1280x720"
+    }
+  ]
 }
