@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
-    <loc>https://ganny.live/news/article1</loc>
+    <loc>https://bharat-sport-x.vercel.app/news/article1</loc>
     <news:news>
       <news:publication>
         <news:name>BharatSportX</news:name>

@@ -4,7 +4,7 @@
   "description": "Get real-time sports scores, AI-generated predictions, and comprehensive sports news for various sports.",
   "icons": [
     {
-      "src": "https://ganny.live/sportlogo.svg",
+      "src": "https://bharat-sport-x.vercel.app/sportlogo.svg",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
